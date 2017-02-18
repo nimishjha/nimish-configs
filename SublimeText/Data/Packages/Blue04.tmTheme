@@ -14,7 +14,7 @@
 		<dict>
 			<key>name</key><string>Square brackets</string>
 			<key>scope</key><string>punctuation.definition.brackets</string>
-			<key>settings</key><dict><key>foreground</key><string>#ff001a</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
@@ -46,7 +46,7 @@
 		<dict>
 			<key>name</key><string>Angle brackets</string>
 			<key>scope</key><string>punctuation.definition.tag</string>
-			<key>settings</key><dict><key>foreground</key><string>#77c8ff</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#77AAFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Functions</string>
@@ -82,15 +82,15 @@
 				<key>foreground</key><string>#88aa9e</string>
 				<key>invisibles</key><string>#ff00ae</string>
 				<key>lineHighlight</key><string>#333335</string>
-				<key>selection</key><string>#009989</string>
+				<key>selection</key><string>#004488</string>
 				<key>selectionForeground</key><string>#ffffff</string>
-				<key>findHighlight</key><string>#221600</string>
-				<key>findHighlightForeground</key><string>#ffa600</string>
+				<key>findHighlight</key><string>#00FFFF</string>
+				<key>findHighlightForeground</key><string>#000000</string>
 				<key>selectionBorder</key><string>#000000</string>
 				<key>activeGuide</key><string>#5e00ff</string>
 				<key>bracketsForeground</key><string>#ff4a00</string>
 				<key>bracketsOptions</key><string>foreground</string>
-				<key>bracketContentsForeground</key><string>#ff4a00</string>
+				<key>bracketContentsForeground</key><string>#FFFF00</string>
 				<key>bracketContentsOptions</key><string>foreground</string>
 				<key>tagsOptions</key><string>foreground</string>
 				<key>tagsForeground</key><string>#ff4a00</string>
@@ -99,13 +99,12 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#71ccb9</string><key>background</key><string>#224438</string></dict>
-			<!-- <key>settings</key><dict><key>foreground</key><string>#ff2040</string><key>background</key><string>#440800</string></dict> -->
+			<key>settings</key><dict><key>foreground</key><string>#77CCFF</string><key>background</key><string>#223344</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
 			<key>scope</key><string>string, punctuation.definition.string</string>
-			<key>settings</key><dict><key>foreground</key><string>#77e9ff</string><key>background</key><string>#204050</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#0099FF</string><key>background</key><string>#003060</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Numbers</string>
@@ -133,14 +132,14 @@
 			<key>settings</key><dict><key>foreground</key><string>#5e00ff</string></dict>
 		</dict>
 		<dict>
-			<key>name</key><string>Tag name</string>
+			<key>name</key><string>Tags</string>
 			<key>scope</key><string>entity.name.tag</string>
-			<key>settings</key><dict><key>foreground</key><string>#77c8ff</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#77AAFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Tag attribute</string>
 			<key>scope</key><string>entity.other.attribute-name</string>
-			<key>settings</key><dict><key>foreground</key><string>#99e3ff</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#5588DD</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Library function</string>
