@@ -1,0 +1,41 @@
+[
+	{ "keys": ["ctrl+shift+["], "command": "fold" },
+	{ "keys": ["ctrl+shift+]"], "command": "unfold" },
+	{ "keys": ["f12"], "command": "toggle_distraction_free" },
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+	{ "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
+	{ "keys": ["f7"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_link.sublime-macro"} },
+	{ "keys": ["f8"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_img.sublime-macro"} },
+	{ "keys": ["f11"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_id.sublime-macro"} },
+	{ "keys": ["shift+f11"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_class.sublime-macro"} },
+	{ "keys": ["alt+1"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h1.sublime-macro"} },
+	{ "keys": ["alt+2"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h2.sublime-macro"} },
+	{ "keys": ["alt+3"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h3.sublime-macro"} },
+	{ "keys": ["alt+4"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h4.sublime-macro"} },
+	{ "keys": ["alt+5"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h5.sublime-macro"} },
+	{ "keys": ["alt+6"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_h6.sublime-macro"} },
+	{ "keys": ["ctrl+alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_i.sublime-macro"} },
+	{ "keys": ["ctrl+alt+j"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_j.sublime-macro"} },
+	{ "keys": ["ctrl+shift+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/insert_for_loop.sublime-macro"} },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+j"], "command": "fold_all" },
+	{ "keys": ["ctrl+k"], "command": "unfold_all" },
+	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
+	{
+		"keys": ["ctrl+shift+c"],
+		"command": "cycle_color_scheme",
+		"args": {
+			"color_schemes": [
+				"Packages/BlackAndWhite.tmTheme",
+				"Packages/Blue01.tmTheme",
+				"Packages/Blue02.tmTheme",
+				"Packages/Blue03.tmTheme",
+				"Packages/Blue04.tmTheme",
+				"Packages/Orange01.tmTheme",
+				"Packages/Green01.tmTheme"
+	  		]
+		}
+	}
+]

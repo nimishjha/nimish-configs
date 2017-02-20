@@ -66,12 +66,12 @@
 		<dict>
 			<key>name</key><string>Constants</string>
 			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFAA22</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
 			<dict>
-				<key>minimapBorder</key><string>#00aa71</string>
+				<key>minimapBorder</key><string>#0099FF</string>
 				<key>background</key><string>#181c1f</string>
 				<key>caret</key><string>#FFFFFF</string>
 				<key>foreground</key><string>#8090A0</string>
@@ -94,7 +94,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#77CCFF</string><key>background</key><string>#223344</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#88CCFF</string><key>background</key><string>#224466</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
