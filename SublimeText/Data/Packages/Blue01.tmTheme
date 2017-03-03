@@ -72,7 +72,7 @@
 			<key>settings</key>
 			<dict>
 				<key>minimapBorder</key><string>#0099FF</string>
-				<key>background</key><string>#181c1f</string>
+				<key>background</key><string>#161B22</string>
 				<key>caret</key><string>#FFFFFF</string>
 				<key>foreground</key><string>#8090A0</string>
 				<key>invisibles</key><string>#ff00ae</string>

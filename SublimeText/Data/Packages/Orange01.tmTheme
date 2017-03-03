@@ -21,13 +21,11 @@
 			<key>scope</key><string>punctuation.definition.block</string>
 			<key>settings</key><dict><key>foreground</key><string>#CCCCCC</string></dict>
 		</dict>
-<!--
 		<dict>
 			<key>name</key><string>Parentheses</string>
 			<key>scope</key><string>punctuation.definition.group</string>
-			<key>settings</key><dict><key>foreground</key><string>#5555FF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
--->
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
@@ -51,27 +49,22 @@
 		<dict>
 			<key>name</key><string>Functions</string>
 			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
-			<key>name</key><string>Variables</string>
-			<key>scope</key><string>variable</string>
-			<key>settings</key><dict><key>foreground</key><string>#CC8844</string></dict>
-		</dict>
-		<dict>
-			<key>name</key><string>Objects</string>
-			<key>scope</key><string>variable.other.object</string>
-			<key>settings</key><dict><key>foreground</key><string>#CC8844</string></dict>
+			<key>name</key><string>Variables, Objects</string>
+			<key>scope</key><string>variable, variable.other.object</string>
+			<key>settings</key><dict><key>foreground</key><string>#CC4444</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Object properties</string>
 			<key>scope</key><string>meta.property.object, meta.object-literal.key</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#AA6666</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Constants</string>
 			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#FFFF55</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFCC00</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
@@ -83,7 +76,7 @@
 				<key>invisibles</key><string>#FF0000</string>
 				<key>lineHighlight</key><string>#333435</string>
 				<key>selection</key><string>#000000</string>
-				<key>selectionForeground</key><string>#FF9900</string>
+				<key>selectionForeground</key><string>#FFFFFF</string>
 				<key>findHighlight</key><string>#112200</string>
 				<key>findHighlightForeground</key><string>#aaFF00</string>
 				<key>selectionBorder</key><string>#000000</string>
@@ -99,7 +92,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#CCCCCC</string><key>background</key><string>#303030</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#A0A0A0</string><key>background</key><string>#383838</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
