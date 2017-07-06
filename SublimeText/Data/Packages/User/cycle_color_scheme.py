@@ -9,9 +9,8 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 		try:
 			schemes = kwargs.get("color_schemes")
 			i = schemes.index(scheme)
-			preferences.set(
-				'color_scheme', schemes[ (i+1) % len(schemes) ])
+			preferences.set('color_scheme', schemes[ (i+1) % len(schemes) ])
 		except ValueError:
-			print("Your current color scheme doesn't match any of your args.")
+			preferences.set('color_scheme', schemes[0])
 		except Exception:
 			print("Something went wrong.")

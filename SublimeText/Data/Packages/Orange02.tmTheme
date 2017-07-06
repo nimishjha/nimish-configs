@@ -9,7 +9,7 @@
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
 			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition</string>
-			<key>settings</key><dict><key>foreground</key><string>#CC7700</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
@@ -56,22 +56,22 @@
 		<dict>
 			<key>name</key><string>Functions</string>
 			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF6666</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
 			<key>scope</key><string>variable</string>
-			<key>settings</key><dict><key>foreground</key><string>#CC8844</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF5500</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Objects</string>
 			<key>scope</key><string>variable.other.object</string>
-			<key>settings</key><dict><key>foreground</key><string>#CC8844</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFAA44</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Object properties</string>
 			<key>scope</key><string>meta.property.object, meta.object-literal.key</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFCC77</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Constants</string>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>name</key><string>Strings</string>
 			<key>scope</key><string>string, punctuation.definition.string</string>
-			<key>settings</key><dict><key>foreground</key><string>#998877</string><key>background</key><string>#302820</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#BBAA99</string><key>background</key><string>#403020</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Numbers</string>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>name</key><string>Keywords</string>
 			<key>scope</key><string>keyword, storage</string>
-			<key>settings</key><dict><key>foreground</key><string>#808080</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#A0A0A0</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Class name</string>

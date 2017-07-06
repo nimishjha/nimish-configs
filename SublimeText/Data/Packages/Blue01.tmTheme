@@ -13,12 +13,12 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition</string>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string>
 			<key>settings</key><dict><key>foreground</key><string>#44CCFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
-			<key>scope</key><string>punctuation.definition.brackets</string>
+			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets</string>
 			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
@@ -66,19 +66,19 @@
 		<dict>
 			<key>name</key><string>Constants</string>
 			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#FFAA22</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
 			<dict>
-				<key>minimapBorder</key><string>#0099FF</string>
-				<key>background</key><string>#161B22</string>
+				<key>minimapBorder</key><string>#AACCFF</string>
+				<key>background</key><string>#181c1f</string>
 				<key>caret</key><string>#FFFFFF</string>
 				<key>foreground</key><string>#8090A0</string>
 				<key>invisibles</key><string>#ff00ae</string>
 				<key>lineHighlight</key><string>#333335</string>
-				<key>selection</key><string>#004499</string>
-				<key>selectionForeground</key><string>#FFFFFF</string>
+				<key>selection</key><string>#000000</string>
+				<key>selectionForeground</key><string>#FFFF00</string>
 				<key>findHighlight</key><string>#00FFFF</string>
 				<key>findHighlightForeground</key><string>#000000</string>
 				<key>selectionBorder</key><string>#000000</string>
@@ -94,7 +94,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#88AADD</string><key>background</key><string>#203050</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#77CCFF</string><key>background</key><string>#223344</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>

@@ -19,23 +19,22 @@
 	{ "keys": ["ctrl+alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_i.sublime-macro"} },
 	{ "keys": ["ctrl+alt+j"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_j.sublime-macro"} },
 	{ "keys": ["ctrl+shift+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/insert_for_loop.sublime-macro"} },
-	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+tab"], "command": "next_view_in_stack" },
 	{ "keys": ["ctrl+j"], "command": "fold_all" },
 	{ "keys": ["ctrl+k"], "command": "unfold_all" },
 	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
 	{
-		"keys": ["ctrl+shift+c"],
+		"keys": ["ctrl+alt+c"],
 		"command": "cycle_color_scheme",
 		"args": {
 			"color_schemes": [
-				"Packages/BlackAndWhite.tmTheme",
 				"Packages/Blue01.tmTheme",
-				"Packages/Blue02.tmTheme",
-				"Packages/Blue03.tmTheme",
-				"Packages/Blue04.tmTheme",
-				"Packages/Orange01.tmTheme",
-				"Packages/Green01.tmTheme"
+				"Packages/Orange01.tmTheme"
 	  		]
 		}
+	},
+	{
+		"keys": ["ctrl+alt+f"],
+		"command": "cycle_font"
 	}
 ]
