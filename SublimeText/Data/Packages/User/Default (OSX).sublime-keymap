@@ -1,44 +1,56 @@
 [
+	// Scroll
+	{ "keys": ["super+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+	{ "keys": ["super+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+
+	// Move
 	{ "keys": ["super+home"], "command": "move_to", "args": {"to": "bof"} },
 	{ "keys": ["super+end"], "command": "move_to", "args": {"to": "eof"} },
 	{ "keys": ["super+shift+home"], "command": "move_to", "args": {"to": "bof", "extend": true} },
 	{ "keys": ["super+shift+end"], "command": "move_to", "args": {"to": "eof", "extend": true} },
-	{ "keys": ["super+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
-	{ "keys": ["super+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+	{ "keys": ["super+left"], "command": "move", "args": {"by": "words", "forward": false} },
+	{ "keys": ["super+right"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+	{ "keys": ["super+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
+	{ "keys": ["super+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
+	{ "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 
-	{ "keys": ["super+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
-	{ "keys": ["super+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
-	{ "keys": ["super+shift+left"], "command": "move", "args": {"by": "subwords", "forward": false, "extend": true} },
-	{ "keys": ["super+shift+right"], "command": "move", "args": {"by": "subword_ends", "forward": true, "extend": true} },
+	// Move and select to brackets
+	{ "keys": ["super+m"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["super+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
 
+	// Tabs
 	{ "keys": ["super+tab"], "command": "next_view_in_stack" },
 	{ "keys": ["super+shift+tab"], "command": "prev_view_in_stack" },
 	{ "keys": ["super+pagedown"], "command": "next_view" },
 	{ "keys": ["super+pageup"], "command": "prev_view" },
 
+	// Find and replace
 	{ "keys": ["super+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
 	{ "keys": ["super+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["super+shift+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+	{ "keys": ["f3"], "command": "find_next" },
+	{ "keys": ["shift+f3"], "command": "find_prev" },
 
-	{ "keys": ["super+m"], "command": "move_to", "args": {"to": "brackets"} },
-	{ "keys": ["super+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
-
+	// Delete
+	{ "keys": ["super+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": true } },
+	{ "keys": ["super+delete"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
 	{ "keys": ["super+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
+	// Clipboard
 	{ "keys": ["super+c"], "command": "copy" },
 	{ "keys": ["super+v"], "command": "paste" },
 	{ "keys": ["super+x"], "command": "cut" },
+
+	// Save, close, reopen closed file, new file
 	{ "keys": ["super+s"], "command": "save" },
 	{ "keys": ["super+shift+s"], "command": "prompt_save_as" },
 	{ "keys": ["super+w"], "command": "close" },
-	{ "keys": ["super+t"], "command": "new_file" },
 	{ "keys": ["super+shift+t"], "command": "reopen_last_file" },
+	{ "keys": ["super+t"], "command": "new_file" },
 
+	// Comment, uncomment
 	{ "keys": ["super+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
 	{ "keys": ["super+shift+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
-
-	{ "keys": ["f3"], "command": "find_next" },
-	{ "keys": ["shift+f3"], "command": "find_prev" },
 
 	{
 		"keys": ["super+shift+pageup"],
@@ -49,6 +61,20 @@
 		"keys": ["super+shift+pagedown"],
 		"command": "move_tab",
 		"args": { "position": "+1" }
+	},
+	{
+		"keys": ["super+alt+c"],
+		"command": "cycle_color_scheme",
+		"args": {
+			"color_schemes": [
+				"Packages/Blue01.tmTheme",
+				"Packages/Orange01.tmTheme"
+	  		]
+		}
+	},
+	{
+		"keys": ["super+alt+f"],
+		"command": "cycle_font"
 	}
 
 ]
