@@ -14,6 +14,10 @@
 	{ "keys": ["super+shift+right"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
 	{ "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 
+	// Swap
+	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["super+shift+down"], "command": "swap_line_down" },
+
 	// Move and select to brackets
 	{ "keys": ["super+m"], "command": "move_to", "args": {"to": "brackets"} },
 	{ "keys": ["super+shift+m"], "command": "expand_selection", "args": {"to": "brackets"} },
@@ -22,7 +26,9 @@
 	{ "keys": ["super+tab"], "command": "next_view_in_stack" },
 	{ "keys": ["super+shift+tab"], "command": "prev_view_in_stack" },
 	{ "keys": ["super+pagedown"], "command": "next_view" },
+	{ "keys": ["ctrl+pagedown"], "command": "next_view" },
 	{ "keys": ["super+pageup"], "command": "prev_view" },
+	{ "keys": ["ctrl+pageup"], "command": "prev_view" },
 
 	// Find and replace
 	{ "keys": ["super+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
@@ -30,10 +36,11 @@
 	{ "keys": ["super+shift+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
 	{ "keys": ["f3"], "command": "find_next" },
 	{ "keys": ["shift+f3"], "command": "find_prev" },
+	{ "keys": ["super+alt+enter"], "command": "replace_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]},
 
 	// Delete
-	{ "keys": ["super+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": true } },
-	{ "keys": ["super+delete"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
+	{ "keys": ["super+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
+	{ "keys": ["super+delete"], "command": "delete_word", "args": { "forward": true, "sub_words": false } },
 	{ "keys": ["super+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 
 	// Clipboard
@@ -52,29 +59,24 @@
 	{ "keys": ["super+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
 	{ "keys": ["super+shift+forward_slash"], "command": "toggle_comment", "args": { "block": true } },
 
-	{
-		"keys": ["super+shift+pageup"],
-		"command": "move_tab",
-		"args": { "position": "-1" }
-	},
-	{
-		"keys": ["super+shift+pagedown"],
-		"command": "move_tab",
-		"args": { "position": "+1" }
-	},
-	{
-		"keys": ["super+alt+c"],
-		"command": "cycle_color_scheme",
-		"args": {
-			"color_schemes": [
-				"Packages/Blue01.tmTheme",
-				"Packages/Orange01.tmTheme"
-	  		]
-		}
-	},
-	{
-		"keys": ["super+alt+f"],
-		"command": "cycle_font"
-	}
+	// Multi-line select
+	{ "keys": ["super+alt+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+alt+down"], "command": "select_lines", "args": {"forward": true} },
 
+	// Other useful shortcuts
+	{ "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+
+	// Move by Symbols
+	{ "keys": ["alt+up"], "command": "move_by_symbols", "args": { "forward": false } },
+	{ "keys": ["alt+down"], "command": "move_by_symbols", "args": { "forward": true } },
+
+	// Other
+	{ "keys": ["super+b"], "command": "toggle_side_bar" },
+	{ "keys": ["super+shift+c"], "command": "coffee_compile" },
+	{ "keys": ["super+shift+pageup"], "command": "move_tab", "args": { "position": "-1" }	},
+	{ "keys": ["super+shift+pagedown"], "command": "move_tab", "args": { "position": "+1" } },
+	{	"keys": ["super+alt+c"], "command": "cycle_color_scheme" },
+	{ "keys": ["super+alt+f"], "command": "cycle_font" },
+	{ "keys": ["f1"], "command": "clone" },
+	{ "keys": ["f12"], "command": "toggle_distraction_free" },
 ]

@@ -1,42 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>name</key><string>BrighterBlue</string>
+	<key>name</key><string>Pale Blue</string>
 	<key>settings</key>
 	<array>
 
 		<dict>
-			<key>name</key><string>Keywords</string>
-			<key>scope</key><string>keyword, storage</string>
-			<key>settings</key><dict><key>foreground</key><string>#5555FF</string></dict>
-		</dict>
-		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string>
-			<key>settings</key><dict><key>foreground</key><string>#44CCFF</string></dict>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition</string>
+			<key>settings</key><dict><key>foreground</key><string>#50f0e4</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
-			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets</string>
+			<key>scope</key><string>punctuation.definition.brackets</string>
 			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
 			<key>scope</key><string>punctuation.definition.block</string>
-			<key>settings</key><dict><key>foreground</key><string>#BBDDDD</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#bbddd1</string></dict>
 		</dict>
-<!--
-		<dict>
-			<key>name</key><string>Parentheses</string>
-			<key>scope</key><string>punctuation.definition.group</string>
-			<key>settings</key><dict><key>foreground</key><string>#00BB00</string></dict>
-		</dict>
--->
+
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
-			<key>settings</key><dict><key>foreground</key><string>#FF55AA</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#ff0200</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>CSS Braces</string>
@@ -46,22 +35,32 @@
 		<dict>
 			<key>name</key><string>CSS pseudo-elements</string>
 			<key>scope</key><string>entity.other.pseudo-element.css</string>
-			<key>settings</key><dict><key>foreground</key><string>#00CCFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Angle brackets</string>
+			<key>scope</key><string>punctuation.definition.tag</string>
+			<key>settings</key><dict><key>foreground</key><string>#77AAFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Functions</string>
-			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration, support.function</string>
-			<key>settings</key><dict><key>foreground</key><string>#99CCFF</string></dict>
+			<key>scope</key><string>entity.name.functionX, variable.function, meta.function.declaration</string>
+			<key>settings</key><dict><key>foreground</key><string>#84e1fb</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
-			<key>scope</key><string>variable, variable.other.object, support.type, support.class</string>
-			<key>settings</key><dict><key>foreground</key><string>#5588FF</string></dict>
+			<key>scope</key><string>variable</string>
+			<key>settings</key><dict><key>foreground</key><string>#71a3cc</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Objects</string>
+			<key>scope</key><string>variable.other.object</string>
+			<key>settings</key><dict><key>foreground</key><string>#71a3cc</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Object properties</string>
 			<key>scope</key><string>meta.property.object, meta.object-literal.key</string>
-			<key>settings</key><dict><key>foreground</key><string>#7799FF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#88a8cc</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Constants</string>
@@ -71,26 +70,24 @@
 		<dict>
 			<key>settings</key>
 			<dict>
-				<key>guide</key><string>#FFFF00</string>
-				<key>activeGuide</key><string>#FFFF00</string>
-				<key>stackGuide</key><string>#FFFF00</string>
-				<key>minimapBorder</key><string>#AACCFF</string>
+				<key>minimapBorder</key><string>#00aa71</string>
 				<key>background</key><string>#181c1f</string>
-				<key>caret</key><string>#FFFFFF</string>
-				<key>foreground</key><string>#8090A0</string>
+				<key>caret</key><string>#ffffff</string>
+				<key>foreground</key><string>#88aa9e</string>
 				<key>invisibles</key><string>#ff00ae</string>
 				<key>lineHighlight</key><string>#333335</string>
-				<key>selection</key><string>#000000</string>
-				<key>selectionForeground</key><string>#FFFF00</string>
+				<key>selection</key><string>#004488</string>
+				<key>selectionForeground</key><string>#ffffff</string>
 				<key>findHighlight</key><string>#00FFFF</string>
 				<key>findHighlightForeground</key><string>#000000</string>
 				<key>selectionBorder</key><string>#000000</string>
-				<key>bracketsForeground</key><string>#FFFF00</string>
+				<key>activeGuide</key><string>#5e00ff</string>
+				<key>bracketsForeground</key><string>#ff4a00</string>
 				<key>bracketsOptions</key><string>foreground</string>
 				<key>bracketContentsForeground</key><string>#FFFF00</string>
 				<key>bracketContentsOptions</key><string>foreground</string>
 				<key>tagsOptions</key><string>foreground</string>
-				<key>tagsForeground</key><string>#FFFF00</string>
+				<key>tagsForeground</key><string>#ff4a00</string>
 			</dict>
 		</dict>
 		<dict>
@@ -106,7 +103,7 @@
 		<dict>
 			<key>name</key><string>Numbers</string>
 			<key>scope</key><string>constant.numeric</string>
-			<key>settings</key><dict><key>foreground</key><string>#AABBCC</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#88cacc</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Built-in constants</string>
@@ -114,29 +111,34 @@
 			<key>settings</key><dict><key>foreground</key><string>#ffffff</string></dict>
 		</dict>
 		<dict>
+			<key>name</key><string>Keywords</string>
+			<key>scope</key><string>keyword, storage</string>
+			<key>settings</key><dict><key>foreground</key><string>#51bdff</string></dict>
+		</dict>
+		<dict>
 			<key>name</key><string>Class name</string>
 			<key>scope</key><string>entity.name.class, entity.name.type</string>
-			<key>settings</key><dict><key>foreground</key><string>#88CC00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#00ff4c</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Inherited class</string>
 			<key>scope</key><string>entity.other.inherited-class</string>
-			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#5e00ff</string></dict>
 		</dict>
 		<dict>
-			<key>name</key><string>Angle brackets</string>
-			<key>scope</key><string>punctuation.definition.tag</string>
-			<key>settings</key><dict><key>foreground</key><string>#6688FF</string></dict>
-		</dict>
-		<dict>
-			<key>name</key><string>XML Tags</string>
+			<key>name</key><string>Tags</string>
 			<key>scope</key><string>entity.name.tag</string>
-			<key>settings</key><dict><key>foreground</key><string>#6688FF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#77AAFF</string></dict>
 		</dict>
 		<dict>
-			<key>name</key><string>XML Tag attribute</string>
+			<key>name</key><string>Tag attribute</string>
 			<key>scope</key><string>entity.other.attribute-name</string>
-			<key>settings</key><dict><key>foreground</key><string>#88AAFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#5588DD</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Library function</string>
+			<key>scope</key><string>support.function</string>
+			<key>settings</key><dict><key>foreground</key><string>#84e1fb</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Library constant</string>
@@ -144,19 +146,24 @@
 			<key>settings</key><dict><key>foreground</key><string>#7799bb</string></dict>
 		</dict>
 		<dict>
+			<key>name</key><string>Library class/type</string>
+			<key>scope</key><string>support.type, support.class</string>
+			<key>settings</key><dict><key>foreground</key><string>#71a3cc</string></dict>
+		</dict>
+		<dict>
 			<key>name</key><string>Built-in class</string>
 			<key>scope</key><string>support.class.builtin</string>
-			<key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#51bdff</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Library variable</string>
 			<key>scope</key><string>support.other.variable</string>
-			<key>settings</key><dict><key>foreground</key><string>#FF55AA</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#ff00ae</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Invalid</string>
 			<key>scope</key><string>invalid</string>
-			<key>settings</key><dict><key>background</key><string>#AA0000</string><key>foreground</key><string>#FFFFFF</string></dict>
+			<key>settings</key><dict><key>background</key><string>#ff00ae</string><key>foreground</key><string>#ffffff</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Invalid deprecated</string>
@@ -193,7 +200,37 @@
 			<key>settings</key><dict><key>foreground</key><string>#ffa600</string></dict>
 		</dict>
 
-	</array>
+	<dict>
+            <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#D02000</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Gutter Mark</string>
+            <key>scope</key>
+            <string>sublimelinter.gutter-mark</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Warning</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.warning</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#DDB700</string>
+            </dict>
+        </dict></array>
 	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
 </dict>
 </plist>

@@ -11,11 +11,11 @@ class CycleFontCommand(sublime_plugin.TextCommand):
 			preferences.set('font_face', new_font)
 
 			if new_font == "Swis721CnBtCode":
-				preferences.set('font_size', 14)
+				preferences.set('font_size', 18)
 			elif new_font == "Verdcode":
-				preferences.set('font_size', 14)
+				preferences.set('font_size', 15)
 			else:
-				preferences.set('font_size', 14)
+				preferences.set('font_size', 16)
 
 		except ValueError:
 			print("Your current color scheme doesn't match any of your args.")

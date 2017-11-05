@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>name</key><string>BrighterBlue</string>
@@ -13,26 +13,20 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string>
-			<key>settings</key><dict><key>foreground</key><string>#44CCFF</string></dict>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, punctuation.section.group, meta.brace.round</string>
+			<key>settings</key><dict><key>foreground</key><string>#66CCFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
-			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets</string>
+			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets, meta.brace.square</string>
 			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
-			<key>scope</key><string>punctuation.definition.block</string>
-			<key>settings</key><dict><key>foreground</key><string>#BBDDDD</string></dict>
+			<key>scope</key><string>punctuation.definition.block, meta.block</string>
+			<key>settings</key><dict><key>foreground</key><string>#BBCCFF</string></dict>
 		</dict>
-<!--
-		<dict>
-			<key>name</key><string>Parentheses</string>
-			<key>scope</key><string>punctuation.definition.group</string>
-			<key>settings</key><dict><key>foreground</key><string>#00BB00</string></dict>
-		</dict>
--->
+
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
@@ -51,11 +45,11 @@
 		<dict>
 			<key>name</key><string>Functions</string>
 			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration, support.function</string>
-			<key>settings</key><dict><key>foreground</key><string>#99CCFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#00CCFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
-			<key>scope</key><string>variable, variable.other.object, support.type, support.class</string>
+			<key>scope</key><string>variable, variable.other.object, support.type, support.class, variable.parameter</string>
 			<key>settings</key><dict><key>foreground</key><string>#5588FF</string></dict>
 		</dict>
 		<dict>
@@ -66,14 +60,14 @@
 		<dict>
 			<key>name</key><string>Constants</string>
 			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#00ff88</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
 			<dict>
 				<key>guide</key><string>#FFFF00</string>
-				<key>activeGuide</key><string>#FFFF00</string>
-				<key>stackGuide</key><string>#FFFF00</string>
+				<key>activeGuide</key><string>#4499FF</string>
+				<key>stackGuide</key><string>#337799</string>
 				<key>minimapBorder</key><string>#AACCFF</string>
 				<key>background</key><string>#181c1f</string>
 				<key>caret</key><string>#FFFFFF</string>
@@ -193,7 +187,37 @@
 			<key>settings</key><dict><key>foreground</key><string>#ffa600</string></dict>
 		</dict>
 
-	</array>
+	<dict>
+            <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#D02000</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Gutter Mark</string>
+            <key>scope</key>
+            <string>sublimelinter.gutter-mark</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Warning</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.warning</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#DDB700</string>
+            </dict>
+        </dict></array>
 	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
 </dict>
 </plist>
