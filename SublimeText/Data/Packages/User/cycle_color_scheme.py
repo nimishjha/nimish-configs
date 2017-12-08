@@ -9,8 +9,8 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 		print("Current color scheme is " + scheme);
 		schemes = [
 			"Packages/User/SublimeLinter/Blue01 (SL).tmTheme",
+			"Packages/User/SublimeLinter/DeepBlue (SL).tmTheme",
 			"Packages/User/SublimeLinter/Orange01 (SL).tmTheme",
-			"Packages/User/SublimeLinter/Dracula (SL).tmTheme",
   		]
 		try:
 			i = schemes.index(scheme)

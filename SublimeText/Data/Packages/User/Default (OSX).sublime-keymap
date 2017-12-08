@@ -37,6 +37,7 @@
 	{ "keys": ["f3"], "command": "find_next" },
 	{ "keys": ["shift+f3"], "command": "find_prev" },
 	{ "keys": ["super+alt+enter"], "command": "replace_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]},
+	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
 
 	// Delete
 	{ "keys": ["super+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
@@ -65,6 +66,7 @@
 
 	// Other useful shortcuts
 	{ "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+	{ "keys": ["super+\\"], "command": "toggle_setting", "args": {"setting": "draw_indent_guides"}},
 
 	// Move by Symbols
 	{ "keys": ["alt+up"], "command": "move_by_symbols", "args": { "forward": false } },
@@ -78,5 +80,7 @@
 	{	"keys": ["super+alt+c"], "command": "cycle_color_scheme" },
 	{ "keys": ["super+alt+f"], "command": "cycle_font" },
 	{ "keys": ["f1"], "command": "clone" },
-	{ "keys": ["f12"], "command": "toggle_distraction_free" },
+	// { "keys": ["f12"], "command": "toggle_distraction_free" },
+	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
+	{ "keys": ["f12"], "command": "code_formatter" },
 ]

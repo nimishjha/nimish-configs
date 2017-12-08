@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Better CoffeeScript",
+		"CodeFormatter",
+		"CoffeeCompile",
+		"Jade",
+		"Move By Symbols",
+		"Package Control",
+		"Pug",
+		"Sass",
+		"Stylus",
+		"SublimeLinter",
+		"SublimeLinter-coffeelint",
+		"SublimeLinter-contrib-eslint"
+	]
+}
