@@ -21,7 +21,6 @@
 			<key>scope</key><string>punctuation.definition.block</string>
 			<key>settings</key><dict><key>foreground</key><string>#CCCCCC</string></dict>
 		</dict>
-
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
@@ -49,8 +48,8 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Functions</string>
-			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>scope</key><string>entity.name.function, variable.function, meta.function, support.function</string>
+			<key>settings</key><dict><key>foreground</key><string>#FF4433</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
@@ -78,7 +77,7 @@
 				<key>minimapBorder</key><string>#000000</string>
 				<key>background</key><string>#181818</string>
 				<key>caret</key><string>#FFFFFF</string>
-				<key>foreground</key><string>#909090</string>
+				<key>foreground</key><string>#808080</string>
 				<key>invisibles</key><string>#FF0000</string>
 				<key>lineHighlight</key><string>#333435</string>
 				<key>selection</key><string>#000000</string>

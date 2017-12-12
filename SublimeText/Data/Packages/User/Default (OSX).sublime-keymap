@@ -80,7 +80,8 @@
 	{	"keys": ["super+alt+c"], "command": "cycle_color_scheme" },
 	{ "keys": ["super+alt+f"], "command": "cycle_font" },
 	{ "keys": ["f1"], "command": "clone" },
-	// { "keys": ["f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["f12"], "command": "code_formatter" },
+	// { "keys": ["super+alt+shift+c"], "command": "filename_to_clipboard" },
+	{ "keys": ["super+alt+shift+c"], "command": "path_to_clipboard" },
 ]

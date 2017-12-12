@@ -43,7 +43,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Functions</string>
-			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration, support.function</string>
+			<key>scope</key><string>entity.name.function, variable.function, meta.function, support.function</string>
 			<key>settings</key><dict><key>foreground</key><string>#99CCFF</string></dict>
 		</dict>
 		<dict>
