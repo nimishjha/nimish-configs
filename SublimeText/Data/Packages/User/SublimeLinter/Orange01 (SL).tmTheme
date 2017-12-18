@@ -18,7 +18,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
-			<key>scope</key><string>punctuation.definition.block</string>
+			<key>scope</key><string>punctuation.definition.block, meta.brace</string>
 			<key>settings</key><dict><key>foreground</key><string>#CCCCCC</string></dict>
 		</dict>
 		<dict>

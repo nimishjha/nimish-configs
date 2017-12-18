@@ -13,18 +13,18 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, meta.brace.round</string>
 			<key>settings</key><dict><key>foreground</key><string>#44CCFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
-			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets</string>
-			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
+			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets, meta.brace.square</string>
+			<key>settings</key><dict><key>foreground</key><string>#FFCC00</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
-			<key>scope</key><string>punctuation.definition.block</string>
-			<key>settings</key><dict><key>foreground</key><string>#BBDDDD</string></dict>
+			<key>scope</key><string>punctuation.definition.block, meta.brace.curly</string>
+			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>

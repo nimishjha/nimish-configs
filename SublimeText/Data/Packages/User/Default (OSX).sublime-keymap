@@ -38,6 +38,9 @@
 	{ "keys": ["shift+f3"], "command": "find_prev" },
 	{ "keys": ["super+alt+enter"], "command": "replace_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]},
 	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
+	{ "keys": ["super+f3"], "command": "find_all_under" },	// replace all occurrences in-place
+	{ "keys": ["super+shift+f3"], "command": "slurp_find_string" },
+	// { "keys": ["super+shift+f3"], "command": "slurp_replace_string" },
 
 	// Delete
 	{ "keys": ["super+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
@@ -82,6 +85,14 @@
 	{ "keys": ["f1"], "command": "clone" },
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["f12"], "command": "code_formatter" },
-	// { "keys": ["super+alt+shift+c"], "command": "filename_to_clipboard" },
-	{ "keys": ["super+alt+shift+c"], "command": "path_to_clipboard" },
+	{ "keys": ["super+alt+shift+c"], "command": "copy_path" },
+
+	// Macros
+	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
+	{ "keys": ["alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_id.sublime-macro"} },
+	{ "keys": ["alt+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_class.sublime-macro"} },
+	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
+
+
+
 ]
