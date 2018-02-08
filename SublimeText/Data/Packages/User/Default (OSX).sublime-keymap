@@ -86,13 +86,12 @@
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["f12"], "command": "code_formatter" },
 	{ "keys": ["super+alt+shift+c"], "command": "copy_path" },
+	{ "keys": ["super+."], "command": "edit_settings", "args": { "base_file": "${packages}/Default/Default ($platform).sublime-keymap" } },
 
 	// Macros
 	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
 	{ "keys": ["alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_id.sublime-macro"} },
 	{ "keys": ["alt+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_class.sublime-macro"} },
 	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
-
-
 
 ]
