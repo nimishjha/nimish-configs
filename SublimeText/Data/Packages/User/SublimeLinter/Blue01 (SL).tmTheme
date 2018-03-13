@@ -7,14 +7,19 @@
 	<array>
 
 		<dict>
+			<key>name</key><string>Plain text</string>
+			<key>scope</key><string>text.plain</string>
+			<key>settings</key><dict><key>foreground</key><string>#90A0C0</string></dict>
+		</dict>
+		<dict>
 			<key>name</key><string>Keywords</string>
 			<key>scope</key><string>keyword, storage</string>
 			<key>settings</key><dict><key>foreground</key><string>#5555FF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, meta.brace.round</string>
-			<key>settings</key><dict><key>foreground</key><string>#44CCFF</string></dict>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, meta.brace.round, punctuation.section.group</string>
+			<key>settings</key><dict><key>foreground</key><string>#8888FF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
@@ -23,8 +28,8 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
-			<key>scope</key><string>punctuation.definition.block, meta.brace.curly</string>
-			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
+			<key>scope</key><string>punctuation.definition.block, meta.brace.curly, punctuation.section.block</string>
+			<key>settings</key><dict><key>foreground</key><string>#00FFFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
@@ -68,11 +73,11 @@
 				<key>activeGuide</key><string>#4499FF</string>
 				<key>stackGuide</key><string>#337799</string>
 				<key>minimapBorder</key><string>#AACCFF</string>
-				<key>background</key><string>#181c1f</string>
+				<key>background</key><string>#101820</string>
 				<key>caret</key><string>#FFFFFF</string>
 				<key>foreground</key><string>#6688CC</string>
 				<key>invisibles</key><string>#ff00ae</string>
-				<key>lineHighlight</key><string>#333335</string>
+				<key>lineHighlight</key><string>#081018</string>
 				<key>selection</key><string>#000000</string>
 				<key>selectionForeground</key><string>#FFFF00</string>
 				<key>findHighlight</key><string>#00FFFF</string>
@@ -89,7 +94,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#77CCFF</string><key>background</key><string>#223344</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#55AAFF</string><key>background</key><string>#113355</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
@@ -194,7 +199,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#D02000</string>
+                <string>#00FFFF</string>
             </dict>
         </dict><dict>
             <key>name</key>
@@ -214,7 +219,7 @@
             <key>settings</key>
             <dict>
                 <key>foreground</key>
-                <string>#DDB700</string>
+                <string>#FF9900</string>
             </dict>
         </dict></array>
 	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>

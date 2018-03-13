@@ -59,6 +59,7 @@
 		".git",
 		".github",
 		".hg",
+		".nyc_output",
 		".settings",
 		".svn",
 		".tmp",
@@ -79,7 +80,7 @@
 		"uitests",
 		"migrate"
 	],
-	"font_face": "Consolas",
+	"font_face": "Menlo",
 	"font_size": 16,
 	"gutter": true,
 	"highlight_line": false,

@@ -5,7 +5,7 @@ class CycleFontCommand(sublime_plugin.TextCommand):
 		current_font = self.view.settings().get("font_face")
 		current_font_size = self.view.settings().get("font_size")
 		try:
-			fonts = ["Swis721CnBtCode", "Verdcode", "Consolas"]
+			fonts = ["Verdcode", "Consolas", "Menlo"]
 			current_font_index = fonts.index(current_font)
 			new_font = fonts[ (current_font_index + 1) % len(fonts) ]
 			preferences.set('font_face', new_font)
