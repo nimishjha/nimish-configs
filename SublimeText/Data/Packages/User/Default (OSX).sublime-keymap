@@ -37,7 +37,7 @@
 	{ "keys": ["f3"], "command": "find_next" },
 	{ "keys": ["shift+f3"], "command": "find_prev" },
 	{ "keys": ["super+alt+enter"], "command": "replace_all", "args": {"close_panel": true}, "context": [{"key": "panel", "operand": "replace"}, {"key": "panel_has_focus"}]},
-	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
+	{ "keys": ["super+alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
 	{ "keys": ["super+f3"], "command": "find_all_under" },	// replace all occurrences in-place
 	{ "keys": ["super+shift+f3"], "command": "slurp_find_string" },
 	// { "keys": ["super+shift+f3"], "command": "slurp_replace_string" },
@@ -80,13 +80,15 @@
 	{ "keys": ["super+shift+c"], "command": "coffee_compile" },
 	{ "keys": ["super+shift+pageup"], "command": "move_tab", "args": { "position": "-1" }	},
 	{ "keys": ["super+shift+pagedown"], "command": "move_tab", "args": { "position": "+1" } },
-	{	"keys": ["super+alt+c"], "command": "cycle_color_scheme" },
+	{	"keys": ["super+alt+o"], "command": "cycle_color_scheme" },
 	{ "keys": ["super+alt+f"], "command": "cycle_font" },
 	{ "keys": ["f1"], "command": "clone" },
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["f12"], "command": "code_formatter" },
 	{ "keys": ["super+alt+shift+c"], "command": "copy_path" },
 	{ "keys": ["super+."], "command": "edit_settings", "args": { "base_file": "${packages}/Default/Default ($platform).sublime-keymap" } },
+	// { "keys": ["f9"], "command": "set_read_only(True)" },
+	// { "keys": ["f10"], "command": "set_read_only(False)" },
 
 	// Macros
 	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
@@ -95,3 +97,6 @@
 	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
 
 ]
+
+
+
