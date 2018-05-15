@@ -7,7 +7,7 @@ class ColorSchemeByPathCommand(sublime_plugin.TextCommand):
 		if "/test/" in self.view.file_name():
 			settings.set('color_scheme', "Packages/User/SublimeLinter/Orange01 (SL).tmTheme")
 		# elif "/client/" in self.view.file_name():
-		else:
+		else if "/direct-web/" in self.view.file_name():
 			settings.set('color_scheme', "Packages/User/SublimeLinter/Blue01 (SL).tmTheme")
 class ColorSchemeByPathEventListener(sublime_plugin.EventListener):
 	def on_load_async(self, view):
