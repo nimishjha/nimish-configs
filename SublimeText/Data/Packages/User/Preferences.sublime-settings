@@ -7,7 +7,7 @@
 	"auto_match_enabled": false,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Blue01 (SL).tmTheme",
+	"color_scheme": "Packages/Nimish/Blue01.tmTheme",
 	"detect_indentation": true,
 	"draw_indent_guides": false,
 	"draw_minimap_border": false,
@@ -113,5 +113,5 @@
 	"translate_tabs_to_spaces": false,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false,
-	"wrap_width": 120
+	"wrap_width": 120,
 }

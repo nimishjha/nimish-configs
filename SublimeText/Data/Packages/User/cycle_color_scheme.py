@@ -6,7 +6,7 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 	def run(self, edit, **kwargs):
 		preferences = sublime.load_settings('Preferences.sublime-settings')
 		scheme = self.view.settings().get("color_scheme")
-		print("Previous color scheme was " + scheme);
+		print("Previous: " + scheme);
 		schemes = [
 			"Packages/User/SublimeLinter/Blue01 (SL).tmTheme",
 			"Packages/User/SublimeLinter/DeepBlue (SL).tmTheme",
@@ -14,9 +14,10 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
   		]
 		try:
 			i = schemes.index(scheme)
-			preferences.set('color_scheme', schemes[ (i+1) % len(schemes) ])
+			newScheme = schemes[ (i+1) % len(schemes) ]
+			preferences.set('color_scheme', newScheme)
 			scheme = self.view.settings().get("color_scheme")
-			print("Changed color scheme to " + scheme);
+			print("New:      " + newScheme)
 		except ValueError:
 			preferences.set('color_scheme', schemes[0])
 		except Exception:
