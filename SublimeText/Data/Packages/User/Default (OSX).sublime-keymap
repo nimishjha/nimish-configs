@@ -8,6 +8,8 @@
 	{ "keys": ["super+end"], "command": "move_to", "args": {"to": "eof"} },
 	{ "keys": ["super+shift+home"], "command": "move_to", "args": {"to": "bof", "extend": true} },
 	{ "keys": ["super+shift+end"], "command": "move_to", "args": {"to": "eof", "extend": true} },
+	{ "keys": ["super+shift+["], "command": "move_to", "args": {"to": "bof", "extend": true} },
+	{ "keys": ["super+shift+]"], "command": "move_to", "args": {"to": "eof", "extend": true} },
 	{ "keys": ["super+left"], "command": "move", "args": {"by": "words", "forward": false} },
 	{ "keys": ["super+right"], "command": "move", "args": {"by": "word_ends", "forward": true} },
 	{ "keys": ["super+shift+left"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },

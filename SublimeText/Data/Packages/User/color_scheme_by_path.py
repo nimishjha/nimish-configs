@@ -6,6 +6,8 @@ class ColorSchemeByPathCommand(sublime_plugin.TextCommand):
 		settings = self.view.settings()
 		if "/test/" in self.view.file_name():
 			settings.set('color_scheme', "Packages/User/SublimeLinter/Orange01 (SL).tmTheme")
+		elif "/uitests/" in self.view.file_name():
+			settings.set('color_scheme', "Packages/User/SublimeLinter/Orange01 (SL).tmTheme")
 		# elif "/direct-web/" in self.view.file_name():
 		# 	settings.set('color_scheme', "Packages/User/SublimeLinter/Blue01 (SL).tmTheme")
 class ColorSchemeByPathEventListener(sublime_plugin.EventListener):

@@ -29,12 +29,12 @@
 		<dict>
 			<key>name</key><string>Braces</string>
 			<key>scope</key><string>punctuation.definition.block, meta.brace.curly, punctuation.section.block</string>
-			<key>settings</key><dict><key>foreground</key><string>#00FFFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF8888</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
-			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF8888</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>CSS Braces</string>
@@ -194,12 +194,12 @@
 		<dict>
       <key>name</key><string>SublimeLinter Warning</string>
       <key>scope</key><string>markup.warning</string>
-      <key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
+      <key>settings</key><dict><key>foreground</key><string>#FF9900</string><key>background</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
       <key>name</key><string>SublimeLinter Error</string>
       <key>scope</key><string>markup.error</string>
-      <key>settings</key><dict><key>foreground</key><string>#FF0000</string></dict>
+      <key>settings</key><dict><key>foreground</key><string>#FF0000</string><key>background</key><string>#FF0000</string></dict>
 		</dict>
 
 </array>
