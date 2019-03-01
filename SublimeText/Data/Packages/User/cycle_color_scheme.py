@@ -11,6 +11,7 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 			"Packages/User/SublimeLinter/Blue01 (SL).tmTheme",
 			"Packages/User/SublimeLinter/DeepBlue (SL).tmTheme",
 			"Packages/User/SublimeLinter/Orange01 (SL).tmTheme",
+			"Packages/User/SublimeLinter/Green01 (SL).tmTheme",
   		]
 		try:
 			i = schemes.index(scheme)
