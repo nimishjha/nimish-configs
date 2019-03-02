@@ -13,9 +13,11 @@
 
 function get(s)
 {
-	if(s.indexOf("#") === 0 && s.indexOf(" ") === -1 && s.indexOf(".") === -1) return document.querySelector(s);
+	if(s.indexOf("#") === 0 && !~s.indexOf(" ") && !~s.indexOf("."))
+		return document.querySelector(s);
 	var nodes = document.querySelectorAll(s);
-	if(nodes.length) return Array.from(nodes);
+	if(nodes.length)
+		return Array.from(nodes);
 	return false;
 }
 
@@ -52,22 +54,6 @@ function insertStyle(str, identifier, important)
 	head.appendChild(style);
 }
 
-function insertStyleFonts()
-{
-	var s = 'a, p, li, td, div, input, select, textarea { font: bold 15px arial; }' +
-	'h1 { font: 40px "swis721 cn bt"; }' +
-	'h2 { font: 32px "swis721 cn bt"; }' +
-	'h3 { font: 28px "swis721 cn bt"; }' +
-	'h4 { font: 24px "swis721 cn bt"; }' +
-	'h5 { font: 18px "swis721 cn bt"; }' +
-	'h6 { font: 16px "swis721 cn bt"; }' +
-	'span, b, em, strong, i { font: inherit; }' +
-	'p, li { line-height: 150%; }' +
-	'p { margin: 0; padding: 5px 0; }' +
-	'pre, code { font: 12px verdcode; }';
-	insertStyle(s, 'style_fonts', true);
-}
-
 function trim(str1)
 {
 	return str1.replace(/^\s+/, '').replace(/\s+$/, '');
@@ -84,18 +70,40 @@ function del(arg)
 		return;
 	if(arg.nodeType)
 		arg.parentNode.removeChild(arg);
-	else if(arg.length && typeof(arg) === "string")
-		del(get(arg));
-	else
-		for(var i = 0, ii = arg.length; i < ii; i++)
-			del(arg[i]);
+	else if(arg.length)
+		if(typeof arg === "string")
+			del(get(arg));
+		else
+			for(var i = 0, ii = arg.length; i < ii; i++)
+				del(arg[i]);
 }
 
-function ylog(str)
+function log(str)
 {
-	var d = document.createElement("h2");
+	var d = document.createElement("h6");
 	d.innerHTML = str;
 	document.body.appendChild(d);
+}
+
+function createElement(tag, props)
+{
+	var elem = document.createElement(tag);
+	if(props && typeof props === "object")
+	{
+		var key, keys = Object.keys(props);
+		var i = keys.length;
+		var settableProperties = ["id", "className", "textContent", "innerHTML", "value"];
+		while(i--)
+		{
+			key = keys[i];
+			if(settableProperties.includes(key))
+				elem[key] = props[key];
+			else
+				elem.setAttribute(key, props[key]);
+		}
+		return elem;
+	}
+	return elem;
 }
 
 //
@@ -106,80 +114,73 @@ function doGfycat()
 	e = get("#mp4Source");
 	if(!e)
 	{
-		ylog("no mp4Source");
+		log("no mp4Source");
 		return;
 	}
 	s = e.src;
 	e.src = '';
 	e = get("#webmSource");
-	ylog(e.src);
+	log(e.src);
 	e.src = '';
 	del('video');
 	//location.href = s;
 	e = document.createElement("a");
 	e.href = e.textContent = s;
-	ylog(s);
+	log(s);
 	document.body.appendChild(e);
 	e.focus;
 }
 
 function deleteElementsContainingText(selector, str)
 {
-	var t1 = new Date();
-	var elems, textContained;
-
-	if(!(selector && str))
+	var sel, text;
+	if (! (selector && str))
 	{
-		elems = prompt("Delete elements containing text");
-		if(elems !== "img")
-			textContained = prompt("Containing text");
-		else
-			textContained = "";
-		if(elems.length)
+		sel = prompt("Delete elements containing text");
+		text = prompt("Containing text");
+		if (sel.length)
 		{
-			var arr = [textContained];
-			deleteElementsContainingText(elems, arr);
+			if(text.length)
+			{
+				if (sel === "img") deleteImagesBySrcContaining(text);
+				else deleteElementsContainingText(sel, text);
+			}
+			else
+			{
+				del(sel);
+			}
 		}
 		return;
 	}
-
 	var e = get(selector);
-	if(!e)
-		return;
-	if(e.length)
+	if (!e) return;
+	if (e.length)
 	{
 		var i = e.length;
 		while (i--)
 		{
-			if(e[i].querySelector(selector))
-			{
-				continue;
-			}
-			if(str)
-			{
-				if(e[i].textContent.indexOf(str) >= 0)
-					e[i].parentNode.removeChild(e[i]);
-			}
-			else
-			{
+			if (e[i].querySelector(selector)) continue;
+			if (e[i].textContent.indexOf(str) >= 0)
 				e[i].parentNode.removeChild(e[i]);
-			}
 		}
 	}
-	else if(e.parentNode)
+	else if (e.parentNode)
 	{
 		e.parentNode.removeChild(e);
 	}
-	var t2 = new Date();
 }
 
 function deleteImagesBySrcContaining(str)
 {
-	var elems = document.getElementsByTagName("img"), i = elems.length;
+	var elems = document.getElementsByTagName("img");
+	var i = elems.length;
 	while (i--)
-	if(elems[i].src.indexOf(str) >= 0)
 	{
-		elems[i].parentNode.removeChild(elems[i]);
+		if(elems[i].src.indexOf(str) >= 0)
+		{
+			log("Deleting image with src " + elems[i].src);
+			elems[i].parentNode.removeChild(elems[i]);
+		}
 	}
 }
 
@@ -294,7 +295,7 @@ function githubToggleTestFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(isTestFile(fileInfo.textContent))
-		  	githubClick(e[i]);
+			githubClick(e[i]);
 		}
 	}
 }
@@ -311,7 +312,7 @@ function githubToggleTemplateFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(fileInfo && isTemplateFile(fileInfo.textContent))
-		  	githubClick(e[i]);
+			githubClick(e[i]);
 		}
 	}
 }
@@ -343,7 +344,7 @@ function githubToggleLogicFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(fileInfo && isLogicFile(fileInfo.textContent) && !isTestFile(fileInfo.textContent))
-		  	githubClick(e[i]);
+			githubClick(e[i]);
 		}
 	}
 }
@@ -372,54 +373,43 @@ function doGithub()
 	var wrapper = document.createElement("div");
 	wrapper.id = "njGithubButtonWrapper";
 	document.body.insertBefore(wrapper, document.body.firstChild);
-
-	var url = location.href;
-	// if(containsAnyOfTheStrings(url, ["/files", "/commits/"]))
-	if(true)
-	{
-		githubAddButton({ buttonText: "Collapse all files", clickHandler: githubCollapseAllFiles });
-		githubAddButton({ buttonText: "Toggle all files", clickHandler: githubToggleAllFiles });
-		githubAddButton({ buttonText: "Toggle logic files", clickHandler: githubToggleLogicFiles });
-		githubAddButton({ buttonText: "Toggle test files", clickHandler: githubToggleTestFiles });
-		githubAddButton({ buttonText: "Toggle template files", clickHandler: githubToggleTemplateFiles });
-	}
+	githubAddButton({ buttonText: "Collapse all files", clickHandler: githubCollapseAllFiles });
+	githubAddButton({ buttonText: "Toggle all files", clickHandler: githubToggleAllFiles });
+	githubAddButton({ buttonText: "Toggle logic files", clickHandler: githubToggleLogicFiles });
+	githubAddButton({ buttonText: "Toggle test files", clickHandler: githubToggleTestFiles });
+	githubAddButton({ buttonText: "Toggle template files", clickHandler: githubToggleTemplateFiles });
 	var s = document.title;
 	s = s.replace(/\[.+\]/, '');
 	document.title = s;
-	//deleteElementsContainingText("h3", "force-pushed");
 	replaceElementsBySelector(".commit-title", "h1");
 }
 
-//
-
-if(~location.href.indexOf("ci.adslot.com/job"))
-{
-  highlightWithinPreformattedBlocks("passed");
-  highlightWithinPreformattedBlocks("passing");
-  highlightWithinPreformattedBlocks("fail");
-  highlightWithinPreformattedBlocks("should add");
-  highlightWithinPreformattedBlocks("Executed");
-  highlightWithinPreformattedBlocks("Error:");
-  highlightWithinPreformattedBlocks("Failed:");
-  highlightWithinPreformattedBlocks("Re-running");
-}
-
-if(~location.hostname.indexOf("imgur.com"))
-{
-	if(get(".post-image").length === 1)
-	{
-		var s = get(".post-image")[0].getElementsByTagName("img")[0].src;
-		location.href = s;
-	}
-}
-
-if(~location.href.indexOf("slack.com"))
+function doSlack()
 {
 	var s = 'html span[class] { color: #AAA !important; font: 12px verdana !important; }' +
 	'.light_theme ts-message .message_content .member { color: #09F !important; font: 12px verdana !important;}' +
 	'html span[class] b {color: #FFF !important; }' +
 	'.message_content { background: #222 !important; }';
 	insertStyle(s, "styleSlack", true);
+}
+
+//
+
+if(~location.href.indexOf("ci.adslot.com/job"))
+{
+	highlightWithinPreformattedBlocks("passed");
+	highlightWithinPreformattedBlocks("passing");
+	highlightWithinPreformattedBlocks("fail");
+	highlightWithinPreformattedBlocks("should add");
+	highlightWithinPreformattedBlocks("Executed");
+	highlightWithinPreformattedBlocks("Error:");
+	highlightWithinPreformattedBlocks("Failed:");
+	highlightWithinPreformattedBlocks("Re-running");
+}
+
+if(~location.href.indexOf("slack.com"))
+{
+	doSlack();
 }
 
 switch(location.hostname)
