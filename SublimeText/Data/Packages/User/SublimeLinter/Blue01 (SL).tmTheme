@@ -49,12 +49,22 @@
 		<dict>
 			<key>name</key><string>Functions</string>
 			<key>scope</key><string>entity.name.function, variable.function, meta.function, support.function</string>
-			<key>settings</key><dict><key>foreground</key><string>#99CCFF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#4444FF</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Function calls</string>
+			<key>scope</key><string>meta.function-call</string>
+			<key>settings</key><dict><key>foreground</key><string>#cc66FF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
-			<key>scope</key><string>variable, variable.other.object, support.type, support.class</string>
-			<key>settings</key><dict><key>foreground</key><string>#5588FF</string></dict>
+			<key>scope</key><string>variable, support.type, variable.other.object, support.class</string>
+			<key>settings</key><dict><key>foreground</key><string>#6688FF</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Objects</string>
+			<key>scope</key><string>support.constant.dom</string>
+			<key>settings</key><dict><key>foreground</key><string>#99CCFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Object properties</string>
@@ -65,6 +75,11 @@
 			<key>name</key><string>Constants</string>
 			<key>scope</key><string>variable.other.constant</string>
 			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Temp</string>
+			<key>scope</key><string>meta.conditionalx</string>
+			<key>settings</key><dict><key>foreground</key><string>#00FF00</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
@@ -94,7 +109,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#66AAFF</string><key>background</key><string>#003055</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#8888FF</string><key>background</key><string>#202055</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
