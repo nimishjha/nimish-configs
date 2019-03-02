@@ -295,7 +295,7 @@ function githubToggleTestFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(isTestFile(fileInfo.textContent))
-			githubClick(e[i]);
+				githubClick(e[i]);
 		}
 	}
 }
@@ -312,7 +312,7 @@ function githubToggleTemplateFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(fileInfo && isTemplateFile(fileInfo.textContent))
-			githubClick(e[i]);
+				githubClick(e[i]);
 		}
 	}
 }
@@ -344,7 +344,7 @@ function githubToggleLogicFiles()
 		{
 			fileInfo = parent.querySelector(".file-info a");
 			if(fileInfo && isLogicFile(fileInfo.textContent) && !isTestFile(fileInfo.textContent))
-			githubClick(e[i]);
+				githubClick(e[i]);
 		}
 	}
 }
