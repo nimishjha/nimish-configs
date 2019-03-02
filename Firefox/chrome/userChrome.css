@@ -1,0 +1,64 @@
+/*html|html,
+xul|page,
+xul|window {
+  font: message-box;
+  -moz-appearance: none;
+  background-color: #141414 !important;
+  color: #CCC !important;
+}*/
+
+#browser-bottombox { height: 30px; background: #141414 !important; }
+.browserContainer>statuspanel { left: 4px !important; bottom: 8px; transition-duration: 0s !important; transition-delay: 0s !important; }
+.browserContainer>statuspanel>.statuspanel-inner>.statuspanel-label { margin-left: 0px !important; border: none !important; padding: 0px !important; background: transparent !important; color: #CCC !important; font: 12px Verdana !important; }
+
+/*
+
+window[inFullscreen="true"] #browser-bottombox { display:none !important; }
+window[inFullscreen="true"] .browserContainer>statuspanel[type="overLink"] .statuspanel-label { display:none !important; }
+
+*/
+____________________________________________________
+
+/*
+@-moz-document url("about:newtab") {
+ body { background-color: #EDCF54 !important;}
+}
+*/
+
+@-moz-document url-prefix(about:blank), url-prefix(about:newtab), url-prefix(about:downloads)
+{
+	html, body, #newtab-customize-overlay
+	{
+		background: #181818 !important;
+		color: #666 !important;
+	}
+}
+
+@-moz-document url(chrome://browser/content/browser.xul)
+{
+	/* v1.01 - uBlock compatibility */
+	/* tab document render area BG */
+	browser[type="content-primary"], tabbrowser tabpanels, #appcontent > #content
+	{
+		background: #1B1B1B url("chrome://global/skin/media/imagedoc-darknoise.png") repeat fixed !important;
+	}
+}
+
+@-moz-document url(about:blank), url(about:newtab)
+{
+	#newtab-window, html
+	{
+		background: #1B1B1B url("chrome://global/skin/media/imagedoc-darknoise.png") repeat fixed;
+	}
+}
+
+
+
+#navigator-toolbox .tabbrowser-tab { border: 0 !important; }
+.tabs-newtab-button { display: none !important; }
+.tabbrowser-tab { -moz-box-align: stretch!important; color: #444 !important; padding: 0 10px !important; }
+.tabbrowser-tab[remote] { text-decoration: underline!important; }
+.tabbrowser-tab[selected=true] { position: relative!important; z-index: 2!important; background: #141414!important; }
+.tab-icon-image { display: none !important; }
+.tabbrowser-tab[selected=true] .tab-label { color: #909090 !important; border: 0 !important; }
+.tab-background-middle, .tab-background-start, .tab-background-end { background-clip: padding-box, padding-box, content-box!important; background-image: none!important; background-color: transparent !important; }

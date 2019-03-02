@@ -351,7 +351,7 @@ function githubToggleLogicFiles()
 
 function doMDN()
 {
-	setTimeout(function(){deleteElementsWithExactText("a", "Section")}, 1000);
+	setTimeout(function(){ deleteElementsWithExactText("a", "Section"); }, 1000);
 }
 
 function doWikipedia()
