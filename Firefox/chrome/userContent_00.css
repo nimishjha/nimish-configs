@@ -25,7 +25,7 @@ xul|window {
 	html div { box-shadow: none !important; }
 
 	html { background: #181818 !important; font-size: 20px !important; }
-	html body, html body[class], html body[id], html body[id][class] { background: #282828 !important; color: #909090 !important; font-family: "Swis721 Cn BT" !important; font-size: 20px !important; }
+	html body, html body[class], html body[id], html body[id][class] { background: #282828 !important; color: #909090 !important; font-family: "swis721 cn bt" !important; font-size: 20px !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
 	body.pad100 table { width: 100% !important; }
@@ -46,10 +46,9 @@ xul|window {
 	html h5, html h5[class], div[class] h5 { font: 1.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h6, html h6[class], div[class] h6 { font: 1rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 
-	main, article, aside, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
-	span { font: inherit !important; }
-	font, input, input[class], button {font: 22px "Swis721 Cn BT" !important; }
-	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, textarea, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; }
+	main, article, aside, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video, span { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "swis721 cn bt" !important; }
+	font, input, input[class], button {font: 22px "swis721 cn bt" !important; }
+	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, textarea, time, title, tt, u, var, wbr, xmp { background: inherit !important; color: inherit !important; }
 
 	hr { height: 2px !important; background: #888 !important; border-style: solid !important; border-color: #888 !important; border-width: 0 !important; margin: 20px 0 !important; }
 	legend { background: #181818 !important; }
@@ -74,7 +73,7 @@ xul|window {
 	html a:visited { color: #357 !important; text-decoration: none !important; }
 	html a:hover, html a:focus, html a:hover *, html a:focus * { color: #FFF !important; text-decoration: none !important; outline: 0 !important; }
 	html a:active { color: #FFF !important; outline: none !important; }
-	html .pagination a:link { font: bold 30px "Swis721 Cn BT" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
+	html .pagination a:link { font: bold 30px "swis721 cn bt" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
 
 	p { line-height: 135% !important; margin: 0 !important; padding: 5px 0 !important; }
 
@@ -82,7 +81,7 @@ xul|window {
 	blockquote blockquote { padding: 0 0 0 40px !important; }
 
 	table { background: #202020 !important; color: inherit !important; border: 0 !important; border-collapse: collapse !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
-	tbody, td, tfoot, th, thead, tr, tbody[class], td[class], tfoot[class], th[class], thead[class], tr[class] { color: inherit !important; background-image: none !important; border: 0 !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
+	tbody, td, tfoot, th, thead, tr { color: inherit !important; background-image: none !important; border: 0 !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
 	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: #181818 !important; }
 	tr:nth-child(even) td , tr:nth-child(even) th { background-color: #202020 !important; }
 
@@ -94,7 +93,7 @@ xul|window {
 	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
 	small { font-size: 80% !important; }
 
-	tt, code { background: #0C0C0C !important; font-family: Verdcode, Consolas, sans-serif !important; padding: 1px 2px !important; }
+	code { background: #0C0C0C !important; font-family: Verdcode, Consolas, sans-serif !important; padding: 1px 2px !important; }
 	pre { background: #0C0C0C !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; font-family: Verdcode !important; font-size: 18px !important; }
 	pre, code { color: #999 !important; }
 	pre p { margin: 0 !important; padding: 0 !important; font-family: Verdcode, Consolas, sans-serif !important; }
@@ -143,7 +142,7 @@ xul|window {
 	a[href*="magnet:"]:visited, a[href*="magnet:"]:visited { background: #202 !important; color: #808 !important; border-color: #999 !important; }
 	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #FFF !important; }
 
-	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
+	.pagination a { font: bold 24px "swis721 cn bt" !important; }
 	div[class*="error"] { color: #F00 !important; }
 	div[class*="warn"] { color: #F90 !important; }
 
