@@ -82,7 +82,7 @@
 	{ "keys": ["super+shift+c"], "command": "coffee_compile" },
 	{ "keys": ["super+shift+pageup"], "command": "move_tab", "args": { "position": "-1" }	},
 	{ "keys": ["super+shift+pagedown"], "command": "move_tab", "args": { "position": "+1" } },
-	{	"keys": ["super+alt+o"], "command": "cycle_color_scheme" },
+	{ "keys": ["super+alt+o"], "command": "cycle_color_scheme" },
 	{ "keys": ["super+alt+f"], "command": "cycle_font" },
 	{ "keys": ["f1"], "command": "clone" },
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
