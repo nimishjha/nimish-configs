@@ -603,7 +603,7 @@
 		"class": "sidebar_label",
 		"parents": [{"class": "tree_row","attributes": ["expandable"]}],
 		// "font.bold": true,
-		"color": [255, 0, 255], // 03
+		"color": [255, 255, 255],
 		"font.face": "Arial",
 		"font.bold": true,
 		"font.size": 18,
