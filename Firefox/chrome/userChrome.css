@@ -56,11 +56,11 @@ ____________________________________________________
 
 #navigator-toolbox .tabbrowser-tab { border: 0 !important; }
 .tabs-newtab-button { display: none !important; }
-.tabbrowser-tab { -moz-box-align: stretch!important; color: #444 !important; padding: 0 10px !important; }
+.tabbrowser-tab { -moz-box-align: stretch!important; color: #777 !important; padding: 0 10px !important; }
 .tabbrowser-tab[remote] { text-decoration: underline!important; }
 .tabbrowser-tab[selected=true] { position: relative!important; z-index: 2!important; background: #141414!important; }
 .tab-icon-image { display: none !important; }
-.tabbrowser-tab[selected=true] .tab-label { color: #909090 !important; border: 0 !important; }
+.tabbrowser-tab[selected=true] .tab-label { color: #AAA !important; border: 0 !important; }
 .tab-background-middle, .tab-background-start, .tab-background-end { background-clip: padding-box, padding-box, content-box!important; background-image: none!important; background-color: transparent !important; }
 
 
@@ -79,6 +79,7 @@ ____________________________________________________
 .browser-toolbar:not(.titlebar-color) { background-color: #222 !important; background-image: none !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background-image: none !important; background-color: #222 !important; }
 #tabbrowser-tabs:-moz-lwtheme { --tab-line-color: transparent !important; }
+#tabbrowser-tabs .tabbrowser-tab .tab-close-button { display:none!important; }
 
 /*@keyframes njProgressBar { 0% { margin-right: 99px; } 100% { margin-right: 1px; } }*/
 #downloads-indicator-icon { background-image: none !important; }
