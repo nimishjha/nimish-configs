@@ -59,7 +59,6 @@
 	{ "keys": ["super+shift+s"], "command": "prompt_save_as" },
 	{ "keys": ["super+w"], "command": "close" },
 	{ "keys": ["super+shift+t"], "command": "reopen_last_file" },
-	{ "keys": ["super+t"], "command": "new_file" },
 
 	// Comment, uncomment
 	{ "keys": ["super+forward_slash"], "command": "toggle_comment", "args": { "block": false } },
@@ -91,14 +90,10 @@
 	{ "keys": ["super+."], "command": "edit_settings", "args": { "base_file": "${packages}/Default/Default ($platform).sublime-keymap" } },
 	// { "keys": ["f9"], "command": "set_read_only(True)" },
 	// { "keys": ["f10"], "command": "set_read_only(False)" },
-
-	// Macros
 	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
 	{ "keys": ["alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_id.sublime-macro"} },
 	{ "keys": ["alt+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_class.sublime-macro"} },
 	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
-
+	{ "keys": ["super+t"], "command": "run_macro_file", "args": {"file": "res://Packages/User/spaces_to_tabs.sublime-macro"} },
+	{ "keys": ["super+alt+8"], "command": "set_setting", "args": {"setting": "tab_size", "value": 8} },
 ]
-
-
-
