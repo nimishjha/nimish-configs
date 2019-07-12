@@ -6,6 +6,10 @@
 	// Move
 	{ "keys": ["super+home"], "command": "move_to", "args": {"to": "bof"} },
 	{ "keys": ["super+end"], "command": "move_to", "args": {"to": "eof"} },
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+	{ "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true} },
+	{ "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
 	{ "keys": ["super+shift+home"], "command": "move_to", "args": {"to": "bof", "extend": true} },
 	{ "keys": ["super+shift+end"], "command": "move_to", "args": {"to": "eof", "extend": true} },
 	{ "keys": ["super+shift+["], "command": "move_to", "args": {"to": "bof", "extend": true} },
@@ -96,4 +100,10 @@
 	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
 	{ "keys": ["super+t"], "command": "run_macro_file", "args": {"file": "res://Packages/User/spaces_to_tabs.sublime-macro"} },
 	{ "keys": ["super+alt+8"], "command": "set_setting", "args": {"setting": "tab_size", "value": 8} },
+	// SublimeLinter
+	{ "keys": ["super+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" } },
+	{ "keys": ["super+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" } },
 ]
+
+
+
