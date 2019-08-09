@@ -1,35 +1,22 @@
 // SublimeLinter Settings - User
 {
-		"gutter_theme": "Default",
-    "linters": {
-        "coffeelint": {
-						"args": ["-f", "/Users/nimish.jha/git/direct-web/cslint-config.json"],
-            "excludes": [],
-        },
-      //   "eslint": {
-						// "args": ["-f", "/Users/nimish.jha/scratchpad/.eslintrc.js"],
-      //       "excludes": [],
-      //   }
-
-    },
-	  "styles": [
-	      {
-	          "mark_style": "solid_underline",
-	          "priority": 1,
-	          "scope": "region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter",
-	          "icon": "dot",
-	          "types": [
-	              "warning"
-	          ]
-	      },
-	      {
-	          "mark_style": "solid_underline",
-	          "priority": 1,
-	          "scope": "region.redish markup.deleted.sublime_linter markup.error.sublime_linter",
-	          "icon": "dot",
-	          "types": [
-	              "error"
-	          ]
-	      }
-	  ],
+	"gutter_theme": "Default",
+	"linters":
+	{
+	},
+	"styles": [
+	{
+		"mark_style": "outline",
+		"priority": 1,
+		"scope": "region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter",
+		"icon": "dot",
+		"types": ["warning"]
+	},
+	{
+		"mark_style": "outline",
+		"priority": 1,
+		"scope": "region.redish markup.deleted.sublime_linter markup.error.sublime_linter",
+		"icon": "dot",
+		"types": ["error"]
+	}],
 }

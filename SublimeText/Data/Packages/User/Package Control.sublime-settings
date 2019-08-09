@@ -5,18 +5,9 @@
 	],
 	"installed_packages":
 	[
-		"Babel",
-		"Better CoffeeScript",
-		"CodeFormatter",
-		"CoffeeCompile",
-		"Jade",
 		"Package Control",
-		"Pug",
-		"Sass",
-		"Stylus",
+		"PowerShell",
 		"SublimeLinter",
-		"SublimeLinter-coffeelint",
-		"SublimeLinter-eslint",
-		"TypeScript Syntax"
+		"SublimeLinter-eslint"
 	]
 }

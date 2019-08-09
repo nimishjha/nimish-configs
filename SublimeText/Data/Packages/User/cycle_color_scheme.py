@@ -8,10 +8,10 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 		scheme = self.view.settings().get("color_scheme")
 		print("Previous: " + scheme);
 		schemes = [
-			"Packages/User/SublimeLinter/Blue01 (SL).tmTheme",
-			"Packages/User/SublimeLinter/DeepBlue (SL).tmTheme",
-			"Packages/User/SublimeLinter/Orange01 (SL).tmTheme",
-			"Packages/User/SublimeLinter/Green01 (SL).tmTheme",
+			"Packages/Nimish/Blue01.tmTheme",
+			"Packages/Nimish/DeepBlue.tmTheme",
+			"Packages/Nimish/Orange01.tmTheme",
+			"Packages/Nimish/Green01.tmTheme",
   		]
 		try:
 			i = schemes.index(scheme)
@@ -22,6 +22,4 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 		except ValueError:
 			preferences.set('color_scheme', schemes[0])
 		except Exception:
-			print("Something went wrong.")
-
-
+			print("CycleColorSchemeCommand: exception")

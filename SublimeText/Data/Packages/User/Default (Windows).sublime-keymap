@@ -28,8 +28,11 @@
 	{ "keys": ["ctrl+b"], "command": "toggle_side_bar" },
 	{ "keys": ["ctrl+t"], "command": "unexpand_tabs", "args": { "set_translate_tabs": true }},
 	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
-	{ "keys": ["ctrl+alt+c"], "command": "cycle_color_scheme" },
+	{ "keys": ["ctrl+alt+h"], "command": "sublime_linter_toggle_highlights" },
+	{ "keys": ["ctrl+alt+o"], "command": "cycle_color_scheme" },
 	{ "keys": ["ctrl+alt+shift+c"], "command": "copy_path" },
 	{ "keys": ["ctrl+alt+f"], "command": "cycle_font" },
 	{ "keys": ["ctrl+\\"], "command": "toggle_setting", "args": {"setting": "draw_indent_guides"}},
+	{ "keys": ["ctrl+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" }},
+	{ "keys": ["ctrl+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" }},
 ]

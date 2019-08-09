@@ -484,7 +484,7 @@
 		"class": "label_control",
 		"parents": [{"class": "status_bar"}],
 		"color": [160,160,160],
-		"font.face": "Verdana",
+		"font.face": "Arial",
 		"font.bold": false,
 		"font.size": 18,
 	},
@@ -603,7 +603,7 @@
 		"class": "sidebar_label",
 		"parents": [{"class": "tree_row","attributes": ["expandable"]}],
 		// "font.bold": true,
-		"color": [255, 255, 255],
+		"color": [255, 0, 255], // 03
 		"font.face": "Arial",
 		"font.bold": true,
 		"font.size": 18,
@@ -856,29 +856,32 @@
 		"class": "quick_panel_row",
 		"attributes": ["selected"],
 		"layer0.texture": "",
-		"layer0.tint": [38, 38, 38] // -01
+		"layer0.tint": [38, 38, 38]
 	},
 	{
 		"class": "quick_panel_label",
-		"fg": [160, 160, 160, 255], // 04
+		"fg": [180, 180, 180, 255], // 04
 		"match_fg": [211, 211, 211, 255], // 05
 		"selected_fg": [211, 211, 211, 255], // 05
 		"selected_match_fg": [242, 242, 242, 255],
 		"font.face": "Arial",
-		"font.bold": true,
-		"font.size": 16,
+		"font.size": 24,
 	},
 	{
 		"class": "quick_panel_path_label",
 		"fg": [116, 116, 116, 255], // 03
 		"match_fg": [160, 160, 160, 255], // 04
 		"selected_fg": [116, 116, 116, 255], // 03
-		"selected_match_fg": [160, 160, 160, 255] // 04
+		"selected_match_fg": [160, 160, 160, 255], // 04
+		"font.face": "Arial",
+		"font.size": 16,
 	},
 	{
 		"class": "quick_panel_score_label",
-		"fg": [116, 116, 116, 255], // 03
-		"selected_fg": [116, 116, 116, 255] // 03
+		"fg": [116, 116, 116, 255],
+		"selected_fg": [116, 116, 116, 255],
+		"font.face": "Arial",
+		"font.size": 16,
 	},
 
 //

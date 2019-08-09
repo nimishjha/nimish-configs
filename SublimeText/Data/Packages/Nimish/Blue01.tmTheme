@@ -5,11 +5,10 @@
 	<key>name</key><string>BrighterBlue</string>
 	<key>settings</key>
 	<array>
-
 		<dict>
 			<key>settings</key>
 			<dict>
-				<key>guide</key><string>#FFFFFF</string>
+				<key>guide</key><string>#406080</string>
 				<key>activeGuide</key><string>#4499FF</string>
 				<key>stackGuide</key><string>#337799</string>
 				<key>minimapBorder</key><string>#AACCFF</string>
@@ -31,7 +30,6 @@
 				<key>tagsForeground</key><string>#FFFF00</string>
 			</dict>
 		</dict>
-
 		<dict>
 			<key>name</key><string>Plain text</string>
 			<key>scope</key><string>text.plain</string>
@@ -50,7 +48,7 @@
 		<dict>
 			<key>name</key><string>Square brackets</string>
 			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets, meta.brace.square</string>
-			<key>settings</key><dict><key>foreground</key><string>#FFCC00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
@@ -89,8 +87,8 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Constants</string>
-			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#00ff89</string></dict>
+			<key>scope</key><string>variable.other.constant, support.constant.prototype</string>
+			<key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Comments</string>
@@ -115,12 +113,12 @@
 		<dict>
 			<key>name</key><string>Class name</string>
 			<key>scope</key><string>entity.name.class, entity.name.type</string>
-			<key>settings</key><dict><key>foreground</key><string>#88CC00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Inherited class</string>
 			<key>scope</key><string>entity.other.inherited-class</string>
-			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#CCCCCC</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Angle brackets</string>
@@ -155,7 +153,7 @@
 		<dict>
 			<key>name</key><string>Invalid</string>
 			<key>scope</key><string>invalid</string>
-			<key>settings</key><dict><key>background</key><string>#000000</string><key>foreground</key><string>#FFFFFF</string></dict>
+			<key>settings</key><dict><key>background</key><string>#AA0000</string><key>foreground</key><string>#FFFFFF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Invalid deprecated</string>
@@ -172,6 +170,16 @@
 			<key>name</key><string>diff.deleted</string>
 			<key>scope</key><string>markup.deleted</string>
 			<key>settings</key><dict><key>foreground</key><string>#5e00ff</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Errors</string>
+			<key>scope</key><string>markup.error</string>
+			<key>settings</key><dict><key>foreground</key><string>#FF0000</string><key>background</key><string>#FF0000</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Warnings</string>
+			<key>scope</key><string>markup.warning</string>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string><key>background</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>diff.inserted</string>
@@ -192,18 +200,37 @@
 			<key>settings</key><dict><key>foreground</key><string>#ffa600</string></dict>
 		</dict>
 
-		<dict>
-      <key>name</key><string>SublimeLinter Warning</string>
-      <key>scope</key><string>markup.warning</string>
-      <key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
-		</dict>
-		<dict>
-      <key>name</key><string>SublimeLinter Error</string>
-      <key>scope</key><string>markup.error</string>
-      <key>settings</key><dict><key>foreground</key><string>#FF0000</string></dict>
-		</dict>
-
-</array>
+	<dict>
+            <key>name</key>
+            <string>SublimeLinter Error</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.error</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#00FFFF</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Gutter Mark</string>
+            <key>scope</key>
+            <string>sublimelinter.gutter-mark</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FFFFFF</string>
+            </dict>
+        </dict><dict>
+            <key>name</key>
+            <string>SublimeLinter Warning</string>
+            <key>scope</key>
+            <string>sublimelinter.mark.warning</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#FF9900</string>
+            </dict>
+        </dict></array>
 	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
 </dict>
 </plist>

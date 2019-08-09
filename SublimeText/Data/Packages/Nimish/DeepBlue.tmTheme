@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>name</key><string>DeepBlue</string>
+	<key>name</key><string>BrighterBlue</string>
 	<key>settings</key>
 	<array>
 
@@ -13,20 +13,26 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, meta.brace.round</string>
-			<key>settings</key><dict><key>foreground</key><string>#4499FF</string></dict>
+			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string>
+			<key>settings</key><dict><key>foreground</key><string>#4444FF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Square brackets</string>
-			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets, meta.brace.square</string>
-			<key>settings</key><dict><key>foreground</key><string>#0099FF</string></dict>
+			<key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets</string>
+			<key>settings</key><dict><key>foreground</key><string>#0000FF</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Braces</string>
 			<key>scope</key><string>punctuation.definition.block</string>
 			<key>settings</key><dict><key>foreground</key><string>#0099FF</string></dict>
 		</dict>
-
+<!--
+		<dict>
+			<key>name</key><string>Parentheses</string>
+			<key>scope</key><string>punctuation.definition.group</string>
+			<key>settings</key><dict><key>foreground</key><string>#00BB00</string></dict>
+		</dict>
+-->
 		<dict>
 			<key>name</key><string>PHP opening and closing tags</string>
 			<key>scope</key><string>punctuation.section.embedded</string>
@@ -68,7 +74,7 @@
 				<key>minimapBorder</key><string>#AACCFF</string>
 				<key>background</key><string>#001522</string>
 				<key>caret</key><string>#FFFFFF</string>
-				<key>foreground</key><string>#6688CC</string>
+				<key>foreground</key><string>#0055AA</string>
 				<key>invisibles</key><string>#ff00ae</string>
 				<key>lineHighlight</key><string>#000814</string>
 				<key>selection</key><string>#004499</string>
@@ -88,7 +94,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#FF9900</string><key>background</key><string>#402000</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#4477FF</string><key>background</key><string>#002040</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
@@ -185,37 +191,7 @@
 			<key>settings</key><dict><key>foreground</key><string>#ffa600</string></dict>
 		</dict>
 
-	<dict>
-            <key>name</key>
-            <string>SublimeLinter Warning</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#DDB700</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Gutter Mark</string>
-            <key>scope</key>
-            <string>sublimelinter.gutter-mark</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FFFFFF</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#00FFFF</string>
-            </dict>
-        </dict></array>
+	</array>
 	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
 </dict>
 </plist>
