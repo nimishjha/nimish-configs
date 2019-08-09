@@ -1,0 +1,20 @@
+[core]
+	editor = C:/Programs/Development/SublimeText/sublime_text.exe -w
+[user]
+	email = nimish.jha@gmail.com
+	name = Nimish Jha
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow bold
+	remote = white bold
+[color "diff"]
+	meta = blue bold
+	frag = yellow
+	old = white bold
+	new = green bold
+[color "status"]
+	added = yellow bold
+	changed = green bold
+	untracked = cyan
