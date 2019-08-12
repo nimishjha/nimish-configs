@@ -56,7 +56,7 @@
 		<dict>
 			<key>name</key><string>Functions</string>
 			<key>scope</key><string>entity.name.function, variable.function, meta.function.declaration</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Variables</string>
@@ -71,12 +71,12 @@
 		<dict>
 			<key>name</key><string>Object properties</string>
 			<key>scope</key><string>meta.property.object, meta.object-literal.key</string>
-			<key>settings</key><dict><key>foreground</key><string>#886644</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Constants</string>
-			<key>scope</key><string>variable.other.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#FFFF55</string></dict>
+			<key>scope</key><string>variable.other.constant, support.constant.prototype</string>
+			<key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict>
 		</dict>
 		<dict>
 			<key>settings</key>
@@ -84,15 +84,15 @@
 				<key>minimapBorder</key><string>#000000</string>
 				<key>background</key><string>#181818</string>
 				<key>caret</key><string>#FFFFFF</string>
-				<key>foreground</key><string>#909090</string>
+				<key>foreground</key><string>#a09080</string>
 				<key>invisibles</key><string>#FF0000</string>
 				<key>lineHighlight</key><string>#333435</string>
-				<key>selection</key><string>#000000</string>
-				<key>selectionForeground</key><string>#FF9900</string>
-				<key>findHighlight</key><string>#112200</string>
-				<key>findHighlightForeground</key><string>#aaFF00</string>
-				<key>selectionBorder</key><string>#000000</string>
-				<key>activeGuide</key><string>#FF00FF</string>
+				<key>selection</key><string>#804000</string>
+				<key>selectionForeground</key><string>#FFFFFF</string>
+				<key>selectionBorder</key><string>#804000</string>
+				<key>findHighlight</key><string>#000000</string>
+				<key>findHighlightForeground</key><string>#FFFF00</string>
+				<key>activeGuide</key><string>#804000</string>
 				<key>bracketsForeground</key><string>#FFFF00</string>
 				<key>bracketsOptions</key><string>foreground</string>
 				<key>bracketContentsForeground</key><string>#FFFF00</string>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>name</key><string>Keywords</string>
 			<key>scope</key><string>keyword, storage</string>
-			<key>settings</key><dict><key>foreground</key><string>#808080</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#CC6600</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Class name</string>
@@ -139,7 +139,7 @@
 		<dict>
 			<key>name</key><string>Tag name</string>
 			<key>scope</key><string>entity.name.tag</string>
-			<key>settings</key><dict><key>foreground</key><string>#AA5522</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#DD7700</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Tag attributes</string>
@@ -154,7 +154,7 @@
 		<dict>
 			<key>name</key><string>Library constant</string>
 			<key>scope</key><string>support.constant</string>
-			<key>settings</key><dict><key>foreground</key><string>#7799bb</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFFF00</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Library class/type</string>
@@ -164,7 +164,7 @@
 		<dict>
 			<key>name</key><string>Built-in class</string>
 			<key>scope</key><string>support.class.builtin</string>
-			<key>settings</key><dict><key>foreground</key><string>#888888</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#FFFF00</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Library variable</string>
@@ -190,17 +190,27 @@
 		<dict>
 			<key>name</key><string>diff.deleted</string>
 			<key>scope</key><string>markup.deleted</string>
-			<key>settings</key><dict><key>foreground</key><string>#FF00FF</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#5e00ff</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Errors</string>
+			<key>scope</key><string>markup.error</string>
+			<key>settings</key><dict><key>foreground</key><string>#FF0000</string><key>background</key><string>#FF0000</string></dict>
+		</dict>
+		<dict>
+			<key>name</key><string>Warnings</string>
+			<key>scope</key><string>markup.warning</string>
+			<key>settings</key><dict><key>foreground</key><string>#FF9900</string><key>background</key><string>#FF9900</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>diff.inserted</string>
 			<key>scope</key><string>markup.inserted</string>
-			<key>settings</key><dict><key>foreground</key><string>#00FF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#aeff00</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>diff.changed</string>
 			<key>scope</key><string>markup.changed</string>
-			<key>settings</key><dict><key>foreground</key><string>#00FF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#aeff00</string></dict>
 		</dict>
 		<dict>
 			<key>scope</key><string>constant.numeric.line-number.find-in-files - match</string>
@@ -208,7 +218,7 @@
 		</dict>
 		<dict>
 			<key>scope</key><string>entity.name.filename.find-in-files</string>
-			<key>settings</key><dict><key>foreground</key><string>#AAFF00</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#ffa600</string></dict>
 		</dict>
 
 	</array>

@@ -35,4 +35,5 @@
 	{ "keys": ["ctrl+\\"], "command": "toggle_setting", "args": {"setting": "draw_indent_guides"}},
 	{ "keys": ["ctrl+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" }},
 	{ "keys": ["ctrl+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" }},
+	{ "keys": ["ctrl+i"], "command": "invert_selection" },
 ]
