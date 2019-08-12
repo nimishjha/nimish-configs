@@ -87,9 +87,9 @@
 				<key>foreground</key><string>#a09080</string>
 				<key>invisibles</key><string>#d2ff00</string>
 				<key>lineHighlight</key><string>#333335</string>
-				<key>selection</key><string>#000000</string>
-				<key>selectionForeground</key><string>#FFFFFF</string>
-				<key>selectionBorder</key><string>#000000</string>
+				<key>selection</key><string>#0c8000</string>
+				<key>selectionForeground</key><string>#ffffff</string>
+				<key>selectionBorder</key><string>#0c8000</string>
 				<key>findHighlight</key><string>#000000</string>
 				<key>findHighlightForeground</key><string>#00ff36</string>
 				<key>activeGuide</key><string>#0c8000</string>
@@ -104,7 +104,7 @@
 		<dict>
 			<key>name</key><string>Comments</string>
 			<key>scope</key><string>comment, punctuation.definition.comment</string>
-			<key>settings</key><dict><key>foreground</key><string>#00FF00</string><key>background</key><string>#005500</string></dict>
+			<key>settings</key><dict><key>foreground</key><string>#cccccc</string><key>background</key><string>#303030</string></dict>
 		</dict>
 		<dict>
 			<key>name</key><string>Strings</string>
