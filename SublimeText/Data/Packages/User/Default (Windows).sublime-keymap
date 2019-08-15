@@ -36,4 +36,6 @@
 	{ "keys": ["ctrl+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" }},
 	{ "keys": ["ctrl+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" }},
 	{ "keys": ["ctrl+i"], "command": "invert_selection" },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 ]
