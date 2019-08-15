@@ -4,7 +4,8 @@
 // @version      0.1
 // @description  Whatever
 // @author       You
-// @match        https://app.slack.com/*
+// @match        *
+// @include        *
 // @grant        none
 // ==/UserScript==
 
@@ -84,11 +85,24 @@
 		insertStyle(s, "styleSlack", true);
 	}
 
+	function doVsts()
+	{
+		const s = '.code-line { font-family: Helvetica; color: #AAA; }' +
+			'.content-original { color: #F00; }' +
+			'.content-modified { color: #0F0; }' +
+			'.added-content-fullrow { background: #060; color: #0F0; }';
+			'.deleted-content-fullrow { background: #800; color: #F00; }' +
+			'.deleted-content, .deleted-content span { color: #F00; background: #600; }' +
+			'.added-content, .added-content span { color: #0F0; background: #060; }';
+		insertStyle(s, "styleVsts", true);
+	}
+
 	function main()
 	{
 		switch (location.hostname)
 		{
 			case 'app.slack.com': doSlack(); break;
+			case 'bupaaunz.visualstudio.com': doVsts(); break;
 		}
 	}
 
