@@ -90,10 +90,8 @@
 		const s = '.code-line { font-family: Helvetica; color: #AAA; }' +
 			'.content-original { color: #F00; }' +
 			'.content-modified { color: #0F0; }' +
-			'.added-content-fullrow { background: #060; color: #0F0; }';
-			'.deleted-content-fullrow { background: #800; color: #F00; }' +
-			'.deleted-content, .deleted-content span { color: #F00; background: #600; }' +
-			'.added-content, .added-content span { color: #0F0; background: #060; }';
+			'.deleted-content-fullrow, .deleted-content, .deleted-content span { color: #F66; background: #600; }' +
+			'.added-content-fullrow, .added-content, .added-content span { color: #8F8; background: #060; }';
 		insertStyle(s, "styleVsts", true);
 	}
 
