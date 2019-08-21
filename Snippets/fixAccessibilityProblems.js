@@ -84,3 +84,62 @@ function fixAriaAttributes()
 		fixAriaDescribedBy(elem);
 	}
 }
+
+//
+//				Independent functions
+//
+
+function addTextToButtons()
+{
+	const buttons = get("button");
+	let i = buttons.length;
+	while(i--)
+	{
+		buttons[i].setAttribute("aria-label", "Placeholder button text");
+	}
+}
+addTextToButtons();
+
+
+function fixAriaSelectedExpanded()
+{
+	const elems = Array.from(document.getElementsByTagName("*"));
+	let i = elems.length;
+	while(i--)
+	{
+		const elem = elems[i];
+		if(elem.hasAttribute("aria-selected") && !["true", "false"].includes(elem.getAttribute("aria-selected")) )
+			elem.setAttribute("aria-selected", "false");
+		if(elem.hasAttribute("aria-expanded") && !["true", "false"].includes(elem.getAttribute("aria-expanded")) )
+			elem.setAttribute("aria-expanded", "false");
+	}
+}
+fixAriaSelectedExpanded();
+
+
+function addAltToImages()
+{
+	const images = get("img");
+	let i = images.length;
+	while(i--)
+	{
+		const image = images[i];
+		if(!image.hasAttribute("alt"))
+			image.setAttribute("alt", "Placeholder alt text");
+	}
+}
+addAltToImages();
+
+
+function addRoleToForms()
+{
+	const forms = get("form");
+	let i = forms.length;
+	while(i--)
+	{
+		const form = forms[i];
+		if(!form.hasAttribute("role"))
+			form.setAttribute("role", "search");
+	}
+}
+addRoleToForms();
