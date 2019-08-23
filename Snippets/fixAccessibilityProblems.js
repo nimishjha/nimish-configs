@@ -3,7 +3,19 @@ forAll("form", addRole);
 forAll("select, input", addLabel);
 forAll("button", addText);
 forAll(".c-footer-social__link", addText);
+forAll(".why-bupa__card-icon", setAriaHidden);
+forAll(".why-bupa__link", addAriaLabel);
 fixAriaAttributes();
+
+function setAriaHidden(elem)
+{
+	elem.setAttribute("aria-hidden", "true");
+}
+
+function addAriaLabel(elem)
+{
+	elem.setAttribute("aria-label", "Learn more about subatomic particles");
+}
 
 function addAlt(image)
 {
