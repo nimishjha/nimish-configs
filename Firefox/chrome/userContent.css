@@ -55,7 +55,7 @@ xul|window {
 	legend { background: #181818 !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: #181818 !important; padding: 20px !important; }
-	figcaption { background: #181818 !important; color: #888 !important; }
+	figcaption { background: #181818 !important; color: #888 !important; padding: 20px !important; }
 	ruby { margin: 10px 0 !important; background: #000 !important; color: #AAA !important; padding: 20px 40px !important; display: block !important; }
 	rp { margin: 10px 0 !important; background: #181818 !important; color: #888 !important; padding: 40px !important; display: block !important; font: 24px "Swis721 Cn BT", Calibri, sans-serif !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; }
 	rt { margin: 10px 0 !important; padding: 20px !important; display: block !important; background: #181818 !important; font: 12px Verdana !important; }
@@ -71,14 +71,14 @@ xul|window {
 
 	html a, html a:link, html a[class], html a[id], a * { color: #57F !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: transparent !important; }
 	html a[href*="https:"], html a[href*="https:"] * { color: #09F !important; }
-	html a:visited { color: #357 !important; text-decoration: none !important; }
+	html a:visited, html a:visited * { color: #357 !important; text-decoration: none !important; }
 	html a:hover, html a:focus, html a:hover *, html a:focus * { color: #FFF !important; text-decoration: none !important; outline: 0 !important; }
 	html a:active { color: #FFF !important; outline: none !important; }
 	html .pagination a:link { font: bold 30px "Swis721 Cn BT" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
 
-	p { line-height: 135% !important; margin: 0 !important; padding: 5px 0 !important; }
-
-	blockquote { padding: 20px 40px !important; border-left: 10px solid #111 !important; margin: 0 !important; }
+	p { margin: 0 !important; padding: 5px 0 !important; }
+	blockquote, p { line-height: 135% !important; margin: 0 !important; }
+	blockquote { padding: 20px 40px !important; border-left: 10px solid #111 !important;  }
 	blockquote blockquote { padding: 0 0 0 40px !important; }
 
 	table { background: #202020 !important; color: inherit !important; border: 0 !important; border-collapse: collapse !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
@@ -122,6 +122,16 @@ xul|window {
 	mark a:hover, a:hover mark, samp a:hover, a:hover samp { background-color: #630 !important; color: #FFF !important; }
 	samp, mark mark { font: 32px "Swis721 Cn BT", Calibri, sans-serif !important; }
 	a:hover mark, a:focus mark { background: #210 !important; color: #FFF !important; }
+	hl2 { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	/* i mark, em mark, b mark, strong mark { color: #FFF !important; } */
+
+	z1 { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	z2 { background: #400 !important; color: #F00 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	z3 { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }
+	z4 { background: #404 !important; color: #F0F !important; padding: 2px 0 !important; line-height: inherit !important; }
+	z5 { background: #440 !important; color: #FF0 !important; padding: 2px 0 !important; line-height: inherit !important; }
+
+	slideshow::after { content: ""; clear: both; display: block; }
 
 	body.xDontShowLinks a, body.xDontShowLinks a *, body.xDontShowLinks a:link { color: inherit !important; text-decoration: none !important; }
 	body.xDontShowLinks a:visited *, body.xDontShowLinks a:visited { color: inherit !important; text-decoration: none !important; }
@@ -206,6 +216,7 @@ xul|window {
 
 	/* highlighted elements */
 	.hl { box-shadow: inset 2px 2px #F00, inset -2px -2px #F00 !important; }
+	.hl2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
 	.hl::after { content: ""; display: block; clear: both; }
 	/*.hl { filter: brightness(1.7) !important; }*/
 	/*tr.hl > td { filter: brightness(1.7) !important; }*/
