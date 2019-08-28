@@ -2,7 +2,8 @@ alias ls='ls -G1'
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad 
 
-alias gl="git log --pretty=format:'%C(green)%h %C(yellow)%<(20)%cr %<(20)%C(bold green)%an %Creset%C(cyan)%s' -20"
+alias gl="git log --pretty=format:'%C(green)%h %C(yellow)%<(20)%cr %<(20)%C(bold green)%an %Creset%C(cyan)%s' -20 --no-merges"
+alias glm="git log --pretty=format:'%C(green)%h %C(yellow)%<(20)%cr %<(20)%C(bold green)%an %Creset%C(cyan)%s' -20"
 alias gh="git log --graph --pretty=format:'%C(bold blue)%an%Creset %Cgreen%cr%Creset -%C(yellow)%d%Creset %s %Cred[%h]%Creset' --abbrev-commit --date=relative"
 alias gs='git status'
 alias gcf='git commit -m wip'

@@ -155,3 +155,16 @@ function addRoleToForms()
 	}
 }
 addRoleToForms();
+
+function hideRadioButtons()
+{
+	const inputs = get("input");
+	let i = inputs.length;
+	while(i--)
+	{
+		const input = inputs[i];
+		if(input.type && input.type === "radio")
+			input.setAttribute("aria-hidden", true);
+	}
+}
+hideRadioButtons();
