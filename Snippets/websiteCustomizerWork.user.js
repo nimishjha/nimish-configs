@@ -72,16 +72,22 @@
 
 	function doSlack()
 	{
-		const s = 'body, body[class] {background-color: black; font-family: Helvetica; font-size: 16px; }' +
+		const s = 'body, body[class] {background-color: #181818; font-family: Helvetica; font-size: 16px; }' +
 		'*, *[class] { background-color: transparent; color: #CCC; border-color: transparent; }' +
 		'h1, h2, h3, h4, h5, h6, b, strong, em, i {color: #FFF; }' +
 		'mark {color: #FF0; }' +
 		'a, a[class] *, * a[class] {color: #09F; }' +
 		'a:hover, a:hover *, a[class]:hover *, * a[class]:hover {color: #FFF; }' +
 		'a:visited, a:visited *, a[class]:visited *, * a[class]:visited {color: #048; }' +
+		'a.c-message__sender_link { color: #FFF; }' +
+		'.p-channel_sidebar__channel span { color: #CCC; }' +
+		'a i.c-icon { color: #FFF; }' +
 		'.c-mrkdwn__code { color: #0F0; background: #030; font-size: 12px; font-weight: bold; }' +
 		'.c-mrkdwn__pre { color: #0F0; background: #030; font-size: 12px; font-weight: bold; }' +
-		'.c-pillow_file_container, .c-pillow_file_container * { background: #030; color: #0F0; }';
+		'.c-pillow_file_container, .c-pillow_file_container * { background: #030; color: #0F0; }' +
+		'.p-channel_sidebar__channel--unread { color: #FFF; border-right: 26px solid #FF0; }';
+		'.p-channel_sidebar__channel--mpim { color: #FFF; }' +
+		'.popover { background: #000; border: 1px solid #FFF; }';
 		insertStyle(s, "styleSlack", true);
 	}
 
