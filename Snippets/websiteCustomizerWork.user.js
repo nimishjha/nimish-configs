@@ -72,7 +72,7 @@
 
 	function doSlack()
 	{
-		const s = 'body, body[class] {background-color: #181818; font-family: Helvetica; font-size: 16px; }' +
+		const s = 'body, body[class] {background-color: #000; font-family: Helvetica; font-size: 16px; }' +
 		'*, *[class] { background-color: transparent; color: #CCC; border-color: transparent; }' +
 		'h1, h2, h3, h4, h5, h6, b, strong, em, i {color: #FFF; }' +
 		'mark {color: #FF0; }' +
@@ -85,9 +85,10 @@
 		'.c-mrkdwn__code { color: #0F0; background: #030; font-size: 12px; font-weight: bold; }' +
 		'.c-mrkdwn__pre { color: #0F0; background: #030; font-size: 12px; font-weight: bold; }' +
 		'.c-pillow_file_container, .c-pillow_file_container * { background: #030; color: #0F0; }' +
-		'.p-channel_sidebar__channel--unread { color: #FFF; border-right: 26px solid #FF0; }';
+		'.p-channel_sidebar__channel--unread { color: #FFF; border-right: 26px solid #FF0; }' +
 		'.p-channel_sidebar__channel--mpim { color: #FFF; }' +
-		'.popover { background: #000; border: 1px solid #FFF; }';
+		'.popover { background: #000; border: 1px solid #FFF; }' +
+		'button.c-avatar { display: none; }';
 		insertStyle(s, "styleSlack", true);
 	}
 
