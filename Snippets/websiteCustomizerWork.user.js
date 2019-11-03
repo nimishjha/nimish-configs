@@ -102,12 +102,72 @@
 		insertStyle(s, "styleVsts", true);
 	}
 
+	function doYoutube()
+	{
+		const s = 'HTML,' +
+		'YTD-APP,' +
+		'YTD-MASTHEAD#masthead.masthead-finish,' +
+		'DIV#skip-navigation.style-scope.ytd-masthead,' +
+		'DIV#container.style-scope.ytd-searchbox,' +
+		'BUTTON#search-icon-legacy.style-scope.ytd-searchbox,' +
+		'DIV.masthead-skeleton-icon,' +
+		'DIV.masthead-skeleton-icon,' +
+		'DIV.masthead-skeleton-icon,' +
+		'DIV.masthead-skeleton-icon,' +
+		'YTD-MINI-GUIDE-RENDERER.style-scope.ytd-app,' +
+		'YTD-MINI-GUIDE-ENTRY-RENDERER.style-scope.ytd-mini-guide-renderer,' +
+		'YTD-MINI-GUIDE-ENTRY-RENDERER.style-scope.ytd-mini-guide-renderer,' +
+		'YTD-MINI-GUIDE-ENTRY-RENDERER.style-scope.ytd-mini-guide-renderer,' +
+		'YTD-MINI-GUIDE-ENTRY-RENDERER.style-scope.ytd-mini-guide-renderer,' +
+		'YTD-MINI-GUIDE-ENTRY-RENDERER.style-scope.ytd-mini-guide-renderer,' +
+		'DIV.badge.badge-style-type-ad.style-scope.ytd-badge-supported-renderer,' +
+		'DIV.badge.badge-style-type-ad.style-scope.ytd-badge-supported-renderer,' +
+		'YTD-BUTTON-RENDERER#cta-button.style-scope.ytd-video-masthead-ad-advertiser-info-renderer.style-primary.size-default,' +
+		'YTD-PLAYLIST-SIDEBAR-RENDERER.style-scope.ytd-browse,' +
+		'YTD-SETTINGS-SIDEBAR-RENDERER.style-scope.ytd-browse,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.ytd-shelf-renderer.style-destructive.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default,' +
+		'YTD-BUTTON-RENDERER.style-scope.yt-horizontal-list-renderer.arrow.style-default.size-default' +
+		'{' +
+		'	background: #000; color: #FFF;' +
+		'}';
+		insertStyle(s, "styleYoutube", true);
+	}
+
+	function doBupaDevEnvironments()
+	{
+		if(get(".cover-detail"))
+		{
+			const elementCoverDetail = angular.element(document.querySelector(".cover-detail"));
+			window.scopeCoverDetail = elementCoverDetail.scope();
+			console.log({ scopeCoverDetail: window.scopeCoverDetail });
+		}
+		if(get(".quote-criteria"))
+		{
+			const elementQuoteCriteria = angular.element(document.querySelector(".quote-criteria"));
+			window.scopeQuoteCriteria = elementQuoteCriteria.scope();
+			console.log({ scopeQuoteCriteria: window.scopeQuoteCriteria });
+		}
+	}
+
 	function main()
 	{
 		switch (location.hostname)
 		{
 			case 'app.slack.com': doSlack(); break;
 			case 'bupaaunz.visualstudio.com': doVsts(); break;
+			case 'youtube.com':
+			case 'www.youtube.com':
+				doYoutube();
+				break;
+		}
+		if(~location.href.indexOf("dotcom-"))
+		{
+			doBupaDevEnvironments();
 		}
 	}
 
