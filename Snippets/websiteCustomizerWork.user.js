@@ -154,6 +154,25 @@
 		}
 	}
 
+	function doBupaMyWork()
+	{
+		if(location.href === "https://mywork.bupa.com.au/vpn/index.html")
+		{
+			const inputs = get("input");
+			inputs[0].value = "njha";
+			let i = inputs.length;
+			while(i--)
+			{
+				const input = inputs[i];
+				if(input.type && input.type === "checkbox")
+				{
+					// input.checked = true;
+					input.click();
+				}
+			}
+		}
+	}
+
 	function main()
 	{
 		switch (location.hostname)
@@ -163,6 +182,9 @@
 			case 'youtube.com':
 			case 'www.youtube.com':
 				doYoutube();
+				break;
+			case 'mywork.bupa.com.au':
+				doBupaMyWork();
 				break;
 		}
 		if(~location.href.indexOf("dotcom-"))
