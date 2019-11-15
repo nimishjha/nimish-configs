@@ -90,20 +90,25 @@
 	{ "keys": ["f1"], "command": "clone" },
 	{ "keys": ["shift+f12"], "command": "toggle_distraction_free" },
 	{ "keys": ["f12"], "command": "code_formatter" },
-	{ "keys": ["super+alt+shift+c"], "command": "copy_path" },
+	{ "keys": ["super+alt+shift+c"], "command": "copy_relative_path" },
 	{ "keys": ["super+."], "command": "edit_settings", "args": { "base_file": "${packages}/Default/Default ($platform).sublime-keymap" } },
 	// { "keys": ["f9"], "command": "set_read_only(True)" },
 	// { "keys": ["f10"], "command": "set_read_only(False)" },
 	{ "keys": ["alt+q"], "command": "run_macro_file", "args": {"file": "res://Packages/User/make_paragraph.sublime-macro"} },
 	{ "keys": ["alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_id.sublime-macro"} },
 	{ "keys": ["alt+c"], "command": "run_macro_file", "args": {"file": "res://Packages/User/div_class.sublime-macro"} },
+	{ "keys": ["super+shift+l"], "command": "run_macro_file", "args": {"file": "res://Packages/User/insert_for_loop_i.sublime-macro"} },
+	{ "keys": ["super+shift+j"], "command": "run_macro_file", "args": {"file": "res://Packages/User/insert_for_loop_j.sublime-macro"} },
 	{ "keys": ["alt+\\"], "command": "context_menu", "args": {"event": {"button": 2, "x": 500, "y": 200}} },
 	{ "keys": ["super+t"], "command": "run_macro_file", "args": {"file": "res://Packages/User/spaces_to_tabs.sublime-macro"} },
 	{ "keys": ["super+alt+8"], "command": "set_setting", "args": {"setting": "tab_size", "value": 8} },
 	// SublimeLinter
 	{ "keys": ["super+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" } },
 	{ "keys": ["super+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" } },
+	{ "keys": ["super+l"], "command": "sublime_linter_toggle_highlights"},
+
+	{ "keys": ["super+j"], "command": "fold_all" },
+	{ "keys": ["super+k"], "command": "unfold_all" },
+
+	{ "keys": ["super+i"], "command": "invert_selection" },
 ]
-
-
-
