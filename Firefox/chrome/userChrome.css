@@ -85,3 +85,9 @@ ____________________________________________________
 #downloads-indicator-icon { background-image: none !important; }
 #downloads-indicator-progress-outer { background: #444 !important; /*width: 100px !important;*/ }
 #downloads-indicator-progress-inner { fill: #39F !important; background: #39F !important; /*animation-name: njProgressBar !important; margin-right: 100px;*/ }
+
+
+
+#searchbar { border: 0 !important; background: transparent !important; }
+#tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background: #181818 !important; }
+
