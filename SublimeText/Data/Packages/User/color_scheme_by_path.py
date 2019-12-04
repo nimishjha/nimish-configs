@@ -4,9 +4,12 @@ import sublime, sublime_plugin
 class ColorSchemeByPathCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		settings = self.view.settings()
-		if "/test/" in self.view.file_name():
+		if "/bupa-com-au-FE/" in self.view.file_name():
+			print("FRONT END")
 			settings.set('color_scheme', 'Packages/User/Nimish/Blue01.tmTheme')
-		elif "/uitests/" in self.view.file_name():
+		elif "/bupa-com-au/" in self.view.file_name():
+			print("BACK END")
+			# settings.set('color_scheme', 'Packages/User/Nimish/Orange01.tmTheme')
 			settings.set('color_scheme', 'Packages/User/Nimish/BrightOrange.tmTheme')
 class ColorSchemeByPathEventListener(sublime_plugin.EventListener):
 	def on_load_async(self, view):

@@ -8,10 +8,12 @@ class CycleColorSchemeCommand(sublime_plugin.TextCommand):
 		scheme = self.view.settings().get("color_scheme")
 		print("Previous: " + scheme);
 		schemes = [
-			"Packages/Nimish/Blue01.tmTheme",
-			"Packages/Nimish/DeepBlue.tmTheme",
-			"Packages/Nimish/Orange01.tmTheme",
-			"Packages/Nimish/Green01.tmTheme",
+			"Packages/User/Nimish/Blue01.tmTheme",
+			"Packages/User/Nimish/DeepBlue.tmTheme",
+			"Packages/User/Nimish/Orange01.tmTheme",
+			"Packages/User/Nimish/BrightOrange.tmTheme",
+			"Packages/User/Nimish/Green01.tmTheme",
+			"Packages/User/Nimish/Test01.tmTheme"
   		]
 		try:
 			i = schemes.index(scheme)
