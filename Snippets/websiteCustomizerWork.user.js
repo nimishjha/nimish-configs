@@ -166,7 +166,6 @@
 				const input = inputs[i];
 				if(input.type && input.type === "checkbox")
 				{
-					// input.checked = true;
 					input.click();
 				}
 			}
@@ -184,7 +183,7 @@
 				doYoutube();
 				break;
 			case 'mywork.bupa.com.au':
-				doBupaMyWork();
+				setTimeout(doBupaMyWork, 1000);
 				break;
 		}
 		if(~location.href.indexOf("dotcom-"))

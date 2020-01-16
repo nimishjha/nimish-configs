@@ -75,6 +75,8 @@
 	// Other useful shortcuts
 	{ "keys": ["super+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
 	{ "keys": ["super+\\"], "command": "toggle_setting", "args": {"setting": "draw_indent_guides"}},
+	{ "keys": ["super+alt+i"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_i.sublime-macro"} },
+	{ "keys": ["super+alt+j"], "command": "run_macro_file", "args": {"file": "res://Packages/User/index_j.sublime-macro"} },
 
 	// Move by Symbols
 	{ "keys": ["alt+up"], "command": "move_by_symbols", "args": { "forward": false } },
@@ -109,6 +111,8 @@
 
 	{ "keys": ["super+j"], "command": "fold_all" },
 	{ "keys": ["super+k"], "command": "unfold_all" },
+	{ "keys": ["super+l"], "command": "fold" },
+	// { "keys": ["super+shift+l"], "command": "unfold" },
 
 	{ "keys": ["super+i"], "command": "invert_selection" },
 ]
