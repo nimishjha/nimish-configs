@@ -42,7 +42,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Operators, Brackets</string>
-			<key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments, meta.brace.round, punctuation.section.group</string>
+			<key>scope</key><string>keyword.operator, punctuation.definition, punctuation.section.arguments, meta.brace.round, punctuation.section.group</string>
 			<key>settings</key><dict><key>foreground</key><string>#8888FF</string></dict>
 		</dict>
 		<dict>
@@ -82,7 +82,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Object properties</string>
-			<key>scope</key><string>meta.property.object, meta.object-literal.key</string>
+			<key>scope</key><string>meta.property.object, meta.object-literal.key, variable.other.property</string>
 			<key>settings</key><dict><key>foreground</key><string>#7799FF</string></dict>
 		</dict>
 		<dict>
@@ -112,7 +112,7 @@
 		</dict>
 		<dict>
 			<key>name</key><string>Class name</string>
-			<key>scope</key><string>entity.name.class, entity.name.type</string>
+			<key>scope</key><string>entity.name.class, entity.name.type, variable.other.class</string>
 			<key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict>
 		</dict>
 		<dict>

@@ -111,8 +111,8 @@
 
 	{ "keys": ["super+j"], "command": "fold_all" },
 	{ "keys": ["super+k"], "command": "unfold_all" },
-	{ "keys": ["super+l"], "command": "fold" },
-	// { "keys": ["super+shift+l"], "command": "unfold" },
+	{ "keys": ["super+["], "command": "fold" },
+	{ "keys": ["super+]"], "command": "unfold" },
 
 	{ "keys": ["super+i"], "command": "invert_selection" },
 ]
