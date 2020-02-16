@@ -5,20 +5,15 @@ class CycleFontCommand(sublime_plugin.TextCommand):
 		current_font = self.view.settings().get("font_face")
 		current_font_size = self.view.settings().get("font_size")
 		try:
-			fonts = ["Verdcode", "Consolas", "Menlo"]
-			current_font_index = fonts.index(current_font)
-			new_font = fonts[ (current_font_index + 1) % len(fonts) ]
-			print(new_font)
+			font_faces = ["Swis721CnBTCode", "Verdcode", "Consolas"]
+			font_sizes = { "Swis721CnBTCode": 18, "Verdcode": 9, "Consolas": 18 }
+			current_font_index = font_faces.index(current_font)
+			new_font = font_faces[ (current_font_index + 1) % len(font_faces) ]
+			new_font_size = font_sizes[new_font]
+			print(new_font, new_font_size)
 			preferences.set('font_face', new_font)
-
-			if new_font == "Swis721CnBtCode":
-				preferences.set('font_size', 18)
-			elif new_font == "Verdcode":
-				preferences.set('font_size', 18)
-			else:
-				preferences.set('font_size', 18)
-
+			preferences.set('font_size', new_font_size)
 		except ValueError:
-			print("Your current color scheme doesn't match any of your args.")
+			print("ValueError")
 		except Exception:
-			print("Something went wrong.")
+			print("Exception")
