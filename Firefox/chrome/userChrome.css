@@ -72,6 +72,7 @@ ____________________________________________________
 
 
 
+#urlbar, #searchbar{ font: 24px "Swis721 Cn BT" !important; }
 #urlbar:not([focused="true"]):-moz-lwtheme, #navigator-toolbox .searchbar-textbox:not([focused="true"]):-moz-lwtheme { border-color: transparent !important; }
 #urlbar:hover, .searchbar-textbox:hover { border-color: transparent !important; }
 #urlbar:-moz-lwtheme[focused="true"], #navigator-toolbox .searchbar-textbox:-moz-lwtheme[focused="true"] { border-color: transparent !important; background: #222 !important; color: #CCC !important; }

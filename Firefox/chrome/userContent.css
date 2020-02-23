@@ -48,10 +48,15 @@ xul|window {
 	html h5, html h5[class], div[class] h5 { font: 1.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h6, html h6[class], div[class] h6 { font: 1rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 
-	main, article, aside, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
+	documentheading h1 { background: #000 !important; border-left: 10px solid #FFF !important; }
+
+	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
+	aside { background-color: #333 !important; color: #888 !important; padding: 10px !important; }
 	span { font: inherit !important; }
-	font, input, input[class], button {font: 22px "Swis721 Cn BT" !important; }
-	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, textarea, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; }
+	font, input, input[class], button { font-family: "Swis721 Cn BT" !important; font-size: 24px !important; }
+	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #FFF !important; }
+	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #FFF !important; }
+	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, textarea, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; font-family: inherit !important; }
 
 	hr { height: 2px !important; background: #888 !important; border-style: solid !important; border-color: #888 !important; border-width: 0 !important; margin: 20px 0 !important; }
 	legend { background: #181818 !important; }
@@ -162,13 +167,13 @@ xul|window {
 	div[class*="warn"] { color: #F90 !important; }
 
 	/* 											 									*/
-	/* 										Analyzer 									*/
+	/* 										Inspector 									*/
 	/* 											 									*/
-	body.analyzer { padding-bottom: 500px !important; }
-	#analyzer { padding: 5px 10px !important; position: fixed !important; left: 0; bottom: 0; width: 50% !important; height: 500px !important; overflow: hidden !important; background: #000 !important; color: #aaa !important; text-align: left !important; z-index: 1000 !important; font: 11px verdana !important; }
-	#analyzer b { color: #09f !important; }
-	#analyzer div { padding: 0 !important; }
-	#analyzer em { font-style: normal; color: #F80 !important; }
+	body.inspector { padding-bottom: 500px !important; }
+	#inspector { padding: 5px 10px !important; position: fixed !important; left: 0; bottom: 0; width: 50% !important; height: 500px !important; overflow: hidden !important; background: #000 !important; color: #aaa !important; text-align: left !important; z-index: 1000 !important; font: 11px verdana !important; }
+	#inspector b { color: #09f !important; }
+	#inspector div { padding: 0 !important; }
+	#inspector em { font-style: normal; color: #F80 !important; }
 	.hovered { background: #000 !important; color: #FFF !important; box-shadow: inset 2px 2px #FFF, inset -2px -2px #FFF !important; }
 
 
@@ -180,11 +185,11 @@ xul|window {
 	/*																			*/
 	/*							Debug												*/
 	/*																			*/
-	body.analyzer {padding-bottom: 300px !important; }
-	#analyzer { padding: 5px 10px !important; position:fixed!important; left:0; bottom: 0; width: 50% !important; height: 200px!important; overflow: hidden !important; background:#000 !important; color:#aaa !important; text-align:left !important; z-index:1000 !important; font:11px verdana !important; }
-	#analyzer b { color:#09f !important; }
-	#analyzer div { padding:0;}
-	#analyzer em { font-style:normal; color:#F80 !important; }
+	body.inspector {padding-bottom: 300px !important; }
+	#inspector { padding: 5px 10px !important; position:fixed!important; left:0; bottom: 0; width: 50% !important; height: 200px!important; overflow: hidden !important; background:#000 !important; color:#aaa !important; text-align:left !important; z-index:1000 !important; font:11px verdana !important; }
+	#inspector b { color:#09f !important; }
+	#inspector div { padding:0;}
+	#inspector em { font-style:normal; color:#F80 !important; }
 	.hovered { background: #000 !important; color: #FFF !important; }
 
 	body.showdivs div { border: 2px solid #000 !important; margin: 2px !important; padding: 0 10px 10px 10px !important; }
@@ -208,7 +213,7 @@ xul|window {
 		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAZklEQVR42uzQAQEAIAzAoGml9+9mDw8RONW02G05AQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBDwgyfAAB3nALPYiUL3AAAAAElFTkSuQmCC) !important;
 	}
 
-	body.debug div#analyzer, body.debug div#analyzer div, body.debug div#analyzer b, body.debug div#analyzer em { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 11px !important; }
+	body.debug div#inspector, body.debug div#inspector div, body.debug div#inspector b, body.debug div#inspector em { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 11px !important; }
 
 	/* Special divs */
 	div[class$="progress"], div[class*="rogress"] { box-shadow: inset 2000px 2000px rgba(255, 255, 255, 0.4) !important; border-radius: 0 !important; }
@@ -286,4 +291,5 @@ xul|window {
 	ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 200px 200px 0 rgba(0,0,0,0.7); }
 	ytd-thumbnail-overlay-time-status-renderer { filter: saturate(0) brightness(2); }
 	#avatar-link { display: none !important; }
+	ytd-app[is-watch-page] { background: #222 !important; }
 }
