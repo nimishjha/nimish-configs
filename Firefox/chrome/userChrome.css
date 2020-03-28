@@ -92,3 +92,5 @@ ____________________________________________________
 #searchbar { border: 0 !important; background: transparent !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background: #181818 !important; }
 
+#urlbar-container { background: #141414 !important; }
+#urlbar.megabar > #urlbar-background { display: none !important; }

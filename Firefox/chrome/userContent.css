@@ -103,7 +103,7 @@ xul|window {
 	small { font-size: 80% !important; }
 
 	tt, code { background: #0C0C0C !important; font-family: Verdcode, Consolas, sans-serif !important; padding: 1px 2px !important; }
-	pre { background: #0C0C0C !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; font-family: Verdcode !important; font-size: 18px !important; }
+	pre { background: #0C0C0C !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; font-family: Verdcode, Verdana, Consolas !important; font-size: 18px !important; }
 	pre, code { color: #999 !important; }
 	pre p { margin: 0 !important; padding: 0 !important; font-family: Verdcode, Consolas, sans-serif !important; }
 
@@ -292,4 +292,11 @@ xul|window {
 	ytd-thumbnail-overlay-time-status-renderer { filter: saturate(0) brightness(2); }
 	#avatar-link { display: none !important; }
 	ytd-app[is-watch-page] { background: #222 !important; }
+}
+
+@-moz-document domain(www.simpleplanes.com), domain(simpleplanes.com)
+{
+	.label-danger { box-shadow: inset 100px 100px #000; }
+	/*.dev { box-shadow: inset 100px 100px #444; }*/
+	.dev, .mod { filter: invert(1); }
 }
