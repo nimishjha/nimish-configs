@@ -85,7 +85,7 @@ ____________________________________________________
 /*@keyframes njProgressBar { 0% { margin-right: 99px; } 100% { margin-right: 1px; } }*/
 #downloads-indicator-icon { background-image: none !important; }
 #downloads-indicator-progress-outer { background: #444 !important; /*width: 100px !important;*/ }
-#downloads-indicator-progress-inner { fill: #39F !important; background: #39F !important; /*animation-name: njProgressBar !important; margin-right: 100px;*/ }
+#downloads-indicator-progress-inner { fill: #FF0 !important; background: #FF0 !important; /*animation-name: njProgressBar !important; margin-right: 100px;*/ }
 
 
 
@@ -93,4 +93,5 @@ ____________________________________________________
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background: #181818 !important; }
 
 #urlbar-container { background: #141414 !important; }
-#urlbar.megabar > #urlbar-background { display: none !important; }
+#urlbar-background { display: none !important; }
+/*#urlbar:-moz-lwtheme > #urlbar-background, #navigator-toolbox #searchbar:-moz-lwtheme { border-color: transparent; background-color: #141414; }*/
