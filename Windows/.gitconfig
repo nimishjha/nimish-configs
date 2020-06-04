@@ -1,5 +1,5 @@
 [core]
-	editor = C:/Programs/Development/SublimeText/sublime_text.exe -w
+	editor = C:/Programs/Development/SublimeText/sublime_text.exe -w -n
 [user]
 	email = nimish.jha@gmail.com
 	name = Nimish Jha
@@ -10,11 +10,16 @@
 	local = yellow bold
 	remote = white bold
 [color "diff"]
-	meta = blue bold
-	frag = yellow
+	meta = white bold blue bold
+	frag = yellow bold
 	old = red bold
 	new = green bold
 [color "status"]
 	added = green bold
 	changed = red bold
 	untracked = magenta bold
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
