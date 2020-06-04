@@ -56,7 +56,7 @@ xul|window {
 	font, input, input[class], button { font-family: "Swis721 Cn BT" !important; font-size: 24px !important; }
 	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #FFF !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #FFF !important; }
-	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, textarea, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; font-family: inherit !important; }
+	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; font-family: inherit !important; }
 
 	hr { height: 2px !important; background: #888 !important; border-style: solid !important; border-color: #888 !important; border-width: 0 !important; margin: 20px 0 !important; }
 	legend { background: #181818 !important; }
@@ -72,6 +72,7 @@ xul|window {
 	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
 	button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; }
 	button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #FFF !important; }
+	button[class*="active"] { outline: 2px solid #0F0 !important; }
 	input div { color: #999 !important; }
 	select:focus, textarea:focus, input:focus { color: #999 !important; outline: 0 !important; background: #0C0C0C !important; }
 	textarea:focus *, input:focus * { color: #999 !important; }
@@ -139,7 +140,7 @@ xul|window {
 	markblue { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markpurple { background: #404 !important; color: #F0F !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markyellow { background: #440 !important; color: #FF0 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	markwhite { background: #000 !important; color: #FFF !important; padding: 2px 0 !important; line-height: inherit !important; }
+	markwhite { background: #000 !important; color: #DDD !important; padding: 2px 0 !important; line-height: inherit !important; }
 
 	slideshow::after { content: ""; clear: both; display: block; }
 
@@ -283,6 +284,9 @@ xul|window {
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
 	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #FFF !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
 	internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
+	comment { display: block !important; padding: 5px 10px !important; border-left: 10px solid #555 !important; background: #222 !important; }
+
+	button[aria-pressed="true"] { outline: 2px solid #0F0 !important; }
 }
 
 @-moz-document domain(www.youtube.com), domain(youtube.com)
@@ -297,6 +301,30 @@ xul|window {
 	ytd-thumbnail-overlay-time-status-renderer { filter: saturate(0) brightness(2); }
 	#avatar-link { display: none !important; }
 	ytd-app[is-watch-page] { background: #222 !important; }
+
+	/* YouTube landing page */
+	#contents.ytd-rich-grid-renderer, #grid-title.ytd-rich-grid-renderer { width: 2400px !important; }
+	ytd-rich-item-renderer { width: 600px !important; }
+	ytd-rich-grid-video-renderer { max-width: none !important; }
+
+	/* YouTube search results page */
+	ytd-two-column-search-results-renderer[guide-persistent-and-visible] #primary.ytd-two-column-search-results-renderer { max-width: none !important; width: 2400px !important; }
+	ytd-video-renderer:not([use-prominent-thumbs]) ytd-thumbnail.ytd-video-renderer { width: 500px !important; height: 300px !important; }
+	img.yt-img-shadow { width: 100% !important; height: auto !important; }
+	#video-title.ytd-video-renderer { max-height: none !important; overflow: visible !important; }
+	.title-and-badge.ytd-video-renderer { overflow: visible !important; }
+	.text-wrapper.ytd-video-renderer { max-width: none !important; }
+	/*#contents, #dismissable, .text-wrapper { width: 2400px !important; max-width: none !important; }*/
+
+	/* YouTube channel page */
+	#items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-radio-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-channel-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-playlist-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-movie-playlist-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-movie-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-show-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-game-card-renderer.ytd-grid-renderer
+	{ width: 500px !important; }
+	ytd-thumbnail.ytd-grid-video-renderer { width: 480px !important; height: 280px !important; }
+	#video-title.yt-simple-endpoint.ytd-grid-video-renderer { max-height: none !important; height: 150px !important; }
+	#video-title { max-height: none !important; height: auto !important; }
+	ytd-two-column-browse-results-renderer.grid:not(.grid-disabled) { max-width: 3000px !important; }
+	ytd-two-column-browse-results-renderer.grid-6-columns, .grid-6-columns.ytd-two-column-browse-results-renderer { width: 100% !important; }
+	ytd-grid-video-renderer.style-scope.yt-horizontal-list-renderer { max-width: none !important; max-height: none !important; height: auto !important; width: 600px !important; }
 }
 
 @-moz-document domain(www.simpleplanes.com), domain(simpleplanes.com)
