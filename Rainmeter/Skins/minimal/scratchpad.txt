@@ -1,0 +1,85 @@
+[measureCalibrate1]
+Measure=Calc
+Formula=Sqrt(0.1)
+MaxValue=1
+[measureCalibrate2]
+Measure=Calc
+Formula=Sqrt(0.2)
+MaxValue=1
+[measureCalibrate3]
+Measure=Calc
+Formula=Sqrt(0.3)
+MaxValue=1
+[measureCalibrate4]
+Measure=Calc
+Formula=Sqrt(0.4)
+MaxValue=1
+[measureCalibrate5]
+Measure=Calc
+Formula=Sqrt(0.5)
+MaxValue=1
+[measureCalibrate6]
+Measure=Calc
+Formula=Sqrt(0.6)
+MaxValue=1
+[measureCalibrate7]
+Measure=Calc
+Formula=Sqrt(0.7)
+MaxValue=1
+[measureCalibrate8]
+Measure=Calc
+Formula=Sqrt(0.8)
+MaxValue=1
+[measureCalibrate9]
+Measure=Calc
+Formula=Sqrt(0.9)
+MaxValue=1
+[measureCalibrate10]
+Measure=Calc
+Formula=Sqrt(1)
+MaxValue=1
+
+;	[measureCpuLogarithmic]
+;	Measure=Calc
+;	Formula=50*Log(measureCpu)
+;	DynamicVariables=1
+;	MaxValue=100
+
+;	[measureCpuSqrt]
+;	Measure=Calc
+;	Formula=Sqrt(measureCPU/100)
+;	DynamicVariables=1
+;	MaxValue=1
+
+;	[measureGpuLogarithmic]
+;	Measure=Calc
+;	Formula=50*Log(measureGpu)
+;	DynamicVariables=1
+;	MaxValue=100
+
+;	[measureGpuSqrt]
+;	Measure=Calc
+;	Formula=Sqrt(measureGPU/100)
+;	DynamicVariables=1
+;	MaxValue=1
+
+;	[measureNetInScaledLogarithmic]
+;	Measure=Calc
+;	Formula=50*Log(measureNetInScaled/40000)
+;	DynamicVariables=1
+;	MaxValue=100
+
+;	[measureNetOutScaledLogarithmic]
+;	Measure=Calc
+;	Formula=50*Log(measureNetOutScaled/20000)
+;	DynamicVariables=1
+;	MaxValue=100
+
+;[MeterDebug]
+;Meter=String
+;MeterStyle=styleLabel
+;X=0
+;Y=0
+;FontColor=255,255,255,255
+;Text=CPU [measureCpu] : [measureCpuLogarithmic]#CRLF#GPU [measureGpu:0] : [measureGpuLogarithmic]#CRLF#NetIn [measureNetInScaled] : [measureNetInScaledLogarithmic]
+;DynamicVariables=1
