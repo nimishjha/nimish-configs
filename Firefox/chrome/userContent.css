@@ -41,6 +41,7 @@ xul|window {
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	html h1, html h2, html h3, html h4, html h5, html h6, html h1[class], html h2[class], html h3[class], html h4[class], html h5[class], html h6[class] { color: #AAA !important; padding: 10px 20px !important; line-height: 160% !important; margin: 2px 0 !important; background: #181818 !important; border: 0 !important; }
+	html a h1, html a h2, html a h3, html a h4, html a h5, html a h6 { color: inherit !important; }
 	html h1, html h1[class], div[class] h1 { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h2, html h2[class], div[class] h2 { font: 1.8rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h3, html h3[class], div[class] h3 { font: 1.6rem "Swis721 Cn BT", Calibri, sans-serif !important; }
@@ -103,8 +104,8 @@ xul|window {
 	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
 	small { font-size: 80% !important; }
 
-	tt, code { background: #0C0C0C !important; font-family: Verdcode, Consolas, sans-serif !important; padding: 1px 2px !important; }
-	pre { background: #0C0C0C !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; font-family: Verdcode, Verdana, Consolas !important; font-size: 18px !important; }
+	tt, code { background: #0C0C0C !important; font-family: Swis721CnBTCode, Verdcode, Consolas, sans-serif !important; padding: 1px 2px !important; }
+	pre { background: #0C0C0C !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; font-family: Swis721CnBTCode, Verdcode, Verdana, Consolas !important; font-size: 22px !important; }
 	pre, code { color: #999 !important; }
 	pre p { margin: 0 !important; padding: 0 !important; font-family: Verdcode, Consolas, sans-serif !important; }
 
@@ -125,8 +126,8 @@ xul|window {
 	pre xk { color: #29F !important; }
 	pre xh { color: #57F !important; }
 
-	samp, mark, hl, kbd { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	/*samp, mark, hl, kbd { background: #383838 !important; color: #FFF !important; padding: 2px 0 !important; line-height: inherit !important; }*/
+	samp, mark { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	/*samp, mark { background: #414C5B !important; color: #e0e8f0 !important; padding: 2px 0 !important; line-height: inherit !important; }*/
 	samp a:link, mark a:link, a:link samp, a:link mark { background: #000 !important; color: #F90 !important; }
 	samp a:visited, mark a:visited, a:visited samp, a:visited mark { color: #C60 !important; }
 	mark a:hover, a:hover mark, samp a:hover, a:hover samp { background-color: #000 !important; color: #FFF !important; }
@@ -325,6 +326,9 @@ xul|window {
 	ytd-two-column-browse-results-renderer.grid:not(.grid-disabled) { max-width: 3000px !important; }
 	ytd-two-column-browse-results-renderer.grid-6-columns, .grid-6-columns.ytd-two-column-browse-results-renderer { width: 100% !important; }
 	ytd-grid-video-renderer.style-scope.yt-horizontal-list-renderer { max-width: none !important; max-height: none !important; height: auto !important; width: 600px !important; }
+
+	/* YouTube playlists */
+	ytd-thumbnail.ytd-playlist-video-renderer { width: 480px !important; height: 272px !important; }
 }
 
 @-moz-document domain(www.simpleplanes.com), domain(simpleplanes.com)
