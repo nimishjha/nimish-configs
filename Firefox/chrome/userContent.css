@@ -59,7 +59,7 @@ xul|window {
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #FFF !important; }
 	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; font-family: inherit !important; }
 
-	hr { height: 2px !important; background: #888 !important; border-style: solid !important; border-color: #888 !important; border-width: 0 !important; margin: 20px 0 !important; }
+	hr { height: 2px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 20px 0 !important; }
 	legend { background: #181818 !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: #181818 !important; padding: 20px !important; margin: 0 0 2px 0; }
@@ -69,10 +69,11 @@ xul|window {
 	rt { margin: 10px 0 !important; padding: 20px !important; display: block !important; background: #181818 !important; font: 12px Verdana !important; }
 	rt:before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #AAA !important; float: left !important; margin: -3px 20px 0 0 !important; }
 
-	button, select, textarea, html input, html input[class] { border: 0 !important; padding: 5px 10px !important; background: #242424 !important; box-shadow: inset 0 0 5px #000 !important; color: #999 !important; line-height: 150% !important; -moz-appearance: none !important; border-radius: 0 !important; }
+	button, select, textarea, html input, html input[class] { padding: 5px 10px !important; background: #242424 !important; box-shadow: inset 0 0 5px #000 !important; color: #999 !important; line-height: 150% !important; -moz-appearance: none !important; border-radius: 0 !important; }
+	select, textarea { border: 0 !important; }
 	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
-	button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; }
-	button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #FFF !important; }
+	button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; border: 2px solid transparent !important; }
+	button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #FFF !important; border-color: #FFF !important; }
 	button[class*="active"] { outline: 2px solid #0F0 !important; }
 	input div { color: #999 !important; }
 	select:focus, textarea:focus, input:focus { color: #999 !important; outline: 0 !important; background: #0C0C0C !important; }
@@ -229,7 +230,8 @@ xul|window {
 	/* highlighted elements */
 	.nimbushl { box-shadow: inset 2px 2px #F00, inset -2px -2px #F00 !important; }
 	table.nimbushl { outline: 2px solid red !important; }
-	tr.nimbushl td { box-shadow: inset 0 2px #F00, inset 0 -2px #F00 !important; }
+	tr.nimbushl td, tr.nimbushl th { box-shadow: inset 0 2px #F00, inset 0 -2px #F00 !important; }
+	tbody.nimbushl td, tbody.nimbushl th { box-shadow: inset 0 2px #F00, inset 0 -2px #F00 !important; }
 	.nimbushl2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
 	.nimbushl::after { content: ""; display: block; clear: both; }
 	/*.hl { filter: brightness(1.7) !important; }*/
@@ -308,8 +310,13 @@ xul|window {
 	ytd-comment-renderer { background: #181818 !important; }
 	ytd-expander.ytd-video-secondary-info-renderer { opacity: 0.6 !important; }
 	ytd-author-comment-badge-renderer { background: #000 !important; padding: 10px !important; border-radius: 0 !important; height: 40px !important; }
-	ytd-comment-action-buttons-renderer { height: 50px !important; }
+	yt-icon-button.ytd-toggle-button-renderer { padding: 0 !important; }
 	button.yt-icon-button { min-height: 40px !important; min-width: 50px !important; }
+
+	ytd-comment-action-buttons-renderer { position: relative; height: 60px !important; }
+	span#vote-count-middle { position: absolute; right: 0 !important; }
+	ytd-toggle-button-renderer { width: 100px !important; }
+	ytd-toggle-button-renderer button { width: 100px !important; height: 50px !important; }
 
 	/* YouTube landing page */
 	#contents.ytd-rich-grid-renderer, #grid-title.ytd-rich-grid-renderer { width: 2400px !important; }
