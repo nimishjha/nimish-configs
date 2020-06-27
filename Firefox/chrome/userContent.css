@@ -49,6 +49,7 @@ xul|window {
 	html h5, html h5[class], div[class] h5 { font: 1.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h6, html h6[class], div[class] h6 { font: 1rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 
+	documentheading { display: block; }
 	documentheading h1 { background: #000 !important; border-left: 10px solid #FFF !important; }
 
 	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
@@ -63,8 +64,8 @@ xul|window {
 	body.ebook hr { height: 2px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 200px 0 20px 0 !important; }
 	legend { background: #181818 !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
-	figure { border: 0 !important; background: #181818 !important; padding: 20px !important; margin: 0 0 2px 0; }
-	figcaption { background: #181818 !important; color: #888 !important; padding: 20px !important; }
+	figure { border: 0 !important; background: #111 !important; padding: 20px !important; margin: 2px 0; }
+	figcaption { background: #111 !important; color: #AAA !important; padding: 20px !important; }
 	ruby { margin: 10px 0 !important; background: #000 !important; color: #AAA !important; padding: 20px 30px !important; display: block !important; font-size: 22px !important; }
 	rp { margin: 10px 0 !important; background: #181818 !important; color: #888 !important; padding: 40px !important; display: block !important; font: 22px "Swis721 Cn BT", Calibri, sans-serif !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; }
 	rt { margin: 10px 0 !important; padding: 20px !important; display: block !important; background: #181818 !important; font: 12px Verdana !important; }
@@ -232,12 +233,18 @@ xul|window {
 	/* highlighted elements */
 	.nimbushl { box-shadow: inset 2px 2px #F00, inset -2px -2px #F00 !important; }
 	table.nimbushl { outline: 2px solid red !important; }
-	tr.nimbushl td, tr.nimbushl th { box-shadow: inset 0 -2px #F00 !important; }
+	tr.nimbushl td, tr.nimbushl th { box-shadow: inset 0 -1000px #700 !important; }
+	tr.trMark td, tr.trMark th { box-shadow: inset 0 -1000px #F90 !important; }
+	tr.trMarkYellow td, tr.trMarkYellow th { box-shadow: inset 0 -1000px #FF0 !important; }
+	tr.trMarkRed td, tr.trMarkRed th { box-shadow: inset 0 -1000px #800 !important; }
+	tr.trMarkGreen td, tr.trMarkGreen th { box-shadow: inset 0 -1000px #070 !important; }
+	tr.trMarkBlue td, tr.trMarkBlue th { box-shadow: inset 0 -1000px #038 !important; }
+	tr.trMarkPurple td, tr.trMarkPurple th { box-shadow: inset 0 -1000px #707 !important; }
+	tr.trMarkWhite td, tr.trMarkWhite th { box-shadow: inset 0 -1000px #000 !important; }
+
 	tbody.nimbushl td, tbody.nimbushl th { box-shadow: inset 0 2px #F00, inset 0 -2px #F00 !important; }
 	.nimbushl2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
 	.nimbushl::after { content: ""; display: block; clear: both; }
-	/*.hl { filter: brightness(1.7) !important; }*/
-	/*tr.hl > td { filter: brightness(1.7) !important; }*/
 
 	/* Github */
 	clipboard-copy, summary, button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; }
@@ -309,14 +316,20 @@ xul|window {
 	#avatar-link { display: none !important; }
 	ytd-app[is-watch-page] { background: #222 !important; }
 	.paper-toast { box-shadow: inset 200px 200px 0 #000 !important; filter: brightness(2) !important; transform: scale(2) !important; }
+	paper-tab { color: #999 !important; }
+	paper-tab.iron-selected { color: #FFF !important; }
 	yt-formatted-string#content-text.style-scope.ytd-comment-renderer { color: #888 !important; }
 	ytd-comment-renderer { background: #181818 !important; }
-	ytd-expander.ytd-video-secondary-info-renderer { opacity: 0.6 !important; }
+	ytd-two-column-browse-results-renderer, ytd-playlist-sidebar-renderer.style-scope { background: #222 !important; }
+	ytd-rich-metadata-renderer { background: #111 !important; }
+
+	yt-formatted-string, yt-formatted-string.ytd-video-secondary-info-renderer { color: #999 !important; }
+	yt-formatted-string.ytd-comments-header-renderer { color: #CCC !important; }
 	ytd-author-comment-badge-renderer { background: #000 !important; padding: 10px !important; border-radius: 0 !important; height: 40px !important; }
 	yt-icon-button.ytd-toggle-button-renderer { padding: 0 !important; }
 	button.yt-icon-button { min-height: 40px !important; min-width: 50px !important; }
 	button svg { display: none !important; }
-	button::after { content: attr(aria-label) !important; overflow: hidden !important; white-space: pre !important; position: absolute !important; top: 10px !important; left: 10px !important; max-width: 80px !important; }
+	button::after { content: attr(aria-label) !important; overflow: hidden !important; white-space: pre !important; position: absolute !important; top: 10px !important; left: 10px !important; max-width: 80px !important; font-size: 22px !important; }
 
 	ytd-comment-action-buttons-renderer { position: relative; height: 60px !important; }
 	span#vote-count-middle { position: absolute; right: 0 !important; }
