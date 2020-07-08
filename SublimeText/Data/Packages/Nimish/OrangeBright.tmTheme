@@ -13,9 +13,9 @@
 				<key>activeGuide</key><string>#4499FF</string>
 				<key>stackGuide</key><string>#337799</string>
 				<key>minimapBorder</key><string>#AACCFF</string>
-				<key>background</key><string>#281200</string>
+				<key>background</key><string>#282420</string>
 				<key>caret</key><string>#FFFFFF</string>
-				<key>foreground</key><string>#A09080</string>
+				<key>foreground</key><string>#B0A090</string>
 				<key>invisibles</key><string>#ff00ae</string>
 				<key>lineHighlight</key><string>#000000</string>
 				<key>selection</key><string>#000000</string>
