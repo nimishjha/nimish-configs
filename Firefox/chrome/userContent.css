@@ -54,11 +54,20 @@ xul|window {
 
 	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
 	aside { background-color: #333 !important; color: #888 !important; padding: 10px !important; }
-	span { font: inherit !important; }
 	font, input, input[class], button { font-family: "Swis721 Cn BT" !important; font-size: 24px !important; }
 	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #FFF !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #FFF !important; }
-	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, tt, code, command, datalist, del, details, dfn, dir, em, fieldset, font, form, hr, i, input, ins, kbd, label, legend, link, mark, meter, nav, optgroup, option, output, param, progress, q, rp, rt, ruby, s, samp, select, small, source, span, body span[class], strike, strong, sub, sup, time, title, u, var, wbr, xmp { background: inherit !important; color: inherit !important; font-family: inherit !important; }
+	abbr, acronym, address, applet, area, audio,
+	b, base, bdo, big, cite, tt, code, command,
+	datalist, del, details, dfn, dir, em, fieldset, font, form,
+	hr, i, input, ins, kbd, label, legend, link, mark, meter, nav,
+	optgroup, option, output, param, progress, q, rp, rt, ruby,
+	s, samp, select, small, source, strike, strong, sub, sup,
+	time, title, u, var, wbr, xmp
+		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-style: normal !important; }
+	span, body span[class] { background: inherit !important; color: inherit !important; font-family: inherit !important; font-style: normal !important; }
+	body span.italic { color: #CCC !important; }
+	body span.bold { color: #CCC !important; font-weight: bold !important; }
 
 	hr { height: 4px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 40px 0 !important; }
 	body.ebook hr { height: 2px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 200px 0 20px 0 !important; }
@@ -233,14 +242,14 @@ xul|window {
 	/* highlighted elements */
 	.nimbushl { box-shadow: inset 2px 2px #F00, inset -2px -2px #F00 !important; }
 	table.nimbushl { outline: 2px solid red !important; }
-	tr.nimbushl td, tr.nimbushl th { box-shadow: inset 0 -1000px #700 !important; }
-	tr.trMark td, tr.trMark th { box-shadow: inset 0 -1000px #F90 !important; }
-	tr.trMarkYellow td, tr.trMarkYellow th { box-shadow: inset 0 -1000px #FF0 !important; }
-	tr.trMarkRed td, tr.trMarkRed th { box-shadow: inset 0 -1000px #800 !important; }
-	tr.trMarkGreen td, tr.trMarkGreen th { box-shadow: inset 0 -1000px #070 !important; }
-	tr.trMarkBlue td, tr.trMarkBlue th { box-shadow: inset 0 -1000px #038 !important; }
-	tr.trMarkPurple td, tr.trMarkPurple th { box-shadow: inset 0 -1000px #707 !important; }
-	tr.trMarkWhite td, tr.trMarkWhite th { box-shadow: inset 0 -1000px #000 !important; }
+	tr.nimbushl td, tr.nimbushl th { box-shadow: inset 10px 0 #A00 !important; padding-left: 20px !important; padding-left: 20px !important; }
+	tr.trMark td, tr.trMark th { box-shadow: inset 10px 0 #F90 !important; padding-left: 20px !important; }
+	tr.trMarkYellow td, tr.trMarkYellow th { box-shadow: inset 10px 0 #FF0 !important; padding-left: 20px !important; }
+	tr.trMarkRed td, tr.trMarkRed th { box-shadow: inset 10px 0 #F00 !important; padding-left: 20px !important; }
+	tr.trMarkGreen td, tr.trMarkGreen th { box-shadow: inset 10px 0 #0F0 !important; padding-left: 20px !important; }
+	tr.trMarkBlue td, tr.trMarkBlue th { box-shadow: inset 10px 0 #09F !important; padding-left: 20px !important; }
+	tr.trMarkPurple td, tr.trMarkPurple th { box-shadow: inset 10px 0 #707 !important; padding-left: 20px !important; }
+	tr.trMarkWhite td, tr.trMarkWhite th { box-shadow: inset 10px 0 #FFF !important; padding-left: 20px !important; }
 
 	tbody.nimbushl td, tbody.nimbushl th { box-shadow: inset 0 2px #F00, inset 0 -2px #F00 !important; }
 	.nimbushl2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
@@ -298,6 +307,7 @@ xul|window {
 	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #FFF !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
 	reference, internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #555 !important; background: #222 !important; }
+	ind { display: block !important; padding-left: 50px !important; }
 
 	button[aria-pressed="true"] { outline: 2px solid #0F0 !important; }
 }
@@ -322,7 +332,14 @@ xul|window {
 	ytd-comment-renderer { background: #181818 !important; }
 	ytd-two-column-browse-results-renderer, ytd-playlist-sidebar-renderer.style-scope { background: #222 !important; }
 	ytd-rich-metadata-renderer { background: #111 !important; }
+	paper-input-container { box-shadow: inset 0 1000px #111 !important; min-height: 200px !important; }
 
+	#author-thumbnail img { display: none !important; }
+
+/*	ytd-comment-renderer { position: relative !important; }
+	ytd-comment-action-buttons-renderer { position: absolute !important; top: 0 !important; right: 0 !important; width: 320px !important; }
+	ytd-expander { width: 800px !important; }
+*/
 	yt-formatted-string, yt-formatted-string.ytd-video-secondary-info-renderer { color: #999 !important; }
 	yt-formatted-string.ytd-comments-header-renderer { color: #CCC !important; }
 	ytd-author-comment-badge-renderer { background: #000 !important; padding: 10px !important; border-radius: 0 !important; height: 40px !important; }
@@ -346,7 +363,7 @@ xul|window {
 	ytd-video-renderer:not([use-prominent-thumbs]) ytd-thumbnail.ytd-video-renderer { width: 500px !important; height: 300px !important; }
 	img.yt-img-shadow { width: 100% !important; height: auto !important; }
 	#video-title.ytd-video-renderer { max-height: none !important; overflow: visible !important; }
-	.title-and-badge.ytd-video-renderer { overflow: visible !important; }
+	h3.title-and-badge.ytd-video-renderer { overflow: visible !important; height: 200px !important; }
 	.text-wrapper.ytd-video-renderer { max-width: none !important; }
 	/*#contents, #dismissable, .text-wrapper { width: 2400px !important; max-width: none !important; }*/
 
