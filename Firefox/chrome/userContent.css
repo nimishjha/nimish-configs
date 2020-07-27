@@ -316,6 +316,7 @@ xul|window {
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
 	ytd-feed-filter-chip-bar-renderer { background: #000 !important; }
+	yt-multi-page-menu-section-renderer { background: #000 !important; }
 	ytd-masthead, app-header, ytd-browse, ytd-app { background: #222 !important; }
 	html body input#search { z-index: 9999999 !important; position: absolute !important; right: 0 !important; }
 	html h3, html h3.style-scope.ytd-rich-grid-video-renderer { font-size: 12px; }
@@ -335,7 +336,8 @@ xul|window {
 	ytd-two-column-browse-results-renderer, ytd-playlist-sidebar-renderer.style-scope { background: #222 !important; }
 	ytd-rich-metadata-renderer { background: #111 !important; }
 	paper-input-container { box-shadow: inset 0 1000px #111 !important; min-height: 600px !important; }
-	ytd-post-renderer { background: #111 !important; }
+	ytd-clarification-renderer, ytd-post-renderer { background: #111 !important; }
+	ytd-commentbox { position: fixed !important; width: 1400px !important; top:500px !important; right: 20px !important; }
 
 	#author-thumbnail img { display: none !important; }
 
