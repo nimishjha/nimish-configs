@@ -41,6 +41,7 @@ xul|window {
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	html h1, html h2, html h3, html h4, html h5, html h6, html h1[class], html h2[class], html h3[class], html h4[class], html h5[class], html h6[class] { color: #AAA !important; padding: 10px 20px !important; line-height: 160% !important; margin: 2px 0 !important; background: #181818 !important; border: 0 !important; }
+	html body.ebook h1 { margin-top: 100px !important; }
 	html a h1, html a h2, html a h3, html a h4, html a h5, html a h6 { color: inherit !important; }
 	html h1, html h1[class], div[class] h1 { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h2, html h2[class], div[class] h2 { font: 1.8rem "Swis721 Cn BT", Calibri, sans-serif !important; }
@@ -70,7 +71,7 @@ xul|window {
 	body span.bold { color: #CCC !important; font-weight: bold !important; }
 
 	hr { height: 4px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 40px 0 !important; }
-	body.ebook hr { height: 2px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 200px 0 20px 0 !important; }
+	body.ebook hr { margin: 200px 0 !important; }
 	legend { background: #181818 !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: #111 !important; padding: 20px !important; margin: 2px 0; }
@@ -315,9 +316,13 @@ xul|window {
 
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
-	ytd-feed-filter-chip-bar-renderer { background: #000 !important; }
-	yt-multi-page-menu-section-renderer { background: #000 !important; }
-	ytd-masthead, app-header, ytd-browse, ytd-app { background: #222 !important; }
+	ytd-feed-filter-chip-bar-renderer,
+	ytd-comment-video-thumbnail-header-renderer,
+	yt-multi-page-menu-section-renderer,
+	ytd-info-panel-content-renderer
+		{ background: #000 !important; }
+
+	ytd-comments, ytd-masthead, app-header, ytd-browse, ytd-app { background: #222 !important; }
 	html body input#search { z-index: 9999999 !important; position: absolute !important; right: 0 !important; }
 	html h3, html h3.style-scope.ytd-rich-grid-video-renderer { font-size: 12px; }
 	#content-text.ytd-comment-renderer,
