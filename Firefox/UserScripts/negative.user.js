@@ -65,7 +65,7 @@
 	function main()
 	{
 		const s = `body, body[class] {background: #181818; }
-			*, *[class] { background-color: transparent; color: #CCC; border-color: transparent; }
+			*, *[class] { background-color: rgba(0,0,0,0.4); color: #CCC; border-color: transparent; }
 			h1, h2, h3, h4, h5, h6, b, strong, em, i {color: #FFF; }
 			mark {color: #FF0; }
 			a, a[class] *, * a[class] {color: #09F; }
