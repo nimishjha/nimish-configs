@@ -6,244 +6,244 @@
 // To view the default settings, hold "alt" while clicking on the "Settings" button.
 // For documentation on these settings, see: https://aka.ms/terminal-documentation
 {
-    "$schema": "https://aka.ms/terminal-profiles-schema",
+	"$schema": "https://aka.ms/terminal-profiles-schema",
 
-    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+	"defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
 
-    // You can add more global application settings here.
-    // To learn more about global settings, visit https://aka.ms/terminal-global-settings
+	// You can add more global application settings here.
+	// To learn more about global settings, visit https://aka.ms/terminal-global-settings
 
-    // If enabled, selections are automatically copied to your clipboard.
-    "copyOnSelect": false,
+	// If enabled, selections are automatically copied to your clipboard.
+	"copyOnSelect": false,
 
-    // If enabled, formatted data is also copied to your clipboard
-    "copyFormatting": false,
+	// If enabled, formatted data is also copied to your clipboard
+	"copyFormatting": false,
 
-    // A profile specifies a command to execute paired with information about how it should look and feel.
-    // Each one of them will appear in the 'New Tab' dropdown,
-    //   and can be invoked from the commandline with `wt.exe -p xxx`
-    // To learn more about profiles, visit https://aka.ms/terminal-profile-settings
-    "profiles":
-    {
-        "defaults":
-        {
-            // Put settings here that you want to apply to all profiles.
-            "colorScheme": "ColorSchemeBlack",
-            "fontFace": "Consolas",
-            // "fontFace": "Cascadia Code PL",
-            "fontSize": 15,
-            "cursorShape": "vintage",
-            "useAcrylic": false,
-            "acrylicOpacity": 0.5,
-            "snapOnInput": true,
-            "experimental.retroTerminalEffect": false,
-        },
-        "list":
-        [
-            {
-                // Make changes here to the cmd.exe profile.
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "Command Prompt",
-                "commandline": "cmd.exe",
-                "hidden": false,
-                "colorScheme": "ColorSchemeBlack",
-                "padding": "20,20,20,20",
-                "startingDirectory": "c:\\git",
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
-                "name": "Blue",
-                "commandline": "cmd.exe",
-                "hidden": false,
-                "colorScheme": "ColorSchemeBlue",
-                "padding": "20,20,20,20",
-                "startingDirectory": "c:\\git",
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6103}",
-                "name": "Green",
-                "commandline": "cmd.exe",
-                "hidden": false,
-                "colorScheme": "ColorSchemeGreen",
-                "padding": "20,20,20,20",
-                "startingDirectory": "c:\\git",
-            },
-            {
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6104}",
-                "name": "Red",
-                "commandline": "cmd.exe",
-                "hidden": false,
-                "colorScheme": "ColorSchemeRed",
-                "padding": "20,20,20,20",
-                "startingDirectory": "c:\\git",
-            },
-            {
-                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "Windows PowerShell",
-                "commandline": "powershell.exe",
-                "hidden": false,
-                "colorScheme": "ColorSchemeRed",
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": false,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            }
-        ]
-    },
+	// A profile specifies a command to execute paired with information about how it should look and feel.
+	// Each one of them will appear in the 'New Tab' dropdown,
+	//   and can be invoked from the commandline with `wt.exe -p xxx`
+	// To learn more about profiles, visit https://aka.ms/terminal-profile-settings
+	"profiles":
+	{
+		"defaults":
+		{
+			// Put settings here that you want to apply to all profiles.
+			"colorScheme": "ColorSchemeBlack",
+			"fontFace": "Consolas",
+			// "fontFace": "Cascadia Code PL",
+			"fontSize": 15,
+			"cursorShape": "vintage",
+			"useAcrylic": false,
+			"acrylicOpacity": 0.5,
+			"snapOnInput": true,
+			"experimental.retroTerminalEffect": false,
+		},
+		"list":
+		[
+			{
+				// Make changes here to the cmd.exe profile.
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+				"name": "Command Prompt",
+				"commandline": "cmd.exe",
+				"hidden": false,
+				"colorScheme": "ColorSchemeBlack",
+				"padding": "20,20,20,20",
+				"startingDirectory": "c:\\git",
+			},
+			{
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6102}",
+				"name": "Blue",
+				"commandline": "cmd.exe",
+				"hidden": false,
+				"colorScheme": "ColorSchemeBlue",
+				"padding": "20,20,20,20",
+				"startingDirectory": "c:\\git",
+			},
+			{
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6103}",
+				"name": "Green",
+				"commandline": "cmd.exe",
+				"hidden": false,
+				"colorScheme": "ColorSchemeGreen",
+				"padding": "20,20,20,20",
+				"startingDirectory": "c:\\git",
+			},
+			{
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6104}",
+				"name": "Red",
+				"commandline": "cmd.exe",
+				"hidden": false,
+				"colorScheme": "ColorSchemeRed",
+				"padding": "20,20,20,20",
+				"startingDirectory": "c:\\git",
+			},
+			{
+				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+				"name": "Windows PowerShell",
+				"commandline": "powershell.exe",
+				"hidden": false,
+				"colorScheme": "ColorSchemeRed",
+			},
+			{
+				"guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+				"hidden": false,
+				"name": "Azure Cloud Shell",
+				"source": "Windows.Terminal.Azure"
+			}
+		]
+	},
 
-    // Add custom color schemes to this array.
-    // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
-    "schemes": [
-        {
-            "name" : "ColorSchemeBlack",
-            "cursorColor": "#FFFFFF",
-            "selectionBackground": "#444444",
-            "background" : "#0C0C0C",
-            "foreground" : "#CCCCCC",
-            "black" : "#0C0C0C",
-            "blue" : "#003060",
-            "cyan" : "#009999",
-            "green" : "#006600",
-            "purple" : "#881798",
-            "red" : "#AA0000",
-            "white" : "#CCCCCC",
-            "yellow" : "#CC5500",
-            "brightBlack" : "#767676",
-            "brightBlue" : "#0099FF",
-            "brightCyan" : "#00FFFF",
-            "brightGreen" : "#66FF00",
-            "brightPurple" : "#FF00FF",
-            "brightRed" : "#FF0000",
-            "brightWhite" : "#FFFFFF",
-            "brightYellow" : "#FF9900"
-        },
-        {
-            "name" : "ColorSchemeRed",
-            "cursorColor": "#FFFFFF",
-            "selectionBackground": "#444444",
-            "background" : "#400000",
-            "foreground" : "#CCCCCC",
-            "black" : "#0C0C0C",
-            "blue" : "#003060",
-            "cyan" : "#009999",
-            "green" : "#006600",
-            "purple" : "#881798",
-            "red" : "#AA0000",
-            "white" : "#CCCCCC",
-            "yellow" : "#CC5500",
-            "brightBlack" : "#767676",
-            "brightBlue" : "#0099FF",
-            "brightCyan" : "#00FFFF",
-            "brightGreen" : "#66FF00",
-            "brightPurple" : "#FF00FF",
-            "brightRed" : "#FF0000",
-            "brightWhite" : "#FFFFFF",
-            "brightYellow" : "#FF9900"
-        },
-        {
-            "name" : "ColorSchemeBlue",
-            "cursorColor": "#FFFFFF",
-            "selectionBackground": "#444444",
-            "background" : "#002040",
-            "foreground" : "#CCCCCC",
-            "black" : "#0C0C0C",
-            "blue" : "#003060",
-            "cyan" : "#009999",
-            "green" : "#006600",
-            "purple" : "#881798",
-            "red" : "#AA0000",
-            "white" : "#CCCCCC",
-            "yellow" : "#CC5500",
-            "brightBlack" : "#767676",
-            "brightBlue" : "#0099FF",
-            "brightCyan" : "#00FFFF",
-            "brightGreen" : "#66FF00",
-            "brightPurple" : "#FF00FF",
-            "brightRed" : "#FF0000",
-            "brightWhite" : "#FFFFFF",
-            "brightYellow" : "#FF9900"
-        },
-        {
-            "name" : "ColorSchemeGreen",
-            "cursorColor": "#FFFFFF",
-            "selectionBackground": "#444444",
-            "background" : "#002800",
-            "foreground" : "#CCCCCC",
-            "black" : "#0C0C0C",
-            "blue" : "#003060",
-            "cyan" : "#009999",
-            "green" : "#006600",
-            "purple" : "#881798",
-            "red" : "#AA0000",
-            "white" : "#CCCCCC",
-            "yellow" : "#CC5500",
-            "brightBlack" : "#767676",
-            "brightBlue" : "#0099FF",
-            "brightCyan" : "#00FFFF",
-            "brightGreen" : "#66FF00",
-            "brightPurple" : "#FF00FF",
-            "brightRed" : "#FF0000",
-            "brightWhite" : "#FFFFFF",
-            "brightYellow" : "#FF9900"
-        },
-    ],
+	// Add custom color schemes to this array.
+	// To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
+	"schemes": [
+		{
+			"name" : "ColorSchemeBlack",
+			"cursorColor": "#FFFFFF",
+			"selectionBackground": "#444444",
+			"background" : "#0C0C0C",
+			"foreground" : "#CCCCCC",
+			"black" : "#0C0C0C",
+			"blue" : "#003060",
+			"cyan" : "#009999",
+			"green" : "#006600",
+			"purple" : "#881798",
+			"red" : "#AA0000",
+			"white" : "#CCCCCC",
+			"yellow" : "#CC5500",
+			"brightBlack" : "#767676",
+			"brightBlue" : "#0099FF",
+			"brightCyan" : "#00FFFF",
+			"brightGreen" : "#66FF00",
+			"brightPurple" : "#FF00FF",
+			"brightRed" : "#FF0000",
+			"brightWhite" : "#FFFFFF",
+			"brightYellow" : "#FF9900"
+		},
+		{
+			"name" : "ColorSchemeRed",
+			"cursorColor": "#FFFFFF",
+			"selectionBackground": "#444444",
+			"background" : "#400000",
+			"foreground" : "#CCCCCC",
+			"black" : "#0C0C0C",
+			"blue" : "#003060",
+			"cyan" : "#009999",
+			"green" : "#006600",
+			"purple" : "#881798",
+			"red" : "#AA0000",
+			"white" : "#CCCCCC",
+			"yellow" : "#CC5500",
+			"brightBlack" : "#767676",
+			"brightBlue" : "#0099FF",
+			"brightCyan" : "#00FFFF",
+			"brightGreen" : "#66FF00",
+			"brightPurple" : "#FF00FF",
+			"brightRed" : "#FF0000",
+			"brightWhite" : "#FFFFFF",
+			"brightYellow" : "#FF9900"
+		},
+		{
+			"name" : "ColorSchemeBlue",
+			"cursorColor": "#FFFFFF",
+			"selectionBackground": "#444444",
+			"background" : "#002040",
+			"foreground" : "#CCCCCC",
+			"black" : "#0C0C0C",
+			"blue" : "#003060",
+			"cyan" : "#009999",
+			"green" : "#006600",
+			"purple" : "#881798",
+			"red" : "#AA0000",
+			"white" : "#CCCCCC",
+			"yellow" : "#CC5500",
+			"brightBlack" : "#767676",
+			"brightBlue" : "#0099FF",
+			"brightCyan" : "#00FFFF",
+			"brightGreen" : "#66FF00",
+			"brightPurple" : "#FF00FF",
+			"brightRed" : "#FF0000",
+			"brightWhite" : "#FFFFFF",
+			"brightYellow" : "#FF9900"
+		},
+		{
+			"name" : "ColorSchemeGreen",
+			"cursorColor": "#FFFFFF",
+			"selectionBackground": "#444444",
+			"background" : "#002800",
+			"foreground" : "#CCCCCC",
+			"black" : "#0C0C0C",
+			"blue" : "#003060",
+			"cyan" : "#009999",
+			"green" : "#006600",
+			"purple" : "#881798",
+			"red" : "#AA0000",
+			"white" : "#CCCCCC",
+			"yellow" : "#CC5500",
+			"brightBlack" : "#767676",
+			"brightBlue" : "#0099FF",
+			"brightCyan" : "#00FFFF",
+			"brightGreen" : "#66FF00",
+			"brightPurple" : "#FF00FF",
+			"brightRed" : "#FF0000",
+			"brightWhite" : "#FFFFFF",
+			"brightYellow" : "#FF9900"
+		},
+	],
 
-    // Add custom keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
-    "keybindings":
-    [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
-        { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
+	// Add custom keybindings to this array.
+	// To unbind a key combination from your defaults.json, set the command to "unbound".
+	// To learn more about keybindings, visit https://aka.ms/terminal-keybindings
+	"keybindings":
+	[
+		// Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+		// These two lines additionally bind them to Ctrl+C and Ctrl+V.
+		// To learn more about selection, visit https://aka.ms/terminal-selection
+		{ "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+		{ "command": "paste", "keys": "ctrl+v" },
 
-        // Press Ctrl+Shift+F to open the search box
-        { "command": "find", "keys": "ctrl+shift+f" },
+		// Press Ctrl+Shift+F to open the search box
+		{ "command": "find", "keys": "ctrl+shift+f" },
 
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
-        { "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
+		// Press Alt+Shift+D to open a new pane.
+		// - "split": "auto" makes this pane open in the direction that provides the most surface area.
+		// - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
+		// To learn more about panes, visit https://aka.ms/terminal-panes
+		{ "command": { "action": "splitPane", "split": "auto", "splitMode": "duplicate" }, "keys": "alt+shift+d" },
 
-        // Custom shortcuts
-        { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+n" },
-        { "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+1" },
-        { "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+2" },
-        { "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+3" },
-        { "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+4" },
-        { "command": "closeTab", "keys": "ctrl+w" },
-        { "command": "nextTab", "keys": "ctrl+pagedown" },
-        { "command": "prevTab", "keys": "ctrl+pageup" },
-        { "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+alt+1" },
-        { "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+alt+2" },
-        { "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+alt+3" },
-        { "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+alt+4" },
-        { "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+alt+5" },
-        { "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+alt+6" },
-        { "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+alt+7" },
-        { "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+alt+8" },
-        { "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+alt+9" },
-        { "command": "scrollUp", "keys": "ctrl+shift+up" },
-        { "command": "scrollDown", "keys": "ctrl+shift+down" },
-        { "command": "scrollUpPage", "keys": "ctrl+shift+pgup" },
-        { "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" },
-        { "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
-        { "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
-        { "command": "resetFontSize", "keys": "ctrl+0" },
-        { "command": { "action": "splitPane", "split": "horizontal", "index": 0 }, "keys": "ctrl+p" },
-        { "command": "closePane", "keys": "ctrl+shift+w" },
-        { "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
-        { "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
-        { "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
-        { "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
-        { "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeBlack" }, "keys": "ctrl+alt+shift+0" },
-        { "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeBlue" }, "keys": "ctrl+alt+shift+1" },
-        { "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeGreen" }, "keys": "ctrl+alt+shift+2" },
-        { "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeRed" }, "keys": "ctrl+alt+shift+3" },
-    ]
+		// Custom shortcuts
+		{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+n" },
+		{ "command": { "action": "newTab", "index": 0 }, "keys": "ctrl+1" },
+		{ "command": { "action": "newTab", "index": 1 }, "keys": "ctrl+2" },
+		{ "command": { "action": "newTab", "index": 2 }, "keys": "ctrl+3" },
+		{ "command": { "action": "newTab", "index": 3 }, "keys": "ctrl+4" },
+		{ "command": "closeTab", "keys": "ctrl+w" },
+		{ "command": "nextTab", "keys": "ctrl+pagedown" },
+		{ "command": "prevTab", "keys": "ctrl+pageup" },
+		{ "command": { "action": "switchToTab", "index": 0 }, "keys": "ctrl+alt+1" },
+		{ "command": { "action": "switchToTab", "index": 1 }, "keys": "ctrl+alt+2" },
+		{ "command": { "action": "switchToTab", "index": 2 }, "keys": "ctrl+alt+3" },
+		{ "command": { "action": "switchToTab", "index": 3 }, "keys": "ctrl+alt+4" },
+		{ "command": { "action": "switchToTab", "index": 4 }, "keys": "ctrl+alt+5" },
+		{ "command": { "action": "switchToTab", "index": 5 }, "keys": "ctrl+alt+6" },
+		{ "command": { "action": "switchToTab", "index": 6 }, "keys": "ctrl+alt+7" },
+		{ "command": { "action": "switchToTab", "index": 7 }, "keys": "ctrl+alt+8" },
+		{ "command": { "action": "switchToTab", "index": 8 }, "keys": "ctrl+alt+9" },
+		{ "command": "scrollUp", "keys": "ctrl+shift+up" },
+		{ "command": "scrollDown", "keys": "ctrl+shift+down" },
+		{ "command": "scrollUpPage", "keys": "ctrl+shift+pgup" },
+		{ "command": "scrollDownPage", "keys": "ctrl+shift+pgdn" },
+		{ "command": { "action": "adjustFontSize", "delta": 1 }, "keys": "ctrl+=" },
+		{ "command": { "action": "adjustFontSize", "delta": -1 }, "keys": "ctrl+-" },
+		{ "command": "resetFontSize", "keys": "ctrl+0" },
+		{ "command": { "action": "splitPane", "split": "horizontal", "index": 0 }, "keys": "ctrl+p" },
+		{ "command": "closePane", "keys": "ctrl+shift+w" },
+		{ "command": { "action": "moveFocus", "direction": "down" }, "keys": "alt+down" },
+		{ "command": { "action": "moveFocus", "direction": "left" }, "keys": "alt+left" },
+		{ "command": { "action": "moveFocus", "direction": "right" }, "keys": "alt+right" },
+		{ "command": { "action": "moveFocus", "direction": "up" }, "keys": "alt+up" },
+		{ "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeBlack" }, "keys": "ctrl+alt+shift+0" },
+		{ "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeBlue" }, "keys": "ctrl+alt+shift+1" },
+		{ "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeGreen" }, "keys": "ctrl+alt+shift+2" },
+		{ "command": { "action": "setColorScheme", "colorScheme": "ColorSchemeRed" }, "keys": "ctrl+alt+shift+3" },
+	]
 }
