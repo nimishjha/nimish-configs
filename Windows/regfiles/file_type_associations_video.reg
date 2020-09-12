@@ -1,0 +1,269 @@
+Windows Registry Editor Version 5.00
+
+
+
+[-HKEY_CLASSES_ROOT\.3gp]
+[-HKEY_CLASSES_ROOT\.asf]
+[-HKEY_CLASSES_ROOT\.avi]
+[-HKEY_CLASSES_ROOT\.divx]
+[-HKEY_CLASSES_ROOT\.flv]
+[-HKEY_CLASSES_ROOT\.m2ts]
+[-HKEY_CLASSES_ROOT\.m4v]
+[-HKEY_CLASSES_ROOT\.mkv]
+[-HKEY_CLASSES_ROOT\.mov]
+[-HKEY_CLASSES_ROOT\.mp4]
+[-HKEY_CLASSES_ROOT\.mpeg]
+[-HKEY_CLASSES_ROOT\.mpg]
+[-HKEY_CLASSES_ROOT\.ogv]
+[-HKEY_CLASSES_ROOT\.rm]
+[-HKEY_CLASSES_ROOT\.vob]
+[-HKEY_CLASSES_ROOT\.webm]
+[-HKEY_CLASSES_ROOT\.wmv]
+
+
+
+[-HKEY_CLASSES_ROOT\association_video_3gp]
+[-HKEY_CLASSES_ROOT\association_video_asf]
+[-HKEY_CLASSES_ROOT\association_video_avi]
+[-HKEY_CLASSES_ROOT\association_video_divx]
+[-HKEY_CLASSES_ROOT\association_video_flv]
+[-HKEY_CLASSES_ROOT\association_video_m2ts]
+[-HKEY_CLASSES_ROOT\association_video_m4v]
+[-HKEY_CLASSES_ROOT\association_video_mkv]
+[-HKEY_CLASSES_ROOT\association_video_mov]
+[-HKEY_CLASSES_ROOT\association_video_mp4]
+[-HKEY_CLASSES_ROOT\association_video_mpeg]
+[-HKEY_CLASSES_ROOT\association_video_mpg]
+[-HKEY_CLASSES_ROOT\association_video_ogv]
+[-HKEY_CLASSES_ROOT\association_video_rm]
+[-HKEY_CLASSES_ROOT\association_video_vob]
+[-HKEY_CLASSES_ROOT\association_video_webm]
+[-HKEY_CLASSES_ROOT\association_video_wmv]
+
+
+
+[HKEY_CLASSES_ROOT\.3gp]
+@="association_video_3gp"
+[HKEY_CLASSES_ROOT\.asf]
+@="association_video_asf"
+[HKEY_CLASSES_ROOT\.avi]
+@="association_video_avi"
+[HKEY_CLASSES_ROOT\.divx]
+@="association_video_divx"
+[HKEY_CLASSES_ROOT\.flv]
+@="association_video_flv"
+[HKEY_CLASSES_ROOT\.m2ts]
+@="association_video_m2ts"
+[HKEY_CLASSES_ROOT\.m4v]
+@="association_video_m4v"
+[HKEY_CLASSES_ROOT\.mkv]
+@="association_video_mkv"
+[HKEY_CLASSES_ROOT\.mov]
+@="association_video_mov"
+[HKEY_CLASSES_ROOT\.mp4]
+@="association_video_mp4"
+[HKEY_CLASSES_ROOT\.mpeg]
+@="association_video_mpeg"
+[HKEY_CLASSES_ROOT\.mpg]
+@="association_video_mpg"
+[HKEY_CLASSES_ROOT\.ogv]
+@="association_video_ogv"
+[HKEY_CLASSES_ROOT\.rm]
+@="association_video_rm"
+[HKEY_CLASSES_ROOT\.vob]
+@="association_video_vob"
+[HKEY_CLASSES_ROOT\.webm]
+@="association_video_webm"
+[HKEY_CLASSES_ROOT\.wmv]
+@="association_video_wmv"
+
+
+
+[HKEY_CLASSES_ROOT\association_video_3gp]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_3gp\DefaultIcon]
+@="j:\\dump\\icons\\video_3gp.ico,0"
+[HKEY_CLASSES_ROOT\association_video_3gp\Shell]
+[HKEY_CLASSES_ROOT\association_video_3gp\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_3gp\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_asf]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_asf\DefaultIcon]
+@="j:\\dump\\icons\\video_asf.ico,0"
+[HKEY_CLASSES_ROOT\association_video_asf\Shell]
+[HKEY_CLASSES_ROOT\association_video_asf\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_asf\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_avi]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_avi\DefaultIcon]
+@="j:\\dump\\icons\\video_avi.ico,0"
+[HKEY_CLASSES_ROOT\association_video_avi\Shell]
+[HKEY_CLASSES_ROOT\association_video_avi\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_avi\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_avi\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_avi\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_divx]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_divx\DefaultIcon]
+@="j:\\dump\\icons\\video_divx.ico,0"
+[HKEY_CLASSES_ROOT\association_video_divx\Shell]
+[HKEY_CLASSES_ROOT\association_video_divx\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_divx\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_flv]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_flv\DefaultIcon]
+@="j:\\dump\\icons\\video_flv.ico,0"
+[HKEY_CLASSES_ROOT\association_video_flv\Shell]
+[HKEY_CLASSES_ROOT\association_video_flv\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_flv\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_flv\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_flv\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_m2ts]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_m2ts\DefaultIcon]
+@="j:\\dump\\icons\\video_m2ts.ico,0"
+[HKEY_CLASSES_ROOT\association_video_m2ts\Shell]
+[HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Opennew]
+[HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_m4v]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_m4v\DefaultIcon]
+@="j:\\dump\\icons\\video_m4v.ico,0"
+[HKEY_CLASSES_ROOT\association_video_m4v\Shell]
+[HKEY_CLASSES_ROOT\association_video_m4v\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_m4v\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_mkv]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_mkv\DefaultIcon]
+@="j:\\dump\\icons\\video_mkv.ico,0"
+[HKEY_CLASSES_ROOT\association_video_mkv\Shell]
+[HKEY_CLASSES_ROOT\association_video_mkv\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mkv\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_mkv\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_mkv\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_mov]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_mov\DefaultIcon]
+@="j:\\dump\\icons\\video_mov.ico,0"
+[HKEY_CLASSES_ROOT\association_video_mov\Shell]
+[HKEY_CLASSES_ROOT\association_video_mov\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mov\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_mp4]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_mp4\DefaultIcon]
+@="j:\\dump\\icons\\video_mp4.ico,0"
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell]
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\Extract AAC]
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\Extract AAC\command]
+@="C:\\Programs\\apps\\extract_aac.cmd \"%1\""
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_mp4\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+[HKEY_CLASSES_ROOT\association_video_mpc_playlist]
+[HKEY_CLASSES_ROOT\association_video_mpc_playlist\DefaultIcon]
+[HKEY_CLASSES_ROOT\association_video_mpc_playlist\Shell]
+[HKEY_CLASSES_ROOT\association_video_mpc_playlist\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mpc_playlist\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_mpeg]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_mpeg\DefaultIcon]
+@="j:\\dump\\icons\\video_mpg.ico,0"
+[HKEY_CLASSES_ROOT\association_video_mpeg\Shell]
+[HKEY_CLASSES_ROOT\association_video_mpeg\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mpeg\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_mpg]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_mpg\DefaultIcon]
+@="j:\\dump\\icons\\video_mpg.ico,0"
+[HKEY_CLASSES_ROOT\association_video_mpg\Shell]
+[HKEY_CLASSES_ROOT\association_video_mpg\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_mpg\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_mpg\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_mpg\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_ogv]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_ogv\DefaultIcon]
+@="j:\\dump\\icons\\video_ogv.ico,0"
+[HKEY_CLASSES_ROOT\association_video_ogv\Shell]
+[HKEY_CLASSES_ROOT\association_video_ogv\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_ogv\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_rm]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_rm\DefaultIcon]
+@="j:\\dump\\icons\\video_rm.ico,0"
+[HKEY_CLASSES_ROOT\association_video_rm\Shell]
+[HKEY_CLASSES_ROOT\association_video_rm\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_rm\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_vob]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_vob\DefaultIcon]
+@="j:\\dump\\icons\\video_vob.ico,0"
+[HKEY_CLASSES_ROOT\association_video_vob\Shell]
+[HKEY_CLASSES_ROOT\association_video_vob\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_vob\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_webm]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_webm\DefaultIcon]
+@="j:\\dump\\icons\\video_webm.ico,0"
+[HKEY_CLASSES_ROOT\association_video_webm\Shell]
+[HKEY_CLASSES_ROOT\association_video_webm\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_webm\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_video_wmv]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_wmv\DefaultIcon]
+@="j:\\dump\\icons\\video_wmv.ico,0"
+[HKEY_CLASSES_ROOT\association_video_wmv\Shell]
+[HKEY_CLASSES_ROOT\association_video_wmv\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_wmv\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_wmv\Shell\opennew]
+@="1 Open in new instance of mpc-hc"
+[HKEY_CLASSES_ROOT\association_video_wmv\Shell\opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"

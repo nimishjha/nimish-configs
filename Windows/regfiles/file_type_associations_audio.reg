@@ -1,0 +1,249 @@
+Windows Registry Editor Version 5.00
+
+
+
+[-HKEY_CLASSES_ROOT\.ape]
+[-HKEY_CLASSES_ROOT\.aac]
+[-HKEY_CLASSES_ROOT\.ac3]
+[-HKEY_CLASSES_ROOT\.aiff]
+[-HKEY_CLASSES_ROOT\.flac]
+[-HKEY_CLASSES_ROOT\.m3u]
+[-HKEY_CLASSES_ROOT\.m4a]
+[-HKEY_CLASSES_ROOT\.mp3]
+[-HKEY_CLASSES_ROOT\.ogg]
+[-HKEY_CLASSES_ROOT\.wav]
+[-HKEY_CLASSES_ROOT\.wma]
+[-HKEY_CLASSES_ROOT\.wv]
+
+
+
+[-HKEY_CLASSES_ROOT\association_audio_ape]
+[-HKEY_CLASSES_ROOT\association_audio_aac]
+[-HKEY_CLASSES_ROOT\association_audio_ac3]
+[-HKEY_CLASSES_ROOT\association_audio_aiff]
+[-HKEY_CLASSES_ROOT\association_audio_flac]
+[-HKEY_CLASSES_ROOT\association_audio_m3u]
+[-HKEY_CLASSES_ROOT\association_audio_m4a]
+[-HKEY_CLASSES_ROOT\association_audio_mp3]
+[-HKEY_CLASSES_ROOT\association_audio_ogg]
+[-HKEY_CLASSES_ROOT\association_audio_wav]
+[-HKEY_CLASSES_ROOT\association_audio_wma]
+[-HKEY_CLASSES_ROOT\association_audio_wv]
+
+
+
+[HKEY_CLASSES_ROOT\.ape]
+@="association_audio_ape"
+[HKEY_CLASSES_ROOT\.aac]
+@="association_audio_aac"
+[HKEY_CLASSES_ROOT\.ac3]
+@="association_audio_ac3"
+[HKEY_CLASSES_ROOT\.aiff]
+@="association_audio_aiff"
+[HKEY_CLASSES_ROOT\.flac]
+@="association_audio_flac"
+[HKEY_CLASSES_ROOT\.m3u]
+@="association_audio_m3u"
+[HKEY_CLASSES_ROOT\.m4a]
+@="association_audio_m4a"
+[HKEY_CLASSES_ROOT\.mp3]
+@="association_audio_mp3"
+[HKEY_CLASSES_ROOT\.ogg]
+@="association_audio_ogg"
+[HKEY_CLASSES_ROOT\.wav]
+@="association_audio_wav"
+[HKEY_CLASSES_ROOT\.wma]
+@="association_audio_wma"
+[HKEY_CLASSES_ROOT\.wv]
+@="association_audio_wv"
+
+
+
+[HKEY_CLASSES_ROOT\association_audio_ape]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_ape\DefaultIcon]
+@="j:\\dump\\icons\\audio_ape.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_ape\Shell]
+[HKEY_CLASSES_ROOT\association_audio_ape\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_ape\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_ape\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_ape\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_aac]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_aac\DefaultIcon]
+@="j:\\dump\\icons\\audio_aac.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\3 Make M3U]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\3 Make M3U\command]
+@="c:\\programs\\apps\\makem3u.cmd"
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\foobar]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\foobar\command]
+@="C:\\programs\\Audio\\foobar2000\\foobar2000.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_aac\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_ac3]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_ac3\DefaultIcon]
+@="j:\\dump\\icons\\audio_ac3.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell]
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_ac3\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_aiff]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_aiff\DefaultIcon]
+@="j:\\dump\\icons\\audio_aiff.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_aiff\Shell]
+[HKEY_CLASSES_ROOT\association_audio_aiff\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_aiff\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_aiff\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_aiff\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_flac]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_flac\DefaultIcon]
+@="j:\\dump\\icons\\audio_flac.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\3 Make M3U]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\3 Make M3U\command]
+@="c:\\programs\\apps\\makem3u.cmd"
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\foobar]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\foobar\command]
+@="C:\\programs\\Audio\\foobar2000\\foobar2000.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Set replay gain]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\Set replay gain\command]
+@="H:\\programs\\FLAC\\metaflac.exe --add-replay-gain \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_flac\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_m3u]
+@="audio_playlist"
+[HKEY_CLASSES_ROOT\association_audio_m3u\DefaultIcon]
+@="j:\\dump\\icons\\audio_m3u.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_m3u\Shell]
+[HKEY_CLASSES_ROOT\association_audio_m3u\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_m3u\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_m3u\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_m3u\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_m4a]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_m4a\DefaultIcon]
+@="j:\\dump\\icons\\audio_m4a.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell]
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_m4a\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_mp3]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_mp3\DefaultIcon]
+@="j:\\dump\\icons\\audio_mp3.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\3 Make M3U]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\3 Make M3U\command]
+@="c:\\programs\\apps\\makem3u.cmd"
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\foobar]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\foobar\command]
+@="C:\\programs\\Audio\\foobar2000\\foobar2000.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_mp3\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_ogg]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_ogg\DefaultIcon]
+@="j:\\dump\\icons\\audio_ogg.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_ogg\Shell]
+[HKEY_CLASSES_ROOT\association_audio_ogg\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_ogg\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_ogg\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_ogg\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_wav]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_wav\DefaultIcon]
+@="j:\\dump\\icons\\audio_wav.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell]
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_wav\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_wma]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_wma\DefaultIcon]
+@="j:\\dump\\icons\\audio_wma.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell]
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\3 Make M3U]
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\3 Make M3U\command]
+@="c:\\programs\\apps\\makem3u.cmd"
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\XOpenWithMPCHC]
+[HKEY_CLASSES_ROOT\association_audio_wma\Shell\XOpenWithMPCHC\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\association_audio_wv]
+@="audio"
+[HKEY_CLASSES_ROOT\association_audio_wv\DefaultIcon]
+@="j:\\dump\\icons\\audio_wv.ico,0"
+[HKEY_CLASSES_ROOT\association_audio_wv\Shell]
+[HKEY_CLASSES_ROOT\association_audio_wv\Shell\Enqueue]
+[HKEY_CLASSES_ROOT\association_audio_wv\Shell\Enqueue\command]
+@="C:\\programs\\Audio\\Winamp\\winamp.exe /ADD \"%1\""
+[HKEY_CLASSES_ROOT\association_audio_wv\Shell\Open]
+[HKEY_CLASSES_ROOT\association_audio_wv\Shell\Open\command]
+@="C:\\programs\\Audio\\winamp\\winamp.exe \"%1\""
