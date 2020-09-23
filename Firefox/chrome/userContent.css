@@ -67,8 +67,8 @@ xul|window {
 	time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-style: normal !important; }
 	span, body span[class] { background: inherit !important; color: inherit !important; font-family: inherit !important; font-style: normal !important; font-size: inherit !important; }
-	body span.italic { color: #CCC !important; }
-	body span.bold { color: #CCC !important; font-weight: bold !important; }
+	body span.italic { color: #FF0 !important; }
+	body span.bold { color: #FF0 !important; font-weight: bold !important; }
 
 	hr { height: 4px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 40px 0 !important; }
 	body.ebook hr { margin: 200px 0 !important; }
@@ -105,7 +105,8 @@ xul|window {
 	blockquote blockquote { padding: 0 0 0 40px !important; }
 
 	table { background: #202020 !important; color: inherit !important; border: 0 !important; border-collapse: collapse !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
-	tbody, td, tfoot, th, thead, tr, tbody[class], td[class], tfoot[class], th[class], thead[class], tr[class] { color: inherit !important; background-image: none !important; border: 0 !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
+	tbody, td, tfoot, thead, tr, tbody[class], td[class], tfoot[class], thead[class], tr[class] { color: inherit !important; background-image: none !important; border: 0 !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; }
+	th, th[class] { background-image: none !important; border: 0 !important; font-family: inherit !important; font-size: inherit !important; text-decoration: none !important; color: #CCC !important; }
 	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: #181818 !important; }
 	tr:nth-child(even) td , tr:nth-child(even) th { background-color: #202020 !important; }
 
@@ -157,15 +158,18 @@ xul|window {
 	markyellow { background: #440 !important; color: #FF0 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markwhite { background: #000 !important; color: #DDD !important; padding: 2px 0 !important; line-height: inherit !important; }
 
-	slideshow::after { content: ""; clear: both; display: block; }
+	slideshow { display: block !important; background: #111 !important; padding: 10px !important; }
+	slideshow::after { content: " "; clear: both; display: block; }
 
 	body.xDontShowLinks a, body.xDontShowLinks a *, body.xDontShowLinks a:link { color: inherit !important; text-decoration: none !important; }
 	body.xDontShowLinks a:visited *, body.xDontShowLinks a:visited { color: inherit !important; text-decoration: none !important; }
 	body.xDontShowLinks a:hover *, body.xDontShowLinks a:focus *, body.xDontShowLinks a:hover, body.xDontShowLinks a:focus { color: #FFF !important; text-decoration: none !important; }
+	body.xDontShowLinks reference { display: none; }
 
     	html.xHE, body.xHE, body.xHE td, body.xHE nav, body.xHE header, body.xHE body, body.xHE small, body.xHE big, body.xHE article, body.xHE section, body.xHE aside, body.xHE details, body.xHE div, body.xHE font, body.xHE article, body.xHE form, body.xHE fieldset, body.xHE label, body.xHE span, body.xHE p, body.xHE blockquote, body.xHE dd, body.xHE dt, body.xHE dl, body.xHE div, body.xHE ul, body.xHE ol, body.xHE li, body.xHE a, body.xHE i, body.xHE b, body.xHE strong, body.xHE h1, body.xHE h2, body.xHE h3, body.xHE h4, body.xHE h5, body.xHE pre, body.xHE em, body.xHE cite, body.xHE h6, body.xHE *, body.xHE { color: #333 !important; background: #080808 !important; }
 	body.xHE kbd, body.xHE samp { color: #F70 !important; }
 	body.xHE input, body.xHE textarea { opacity: 0 !important; }
+	body.xHE reference { display: none; }
 
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #F00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #F00 !important; }
@@ -322,6 +326,7 @@ xul|window {
 	ytd-info-panel-content-renderer
 		{ background: #000 !important; }
 
+	.less-button { display: none !important; }
 	ytd-comments, ytd-masthead, app-header, ytd-browse, ytd-app { background: #222 !important; }
 	html body input#search { z-index: 9999999 !important; position: absolute !important; right: 0 !important; }
 	html h3, html h3.style-scope.ytd-rich-grid-video-renderer { font-size: 12px; }
@@ -367,6 +372,8 @@ xul|window {
 	#contents.ytd-rich-grid-renderer, #grid-title.ytd-rich-grid-renderer { width: 2400px !important; }
 	ytd-rich-item-renderer { width: 600px !important; }
 	ytd-rich-grid-video-renderer { max-width: none !important; }
+	ytd-thumbnail { width: 600px !important; height: 400px !important; }
+	div#dismissable.ytd-rich-grid-media { width: 600px !important; }
 
 	/* YouTube search results page */
 	ytd-two-column-search-results-renderer[guide-persistent-and-visible] #primary.ytd-two-column-search-results-renderer { max-width: none !important; width: 2400px !important; }
