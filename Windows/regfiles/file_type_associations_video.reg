@@ -8,6 +8,7 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\.divx]
 [-HKEY_CLASSES_ROOT\.flv]
 [-HKEY_CLASSES_ROOT\.m2ts]
+[-HKEY_CLASSES_ROOT\.ts]
 [-HKEY_CLASSES_ROOT\.m4v]
 [-HKEY_CLASSES_ROOT\.mkv]
 [-HKEY_CLASSES_ROOT\.mov]
@@ -28,6 +29,7 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\association_video_divx]
 [-HKEY_CLASSES_ROOT\association_video_flv]
 [-HKEY_CLASSES_ROOT\association_video_m2ts]
+[-HKEY_CLASSES_ROOT\association_video_ts]
 [-HKEY_CLASSES_ROOT\association_video_m4v]
 [-HKEY_CLASSES_ROOT\association_video_mkv]
 [-HKEY_CLASSES_ROOT\association_video_mov]
@@ -54,6 +56,8 @@ Windows Registry Editor Version 5.00
 @="association_video_flv"
 [HKEY_CLASSES_ROOT\.m2ts]
 @="association_video_m2ts"
+[HKEY_CLASSES_ROOT\.ts]
+@="association_video_ts"
 [HKEY_CLASSES_ROOT\.m4v]
 @="association_video_m4v"
 [HKEY_CLASSES_ROOT\.mkv]
@@ -142,6 +146,18 @@ Windows Registry Editor Version 5.00
 @="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
 [HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Opennew]
 [HKEY_CLASSES_ROOT\association_video_m2ts\Shell\Opennew\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
+
+[HKEY_CLASSES_ROOT\association_video_ts]
+@="video"
+[HKEY_CLASSES_ROOT\association_video_ts\DefaultIcon]
+@="j:\\dump\\icons\\video_ts.ico,0"
+[HKEY_CLASSES_ROOT\association_video_ts\Shell]
+[HKEY_CLASSES_ROOT\association_video_ts\Shell\Open]
+[HKEY_CLASSES_ROOT\association_video_ts\Shell\Open\command]
+@="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\""
+[HKEY_CLASSES_ROOT\association_video_ts\Shell\Opennew]
+[HKEY_CLASSES_ROOT\association_video_ts\Shell\Opennew\command]
 @="C:\\programs\\Video\\mpc-hc\\mpc-hc.exe \"%1\" /new"
 
 [HKEY_CLASSES_ROOT\association_video_m4v]
