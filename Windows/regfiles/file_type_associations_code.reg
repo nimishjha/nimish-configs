@@ -262,7 +262,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\association_code_htm]
 @="code_html"
 [HKEY_CLASSES_ROOT\association_code_htm\DefaultIcon]
-@="\"%1\""
+@="j:\\dump\\icons\\code_htm.ico,0"
 [HKEY_CLASSES_ROOT\association_code_htm\Shell]
 [HKEY_CLASSES_ROOT\association_code_htm\Shell\Open]
 [HKEY_CLASSES_ROOT\association_code_htm\Shell\Open\command]
@@ -392,7 +392,8 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\association_code_python\Shell]
 [HKEY_CLASSES_ROOT\association_code_python\Shell\Open]
 [HKEY_CLASSES_ROOT\association_code_python\Shell\Open\command]
-@="C:\\programs\\Development\\SublimeText\\sublime_text.exe \"%1\""
+@="\"C:\\Windows\\py.exe\" \"%L\" %*"
+
 
 [HKEY_CLASSES_ROOT\association_code_scss]
 @="code_scss"
