@@ -26,7 +26,7 @@ xul|window {
 
 	/*html div { box-shadow: none !important; }*/
 
-	html { background: #000 !important; font-size: 20px !important; }
+	html { background: #181818 !important; font-size: 20px !important; }
 	html body, html body[class], html body[id], html body[id][class] { background: #282828 !important; color: #909090 !important; font-family: "Swis721 Cn BT" !important; font-size: 20px !important; border: 0 !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
@@ -50,6 +50,14 @@ xul|window {
 	html h5, html h5[class], div[class] h5 { font: 1.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h6, html h6[class], div[class] h6 { font: 1rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 
+	part, chapternumber, chaptertitle, chaptersubtitle { color: #AAA !important; padding: 10px 20px !important; line-height: 160% !important; margin: 2px 0 !important; background: #1C1C1C !important; border: 0 !important; }
+	part { font: 3.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
+	chapternumber { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
+	chaptertitle { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
+	chaptersubtitle { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
+
+	screenrefresh { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: #777; display: block; }
+
 	documentheading { display: block; }
 	documentheading h1 { background: #000 !important; border-left: 10px solid #FFF !important; }
 
@@ -72,6 +80,7 @@ xul|window {
 
 	hr { height: 4px !important; background: #111 !important; border-style: solid !important; border-color: #111 !important; border-width: 0 !important; margin: 40px 0 !important; }
 	body.ebook hr { margin: 200px 0 !important; }
+	body.ebook section { margin: 200px 0 !important; }
 	legend { background: #181818 !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: #111 !important; padding: 20px !important; margin: 2px 0; }
@@ -186,6 +195,7 @@ xul|window {
 	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #FFF !important; }
 
 	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
+	div[class*="alert"] { color: #FF0 !important; }
 	div[class*="error"] { color: #F00 !important; }
 	div[class*="warn"] { color: #F90 !important; }
 
