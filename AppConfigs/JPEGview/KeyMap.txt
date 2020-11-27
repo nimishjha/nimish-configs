@@ -127,7 +127,7 @@
 // (Left, right, middle, extra mouse buttons, mouse left double click)
 
 // Uncomment the following line if you want to exit JPEGView with the Esc key immediatly when playing an animation or a slideshow
-// Esc                    IDM_EXIT
+Esc                    IDM_EXIT
 PgDn                    IDM_NEXT
 Right                   IDM_NEXT
 Left                    IDM_PREV
@@ -180,8 +180,6 @@ Up                	IDM_PAN_UP
 Down              	IDM_PAN_DOWN
 Left              	IDM_PAN_LEFT
 Right             	IDM_PAN_RIGHT
-Ctrl+Down               IDM_ZOOM_DEC
-Ctrl+Up                 IDM_ZOOM_INC
 Ctrl+A                  IDM_EXCHANGE_PROC_PARAMS
 Ctrl+C                  IDM_COPY
 C                       IDM_SORT_CREATION_DATE
@@ -197,10 +195,11 @@ D                       IDM_CLEAR_PARAM_DB
 Ctrl+Shift+E            IDM_TOUCH_IMAGE_EXIF
 Ctrl+O                  IDM_OPEN
 Ctrl+P                  IDM_PRINT
-Ctrl+R                  IDM_RELOAD
+// Ctrl+R                  IDM_RELOAD
 Alt+R                   IDM_SLIDESHOW_RESUME
 Ctrl+X                  IDM_COPY_FULL
 Ctrl+V                  IDM_PASTE
 Ctrl+L                  IDM_LANDSCAPE_MODE
 R                       IDM_ROTATE_90_LOSSLESS_CONFIRM
 T                       IDM_ROTATE_270_LOSSLESS_CONFIRM
+Ctrl+R			IDM_ROTATE_90
