@@ -41,7 +41,6 @@ xul|window {
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	html h1, html h2, html h3, html h4, html h5, html h6, html h1[class], html h2[class], html h3[class], html h4[class], html h5[class], html h6[class] { color: #AAA !important; padding: 10px 20px !important; line-height: 160% !important; margin: 2px 0 !important; background: #181818 !important; border: 0 !important; }
-	html body.ebook h1 { margin-top: 100px !important; }
 	html a h1, html a h2, html a h3, html a h4, html a h5, html a h6 { color: inherit !important; }
 	html h1, html h1[class], div[class] h1 { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	html h2, html h2[class], div[class] h2 { font: 1.8rem "Swis721 Cn BT", Calibri, sans-serif !important; }
@@ -60,6 +59,7 @@ xul|window {
 	chapternumber { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	chaptertitle { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
 	chaptersubtitle { font: 2.2rem "Swis721 Cn BT", Calibri, sans-serif !important; }
+	right { display: block !important; text-align: right !important; }
 
 	screenrefresh { position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: #777; display: block; }
 
