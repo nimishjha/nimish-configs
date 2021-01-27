@@ -41,6 +41,7 @@ xul|window {
 	body.pad100 ul li { border-left: 5px solid #0C0C0C !important; padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; line-height: 150% !important; }
 	body.pad100 ol li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; line-height: 150% !important; }
 	body.pad100 img { max-width: 100% !important; display: block !important; }
+	body.pad100 section { padding: 10px !important; border: 2px solid #111 !important; margin: 100px 0 !important; }
 	body.xdark { background: #111 !important; }
 	body.xblack { background: #000 !important; }
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
@@ -72,7 +73,8 @@ xul|window {
 	documentheading { display: block; margin: 0 0 500px 0 !important; }
 	documentheading h1 { font-size: 2.8rem !important; }
 
-	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, section, summary, ul, video { font: inherit !important; background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
+	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, summary, ul, video { background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
+	section { background: inherit !important; color: inherit !important; font: 22px "Swis721 Cn BT" !important; }
 	aside { background-color: #333 !important; color: #888 !important; padding: 10px !important; }
 	font, input, input[class], button { font-family: "Swis721 Cn BT" !important; font-size: 24px !important; }
 	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #FFF !important; }
