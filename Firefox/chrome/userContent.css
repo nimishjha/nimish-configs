@@ -187,12 +187,12 @@ xul|window {
 	body.xDontShowLinks a, body.xDontShowLinks a *, body.xDontShowLinks a:link { color: inherit !important; text-decoration: none !important; }
 	body.xDontShowLinks a:visited *, body.xDontShowLinks a:visited { color: inherit !important; text-decoration: none !important; }
 	body.xDontShowLinks a:hover *, body.xDontShowLinks a:focus *, body.xDontShowLinks a:hover, body.xDontShowLinks a:focus { color: #FFF !important; text-decoration: none !important; }
-	body.xDontShowLinks reference { display: none; }
+	/*body.xDontShowLinks reference { display: none; }*/
 
     	html.xHE, body.xHE, body.xHE td, body.xHE nav, body.xHE header, body.xHE body, body.xHE small, body.xHE big, body.xHE article, body.xHE section, body.xHE aside, body.xHE details, body.xHE div, body.xHE font, body.xHE article, body.xHE form, body.xHE fieldset, body.xHE label, body.xHE span, body.xHE p, body.xHE blockquote, body.xHE dd, body.xHE dt, body.xHE dl, body.xHE div, body.xHE ul, body.xHE ol, body.xHE li, body.xHE a, body.xHE i, body.xHE b, body.xHE strong, body.xHE h1, body.xHE h2, body.xHE h3, body.xHE h4, body.xHE h5, body.xHE pre, body.xHE em, body.xHE cite, body.xHE h6, body.xHE *, body.xHE { color: #333 !important; background: #080808 !important; }
 	body.xHE kbd, body.xHE samp { color: #F70 !important; }
 	body.xHE input, body.xHE textarea { opacity: 0 !important; }
-	body.xHE reference { display: none; }
+	/*body.xHE reference { display: none; }*/
 
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #F00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #F00 !important; }
