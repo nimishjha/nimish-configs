@@ -16,10 +16,10 @@ html#main-window { --lwt-text-color: #888 !important; }
 
 #main-menubar > menu { color: #888 !important; }
 
-/*#browser-bottombox { height: 30px; background: #141414 !important; }
+#browser-bottombox { height: 40px; background: #141414 !important; }
 .browserContainer>statuspanel { left: 4px !important; bottom: 8px; transition-duration: 0s !important; transition-delay: 0s !important; }
 .browserContainer>statuspanel>.statuspanel-inner>.statuspanel-label { margin-left: 0px !important; border: none !important; padding: 0px !important; background: transparent !important; color: #CCC !important; font: 12px Verdana !important; }
-*/
+
 
 /*
 
