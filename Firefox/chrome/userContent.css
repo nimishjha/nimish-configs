@@ -11,9 +11,9 @@ xul|window {
 	--backgroundHtml: #181818;
 	--backgroundBody: #292929;
 	--colorText: #A0A0A0;
-	--backgroundBody1: #303030;
-	--colorText1: #A6A6A6;
-	--backgroundBody2: #151515;
+	--backgroundBody1: #2F2F2F;
+	--colorText1: #AAA;
+	--backgroundBody2: #000;
 	--colorText2: #888;
 	--backgroundHeadings: #181818;
 	--colorHeadings: #AAA;
@@ -196,11 +196,11 @@ xul|window {
 /*	mark a:link, a:link mark { background: #000 !important; color: #F90 !important; }
 	mark a:visited, a:visited mark { color: #C60 !important; }
 	mark a:hover, a:hover mark { background-color: #000 !important; color: #FFF !important; }
-	a:hover mark, a:focus mark { background: #210 !important; color: #FFF !important; }*/
-
+	a:hover mark, a:focus mark { background: #210 !important; color: #FFF !important; }
+*/
 	/*mark { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }*/
 	/*mark { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
-	mark { background: #000 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	mark { background: #404040 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markgreen { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markred { background: #400 !important; color: #F44 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markblue { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }
@@ -225,7 +225,7 @@ xul|window {
 	body.nimbusTheme2 em, body.nimbusTheme2 i, body.nimbusTheme2 b, body.nimbusTheme2 strong { color: #AAA !important; background: transparent !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
 	/*body.nimbusTheme2 mark { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
-	body.nimbusTheme2 mark { background: #333 !important; color: #BBB !important; padding: 2px 0 !important; line-height: inherit !important; }
+	body.nimbusTheme2 mark { background: #333 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	body.nimbusTheme2 markgreen { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	body.nimbusTheme2 markred { background: #400 !important; color: #F44 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	/*body.nimbusTheme2 markblue { background: #448 !important; color: #99F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
@@ -393,6 +393,9 @@ xul|window {
 	yt-multi-page-menu-section-renderer,
 	ytd-info-panel-content-renderer
 		{ background: #000 !important; }
+
+	ytd-button-renderer.style-destructive[is-paper-button] { background: #000 !important; }
+	.ytd-subscribe-button-renderer { background: #000 !important; }
 
 	.less-button { display: none !important; }
 	ytd-comments, ytd-masthead, app-header, ytd-browse, ytd-app { background: #222 !important; }
