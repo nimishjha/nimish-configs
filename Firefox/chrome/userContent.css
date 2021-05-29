@@ -9,14 +9,19 @@ xul|window {
 
 :root {
 	--backgroundHtml: #181818;
-	--backgroundBody: #292929;
-	--colorText: #A0A0A0;
-	--backgroundBody1: #2F2F2F;
-	--colorText1: #AAA;
-	--backgroundBody2: #000;
-	--colorText2: #888;
+	--backgroundBody: #2C2C2C;
+	--colorText: #999;
+	--colorTextEmphasis: #CCC;
 	--backgroundHeadings: #181818;
 	--colorHeadings: #AAA;
+
+	--backgroundBody1: #353535;
+	--colorText1: #B0B0B0;
+	--colorTextEmphasis1: #CCC;
+
+	--backgroundBody2: #111;
+	--colorText2: #555;
+	--colorTextEmphasis2: #AAA;
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -43,10 +48,10 @@ xul|window {
 		50% { background: #AAA; }
 		100% { background: #181818; }
 	}
-/*	html:after { content: ""; position: fixed; left: 0; top: 0; width: 100%; height: 100px; background: #888; animation: move 40s linear alternate infinite; z-index: -1; }
-	html.nimbusTheme2:after { animation: movedark 40s linear alternate infinite; z-index: -1; }
-	html:after { content: ""; position: fixed; left: 0; top: 45vh; width: 100%; height: 100px; animation: fade 10s linear alternate infinite; z-index: -1; }
-*/
+	/*html:after { content: ""; position: fixed; left: 0; top: 0; width: 100%; height: 100px; background: #888; animation: move 40s linear alternate infinite; z-index: -1; }*/
+	/*html.nimbusTheme2:after { animation: movedark 40s linear alternate infinite; z-index: -1; }*/
+	/*html:after { content: ""; position: fixed; left: 0; top: 45vh; width: 100%; height: 100px; animation: fade 10s linear alternate infinite; z-index: -1; }*/
+
 
 	* { animation: none !important; transition: none !important; text-shadow: none !important; }
 
@@ -84,7 +89,7 @@ xul|window {
 	quote, quoteauthor, footnote { line-height: 135% !important; }
 	quote { display: block !important; padding: 1rem 2rem !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; color: #AAA !important; font-size: 1.2rem !important; }
 	quoteauthor { display: block !important;  padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: #202020 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; font-size: 1.2rem !important; text-align: right !important; }
-	footnote { display: block !important; padding: 0.2em 10px !important; margin: 2px 0 !important; background: #222 !important; border-width: 0 0 0 10px !important; border-style: solid !important; border-color: #181818 !important; color: #AAA !important; }
+	footnote { display: block !important; padding: 0.5em 10px !important; margin: 2px 0 !important; background: #222 !important; border-width: 0 0 0 10px !important; border-style: solid !important; border-color: #181818 !important; color: #AAA !important; }
 	partheading { display: block !important; margin: 500px 0 !important; }
 	chapterheading { display: block !important; margin: 500px 0 2px 0 !important; }
 	part, chapternumber, chaptertitle, chaptersubtitle { color: #AAA !important; padding: 10px 20px !important; line-height: 135% !important; margin: 2px 0 !important; background: #1C1C1C !important; border: 0 !important; }
@@ -101,7 +106,7 @@ xul|window {
 
 	main, article, blockquote, caption, center, col, colgroup, dd, div, div[class], dl, dt, figcaption, figure, footer, head, header, hgroup, img, li, menu, noscript, ol, p, summary, ul, video { background: inherit !important; color: inherit !important; border: none !important; font: 22px "Swis721 Cn BT" !important; }
 	section { background: inherit !important; color: inherit !important; font: 22px "Swis721 Cn BT" !important; }
-	aside { background-color: #333 !important; color: #888 !important; padding: 10px !important; }
+	aside { background-color: #333 !important; color: var(--colorText) !important; padding: 10px !important; }
 	font, input, input[class], button { font-family: "Swis721 Cn BT" !important; font-size: 24px !important; }
 	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #FFF !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #FFF !important; }
@@ -166,8 +171,8 @@ xul|window {
 	dt { padding: 0.5em 10px !important; line-height: 135% !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; color: #AAA !important; }
 	dd { padding: 0.25em 10px !important; line-height: 135% !important; margin: 2px 0 !important; background: #202020 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; }
 
-	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: #CCC !important; }
-	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: #CCC !important; }
+	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
+	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
 	small { font-size: 80% !important; }
 
@@ -198,14 +203,14 @@ xul|window {
 	mark a:hover, a:hover mark { background-color: #000 !important; color: #FFF !important; }
 	a:hover mark, a:focus mark { background: #210 !important; color: #FFF !important; }
 */
-	/*mark { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }*/
+	mark { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	/*mark { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
-	mark { background: #404040 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	markgreen { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	markred { background: #400 !important; color: #F44 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	/*mark { background: #404040 !important; padding: 2px 0 !important; line-height: inherit !important; }*/
+	markgreen { background: #040 !important; color: #0C0 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	markred { background: #400 !important; color: #C66 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markblue { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }
 	/*markblue { background: #448 !important; color: #99F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
-	markpurple { background: #404 !important; color: #F0F !important; padding: 2px 0 !important; line-height: inherit !important; }
+	markpurple { background: #404 !important; color: #C6C !important; padding: 2px 0 !important; line-height: inherit !important; }
 	markyellow { background: #540 !important; color: #DD8!important; padding: 2px 0 !important; line-height: inherit !important; }
 	markwhite { background: #000 !important; color: #DDD !important; padding: 2px 0 !important; line-height: inherit !important; }
 
@@ -222,18 +227,50 @@ xul|window {
     	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
     	body.nimbusTheme2 annotation { background: #222 !important; color: #AAA !important; }
 	body.nimbusTheme2 kbd, body.nimbusTheme2 samp { color: #F70 !important; }
-	body.nimbusTheme2 em, body.nimbusTheme2 i, body.nimbusTheme2 b, body.nimbusTheme2 strong { color: #AAA !important; background: transparent !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
-	/*body.nimbusTheme2 mark { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
-	body.nimbusTheme2 mark { background: #333 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	body.nimbusTheme2 markgreen { background: #040 !important; color: #0F0 !important; padding: 2px 0 !important; line-height: inherit !important; }
-	body.nimbusTheme2 markred { background: #400 !important; color: #F44 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	/*body.nimbusTheme2 mark { background: #420 !important; color: #F90 !important; padding: 2px 0 !important; line-height: inherit !important; }*/
+	body.nimbusTheme2 mark { background: #333 !important; color: #888 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	body.nimbusTheme2 markgreen { background: #040 !important; color: #0C0 !important; padding: 2px 0 !important; line-height: inherit !important; }
+	body.nimbusTheme2 markred { background: #400 !important; color: #C66 !important; padding: 2px 0 !important; line-height: inherit !important; }
 	/*body.nimbusTheme2 markblue { background: #448 !important; color: #99F !important; padding: 2px 0 !important; line-height: inherit !important; }*/
 	body.nimbusTheme2 markblue { background: #036 !important; color: #09F !important; padding: 2px 0 !important; line-height: inherit !important; }
-	body.nimbusTheme2 markpurple { background: #404 !important; color: #F0F !important; padding: 2px 0 !important; line-height: inherit !important; }
+	body.nimbusTheme2 markpurple { background: #404 !important; color: #C6C !important; padding: 2px 0 !important; line-height: inherit !important; }
 	body.nimbusTheme2 markyellow { background: #540 !important; color: #DD8!important; padding: 2px 0 !important; line-height: inherit !important; }
 	body.nimbusTheme2 markwhite { background: #000 !important; color: #DDD !important; padding: 2px 0 !important; line-height: inherit !important; }
 	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
+	body.nimbusTheme2 em,
+	body.nimbusTheme2 i,
+	body.nimbusTheme2 b,
+	body.nimbusTheme2 strong,
+	body.nimbusTheme2 mark b,
+	body.nimbusTheme2 markyellow b,
+	body.nimbusTheme2 markred b,
+	body.nimbusTheme2 markgreen b,
+	body.nimbusTheme2 markpurple b,
+	body.nimbusTheme2 markblue b,
+	body.nimbusTheme2 markwhite b,
+	body.nimbusTheme2 mark strong,
+	body.nimbusTheme2 markyellow strong,
+	body.nimbusTheme2 markred strong,
+	body.nimbusTheme2 markgreen strong,
+	body.nimbusTheme2 markpurple strong,
+	body.nimbusTheme2 markblue strong,
+	body.nimbusTheme2 markwhite strong,
+	body.nimbusTheme2 mark em,
+	body.nimbusTheme2 markyellow em,
+	body.nimbusTheme2 markred em,
+	body.nimbusTheme2 markgreen em,
+	body.nimbusTheme2 markpurple em,
+	body.nimbusTheme2 markblue em,
+	body.nimbusTheme2 markwhite em,
+	body.nimbusTheme2 mark i,
+	body.nimbusTheme2 markyellow i,
+	body.nimbusTheme2 markred i,
+	body.nimbusTheme2 markgreen i,
+	body.nimbusTheme2 markpurple i,
+	body.nimbusTheme2 markblue i,
+	body.nimbusTheme2 markwhite i
+		{ color: var(--colorTextEmphasis2) !important; background: transparent !important; }
 
 
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #F00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }

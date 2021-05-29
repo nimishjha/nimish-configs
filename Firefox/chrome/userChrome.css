@@ -65,7 +65,7 @@ ____________________________________________________
 
 
 #navigator-toolbox .tabbrowser-tab { border: 0 !important; }
-.tabs-newtab-button { display: none !important; }
+#tabs-newtab-button { display: none !important; }
 .tabbrowser-tab { -moz-box-align: stretch!important; color: #777 !important; padding: 0 10px !important; }
 .tabbrowser-tab[remote] { text-decoration: underline!important; }
 .tabbrowser-tab[selected=true] { position: relative!important; z-index: 2!important; background: #141414!important; }
@@ -92,13 +92,6 @@ ____________________________________________________
 #tabbrowser-tabs:-moz-lwtheme { --tab-line-color: transparent !important; }
 #tabbrowser-tabs .tabbrowser-tab .tab-close-button { display:none!important; }
 
-/*@keyframes njProgressBar { 0% { margin-right: 99px; } 100% { margin-right: 1px; } }*/
-#downloads-indicator-icon { background-image: none !important; }
-#downloads-indicator-progress-outer { background: #444 !important; /*width: 100px !important;*/ }
-#downloads-indicator-progress-inner { fill: #FF0 !important; background: #FF0 !important; /*animation-name: njProgressBar !important; margin-right: 100px;*/ }
-
-
-
 #searchbar { border: 0 !important; background: transparent !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background: #181818 !important; }
 
@@ -113,3 +106,16 @@ ____________________________________________________
 .tab-close-button { display: none !important; }
 .urlbar-container { padding: 0 !important; padding-block: 0 !important; }
 #urlbar-container, #search-container { padding-block: 0 !important; margin-inline: 0 !important; }
+
+
+/*
+#downloads-indicator-icon { background-image: none !important; }
+#downloads-indicator-start-image { display: none !important; }
+#downloads-indicator-anchor { min-width: 100px !important; min-height: 20px !important; -moz-context-properties: fill, fill-opacity !important; list-style-image: none !important; background: #000 !important; }
+#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer { visibility: hidden !important; top: 0 !important; left: 0 !important; width: 100px !important; height: 20px !important; border-radius: 0 !important; border: 1px solid #000 !important; padding: 1px !important; }
+#downloads-indicator-progress-inner { width: var(--download-progress-pcent) !important; height: 16px !important; background: #888 !important; border-radius: 0 !important; }
+toolbar .toolbarbutton-1 > .toolbarbutton-icon, toolbar .toolbarbutton-1 > .toolbarbutton-text, toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack { padding: 0 !important; border-radius: 0 !important; }
+#downloads-indicator-finish-box { display: none !important; }
+#downloads-indicator-start-box { display: none !important; }
+*/
+
