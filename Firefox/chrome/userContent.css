@@ -423,6 +423,11 @@ xul|window {
 	button[aria-pressed="true"] { outline: 2px solid #0F0 !important; }
 }
 
+@-moz-document domain(www.google.com), domain(google.com), domain(translate.google.com)
+{
+	c-wiz { background: #000 !important; color: #888 !important; }
+}
+
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
 	ytd-feed-filter-chip-bar-renderer,
