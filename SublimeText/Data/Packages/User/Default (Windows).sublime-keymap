@@ -30,6 +30,7 @@
 	{ "keys": ["ctrl+j"], "command": "fold_all" },
 	{ "keys": ["ctrl+k"], "command": "unfold_all" },
 	{ "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+q"], "command": "normalize_whitespace" },
 	{ "keys": ["ctrl+t"], "command": "unexpand_tabs", "args": { "set_translate_tabs": true }},
 	{ "keys": ["ctrl+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["alt+l"], "command": "toggle_in_selection", "context": [{ "key": "setting.is_widget", "operator": "equal", "operand": true }] },
