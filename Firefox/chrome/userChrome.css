@@ -12,6 +12,8 @@ menupopup,
 menubar
 	{ font: 12px Verdana !important; }
 
+:root > iframe.devtools-highlighter-renderer { opacity: 0.5 !important; }
+
 html#main-window { --lwt-text-color: #888 !important; }
 
 #main-menubar > menu { color: #888 !important; }
@@ -27,13 +29,7 @@ window[inFullscreen="true"] #browser-bottombox { display:none !important; }
 window[inFullscreen="true"] .browserContainer>statuspanel[type="overLink"] .statuspanel-label { display:none !important; }
 
 */
-____________________________________________________
 
-/*
-@-moz-document url("about:newtab") {
- body { background-color: #EDCF54 !important;}
-}
-*/
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab), url-prefix(about:downloads)
 {
@@ -86,7 +82,7 @@ ____________________________________________________
 #urlbar:not([focused="true"]):-moz-lwtheme, #navigator-toolbox .searchbar-textbox:not([focused="true"]):-moz-lwtheme { border-color: transparent !important; }
 #urlbar:hover, .searchbar-textbox:hover { border-color: transparent !important; }
 #urlbar:-moz-lwtheme[focused="true"], #navigator-toolbox .searchbar-textbox:-moz-lwtheme[focused="true"] { border-color: transparent !important; background: #222 !important; color: #CCC !important; }
-#urlbar:-moz-lwtheme, #navigator-toolbox .searchbar-textbox:-moz-lwtheme { background-color: transparent !important; color: #999 !important; }
+#urlbar:-moz-lwtheme, #navigator-toolbox .searchbar-textbox:-moz-lwtheme { background-color: transparent !important; color: #555 !important; }
 .browser-toolbar:not(.titlebar-color) { background-color: #222 !important; background-image: none !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background-image: none !important; background-color: #222 !important; }
 #tabbrowser-tabs:-moz-lwtheme { --tab-line-color: transparent !important; }
@@ -107,6 +103,10 @@ ____________________________________________________
 .urlbar-container { padding: 0 !important; padding-block: 0 !important; }
 #urlbar-container, #search-container { padding-block: 0 !important; margin-inline: 0 !important; }
 
+.urlbar-icon,
+.toolbarbutton-badge,
+.toolbarbutton-icon { filter: saturate(0) brightness(0.7) !important; }
+
 
 /*
 #downloads-indicator-icon { background-image: none !important; }
@@ -118,4 +118,6 @@ toolbar .toolbarbutton-1 > .toolbarbutton-icon, toolbar .toolbarbutton-1 > .tool
 #downloads-indicator-finish-box { display: none !important; }
 #downloads-indicator-start-box { display: none !important; }
 */
+
+
 
