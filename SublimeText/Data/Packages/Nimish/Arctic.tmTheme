@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<dict>
+	<key>name</key><string>BlackAndWhite</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>minimapBorder</key><string>#AACCFF</string>
+				<key>background</key><string>#182028</string>
+				<key>caret</key><string>#CCCCCC</string>
+				<key>foreground</key><string>#789</string>
+				<key>invisibles</key><string>#ff00ae</string>
+				<key>lineHighlight</key><string>#000814</string>
+				<key>selection</key><string>#000</string>
+				<key>selectionForeground</key><string>#BFF</string>
+				<key>findHighlight</key><string>#00FFFF</string>
+				<key>findHighlightForeground</key><string>#000000</string>
+				<key>selectionBorder</key><string>#000000</string>
+				<key>activeGuide</key><string>#5e00ff</string>
+				<key>bracketsForeground</key><string>#FFFF00</string>
+				<key>bracketsOptions</key><string>foreground</string>
+				<key>bracketContentsForeground</key><string>#FFFF00</string>
+				<key>bracketContentsOptions</key><string>foreground</string>
+				<key>tagsOptions</key><string>foreground</string>
+				<key>tagsForeground</key><string>#FFFF00</string>
+			</dict>
+		</dict>
+		<dict><key>scope</key><string>keyword, storage</string><key>settings</key> <dict><key>foreground</key><string>#568</string></dict> </dict>
+		<dict><key>scope</key><string>keyword.operator.arithmetic, punctuation.definition, punctuation.section.arguments</string><key>settings</key> <dict><key>foreground</key><string>#80A0F0</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.definition.brackets, punctuation.section.brackets, punctuation.section.block</string><key>settings</key> <dict><key>foreground</key><string>#80A0C0</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.definition.block</string><key>settings</key> <dict><key>foreground</key><string>#0099FF</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.section.embedded</string><key>settings</key> <dict><key>foreground</key><string>#FF55AA</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.section.property-list</string><key>settings</key> <dict><key>foreground</key><string>#dddddd</string></dict></dict>
+		<dict><key>scope</key><string>entity.other.pseudo-element.css</string><key>settings</key> <dict><key>foreground</key><string>#00CCFF</string></dict></dict>
+		<dict><key>scope</key><string>entity.name.function, variable.function, meta.function.declaration, support.function</string><key>settings</key> <dict><key>foreground</key><string>#A0D0E0</string></dict></dict>
+		<dict><key>scope</key><string>variable, variable.other.object, support.type, support.class</string><key>settings</key> <dict><key>foreground</key><string>#80A0C0</string></dict></dict>
+		<dict><key>scope</key><string>meta.property.object, meta.object-literal.key, meta.mapping.key</string><key>settings</key><dict><key>foreground</key><string>#507090</string></dict></dict>
+		<dict><key>scope</key><string>variable.other.constant</string><key>settings</key> <dict><key>foreground</key><string>#00CCFF</string></dict></dict>
+		<dict><key>scope</key><string>comment, punctuation.definition.comment</string><key>settings</key> <dict><key>foreground</key><string>#90A0C0</string><key>background</key><string>#203040</string></dict></dict>
+		<dict><key>scope</key><string>string, punctuation.definition.string</string><key>settings</key> <dict><key>foreground</key><string>#7090B0</string><key>background</key><string>#203840</string></dict></dict>
+		<dict><key>scope</key><string>constant.numeric</string><key>settings</key> <dict><key>foreground</key><string>#AABBCC</string><key>background</key><string>#203040</string></dict></dict>
+		<dict><key>scope</key><string>constant.language</string><key>settings</key> <dict><key>foreground</key><string>#AABBCC</string></dict></dict>
+		<dict><key>scope</key><string>entity.name.class, entity.name.type</string><key>settings</key> <dict><key>foreground</key><string>#88CC00</string></dict></dict>
+		<dict><key>scope</key><string>entity.other.inherited-class</string><key>settings</key> <dict><key>foreground</key><string>#AAFF00</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.definition.tag</string><key>settings</key> <dict><key>foreground</key><string>#507090</string></dict></dict>
+		<dict><key>scope</key><string>entity.name.tag</string><key>settings</key> <dict><key>foreground</key><string>#507090</string></dict></dict>
+		<dict><key>scope</key><string>entity.other.attribute-name</string><key>settings</key> <dict><key>foreground</key><string>#88AAFF</string></dict></dict>
+		<dict><key>scope</key><string>support.constant</string><key>settings</key> <dict><key>foreground</key><string>#7799bb</string></dict></dict>
+		<dict><key>scope</key><string>support.class.builtin</string><key>settings</key> <dict><key>foreground</key><string>#AABBCC</string></dict></dict>
+		<dict><key>scope</key><string>support.other.variable</string><key>settings</key> <dict><key>foreground</key><string>#FF55AA</string></dict></dict>
+		<dict><key>scope</key><string>invalid</string><key>settings</key> <dict><key>background</key><string>#AA0000</string><key>foreground</key><string>#FFFFFF</string></dict></dict>
+		<dict><key>scope</key><string>invalid.deprecated</string><key>settings</key> <dict><key>background</key><string>#440020</string><key>foreground</key><string>#ff00ae</string></dict></dict>
+		<dict><key>scope</key><string>meta.diff, meta.diff.header</string><key>settings</key> <dict><key>foreground</key><string>#767676</string></dict></dict>
+		<dict><key>scope</key><string>markup.deleted</string><key>settings</key> <dict><key>foreground</key><string>#5e00ff</string></dict></dict>
+		<dict><key>scope</key><string>markup.inserted</string><key>settings</key> <dict><key>foreground</key><string>#aeff00</string></dict></dict>
+		<dict><key>scope</key><string>markup.changed</string><key>settings</key> <dict><key>foreground</key><string>#aeff00</string></dict></dict>
+		<dict><key>scope</key><string>constant.numeric.line-number.find-in-files - match</string><key>settings</key> <dict><key>foreground</key><string>#707070</string></dict></dict>
+		<dict><key>scope</key><string>entity.name.filename.find-in-files</string><key>settings</key> <dict><key>foreground</key><string>#ffa600</string></dict></dict>
+	</array>
+	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+</dict>
+</plist>

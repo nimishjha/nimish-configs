@@ -156,10 +156,11 @@ Alt+1			IDM_ZOOM_25
 Alt+2			IDM_ZOOM_50
 Alt+3			IDM_ZOOM_100
 Alt+4			IDM_ZOOM_200
-Alt+L			IDM_LANDSCAPE_MODE
+Alt+5			IDM_ZOOM_400
 F3                      IDM_TOGGLE_RESAMPLING_QUALITY
 F4                      IDM_KEEP_PARAMETERS
 F5                      IDM_AUTO_CORRECTION
+Alt+L			IDM_LANDSCAPE_MODE
 Shift+F5                IDM_AUTO_CORRECTION_SECTION
 F6                      IDM_LDC
 Shift+Ctrl+F6           IDM_LDC_HIGHLIGHTS_INC
@@ -195,11 +196,10 @@ D                       IDM_CLEAR_PARAM_DB
 Ctrl+Shift+E            IDM_TOUCH_IMAGE_EXIF
 Ctrl+O                  IDM_OPEN
 Ctrl+P                  IDM_PRINT
-// Ctrl+R                  IDM_RELOAD
+Ctrl+R                  IDM_ROTATE_90
 Alt+R                   IDM_SLIDESHOW_RESUME
 Ctrl+X                  IDM_COPY_FULL
 Ctrl+V                  IDM_PASTE
 Ctrl+L                  IDM_LANDSCAPE_MODE
 R                       IDM_ROTATE_90_LOSSLESS_CONFIRM
 T                       IDM_ROTATE_270_LOSSLESS_CONFIRM
-Ctrl+R			IDM_ROTATE_90

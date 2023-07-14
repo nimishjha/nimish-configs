@@ -1,38 +1,41 @@
 /*html|html,
 xul|page,
 xul|window {
-  font: message-box;
-  -moz-appearance: none;
-  background-color: #141414 !important;
-  color: #CCC !important;
+	font: message-box;
+	-moz-appearance: none;
+	background-color: #141414 !important;
+	color: #CCC !important;
 }*/
 
 :root,
 menupopup,
 menubar
-	{ font: 12px Verdana !important; }
+	{ font: 22px Swis721 Cn BT !important; }
+
+.tab-label-container, #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container { height: 1.2em !important; }
+.tab-label { line-height: 1.2em !important; }
+
+:root > iframe.devtools-highlighter-renderer { opacity: 0.5 !important; }
 
 html#main-window { --lwt-text-color: #888 !important; }
 
 #main-menubar > menu { color: #888 !important; }
 
-#browser-bottombox { height: 36px; background: #000 !important; }
+/*#browser-bottombox { height: 36px; background: #000 !important; }*/
+/*
 .browserContainer>statuspanel { left: 4px !important; bottom: 8px; transition-duration: 0s !important; transition-delay: 0s !important; }
 .browserContainer>statuspanel>.statuspanel-inner>.statuspanel-label { margin-left: 0px !important; border: none !important; padding: 0px !important; background: transparent !important; color: #CCC !important; font: 12px Verdana !important; }
-
+*/
 
 /*
+#statuspanel, #statuspanel[hidden="true"], #statuspanel:not([hidden]) { display: block !important; background: #111 !important; position: fixed !important; bottom: 0 !important; width: 100% !important; height: 35px !important; padding: 0 10px !important; }
+#statuspanel-label { background: transparent !important; color: #AAA !important; }
+#statuspanel[inactive], #statuspanel[inactive="true"] { opacity: 1 !important; visibility: visible !important; }
+*/
 
+/*
 window[inFullscreen="true"] #browser-bottombox { display:none !important; }
 window[inFullscreen="true"] .browserContainer>statuspanel[type="overLink"] .statuspanel-label { display:none !important; }
-
-*/
-____________________________________________________
-
-/*
-@-moz-document url("about:newtab") {
- body { background-color: #EDCF54 !important;}
-}
 */
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab), url-prefix(about:downloads)
@@ -62,8 +65,6 @@ ____________________________________________________
 	}
 }
 
-
-
 #navigator-toolbox .tabbrowser-tab { border: 0 !important; }
 #tabs-newtab-button { display: none !important; }
 .tabbrowser-tab { -moz-box-align: stretch!important; color: #777 !important; padding: 0 10px !important; }
@@ -73,20 +74,18 @@ ____________________________________________________
 .tabbrowser-tab[selected=true] .tab-label { color: #AAA !important; border: 0 !important; }
 .tab-background-middle, .tab-background-start, .tab-background-end { background-clip: padding-box, padding-box, content-box!important; background-image: none!important; background-color: transparent !important; }
 
-
 /*
 
 
 
 */
 
-
-
 #urlbar, #searchbar{ font: 24px "Swis721 Cn BT" !important; }
 #urlbar:not([focused="true"]):-moz-lwtheme, #navigator-toolbox .searchbar-textbox:not([focused="true"]):-moz-lwtheme { border-color: transparent !important; }
 #urlbar:hover, .searchbar-textbox:hover { border-color: transparent !important; }
 #urlbar:-moz-lwtheme[focused="true"], #navigator-toolbox .searchbar-textbox:-moz-lwtheme[focused="true"] { border-color: transparent !important; background: #222 !important; color: #CCC !important; }
-#urlbar:-moz-lwtheme, #navigator-toolbox .searchbar-textbox:-moz-lwtheme { background-color: transparent !important; color: #999 !important; }
+#urlbar:not([focused="true"]) { color: #555 !important; }
+#urlbar:-moz-lwtheme, #navigator-toolbox .searchbar-textbox:-moz-lwtheme { background-color: transparent !important; color: #555 !important; }
 .browser-toolbar:not(.titlebar-color) { background-color: #222 !important; background-image: none !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background-image: none !important; background-color: #222 !important; }
 #tabbrowser-tabs:-moz-lwtheme { --tab-line-color: transparent !important; }
@@ -95,10 +94,10 @@ ____________________________________________________
 #searchbar { border: 0 !important; background: transparent !important; }
 #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="true"]:-moz-lwtheme, #tabbrowser-tabs:not([movingtab]) > .tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]:-moz-lwtheme { background: #181818 !important; }
 
+#tabbrowser-tabs, #tabbrowser-tabs * { --tab-loading-fill: #00CC00 !important; animation-delay: 0ms !important; animation-duration: 0ms !important; transition: none !important; }
+
 #urlbar-container { background: #141414 !important; }
 #urlbar-background { display: none !important; }
-/*#urlbar:-moz-lwtheme > #urlbar-background, #navigator-toolbox #searchbar:-moz-lwtheme { border-color: transparent; background-color: #141414; }*/
-
 
 #navigator-toolbox { background: #000 !important; color: #777 !important; }
 .tab-background { border-radius: 0 !important; margin-block: 0 !important; background-image: none !important; }
@@ -107,15 +106,23 @@ ____________________________________________________
 .urlbar-container { padding: 0 !important; padding-block: 0 !important; }
 #urlbar-container, #search-container { padding-block: 0 !important; margin-inline: 0 !important; }
 
+.urlbar-icon,
+.toolbarbutton-badge,
+.toolbarbutton-icon { filter: saturate(0) brightness(0.7) !important; }
+.private-browsing-indicator { filter: saturate(0) brightness(0.7) !important; }
 
-/*
-#downloads-indicator-icon { background-image: none !important; }
-#downloads-indicator-start-image { display: none !important; }
-#downloads-indicator-anchor { min-width: 100px !important; min-height: 20px !important; -moz-context-properties: fill, fill-opacity !important; list-style-image: none !important; background: #000 !important; }
-#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer { visibility: hidden !important; top: 0 !important; left: 0 !important; width: 100px !important; height: 20px !important; border-radius: 0 !important; border: 1px solid #000 !important; padding: 1px !important; }
-#downloads-indicator-progress-inner { width: var(--download-progress-pcent) !important; height: 16px !important; background: #888 !important; border-radius: 0 !important; }
-toolbar .toolbarbutton-1 > .toolbarbutton-icon, toolbar .toolbarbutton-1 > .toolbarbutton-text, toolbar .toolbarbutton-1 > .toolbarbutton-badge-stack { padding: 0 !important; border-radius: 0 !important; }
-#downloads-indicator-finish-box { display: none !important; }
-#downloads-indicator-start-box { display: none !important; }
-*/
+.urlbarView { background: #111; }
+
+:root:not([lwtheme-image]) .browserContainer > findbar:-moz-lwtheme { background-color: #111 !important; border-color: #111 !important; background-image: none !important; color: #808080 !important; }
+
+input[type="checkbox"].toggle-button:checked { background: #357 !important; border-color: #357 !important; }
+
+input[type="checkbox"].toggle-button::before { background: #ACE !important; }
+
+.tab-background { outline: 0 !important; }
+
+@media (prefers-contrast)
+{
+	.tab-background:is([selected], [multiselected]), .tabbrowser-tab:hover > .tab-stack > .tab-background {  border: 0 !important; }
+}
 

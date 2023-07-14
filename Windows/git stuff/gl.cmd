@@ -1,2 +1,2 @@
 @echo off
-git log --pretty=format:"%%C(Yellow bold)%%h %%<|(25)%%C(Cyan bold)%%cn %%C(green bold) %%<|(50)%%cd %%C(White) %%s" -40 --no-merges --date=format:%%c
+git log --pretty=format:"%%C(Yellow bold)%%h %%<|(30)%%C(Blue no-bold)%%cn %%<|(55)%%C(Blue bold)%%an %%<|(80)%%C(Green no-bold)%%ad %%<|(105)%%C(Green bold)%%cd %%C(White no-bold) %%s" --date=format:"%%Y %%a %%b %%d %%H:%%M" -30

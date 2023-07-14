@@ -1,0 +1,57 @@
+general
+{
+	output_format = "i3bar"
+	colors = true
+	color_good = "#004080"
+	color_degraded = "#A05000"
+	color_bad = "#C00000"
+	interval = 5
+}
+
+order += "ethernet none1"
+order += "cpu_usage"
+order += "ethernet none2"
+order += "memory"
+order += "ethernet enp6s0"
+order += "ethernet proton0"
+order += "tztime local"
+
+ethernet none1
+{
+	color_bad = "#404040"
+	format_down = "CPU"
+}
+
+cpu_usage
+{
+	format = "%usage"
+}
+
+ethernet none2
+{
+	color_bad = "#404040"
+	format_down = "RAM"
+}
+
+memory
+{
+	memory_used_method = classical
+	format="%used"
+}
+
+ethernet enp6s0
+{
+        format_up = "ETH"
+        format_down = "ETH"
+}
+
+ethernet proton0
+{
+        format_up = "VPN"
+        format_down = "VPN"
+}
+
+tztime local
+{
+	format = "%A, %e %B %Y %H:%M"
+}

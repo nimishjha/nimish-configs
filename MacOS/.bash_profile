@@ -12,9 +12,6 @@ alias ga='git add .'
 alias gbmy="git for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)' | grep Nimish"
 alias gb="git branch -v --sort=-committerdate"
 
-alias ovc='git checkout feature/ovc/ovc-develop'
-alias corporate='git checkout feature/corporate/corporate-develop'
-
 function gc(){ git commit -m "$1"; }
 function gcn(){ git commit -m "$1" -n; }
 function youtubeflac(){ youtube-dl -x --audio-format flac "$1"; }

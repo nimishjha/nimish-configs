@@ -1,0 +1,1 @@
+~/.var/app/com.github.wwmm.easyeffects/config/easyeffects/output
