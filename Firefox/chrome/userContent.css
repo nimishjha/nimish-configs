@@ -8,29 +8,29 @@
 	--colorLinksHover: #DDD;
 	--colorLinksVisited:  #55C;
 	--backgroundNav: #111;
-	--fontSizeSmall: 16px;
+	--fontSizeSmall: 0.8rem;
 	--colorBorders: #111;
 
 	--backgroundHtml: #181818;
 	--backgroundBody: #242424;
-	--colorText: #999;
-	--colorTextEmphasis: #C0C0C0;
+	--colorText: #777;
+	--colorTextEmphasis: #999;
 	--backgroundHeadings: #131313;
-	--colorHeadings: #999;
+	--colorHeadings: #777;
 	--colorSeparator: #181818;
 	--colorBorderDark: #111;
 	--colorBorderLight: #444;
 
 	--backgroundBody1: #242424;
-	--colorText1: #999;
-	--colorTextEmphasis1: #C0C0C0;
-	--colorHeadings1: #999;
+	--colorText1: #777;
+	--colorTextEmphasis1: #999;
+	--colorHeadings1: #777;
 
 	--backgroundHtml2: #000;
 	--backgroundBody2: #000;
-	--colorText2: #909090;
-	--colorHeadings2: #A0A0A0;
-	--colorTextEmphasis2: #BBB;
+	--colorText2: #777;
+	--colorHeadings2: #777;
+	--colorTextEmphasis2: #999;
 
 	--component-bg-color: #404;
 }
@@ -64,13 +64,13 @@
 	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--backgroundBody2) !important; color: var(--colorText2) !important; }
 
 	html, html body, #nimbus body {
-		font-size: 26px !important;
+		font-size: 22px !important;
 		font-family: "Swis721 Cn BT" !important;
 		font-style: normal !important;
 		line-height: var(--lineHeight) !important;
 	}
 
-	figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: 26px !important; }
+	math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: 22px !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
 	body.pad100 table { width: 100% !important; }
@@ -185,12 +185,12 @@
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
 
-	pre em { color: #00AAFF; }
-	pre i { color: #0088CC; }
-	pre b { color: #44EEFF; }
-	pre u { color: #6677EE; }
-	pre dfn { color: #8888CC; }
-	pre s { color: #6677CC; }
+	pre em { color: #00AAFF !important; }
+	pre i { color: #0088CC !important; }
+	pre b { color: #44EEFF !important; }
+	pre u { color: #6677EE !important; }
+	pre dfn { color: #8888CC !important; }
+	pre s { color: #6677CC !important; }
 	pre q1 { color: #1CF; background: #003040; }
 	pre q2 { color: #57F; background: #203040; }
 	pre c1 { color: #AABBCC; background: #303840; }
@@ -359,7 +359,7 @@
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #555 !important; background: #181818 !important; margin-bottom: 2px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
 
-	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
+	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 3px 0 !important; line-height: inherit !important; }
 	mark { background: #048 !important; color: #6CF !important; }
 	markgreen { background: #150 !important; color: #2C0 !important; }
 	markred { background: #500 !important; color: #E33 !important; }
