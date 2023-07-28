@@ -1,0 +1,42 @@
+[user]
+	email = asd@asd.asd
+	name = asd
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow bold
+	remote = white bold
+[color "diff"]
+	meta = white bold blue bold
+	frag = yellow bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = magenta bold
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[core]
+	editor = micro
+	pager = delta
+[cola]
+	spellcheck = false
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	light = false
+	syntax-theme = none
+	plus-style = 155 22
+	minus-style = 197 52
+	zero-style = white auto
+	line-buffer-size = 0
+[merge]
+	conflictstyle = diff3
+[diff]
+	colorMoved = default
