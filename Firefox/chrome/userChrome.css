@@ -10,7 +10,7 @@ xul|window {
 :root,
 menupopup,
 menubar
-	{ font: 22px Swis721 Cn BT !important; }
+	{ font: 16px Swis721 Cn BT !important; }
 
 .tab-label-container, #tabbrowser-tabs:not([secondarytext-unsupported]) .tab-label-container { height: 1.2em !important; }
 .tab-label { line-height: 1.2em !important; }
@@ -67,14 +67,16 @@ window[inFullscreen="true"] .browserContainer>statuspanel[type="overLink"] .stat
 
 #navigator-toolbox .tabbrowser-tab { border: 0 !important; }
 #tabs-newtab-button { display: none !important; }
-.tabbrowser-tab { -moz-box-align: stretch!important; color: #777 !important; padding: 0 10px !important; }
+.tabbrowser-tab { -moz-box-align: stretch!important; color: #555 !important; padding: 0 10px !important; }
 .tabbrowser-tab[remote] { text-decoration: underline!important; }
 .tabbrowser-tab[selected=true] { position: relative!important; z-index: 2!important; background: #141414!important; }
 .tab-icon-image { display: none !important; }
-.tabbrowser-tab[selected=true] .tab-label { color: #AAA !important; border: 0 !important; }
+.tabbrowser-tab[selected=true] .tab-label { color: #777 !important; border: 0 !important; }
 .tab-background-middle, .tab-background-start, .tab-background-end { background-clip: padding-box, padding-box, content-box!important; background-image: none!important; background-color: transparent !important; }
 #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, .tab-background:is([selected], [multiselected]) { background: #141414 !important; }
 #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon, #tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) { box-shadow: none !important; }
+/*Disable tab gradient*/
+.tab-label-container[textoverflow][labeldirection="ltr"]:not([pinned]), .tab-label-container[textoverflow]:not([labeldirection], [pinned]):-moz-locale-dir(ltr) { mask-image: none !important; }
 
 /*
 
@@ -127,4 +129,3 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 {
 	.tab-background:is([selected], [multiselected]), .tabbrowser-tab:hover > .tab-stack > .tab-background {  border: 0 !important; }
 }
-

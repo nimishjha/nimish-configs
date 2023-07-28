@@ -178,9 +178,9 @@
 	tt { color: #06C !important; }
 	kbd { color: #4D4 !important; }
 	samp { color: #0CC !important; }
-	pre { font: bold 22px/1.2 "Swis721CnBTCode", Consolas, monospace !important; }
-	body.nimbusTheme1 pre { font: bold 20px/1.2 Consolas, monospace !important; }
-	body.nimbusTheme2 pre { font: bold 20px/1.2 Consolas, monospace !important; }
+	pre { font: 18px/1.2 "Swis721CnBTCode", Consolas, monospace !important; }
+	body.nimbusTheme1 pre { font: bold 16px/1.2 Consolas, monospace !important; }
+	body.nimbusTheme2 pre { font: bold 16px/1.2 Consolas, monospace !important; }
 	pre { background: #0C0C0C !important; color: #888 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
