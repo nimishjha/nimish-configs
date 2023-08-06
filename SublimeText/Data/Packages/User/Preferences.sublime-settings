@@ -6,7 +6,7 @@
 	"auto_match_enabled": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Nimish/BlueGreen.tmTheme",
+	"color_scheme": "Packages/Nimish/ArcticDim.tmTheme",
 	"detect_indentation": true,
 	"drag_text": false,
 	"draw_indent_guides": false,
@@ -77,11 +77,12 @@
 		"uploads",
 		"migrate"
 	],
-	"font_face": "Swis721CnBTCode",
+	"font_face": "Swis721 Cn BT",
 	"font_options":
 	[
+		""
 	],
-	"font_size": 17,
+	"font_size": 14,
 	"gutter": true,
 	"hardware_acceleration": "none",
 	"highlight_line": false,
@@ -90,8 +91,8 @@
 		"Vintage"
 	],
 	"line_numbers": true,
-	"line_padding_bottom": 2,
-	"line_padding_top": 2,
+	"line_padding_bottom": 0,
+	"line_padding_top": 0,
 	"margin": 0,
 	"match_brackets": true,
 	"open_files_in_new_window": "never",

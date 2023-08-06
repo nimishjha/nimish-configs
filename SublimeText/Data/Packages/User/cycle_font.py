@@ -2,20 +2,15 @@ import sublime, sublime_plugin
 
 class CycleFontCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
+		sublime.log_commands(False)
 		preferences = sublime.load_settings('Preferences.sublime-settings')
 		current_font = self.view.settings().get("font_face")
 		fonts = [
-			["Swis721CnBTCode", 17, []],
-			["Monospace", 12, ["bold"]],
-			["SF Mono", 12, [ "bold" ]],
-			# ["Swis721 Cn BT", 16, ["bold"]],
-			# ["Consolas", 14, ["bold" ]],
-			# ["JetBrains Mono NL", 14, ["bold"]],
-			# ["Consolas", 14, ["normal"]],
-			# ["Menlo Bold for Powerline", 12, []],
-			# ["Arial", 13, ["bold"]],
-			# ["Verdcode", 11, ["bold"]],
-			# ["Tahoma", 13, ["bold"]],
+			# ["Swis721CnBTCode", 15, []],
+			# ["Swis721 Cn BT", 14, ["bold"]],
+			["Swis721 Cn BT", 14, []],
+			["Monospace", 11, ["bold"]],
+			# ["SF Mono", 11, [ "bold" ]],
 		]
 		num_fonts = len(fonts)
 		new_index = -1

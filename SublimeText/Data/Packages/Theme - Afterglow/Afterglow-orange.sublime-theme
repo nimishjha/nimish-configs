@@ -589,7 +589,7 @@
 				"color": "#888",
 				"font.face": "var(fontSidebar)",
 				"font.bold": true,
-				"font.size": 24,
+				"font.size": "var(fontSizeSidebar)",
 			},
 			{
 				// Sidebar entry color on hover
