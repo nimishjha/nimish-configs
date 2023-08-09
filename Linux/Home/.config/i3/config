@@ -154,6 +154,9 @@ assign [class="Steam"] 9
 
 focus_follows_mouse	no
 
+# hide title bars
+default_border	pixel
+
 #
 #	Custom keyboard shortcuts
 #
@@ -178,8 +181,9 @@ bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H%M%S`.png
 #
 bar
 {
+	mode			hide
 	status_command		i3status
-	font			pango:Swis721 Cn BT 14
+	font			pango:Swis721 Cn BT 16
 	tray_output		primary
 	tray_padding		20
 	separator_symbol	" "
@@ -187,11 +191,11 @@ bar
 	bindsym button5 nop
 	colors
 	{
-		background		#000000
-		statusline		#303030
-		focused_workspace	#303030 #303030 #606060 #00CC00
+		background		#181818
+		statusline		#606060
+		focused_workspace	#404040 #404040 #909090 #00CC00
 		urgent_workspace	#AA0000 #AA0000 #DDDDDD #00CC00
 		active_workspace	#CC5500 #CC5500 #808080 #00CC00
-		inactive_workspace	#101010 #000000 #303030 #00CC00
+		inactive_workspace	#000000 #181818 #404040 #00CC00
 	}
 }

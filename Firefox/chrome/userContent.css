@@ -178,10 +178,10 @@
 	tt { color: #06C !important; }
 	kbd { color: #4D4 !important; }
 	samp { color: #0CC !important; }
-	pre { font: 18px/1.2 "Swis721CnBTCode", Consolas, monospace !important; }
-	body.nimbusTheme1 pre { font: bold 16px/1.2 Consolas, monospace !important; }
-	body.nimbusTheme2 pre { font: bold 16px/1.2 Consolas, monospace !important; }
-	pre { background: #0C0C0C !important; color: #888 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; overflow-x: auto !important; }
+	pre { font: bold 20px/1.2 "swis721 cn bt", monospace !important; }
+	body.nimbusTheme1 pre { font: bold 15px/1.2 monospace !important; }
+	body.nimbusTheme2 pre { font: bold 15px/1.2 monospace !important; }
+	pre { background: #0C0C0C !important; color: #888 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
 
@@ -202,22 +202,22 @@
 	pre xh { color: #AADDCC; }
 	pre xv { color: #C36; }
 
-	X0 { color: #6666CC; }
-	X1 { color: #EE6688; }
-	X2 { color: #6677DD; }
-	X3 { color: #8899CC; }
-	X4 { color: #2299DD; }
-	X5 { color: #8855EE; }
-	X6 { color: #33BBCC; }
-	X7 { color: #AA7788; }
-	X8 { color: #CC44BB; }
-	X9 { color: #EE9966; }
-	X10 { color: #6666EE; }
-	X11 { color: #EE00AA; }
-	X12 { color: #BB44BB; }
-	X13 { color: #9900DD; }
-	X14 { color: #9966DD; }
-	X15 { color: #22BBCC; }
+	X0 { color: #AA99BB; }
+	X1 { color: #BB7777; }
+	X2 { color: #9966BB; }
+	X3 { color: #AA77AA; }
+	X4 { color: #885566; }
+	X5 { color: #665577; }
+	X6 { color: #556699; }
+	X7 { color: #558866; }
+	X8 { color: #BB5588; }
+	X9 { color: #885577; }
+	X10 { color: #BB8866; }
+	X11 { color: #558866; }
+	X12 { color: #8888BB; }
+	X13 { color: #BB77AA; }
+	X14 { color: #5566AA; }
+	X15 { color: #4444AA; }
 
 	XC { color: #1CF; background: #247; }
 	XK { color: #1177CC; }
@@ -482,101 +482,8 @@
 
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
-	#avatar-btn img,
-	ytd-shelf-renderer,
-	#related,
-	ytd-mealbar-promo-renderer
-		{ display: none !important; }
-
-	ytd-rich-grid-video-renderer #avatar-link { opacity: 0 !important; width: 1px !important;  }
-
-	ytd-feed-filter-chip-bar-renderer,
-	ytd-comment-video-thumbnail-header-renderer,
-	yt-multi-page-menu-section-renderer,
-	ytd-info-panel-content-renderer,
-	ytd-simple-menu-header-renderer,
-	ytd-multi-page-menu-renderer,
-	tp-yt-paper-listbox,
-	ytd-toggle-button-renderer
-		{ background: #000 !important; }
-
-	ytd-button-renderer.style-destructive[is-paper-button] { background: #000 !important; }
-	.ytd-subscribe-button-renderer { background: #000 !important; }
-
-	.less-button { display: none !important; }
-	ytd-comments, ytd-masthead, app-header, ytd-browse, ytd-app { background: var(--backgroundBody) !important; }
-	html body input#search { z-index: 2147483647 !important; position: absolute !important; right: 0 !important; }
-	#content-text.ytd-comment-renderer,
-	.published-time-text.ytd-comment-renderer,
-	#author-text.yt-simple-endpoint.ytd-comment-renderer
-		{ font-size: 22px !important; line-height: 30px !important; }
-	ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 200px 200px 0 rgba(0,0,0,0.7); }
-	ytd-thumbnail-overlay-time-status-renderer { filter: saturate(0) brightness(1); }
-	#avatar-link { display: none !important; }
-	ytd-app[is-watch-page] { background: var(--backgroundBody) !important; }
-	.paper-toast { box-shadow: inset 200px 200px 0 #000 !important; }
-	paper-tab { color: #999 !important; }
-	paper-tab.iron-selected { color: #FFF !important; }
-	yt-formatted-string#content-text.style-scope.ytd-comment-renderer { color: #888 !important; }
-	ytd-comment-renderer { background: #181818 !important; }
-	ytd-two-column-browse-results-renderer, ytd-playlist-sidebar-renderer.style-scope { background: var(--backgroundBody) !important; }
-	ytd-rich-metadata-renderer { background: #111 !important; }
-	ytd-clarification-renderer { display: none !important; }
-	ytd-post-renderer { background: #111 !important; }
-	ytd-commentbox { position: fixed !important; width: 2400px !important; top:0px !important; height: 100vh !important; right: 20px !important; z-index: 2147483647 !important; }
-	paper-input-container { box-shadow: inset 0 3000px #111 !important; height: 80vh !important; }
-
-	#author-thumbnail img { display: none !important; }
-
-	yt-formatted-string { font: inherit !important; }
-	yt-formatted-string, yt-formatted-string.ytd-video-secondary-info-renderer { color: #999 !important; }
-	yt-formatted-string.ytd-comments-header-renderer { color: #CCC !important; }
-	ytd-author-comment-badge-renderer { background: #000 !important; padding: 10px !important; border-radius: 0 !important; height: 40px !important; }
-	yt-icon-button.ytd-toggle-button-renderer { padding: 0 !important; }
-	button.yt-icon-button { min-height: 40px !important; min-width: 50px !important; }
-	button svg { display: none !important; }
-	button::after { content: attr(aria-label) !important; overflow: hidden !important; white-space: pre !important; position: absolute !important; top: 10px !important; left: 10px !important; max-width: 80px !important; font-size: 22px !important; }
-
-	ytd-comment-action-buttons-renderer { position: relative; height: 60px !important; }
-	span#vote-count-middle { position: absolute; right: 0 !important; }
-	ytd-toggle-button-renderer { width: 100px !important; }
-	ytd-toggle-button-renderer button { width: 100px !important; height: 50px !important; }
-
-	/* YouTube landing page */
-	#contents.ytd-rich-grid-renderer, #grid-title.ytd-rich-grid-renderer { width: 3200px !important; }
-	ytd-rich-item-renderer { width: 600px !important; margin: 0 !important; }
-	ytd-rich-grid-video-renderer { max-width: none !important; }
-	ytd-thumbnail { width: 600px !important; height: 400px !important; }
-	ytd-rich-grid-media { width: 600px !important; max-width: none !important; display: block !important; }
-
-	/* YouTube search results page */
-	ytd-two-column-search-results-renderer[guide-persistent-and-visible] #primary.ytd-two-column-search-results-renderer { max-width: none !important; width: 3200px !important; }
-	ytd-video-renderer:not([use-prominent-thumbs]) ytd-thumbnail.ytd-video-renderer { width: 500px !important; height: 300px !important; }
-	img.yt-img-shadow { width: 100% !important; height: auto !important; }
-	#video-title.ytd-video-renderer { max-height: none !important; overflow: visible !important; }
-	h3.title-and-badge.ytd-video-renderer { overflow: visible !important; height: 200px !important; }
-	.text-wrapper.ytd-video-renderer { max-width: none !important; }
-	/*#contents, #dismissable, .text-wrapper { width: 2400px !important; max-width: none !important; }*/
-
-	/* YouTube channel page */
-	#items.ytd-grid-renderer > ytd-grid-video-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-radio-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-channel-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-playlist-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-movie-playlist-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-movie-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-grid-show-renderer.ytd-grid-renderer, #items.ytd-grid-renderer > ytd-game-card-renderer.ytd-grid-renderer
-	{ width: 500px !important; }
-	ytd-thumbnail.ytd-grid-video-renderer { width: 480px !important; height: 280px !important; }
-	#video-title.yt-simple-endpoint.ytd-grid-video-renderer { max-height: none !important; height: 150px !important; }
-	#video-title { max-height: none !important; height: auto !important; }
-	ytd-two-column-browse-results-renderer.grid:not(.grid-disabled) { max-width: 3200px !important; }
-	ytd-two-column-browse-results-renderer.grid-6-columns, .grid-6-columns.ytd-two-column-browse-results-renderer { width: 100% !important; }
-	ytd-grid-video-renderer.style-scope.yt-horizontal-list-renderer { max-width: none !important; max-height: none !important; height: auto !important; width: 600px !important; }
-
-	/* YouTube playlists */
-	ytd-thumbnail.ytd-playlist-video-renderer { width: 480px !important; height: 272px !important; }
-
-	.iron-selected { background: #444 !important; }
-	ytd-rich-grid-row { justify-content: flex-start !important; }
-	ytd-expander.ytd-video-secondary-info-renderer { font-size: 22px; line-height: 1.2rem; }
-
-	#primary-inner { margin-top: 600px !important; }
-	.watch-active-metadata { margin-top: 600px !important; }
+	body { opacity: 0.5 !important; }
+	body, body * { font-family: "swis721 cn bt" !important; font-size: 18px !important; }
 }
 
 .devtools-monospace,

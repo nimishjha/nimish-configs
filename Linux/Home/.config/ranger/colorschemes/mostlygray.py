@@ -6,6 +6,7 @@ class MostlyGray(ColorScheme):
 
 	def use(self, context):
 		fg, bg, attr = default_colors
+		fg = 7
 		default_bg = bg
 		attr = dim
 
@@ -32,7 +33,7 @@ class MostlyGray(ColorScheme):
 				bg = 19
 			if context.directory:
 				attr |= bold
-				fg = 252
+				fg = 7
 			if context.link:
 				fg = context.good and 129 or 21
 				bg = 234
@@ -43,8 +44,10 @@ class MostlyGray(ColorScheme):
 				bg = 236
 			if context.cut:
 				bg = 88
+				fg = 252
 			if context.copied:
 				bg = 55
+				fg = 252
 			if context.marked and context.selected:
 				bg = 21
 			if context.copied and context.selected:
@@ -79,7 +82,7 @@ class MostlyGray(ColorScheme):
 			elif context.link:
 				fg = 116
 			else:
-				fg = 226
+				fg = 145
 
 		elif context.in_statusbar:
 			fg = 252
