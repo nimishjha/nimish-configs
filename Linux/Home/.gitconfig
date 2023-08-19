@@ -1,5 +1,5 @@
 [user]
-	email = asd@asd.asd
+	email = asd@asd.com
 	name = asd
 [color]
 	ui = auto
@@ -12,6 +12,8 @@
 	frag = yellow bold
 	old = red bold
 	new = green bold
+	oldMoved = 7 57
+	newMoved = white bold blue bold
 [color "status"]
 	added = green bold
 	changed = red bold
@@ -32,11 +34,19 @@
 	navigate = true
 	light = false
 	syntax-theme = none
-	plus-style = 155 22
-	minus-style = 197 52
+	plus-style = 70 auto
+	minus-style = 130 auto
 	zero-style = white auto
 	line-buffer-size = 0
+	file-style = 105 18
+	file-decoration-style =18 ul
+	hunk-header-style = 15 57 line-number
+	hunk-header-file-style = 0
+	hunk-header-decoration-style = 57 ul
+	hunk-header-line-number-style = 7
+	whitespace-error-style = 57 105
+	commit-style = 70 22
 [merge]
 	conflictstyle = diff3
 [diff]
-	colorMoved = default
+	colorMoved = no

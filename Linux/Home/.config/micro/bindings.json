@@ -1,4 +1,5 @@
 {
-    "Alt-/": "lua:comment.comment",
-    "CtrlUnderscore": "lua:comment.comment"
+    "Ctrl-/": "lua:comment.comment",
+    "F3": "FindNext",
+    "Shift-F3": "FindPrevious"
 }

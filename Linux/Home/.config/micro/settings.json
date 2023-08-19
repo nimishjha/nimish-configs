@@ -1,6 +1,7 @@
 {
-    "colorscheme": "gray",
+    "colorscheme": "aaa_greendark",
     "ftoptions": false,
     "rmtrailingws": true,
+    "softwrap": true,
     "tabsize": 8
 }
