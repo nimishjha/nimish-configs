@@ -4,7 +4,7 @@ local msg = require 'mp.msg'
 os.setlocale("")
 
 local settings = {
-	filetypes = { 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'gif', 'webp', 'svg', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov' },
+	filetypes = { 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'gif', 'webp', 'svg', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd' },
 	fileList = {},
 	dir = "",
 	--order by natural (version) numbers, thus behaving case-insensitively and treating multi-digit numbers atomically
@@ -17,7 +17,7 @@ local settings = {
 	pass1 = "",
 	pass2 = "",
 	whichPass = "pass2",
-	shaderPresets = { { "", "" }, { "", "" }, { "", "" }, { "", "" } }
+	shaderPresets = { { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" } }
 }
 
 local fileTypesToHandle = {}
@@ -95,7 +95,7 @@ function getIndexOfCurrentFile(files, currentFileName)
 	local index
 	local currentFileNameLower = string.lower(currentFileName)
 	local found = false
-	while (min <= max) do
+	while (min < max) do
 		index = math.floor((min + max) / 2)
 		local value = string.lower(files[index])
 		if (currentFileNameLower == value) then
@@ -107,6 +107,10 @@ function getIndexOfCurrentFile(files, currentFileName)
 		else
 			min = index + 1
 		end
+	end
+
+	if (min == max) then
+		return min
 	end
 
 	if not (found) then
@@ -176,6 +180,26 @@ function toggleShaderPass()
 		mp.commandv("show_text", "mode: pass1")
 		settings.whichPass = "pass1"
 	end
+end
+
+function setShaderPass1()
+	mp.commandv("show_text", "mode: Pass 1")
+	settings.whichPass = "pass1"
+end
+
+function setShaderPass2()
+	mp.commandv("show_text", "mode: Pass 2")
+	settings.whichPass = "pass2"
+end
+
+function clearShaderPass1()
+	settings.pass1 = ""
+	applyShaders()
+end
+
+function clearShaderPass2()
+	settings.pass2 = ""
+	applyShaders()
 end
 
 function setShaderFileAndPass()
@@ -270,10 +294,18 @@ mp.add_forced_key_binding('Shift+F1', 'saveShader1', saveShaderPreset(1))
 mp.add_forced_key_binding('Shift+F2', 'saveShader2', saveShaderPreset(2))
 mp.add_forced_key_binding('Shift+F3', 'saveShader3', saveShaderPreset(3))
 mp.add_forced_key_binding('Shift+F4', 'saveShader4', saveShaderPreset(4))
+mp.add_forced_key_binding('Shift+F5', 'saveShader5', saveShaderPreset(5))
+mp.add_forced_key_binding('Shift+F6', 'saveShader6', saveShaderPreset(6))
+mp.add_forced_key_binding('Shift+F7', 'saveShader7', saveShaderPreset(7))
+mp.add_forced_key_binding('Shift+F8', 'saveShader8', saveShaderPreset(8))
 mp.add_forced_key_binding('F1', 'loadShader1', loadShaderPreset(1))
 mp.add_forced_key_binding('F2', 'loadShader2', loadShaderPreset(2))
 mp.add_forced_key_binding('F3', 'loadShader3', loadShaderPreset(3))
 mp.add_forced_key_binding('F4', 'loadShader4', loadShaderPreset(4))
+mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
+mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
+mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
+mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
 mp.add_forced_key_binding('F10', 'toggleShaderPass', toggleShaderPass)
 
 mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
@@ -299,6 +331,7 @@ mp.add_forced_key_binding('k', 'set_shaders_Curve', setShaderGroup('Curve'))
 mp.add_forced_key_binding('z', 'set_shaders_Test1', setShaderGroup('Test1_'))
 mp.add_forced_key_binding('x', 'set_shaders_Test2', setShaderGroup('Test2_'))
 mp.add_forced_key_binding('c', 'set_shaders_Test3', setShaderGroup('Test3_'))
+mp.add_forced_key_binding('Shift+z', 'set_shaders_Test4', setShaderGroup('Test4_'))
 mp.add_forced_key_binding('v', 'set_shaders_OrangeBlue', setShaderGroup('OrangeBlue'))
 mp.add_forced_key_binding('b', 'set_shaders_MonotoneSepia', setShaderGroup('MonotoneSepia'))
 mp.add_forced_key_binding('n', 'set_shaders_MonotoneRed', setShaderGroup('MonotoneRed'))
@@ -318,3 +351,8 @@ mp.add_forced_key_binding('7', 'set_shader_number_7', setShaderNumber(7))
 mp.add_forced_key_binding('8', 'set_shader_number_8', setShaderNumber(8))
 mp.add_forced_key_binding('9', 'set_shader_number_9', setShaderNumber(9))
 mp.add_forced_key_binding('0', 'set_shader_number_0', setShaderNumber(0))
+
+mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
+mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
+mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
+mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)

@@ -85,6 +85,6 @@ class MostlyGray(ColorScheme):
 				fg = 145
 
 		elif context.in_statusbar:
-			fg = 252
+			fg = 7
 
 		return fg, bg, attr

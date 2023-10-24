@@ -1,7 +1,7 @@
 set recolor true
-set recolor-darkcolor "#888888"
-set recolor-lightcolor "#202020"
+set recolor-darkcolor "#707070"
+set recolor-lightcolor "#181818"
 set statusbar-fg "#707070"
 set guioptions ""
-set font "monospace normal 14"
+set font "swis721 cn bt normal 16"
 

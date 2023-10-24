@@ -8,8 +8,8 @@
 	{ "keys": ["ctrl+alt+down"], "command": "select_lines", "args": {"forward": true} },
 	{ "keys": ["f1"], "command": "toggle_full_screen" },
 	{ "keys": ["f2"], "command": "toggle_distraction_free" },
-	{ "keys": ["home"], "command": "move_to", "args": {"to": "hardbol"} },
-	{ "keys": ["alt+home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["alt+home"], "command": "move_to", "args": {"to": "hardbol"} },
 	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
 	{ "keys": ["ctrl+e"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
 	{ "keys": ["ctrl+alt+-"], "command": "run_macro_file", "args": {"file": "res://Packages/User/insert_horizontal_line.sublime-macro"} },
@@ -54,8 +54,8 @@
 	{ "keys": ["ctrl+alt+f"], "command": "cycle_font" },
 	{ "keys": ["ctrl+alt+8"], "command": "set_setting", "args": {"setting": "tab_size", "value": 8} },
 	{ "keys": ["ctrl+\\"], "command": "toggle_setting", "args": {"setting": "draw_indent_guides"}},
-	{ "keys": ["ctrl+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" }},
-	{ "keys": ["ctrl+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" }},
+	// { "keys": ["ctrl+]"], "command": "sublime_linter_goto_error", "args": { "direction": "next" }},
+	// { "keys": ["ctrl+["], "command": "sublime_linter_goto_error", "args": { "direction": "previous" }},
 	{ "keys": ["ctrl+i"], "command": "invert_selection" },
 	// { "keys": ["ctrl+tab"], "command": "next_view" },
 	// { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
@@ -83,18 +83,20 @@
 
 	{ "keys": ["ctrl+shift+pageup"], "command": "move_tab", "args": { "position": "-1" } },
 	{ "keys": ["ctrl+shift+pagedown"], "command": "move_tab", "args": { "position": "+1" } },
-	{ "keys": ["ctrl+m"], "command": "toggle_menu" },
+	{ "keys": ["ctrl+shift+m"], "command": "toggle_menu" },
 	{ "keys": ["ctrl+0"], "command": "focus_side_bar" },
 	{ "keys": ["ctrl+1"], "command": "enable_command_logging" },
 	{ "keys": ["ctrl+2"], "command": "disable_command_logging" },
-	// { "keys": ["ctrl+."], "command": "next_modification" },
-	// { "keys": ["ctrl+,"], "command": "prev_modification" },
+	{ "keys": ["ctrl+]"], "command": "next_modification" },
+	{ "keys": ["ctrl+["], "command": "prev_modification" },
 
 	{ "keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-	{ "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" },
+	{ "keys": ["super+p"], "command": "prompt_select_workspace" },
 
 	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0 } },
 	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0 } },
+
+	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
 
 ]

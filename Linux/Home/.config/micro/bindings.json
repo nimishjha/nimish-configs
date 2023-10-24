@@ -1,5 +1,14 @@
 {
+    "Alt-/": "lua:comment.comment",
     "Ctrl-/": "lua:comment.comment",
+    "Ctrl-Backspace": "DeleteWordLeft",
+    "CtrlUnderscore": "lua:comment.comment",
     "F3": "FindNext",
-    "Shift-F3": "FindPrevious"
+    "Shift-F3": "FindPrevious",
+    "Ctrl-d": "CutLine",
+    "Shift-PageDown": "SelectPageDown",
+    "Shift-PageUp": "SelectPageUp",
+    "Ctrl-m": "JumpToMatchingBrace",
+    "AltShiftLeft": "SelectWordLeft",
+    "AltShiftRight": "SelectWordRight",
 }
