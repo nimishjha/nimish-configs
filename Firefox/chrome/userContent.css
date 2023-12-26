@@ -5,7 +5,7 @@
 	--colorFormElements: #999;
 	--colorFormElementsFocused: #CCC;
 	--colorLinks: #77D;
-	--colorLinksHover: #DDD;
+	--colorLinksHover: #CCC;
 	--colorLinksVisited:  #55C;
 	--backgroundNav: #111;
 	--fontSizeSmall: 0.8rem;
@@ -53,7 +53,7 @@
 
 @-moz-document url-prefix(https:), url-prefix(http:), url-prefix(file:)
 {
-
+	::-moz-selection { color: #AAA; background: #000; }
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
 		{ box-shadow: inset 0px 2000px 0 #000 !important; }
@@ -121,8 +121,8 @@
 
 	span, span[class] { font-family: inherit !important; font-size: inherit !important; line-height: inherit !important; color: inherit !important; background: inherit !important; }
 
-	span.italic, span.txit { color: #FF0 !important; }
-	span.bold, span.txbd { color: #FF0 !important; font-weight: bold !important; }
+	span.italic, span.txit { color: #CCA !important; }
+	span.bold, span.txbd { color: #CCA !important; font-weight: bold !important; }
 	div[class*="modal"], div[class*="popover"] { background: var(--backgroundFormElements) !important; }
 
 	hr { height: 4px !important; background: var(--colorSeparator) !important; border-color: var(--colorSeparator) !important; border-style: solid !important; border-width: 0 !important; margin: 40px 0 !important; }
@@ -130,7 +130,7 @@
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: #111 !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
 	figcaption { background: #111 !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
-	annotation { background: #444 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
+	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
 	ruby { margin: 10px 0 !important; background: #F90 !important; color: #FFF !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
 	rp { margin: 10px 0 !important; background: #181818 !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
 	rt { margin: 10px 0 !important; padding: 20px !important; display: block !important; background: #181818 !important; font: 12px Verdana !important; overflow-x: hidden; }
@@ -227,7 +227,7 @@
 
 	body.nimbusTheme1 a, body.nimbusTheme1 a *, body.nimbusTheme1 a:link { color: #666 !important; text-decoration: none !important; }
 	body.nimbusTheme1 a:visited *, body.nimbusTheme1 a:visited { color: #666 !important; text-decoration: none !important; }
-	body.nimbusTheme1 a:hover *, body.nimbusTheme1 a:focus *, body.nimbusTheme1 a:hover, body.nimbusTheme1 a:focus { color: #FFF !important; text-decoration: none !important; }
+	body.nimbusTheme1 a:hover *, body.nimbusTheme1 a:focus *, body.nimbusTheme1 a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
 	body.nimbusTheme1 cite,
 	body.nimbusTheme1 u,
 	body.nimbusTheme1 em,
@@ -252,10 +252,10 @@
     	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
     	body.nimbusTheme2 annotation { background: #222 !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
-	body.nimbusTheme2 mark { background: #048 !important; color: #6CF !important; }
+	body.nimbusTheme2 mark { background: #048 !important; color: #6AC !important; }
 	body.nimbusTheme2 markgreen { background: #150 !important; color: #5E0 !important; }
 	body.nimbusTheme2 markred { background: #500 !important; color: #E33 !important; }
-	body.nimbusTheme2 markblue { background: #448 !important; color: #99C !important; }
+	body.nimbusTheme2 markblue { background: #005 !important; color: #6AC !important; }
 	body.nimbusTheme2 markpurple { background: #404 !important; color: #C6C !important; }
 	body.nimbusTheme2 markyellow { background: #804800 !important; color: #FF0 !important; }
 	body.nimbusTheme2 markwhite { background: #000 !important; color: #DDD !important; }
@@ -359,13 +359,13 @@
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #555 !important; background: #181818 !important; margin-bottom: 2px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
 
-	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 3px 0 !important; line-height: inherit !important; }
-	mark { background: #048 !important; color: #6CF !important; }
+	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
+	mark { background: #048 !important; color: #6BE !important; }
 	markgreen { background: #150 !important; color: #2C0 !important; }
 	markred { background: #500 !important; color: #E33 !important; }
-	markblue { background: #005 !important; color: #05C !important; }
-	markpurple { background: #408 !important; color: #C7F !important; }
-	markyellow { background: #804800 !important; color: #FF0 !important; }
+	markblue { background: #005 !important; color: #66D !important; }
+	markpurple { background: #204 !important; color: #C7E !important; }
+	markyellow { background: #804800 !important; color: #EE0 !important; }
 	markwhite { background: #000 !important; color: #DDD !important; }
 
 	warning, info, error { display: block; border-width: 2px 2px 2px 20px; border-style: solid; padding: 1rem 2rem; margin: 10px 0; }
@@ -482,8 +482,11 @@
 
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
-	body { opacity: 0.5 !important; }
+	body { opacity: 0.65 !important; }
+	body.nimbusTheme2 { opacity: 0.9 !important; }
+	body.nimbusTheme3 { opacity: 0.9 !important; }
 	body, body * { font-family: "swis721 cn bt" !important; font-size: 18px !important; }
+	.ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 0 200px #000; }
 }
 
 .devtools-monospace,

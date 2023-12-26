@@ -195,11 +195,13 @@ end
 function clearShaderPass1()
 	settings.pass1 = ""
 	applyShaders()
+	setShaderPass1()
 end
 
 function clearShaderPass2()
 	settings.pass2 = ""
 	applyShaders()
+	setShaderPass2()
 end
 
 function setShaderFileAndPass()
@@ -236,9 +238,13 @@ function applyShaders()
 		if (isValidShaderName(settings.pass2)) then
 			message = "Pass 2:" .. settings.pass2
 			mp.commandv("change-list", "glsl-shaders", "set", "~/.config/mpv/shaders/" .. settings.pass2 .. ".glsl")
+		else
+			clearShaders()
 		end
 	end
-	mp.commandv("show_text", message)
+	if(string.len(message) > 0) then
+		mp.commandv("show_text", message)
+	end
 end
 
 function clearShaders()
@@ -306,8 +312,9 @@ mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
 mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
 mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
 mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
-mp.add_forced_key_binding('F10', 'toggleShaderPass', toggleShaderPass)
 
+mp.add_forced_key_binding('Ctrl+c', 'clearShaders1', clearShaders)
+mp.add_forced_key_binding('`', 'clearShaders2', clearShaders)
 mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
 
 mp.add_forced_key_binding('q', 'set_shaders_Blue1', setShaderGroup('Blue1_'))
@@ -325,11 +332,12 @@ mp.add_forced_key_binding('s', 'set_shaders_Brightness2', setShaderGroup('Bright
 mp.add_forced_key_binding('d', 'set_shaders_Saturation1', setShaderGroup('Saturation1_'))
 mp.add_forced_key_binding('f', 'set_shaders_Saturation2', setShaderGroup('Saturation2_'))
 mp.add_forced_key_binding('g', 'set_shaders_Grayscale', setShaderGroup('Grayscale'))
-mp.add_forced_key_binding('h', 'set_shaders_Blend', setShaderGroup('Blend'))
+mp.add_forced_key_binding('h', 'set_shaders_BlendCool', setShaderGroup('BlendCool'))
 mp.add_forced_key_binding('j', 'set_shaders_BlendWarm', setShaderGroup('BlendWarm'))
 mp.add_forced_key_binding('k', 'set_shaders_Curve', setShaderGroup('Curve'))
 mp.add_forced_key_binding('z', 'set_shaders_Test1', setShaderGroup('Test1_'))
 mp.add_forced_key_binding('x', 'set_shaders_Test2', setShaderGroup('Test2_'))
+mp.add_forced_key_binding('Shift+x', 'set_shaders_Test5', setShaderGroup('Test5_'))
 mp.add_forced_key_binding('c', 'set_shaders_Test3', setShaderGroup('Test3_'))
 mp.add_forced_key_binding('Shift+z', 'set_shaders_Test4', setShaderGroup('Test4_'))
 mp.add_forced_key_binding('v', 'set_shaders_OrangeBlue', setShaderGroup('OrangeBlue'))
@@ -337,8 +345,6 @@ mp.add_forced_key_binding('b', 'set_shaders_MonotoneSepia', setShaderGroup('Mono
 mp.add_forced_key_binding('n', 'set_shaders_MonotoneRed', setShaderGroup('MonotoneRed'))
 mp.add_forced_key_binding('m', 'set_shaders_Red', setShaderGroup('Red'))
 
-mp.add_forced_key_binding('`', 'clearShaders1', clearShaders)
-mp.add_forced_key_binding('-', 'clearShaders2', clearShaders)
 mp.add_forced_key_binding('=', 'cacheFileList', cacheFileList)
 
 mp.add_forced_key_binding('1', 'set_shader_number_1', setShaderNumber(1))

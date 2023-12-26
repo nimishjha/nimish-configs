@@ -173,7 +173,8 @@ bindsym $mod+Shift+KP_Up		workspace number 8
 bindsym $mod+Shift+KP_Prior		workspace number 9
 bindsym $mod+Shift+KP_Insert		workspace number 10
 
-bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H%M%S`.png
+# bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H%M%S`.png
+bindsym --release Print exec import $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H%M%S`.png
 
 
 #

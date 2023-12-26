@@ -21,39 +21,50 @@ class MostlyGray(ColorScheme):
 			if context.video:
 				fg = 33
 			if context.image:
-				fg = 42
+				fg = 81
 			if context.document:
-				fg = 45
+				fg = 75
+			if context.customtype01:
+				fg = 125
+			if context.customtype02:
+				fg = 73
+			if context.customtype03:
+				attr |= bold
+				fg = 99
+			if context.customtype04:
+				attr |= bold
+				fg = 105
+			if context.customtype05:
+				fg = 83
 			if context.container:
 				attr |= bold
 				fg = 111
 			if context.link:
 				fg = cyan if context.good else magenta
 			if context.marked:
-				bg = 19
+				bg = 17
 			if context.directory:
 				attr |= bold
 				fg = 7
 			if context.link:
-				fg = context.good and 129 or 21
-				bg = 234
+				fg = context.good and 129 or 124
 			if context.selected:
 				# attr = reverse
 				# fg = 226
 				# bg = 20
 				bg = 236
 			if context.cut:
-				bg = 88
-				fg = 252
+				bg = 52
+				# fg = 252
 			if context.copied:
 				bg = 55
 				fg = 252
 			if context.marked and context.selected:
-				bg = 21
+				bg = 20
 			if context.copied and context.selected:
 				bg = 57
 			if context.cut and context.selected:
-				bg = 124
+				bg = 88
 			if not(context.main_column):
 				fg = 240
 				if context.selected:
