@@ -21,9 +21,9 @@ class MostlyGray(ColorScheme):
 			if context.video:
 				fg = 33
 			if context.image:
-				fg = 81
+				fg = 63
 			if context.document:
-				fg = 75
+				fg = 108
 			if context.customtype01:
 				fg = 125
 			if context.customtype02:

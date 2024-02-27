@@ -1,5 +1,4 @@
   EQSET
-  # damp frequencies Hz by -4dB, filter bandwidth 1.5 octaves
   #band		octaves		dB
   500  	 	1.5 		-4
   1000   	1.5 		-4
