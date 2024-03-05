@@ -128,6 +128,9 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 
 .tab-background { outline: 0 !important; }
 
+#downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer { width: 32px !important; align-items: flex-start !important; justify-content: flex-start !important; border: 2px solid #000 !important; background: #000 !important; border-radius: 0 !important; height: 10px !important; top: calc(50% - 5px) !important;}
+#downloads-indicator-progress-inner { width: calc(var(--download-progress-pcent)) !important; height: 100% !important; background: #AAA !important; border-radius: 0 !important; }
+
 @media (prefers-contrast)
 {
 	.tab-background:is([selected], [multiselected]), .tabbrowser-tab:hover > .tab-stack > .tab-background {  border: 0 !important; }
