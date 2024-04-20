@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<dict>
+	<key>name</key><string>Random01</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>minimapBorder</key><string>#AACCFF</string>
+				<key>background</key><string>#001810</string>
+				<key>caret</key><string>#CCCCCC</string>
+				<key>foreground</key><string>#709080</string>
+				<key>invisibles</key><string>#ff00ae</string>
+				<key>lineHighlight</key><string>#003000</string>
+				<key>selection</key><string>#000</string>
+				<key>selectionForeground</key><string>#0B0</string>
+				<key>findHighlight</key><string>#000000</string>
+				<key>findHighlightForeground</key><string>#CCCC00</string>
+				<key>selectionBorder</key><string>#000000</string>
+				<key>activeGuide</key><string>#5e00ff</string>
+				<key>bracketsForeground</key><string>#CCCC00</string>
+				<key>bracketsOptions</key><string>foreground</string>
+				<key>bracketContentsForeground</key><string>#CCCC00</string>
+				<key>bracketContentsOptions</key><string>foreground</string>
+				<key>tagsOptions</key><string>foreground</string>
+				<key>tagsForeground</key><string>#CCCC00</string>
+			</dict>
+		</dict>
+		<dict><key>scope</key><string>keyword, storage</string><key>settings</key> <dict><key>foreground</key><string>#376</string></dict> </dict>
+		<dict><key>scope</key><string>punctuation</string><key>settings</key> <dict><key>foreground</key><string>#5A8</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.definition.tag</string><key>settings</key> <dict><key>foreground</key><string>#509070</string></dict></dict>
+		<dict><key>scope</key><string>entity</string><key>settings</key> <dict><key>foreground</key><string>#7a9</string></dict></dict>
+		<dict><key>scope</key><string>meta</string><key>settings</key> <dict><key>foreground</key><string>#6A8</string></dict></dict>
+		<dict><key>scope</key><string>meta.function-call</string><key>settings</key> <dict><key>foreground</key><string>#286</string></dict></dict>
+		<dict><key>scope</key><string>variable.other</string><key>settings</key> <dict><key>foreground</key><string>#3A6</string></dict></dict>
+		<dict><key>scope</key><string>comment</string><key>settings</key> <dict><key>foreground</key><string>#40A080</string><key>background</key><string>#004030</string></dict></dict>
+		<dict><key>scope</key><string>constant</string><key>settings</key> <dict><key>foreground</key><string>#0CA</string></dict></dict>
+		<dict><key>scope</key><string>string</string><key>settings</key> <dict><key>foreground</key><string>#70B0A0</string><key>background</key><string>#103020</string></dict></dict>
+		<dict><key>scope</key><string>support</string><key>settings</key> <dict><key>foreground</key><string>#7B9</string></dict></dict>
+	</array>
+	<key>uuid</key><string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+</dict>
+</plist>

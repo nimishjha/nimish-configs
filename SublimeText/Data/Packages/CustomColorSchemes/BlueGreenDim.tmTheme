@@ -8,7 +8,6 @@
 		<dict>
 			<key>settings</key>
 			<dict>
-				<!-- <key>background</key><string>#16181D</string> -->
 				<key>background</key><string>#001830</string>
 				<key>foreground</key><string>#8090B0</string>
 
@@ -41,24 +40,24 @@
 		<dict><key>scope</key><string>constant.language, variable.other.constant, punctuation.definition.constant, constant.other.color, constant.numeric</string><key>settings</key><dict><key>foreground</key><string>#0099FF</string><key>background</key><string>#103850</string></dict></dict>
 		<dict><key>scope</key><string>constant.character.escape</string><key>settings</key><dict><key>foreground</key><string>#FF9900</string></dict></dict>
 		<dict><key>scope</key><string>constant.numeric.line-number.find-in-files</string><key>settings</key><dict><key>foreground</key><string>#777</string></dict></dict>
-		<dict><key>scope</key><string>entity.name</string><key>settings</key><dict><key>foreground</key><string>#44AAFF</string></dict></dict>
+		<dict><key>scope</key><string>entity.name</string><key>settings</key><dict><key>foreground</key><string>#6060AA</string></dict></dict>
 		<dict><key>scope</key><string>entity.other</string><key>settings</key><dict><key>foreground</key><string>#4488CC</string></dict></dict>
 		<dict><key>scope</key><string>invalid.deprecated</string><key>settings</key><dict><key>background</key><string>#440020</string><key>foreground</key><string>#ff00ae</string></dict></dict>
 		<dict><key>scope</key><string>invalid</string><key>settings</key><dict><key>background</key><string>#AA0000</string><key>foreground</key><string>#FFFFFF</string></dict></dict>
-		<dict><key>scope</key><string>keyword, storage.type</string><key>settings</key><dict><key>foreground</key><string>#0088CC</string></dict></dict>
+		<dict><key>scope</key><string>keyword, storage</string><key>settings</key><dict><key>foreground</key><string>#0088CC</string></dict></dict>
 		<dict><key>scope</key><string>keyword.operator</string><key>settings</key><dict><key>foreground</key><string>#0088DD</string></dict></dict>
 		<dict><key>scope</key><string>markup.bold</string><key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict></dict>
 		<dict><key>scope</key><string>markup.changed</string><key>settings</key><dict><key>foreground</key><string>#aeff00</string></dict></dict>
 		<dict><key>scope</key><string>markup.deleted</string><key>settings</key><dict><key>foreground</key><string>#5e00ff</string></dict></dict>
 		<dict><key>scope</key><string>markup.inserted</string><key>settings</key><dict><key>foreground</key><string>#aeff00</string></dict></dict>
-		<dict><key>scope</key><string>meta.property.object, meta.object-literal.key, meta.mapping.key</string><key>settings</key><dict><key>foreground</key><string>#59F</string></dict></dict>
-		<dict><key>scope</key><string>punctuation.section</string><key>settings</key><dict><key>foreground</key><string>#66AAFF</string></dict></dict>
+		<dict><key>scope</key><string>meta.property, meta.property.object, meta.object-literal.key, meta.mapping.key</string><key>settings</key><dict><key>foreground</key><string>#59F</string></dict></dict>
+		<dict><key>scope</key><string>punctuation.section</string><key>settings</key><dict><key>foreground</key><string>#90A0B0</string></dict></dict>
 		<dict><key>scope</key><string>punctuation.definition</string><key>settings</key><dict><key>foreground</key><string>#4499FF</string></dict></dict>
-		<dict><key>scope</key><string>string</string><key>settings</key><dict><key>foreground</key><string>#00CCFF</string><key>background</key><string>#003040</string></dict></dict>
+		<dict><key>scope</key><string>string, punctuation.definition.string</string><key>settings</key> <dict><key>foreground</key><string>#5090C0</string><key>background</key><string>#203050</string></dict></dict>
 		<dict><key>scope</key><string>string.regexp</string><key>settings</key><dict><key>foreground</key><string>#FF7777</string><key>background</key><string>#440000</string></dict></dict>
 		<dict><key>scope</key><string>support.class.builtin</string><key>settings</key><dict><key>foreground</key><string>#FFFFFF</string></dict></dict>
 		<dict><key>scope</key><string>support.constant</string><key>settings</key><dict><key>foreground</key><string>#7799bb</string></dict></dict>
-		<dict><key>scope</key><string>variable.function, support.function</string><key>settings</key><dict><key>foreground</key><string>#0088DD</string></dict></dict>
+		<dict><key>scope</key><string>variable.function, support.function</string><key>settings</key><dict><key>foreground</key><string>#2080C0</string></dict></dict>
 		<dict><key>scope</key><string>support.other.variable</string><key>settings</key><dict><key>foreground</key><string>#00FFCC</string></dict></dict>
 		<dict><key>scope</key><string>variable, variable.other.object, support.type, support.class, meta.generic-name</string><key>settings</key><dict><key>foreground</key><string>#77AAFF</string></dict></dict>
 	</array>
