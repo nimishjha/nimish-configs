@@ -202,22 +202,22 @@
 	pre xh { color: #AADDCC; }
 	pre xv { color: #C36; }
 
-	X0 { color: #AA99BB; }
-	X1 { color: #BB7777; }
-	X2 { color: #9966BB; }
-	X3 { color: #AA77AA; }
-	X4 { color: #885566; }
-	X5 { color: #665577; }
-	X6 { color: #556699; }
-	X7 { color: #558866; }
-	X8 { color: #BB5588; }
-	X9 { color: #885577; }
-	X10 { color: #BB8866; }
-	X11 { color: #558866; }
-	X12 { color: #8888BB; }
-	X13 { color: #BB77AA; }
-	X14 { color: #5566AA; }
-	X15 { color: #4444AA; }
+	X0 { color: #664477; }
+	X1 { color: #6677CC; }
+	X2 { color: #6644BB; }
+	X3 { color: #666688; }
+	X4 { color: #6666FF; }
+	X5 { color: #774488; }
+	X6 { color: #667777; }
+	X7 { color: #667766; }
+	X8 { color: #6655DD; }
+	X9 { color: #666677; }
+	X10 { color: #6644AA; }
+	X11 { color: #777788; }
+	X12 { color: #665566; }
+	X13 { color: #7744DD; }
+	X14 { color: #774488; }
+	X15 { color: #6677EE; }
 
 	XC { color: #1CF; background: #247; }
 	XK { color: #1177CC; }
@@ -258,7 +258,7 @@
 	body.nimbusTheme2 markblue { background: #005 !important; color: #6AC !important; }
 	body.nimbusTheme2 markpurple { background: #404 !important; color: #C6C !important; }
 	body.nimbusTheme2 markyellow { background: #804800 !important; color: #FF0 !important; }
-	body.nimbusTheme2 markwhite { background: #000 !important; color: #DDD !important; }
+	body.nimbusTheme2 markwhite { background: #222 !important; color: #DDD !important; }
 	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
 	body.nimbusTheme2 em,
 	body.nimbusTheme2 i,

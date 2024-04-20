@@ -45,6 +45,9 @@ toolbar { background: #000 !important; }
 #downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer { width: 32px !important; align-items: flex-start !important; justify-content: flex-start !important; border: 2px solid #888 !important; background: #000 !important; border-radius: 0 !important; height: 10px !important; top: calc(50% - 5px) !important;}
 #downloads-indicator-progress-inner { width: calc(var(--download-progress-pcent)) !important; height: 100% !important; background: #AAA !important; border-radius: 0 !important; }
 
-richlistitem { background: #222 !important; color: #888 !important; }
-richlistitem[selected] { background: #222 !important; color: #AAA !important; }
-#downloadsListBox { background-color: #000 !important; border: 1px solid #444 !important; border-radius: 0 !important; }
+richlistbox#downloadsListBox { background-color: #000 !important; border: 1px solid #444 !important; border-radius: 0 !important; }
+#downloadsListBox richlistitem { background: #222 !important; color: #888 !important; }
+#downloadsListBox richlistitem[selected] { background: #222 !important; color: #AAA !important; }
+
+.download.download-state { font-size: 20px; background: #000 !important; color: #888 !important; }
+.download.download-state[selected] { background: #333 !important; color: #AAA !important; }
