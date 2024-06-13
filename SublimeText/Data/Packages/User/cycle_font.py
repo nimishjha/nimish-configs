@@ -6,11 +6,10 @@ class CycleFontCommand(sublime_plugin.TextCommand):
 		preferences = sublime.load_settings('Preferences.sublime-settings')
 		current_font = self.view.settings().get("font_face")
 		fonts = [
-			# ["Swis721CnBTCode", 15, []],
-			# ["Swis721 Cn BT", 14, ["bold"]],
-			["Swis721 Cn BT", 14, []],
-			["Monospace", 11, ["bold"]],
-			# ["SF Mono", 11, [ "bold" ]],
+			# ["Swis721CnBTCode", 13, []],
+			["Swis721 Cn BT", 13, ["bold"]],
+			["SF Mono", 10, ["bold"]],
+			["Monospace", 10, ["bold"]],
 		]
 		num_fonts = len(fonts)
 		new_index = -1
@@ -24,6 +23,7 @@ class CycleFontCommand(sublime_plugin.TextCommand):
 		new_font = fonts[new_index][0]
 		new_font_size = fonts[new_index][1]
 		new_font_options = fonts[new_index][2]
+		print("Setting font to ", new_font, new_font_size, new_font_options)
 		preferences.set('font_face', new_font)
 		preferences.set('font_size', new_font_size)
 		preferences.set('font_options', new_font_options)

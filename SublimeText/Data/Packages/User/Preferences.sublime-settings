@@ -6,7 +6,7 @@
 	"auto_match_enabled": true,
 	"caret_extra_width": 2,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Nimish/ArcticDim.tmTheme",
+	"color_scheme": "Packages/CustomColorSchemes/Arctic.tmTheme",
 	"detect_indentation": true,
 	"drag_text": false,
 	"draw_indent_guides": false,
@@ -80,7 +80,7 @@
 	"font_face": "Swis721 Cn BT",
 	"font_options":
 	[
-		""
+		"bold"
 	],
 	"font_size": 14,
 	"gutter": true,
@@ -90,6 +90,7 @@
 	[
 		"Vintage"
 	],
+	"index_files": true,
 	"line_numbers": true,
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
