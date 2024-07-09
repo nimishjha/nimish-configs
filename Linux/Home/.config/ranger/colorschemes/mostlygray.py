@@ -17,7 +17,7 @@ class MostlyGray(ColorScheme):
 			if context.border:
 				fg = 240
 			if context.audio:
-				fg = 178
+				fg = 94
 			if context.video:
 				fg = 33
 			if context.image:
@@ -80,22 +80,50 @@ class MostlyGray(ColorScheme):
 				if context.bad:
 					fg = 124
 				else:
-					fg = 51
+					fg = 237
 			elif context.directory:
-				fg = 51
+				fg = 244
 			elif context.tab:
 				if context.good:
-					bg = 250
-					fg = 0
+					bg = 235
+					fg = 7
 				else:
-					bg = 238
-					fg = 252
+					bg = 239
+					fg = 7
 			elif context.link:
 				fg = 116
 			else:
-				fg = 145
+				fg = 7
 
 		elif context.in_statusbar:
-			fg = 7
+			if context.permissions:
+				if context.good:
+					fg = cyan
+				elif context.bad:
+					fg = magenta
+			if context.marked:
+				attr |= bold | reverse
+				fg = yellow
+				fg += BRIGHT
+			if context.frozen:
+				attr |= bold | reverse
+				fg = cyan
+				fg += BRIGHT
+			if context.message:
+				if context.bad:
+					attr |= bold
+					fg = red
+					fg += BRIGHT
+			if context.loaded:
+				bg = self.progress_bar_color
+			if context.vcsinfo:
+				fg = blue
+				attr &= ~bold
+			if context.vcscommit:
+				fg = yellow
+				attr &= ~bold
+			if context.vcsdate:
+				fg = cyan
+				attr &= ~bold
 
 		return fg, bg, attr
