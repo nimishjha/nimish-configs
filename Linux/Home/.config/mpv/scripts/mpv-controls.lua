@@ -4,7 +4,7 @@ local msg = require 'mp.msg'
 os.setlocale("")
 
 local settings = {
-	filetypes = { 'jpg', 'jpeg', 'png', 'tif', 'tiff', 'gif', 'webp', 'svg', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd' },
+	filetypes = { 'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd' },
 	fileList = {},
 	dir = "",
 	--order by natural (version) numbers, thus behaving case-insensitively and treating multi-digit numbers atomically
@@ -313,8 +313,7 @@ mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
 mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
 mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
 
-mp.add_forced_key_binding('Ctrl+c', 'clearShaders1', clearShaders)
-mp.add_forced_key_binding('`', 'clearShaders2', clearShaders)
+mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
 mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
 
 mp.add_forced_key_binding('q', 'set_shaders_Blue1', setShaderGroup('Blue1_'))
