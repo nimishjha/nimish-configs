@@ -17,7 +17,20 @@ local settings = {
 	pass1 = "",
 	pass2 = "",
 	whichPass = "pass2",
-	shaderPresets = { { "Brightness2_03", "BlendCool01" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" } },
+	shaderPresets = {
+		{ "Brightness2_03", "BlendCool01" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" },
+		{ "", "" }
+	},
 
 	eqIndex = 1,
 	eqFrequencies = {128, 250, 500, 1000, 2000, 4000, 6000, 8000, 12000, 16000},
@@ -343,6 +356,11 @@ mp.add_forced_key_binding('Shift+F5', 'saveShader5', saveShaderPreset(5))
 mp.add_forced_key_binding('Shift+F6', 'saveShader6', saveShaderPreset(6))
 mp.add_forced_key_binding('Shift+F7', 'saveShader7', saveShaderPreset(7))
 mp.add_forced_key_binding('Shift+F8', 'saveShader8', saveShaderPreset(8))
+mp.add_forced_key_binding('Shift+F9', 'saveShader9', saveShaderPreset(9))
+mp.add_forced_key_binding('Shift+F10', 'saveShader10', saveShaderPreset(10))
+mp.add_forced_key_binding('Shift+F11', 'saveShader11', saveShaderPreset(11))
+mp.add_forced_key_binding('Shift+F12', 'saveShader12', saveShaderPreset(12))
+
 mp.add_forced_key_binding('F1', 'loadShader1', loadShaderPreset(1))
 mp.add_forced_key_binding('F2', 'loadShader2', loadShaderPreset(2))
 mp.add_forced_key_binding('F3', 'loadShader3', loadShaderPreset(3))
@@ -351,6 +369,10 @@ mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
 mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
 mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
 mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
+mp.add_forced_key_binding('F9', 'loadShader9', loadShaderPreset(9))
+mp.add_forced_key_binding('F10', 'loadShader10', loadShaderPreset(10))
+mp.add_forced_key_binding('F11', 'loadShader11', loadShaderPreset(11))
+mp.add_forced_key_binding('F12', 'loadShader12', loadShaderPreset(12))
 
 mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
 mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
