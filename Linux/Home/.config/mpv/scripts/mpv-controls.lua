@@ -17,7 +17,12 @@ local settings = {
 	pass1 = "",
 	pass2 = "",
 	whichPass = "pass2",
-	shaderPresets = { { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" } }
+	shaderPresets = { { "Brightness2_03", "BlendCool01" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" }, { "", "" } },
+
+	eqIndex = 1,
+	eqFrequencies = {128, 250, 500, 1000, 2000, 4000, 6000, 8000, 12000, 16000},
+	eqWidths = {1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5},
+	eqGains = {0, 0, -9, -12, -12, -12, -12, -18, -18, -21}
 }
 
 local fileTypesToHandle = {}
@@ -288,6 +293,40 @@ end
 
 -- ____________________________________________________________________________________________________
 
+function applyEqualizerSettings()
+	local eqString = ""
+	for i = 1, 10 do
+		eqString = eqString .. "equalizer=f=" .. settings.eqFrequencies[i] .. ":t=o:w=" .. settings.eqWidths[i] .. ":g=" .. settings.eqGains[i]
+		if i ~= 10 then
+			eqString = eqString .. ","
+		end
+	end
+	mp.command(string.format("af set \"%s\"", eqString))
+end
+
+function prevFrequencyBand()
+	settings.eqIndex = math.max(settings.eqIndex - 1, 1);
+	mp.commandv("show_text", settings.eqFrequencies[settings.eqIndex])
+end
+
+function nextFrequencyBand()
+	settings.eqIndex = math.min(settings.eqIndex + 1, 10);
+	mp.commandv("show_text", settings.eqFrequencies[settings.eqIndex])
+end
+
+function increaseGain()
+	settings.eqGains[settings.eqIndex] = settings.eqGains[settings.eqIndex] + 3
+	applyEqualizerSettings()
+end
+
+function decreaseGain()
+	settings.eqGains[settings.eqIndex] = settings.eqGains[settings.eqIndex] - 3
+	applyEqualizerSettings()
+end
+
+
+-- ____________________________________________________________________________________________________
+
 mp.add_forced_key_binding('KP8', 'moveToFirstFile', moveToFirstFile)
 mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
 mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
@@ -361,3 +400,8 @@ mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
 mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
 mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
 mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
+
+mp.add_forced_key_binding('KP7', 'decreaseGain', decreaseGain)
+mp.add_forced_key_binding('KP9', 'increaseGain', increaseGain)
+mp.add_forced_key_binding('[', 'prevFrequencyBand', prevFrequencyBand)
+mp.add_forced_key_binding(']', 'nextFrequencyBand', nextFrequencyBand)
