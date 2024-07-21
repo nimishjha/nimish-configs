@@ -306,6 +306,42 @@ end
 
 -- ____________________________________________________________________________________________________
 
+function getFirstFile(res, delimiter)
+	if not res.error and res.status == 0 then
+		local playableFiles = {}
+		local firstFile
+		for line in res.stdout:gmatch("[^"..delimiter.."]+") do
+			firstFile = line
+			break
+		end
+		return firstFile, nil
+	else
+		return nil, res.error
+	end
+end
+
+function getLastModifiedFile(dir)
+	local flags = ('-1c')
+	local args = { 'ls', flags, dir }
+	local directoryListing = utils.subprocess({ args = args, cancellable = false })
+	return getFirstFile(directoryListing, '\n')
+end
+
+function loadLastModifiedShader()
+	local dir = mp.command_native({"expand-path", "~~home/"}) .. "/shaders"
+	local file, error
+	file, error = getLastModifiedFile(dir)
+	if not file then
+		msg.error("Subprocess failed: " .. (error or ''))
+		return
+	end
+	mp.commandv("change-list", "glsl-shaders", "set", "~/.config/mpv/shaders/" .. file)
+	mp.commandv("show_text", "loaded shader " .. file)
+end
+
+
+-- ____________________________________________________________________________________________________
+
 function applyEqualizerSettings()
 	local eqString = ""
 	for i = 1, 10 do
@@ -427,3 +463,5 @@ mp.add_forced_key_binding('KP7', 'decreaseGain', decreaseGain)
 mp.add_forced_key_binding('KP9', 'increaseGain', increaseGain)
 mp.add_forced_key_binding('[', 'prevFrequencyBand', prevFrequencyBand)
 mp.add_forced_key_binding(']', 'nextFrequencyBand', nextFrequencyBand)
+
+mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
