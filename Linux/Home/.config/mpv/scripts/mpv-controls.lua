@@ -19,17 +19,17 @@ local settings = {
 	whichPass = "pass2",
 	shaderPresets = {
 		{ "Brightness2_03", "BlendCool01" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" },
-		{ "", "" }
+		{ "Curve07", "BlendCool01" },
+		{ "Brightness2_03", "BlendCool04" },
+		{ "Curve07", "BlendCool04" },
+		{ "", "SaturateSelective01" },
+		{ "", "SaturateSelective02" },
+		{ "", "SaturateSelective09" },
+		{ "", "SaturateSelective10" },
+		{ "Brightness2_02", "BlendWarm10" },
+		{ "Curve07", "BlendWarm01" },
+		{ "Curve07", "BlendWarm02" },
+		{ "Curve07", "BlendWarm10" },
 	},
 
 	eqIndex = 1,
@@ -308,13 +308,7 @@ end
 
 function getFirstFile(res, delimiter)
 	if not res.error and res.status == 0 then
-		local playableFiles = {}
-		local firstFile
-		for line in res.stdout:gmatch("[^"..delimiter.."]+") do
-			firstFile = line
-			break
-		end
-		return firstFile, nil
+		return string.match(res.stdout, "[^"..delimiter.."]+"), nil
 	else
 		return nil, res.error
 	end
@@ -433,8 +427,9 @@ mp.add_forced_key_binding('j', 'set_shaders_BlendWarm', setShaderGroup('BlendWar
 mp.add_forced_key_binding('k', 'set_shaders_Curve', setShaderGroup('Curve'))
 mp.add_forced_key_binding('z', 'set_shaders_Test1', setShaderGroup('Test1_'))
 mp.add_forced_key_binding('x', 'set_shaders_Test2', setShaderGroup('Test2_'))
-mp.add_forced_key_binding('Shift+x', 'set_shaders_Test5', setShaderGroup('Test5_'))
+mp.add_forced_key_binding('Shift+x', 'set_shaders_ComplexBlend', setShaderGroup('ComplexBlend'))
 mp.add_forced_key_binding('c', 'set_shaders_Test3', setShaderGroup('Test3_'))
+mp.add_forced_key_binding('Shift+c', 'set_shaders_SaturateSelective', setShaderGroup('SaturateSelective'))
 mp.add_forced_key_binding('Shift+z', 'set_shaders_Test4', setShaderGroup('Test4_'))
 mp.add_forced_key_binding('v', 'set_shaders_OrangeBlue', setShaderGroup('OrangeBlue'))
 mp.add_forced_key_binding('b', 'set_shaders_MonotoneSepia', setShaderGroup('MonotoneSepia'))
