@@ -37,7 +37,7 @@ toolbar { background: #000 !important; }
 #urlbar-input-container { opacity: 0 !important; }
 #navigator-toolbox:hover #urlbar-input-container, #urlbar[focused] #urlbar-input-container { opacity: 1 !important; }
 
-#navigator-toolbox { background: #000 !important; }
+#navigator-toolbox { background: #000 !important; border-bottom: 1px solid #000 !important; }
 #titlebar, #nav-bar toolbarbutton, #page-action-buttons { opacity: 0 !important; }
 #navigator-toolbox:hover #titlebar { opacity: 1 !important; }
 #navigator-toolbox:hover toolbarbutton, #navigator-toolbox:hover #page-action-buttons { opacity: 0.75 !important; }
@@ -45,9 +45,33 @@ toolbar { background: #000 !important; }
 #downloads-button > .toolbarbutton-badge-stack > #downloads-indicator-progress-outer { width: 32px !important; align-items: flex-start !important; justify-content: flex-start !important; border: 2px solid #888 !important; background: #000 !important; border-radius: 0 !important; height: 10px !important; top: calc(50% - 5px) !important;}
 #downloads-indicator-progress-inner { width: calc(var(--download-progress-pcent)) !important; height: 100% !important; background: #AAA !important; border-radius: 0 !important; }
 
-richlistbox#downloadsListBox { background-color: #000 !important; border: 1px solid #444 !important; border-radius: 0 !important; }
+#downloadsListBox { background-color: #000 !important; border: 1px solid #444 !important; border-radius: 0 !important; }
 #downloadsListBox richlistitem { background: #222 !important; color: #888 !important; }
 #downloadsListBox richlistitem[selected] { background: #222 !important; color: #AAA !important; }
+#downloadsListBox .download.download-state[current="true"] { background: #000 !important; color: #AAA !important; }
 
-.download.download-state { font-size: 20px; background: #000 !important; color: #888 !important; }
-.download.download-state[selected] { background: #333 !important; color: #AAA !important; }
+.download.download-state { font-size: 20px !important; background-color: #000 !important; color: #888 !important; }
+.download.download-state[selected] { background-color: #333 !important; color: #AAA !important; }
+.download.download-state[active] { background-color: #333 !important; color: #AAA !important; }
+
+
+#contentAreaDownloadsView { --download-progress-fill-color: #0C0; }
+#contentAreaDownloadsView { background: #000 !important; color: #888 !important; }
+#contentAreaDownloadsView #downloadsListBox.allDownloadsListBox { background: #111 !important; border: 0 !important; }
+#contentAreaDownloadsView .download.download-state[current="true"] { background: #000 !important; color: #AAA !important; outline: 0 !important; }
+
+html|select[size][multiple], xul|listheader, xul|richlistbox { appearance: none !important; margin-inline: 0 !important; background-color: #000 !important; border: 0 !important; border-radius: 0 !important; color: #888 !important; }
+xul|richlistbox > xul|richlistitem[selected], xul|treechildren::-moz-tree-row(selected) { background-color: #000 !important; color: #AAA !important; }
+
+#contentAreaDownloadsView {
+--download-progress-fill-color: #DD0;
+}
+
+@media (prefers-color-scheme: dark) {
+  #contentAreaDownloadsView {
+    --download-progress-fill-color: #C0C;
+  }
+}
+
+#urlbar:is([focused], [open]) > #urlbar-background, #searchbar:focus-within { background: #000 !important; }
+#urlbar[focused] > #urlbar-background, #searchbar:focus-within { box-shadow: none !important; }

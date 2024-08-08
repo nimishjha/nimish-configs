@@ -70,7 +70,7 @@
 		line-height: var(--lineHeight) !important;
 	}
 
-	math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: 22px !important; }
+	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: 22px !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
 	body.pad100 table { width: 100% !important; }
@@ -252,12 +252,12 @@
     	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
     	body.nimbusTheme2 annotation { background: #222 !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
-	body.nimbusTheme2 mark { background: #048 !important; color: #6AC !important; }
+	body.nimbusTheme2 mark { background: #048 !important; color: #6BE !important; }
 	body.nimbusTheme2 markgreen { background: #150 !important; color: #5E0 !important; }
 	body.nimbusTheme2 markred { background: #500 !important; color: #E33 !important; }
 	body.nimbusTheme2 markblue { background: #005 !important; color: #6AC !important; }
-	body.nimbusTheme2 markpurple { background: #404 !important; color: #C6C !important; }
-	body.nimbusTheme2 markyellow { background: #804800 !important; color: #FF0 !important; }
+	body.nimbusTheme2 markpurple { background: #204 !important; color: #C7E !important; }
+	body.nimbusTheme2 markyellow { background: #222 !important; color: #FF0 !important; }
 	body.nimbusTheme2 markwhite { background: #222 !important; color: #DDD !important; }
 	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
 	body.nimbusTheme2 em,
@@ -489,15 +489,7 @@
 	.ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 0 200px #000; }
 }
 
-.devtools-monospace,
-.devtools-monospace span,
-.devtools-monospace *,
-.CodeMirror.cm-s-mozilla,
-.CodeMirror.cm-s-default,
-.CodeMirror
-{
-	font: 9pt Verdana !important;
-}
+/* .devtools-monospace, .devtools-monospace span, .devtools-monospace *, .CodeMirror.cm-s-mozilla, .CodeMirror.cm-s-default, .CodeMirror { font: 9pt Verdana !important; } */
 
 .CodeMirror, .CodeMirror * { background: #111 !important; color: #888 !important; }
 .CodeMirror pre { line-height: 1.4 !important; }
@@ -509,7 +501,7 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 {
 	html, body { background: #111 !important; color: #888 !important; }
 	#editor { background: #111 !important; color: #999 !important; }
-	#editor textarea { background: #111 !important; color: #999 !important; font: 26px/1.4 "Swis721 Cn BT" !important; }
+	#editor textarea { background: #111 !important; color: #999 !important; font: 20px/1.4 "Swis721 Cn BT" !important; }
 	.tab-bar { background: #222 !important; color: #555 !important; }
 	#tabs .tab.active { background: #111 !important; color: #999 !important; }
 }
