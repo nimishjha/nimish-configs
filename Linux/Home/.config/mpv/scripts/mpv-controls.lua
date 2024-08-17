@@ -19,13 +19,13 @@ local settings = {
 	whichPass = "pass2",
 	shaderPresets = {
 		{ "Brightness2_03", "BlendCool01" },
-		{ "Curve07", "BlendCool01" },
 		{ "Brightness2_03", "BlendCool04" },
-		{ "Curve07", "BlendCool04" },
-		{ "", "SaturateSelective01" },
-		{ "", "SaturateSelective02" },
-		{ "", "SaturateSelective09" },
-		{ "", "SaturateSelective10" },
+		{ "Brightness2_03", "BlendCool05" },
+		{ "Brightness2_03", "BlendCool08" },
+		{ "Curve05", "SaturateSelective01" },
+		{ "Curve05", "SaturateSelective02" },
+		{ "Curve05", "SaturateSelective03" },
+		{ "Curve05", "SaturateSelective10" },
 		{ "Brightness2_02", "BlendWarm10" },
 		{ "Curve07", "BlendWarm01" },
 		{ "Curve07", "BlendWarm02" },
@@ -33,9 +33,9 @@ local settings = {
 	},
 
 	eqIndex = 1,
-	eqFrequencies = {128, 250, 500, 1000, 2000, 4000, 6000, 8000, 12000, 16000},
-	eqWidths = {1, 1, 1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5},
-	eqGains = {0, 0, -9, -12, -12, -12, -12, -18, -18, -21}
+	eqFrequencies = {500, 1000, 2000, 4000, 6000, 8000, 12000, 16000},
+	eqWidths = {1, 1, 1, 1, 0.5, 0.5, 0.5, 0.5},
+	eqGains = {-9, -12, -12, -12, -12, -18, -18, -21}
 }
 
 local fileTypesToHandle = {}
@@ -338,9 +338,9 @@ end
 
 function applyEqualizerSettings()
 	local eqString = ""
-	for i = 1, 10 do
+	for i = 1, 8 do
 		eqString = eqString .. "equalizer=f=" .. settings.eqFrequencies[i] .. ":t=o:w=" .. settings.eqWidths[i] .. ":g=" .. settings.eqGains[i]
-		if i ~= 10 then
+		if i ~= 8 then
 			eqString = eqString .. ","
 		end
 	end
@@ -353,7 +353,7 @@ function prevFrequencyBand()
 end
 
 function nextFrequencyBand()
-	settings.eqIndex = math.min(settings.eqIndex + 1, 10);
+	settings.eqIndex = math.min(settings.eqIndex + 1, 8);
 	mp.commandv("show_text", settings.eqFrequencies[settings.eqIndex])
 end
 
@@ -370,7 +370,7 @@ end
 
 -- ____________________________________________________________________________________________________
 
-mp.add_forced_key_binding('KP8', 'moveToFirstFile', moveToFirstFile)
+mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
 mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
 mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
 mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
@@ -432,6 +432,7 @@ mp.add_forced_key_binding('c', 'set_shaders_Test3', setShaderGroup('Test3_'))
 mp.add_forced_key_binding('Shift+c', 'set_shaders_SaturateSelective', setShaderGroup('SaturateSelective'))
 mp.add_forced_key_binding('Shift+z', 'set_shaders_Test4', setShaderGroup('Test4_'))
 mp.add_forced_key_binding('v', 'set_shaders_OrangeBlue', setShaderGroup('OrangeBlue'))
+mp.add_forced_key_binding('Shift+v', 'set_shaders_Test5', setShaderGroup('Test5_'))
 mp.add_forced_key_binding('b', 'set_shaders_MonotoneSepia', setShaderGroup('MonotoneSepia'))
 mp.add_forced_key_binding('n', 'set_shaders_MonotoneRed', setShaderGroup('MonotoneRed'))
 mp.add_forced_key_binding('m', 'set_shaders_Red', setShaderGroup('Red'))
