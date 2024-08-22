@@ -2,6 +2,13 @@ import os
 
 from ranger.api.commands import Command
 
+def getFormattedModificationTime(filepath):
+	from datetime import datetime
+	import os
+	modTime = os.path.getmtime(filepath)
+	dateTime = datetime.fromtimestamp(modTime)
+	return dateTime.strftime("%Y%m%d_%H%M%S")
+
 class prepend_aaa(Command):
 
 	def execute(self):
@@ -57,11 +64,37 @@ class batch_rename(Command):
 		new_base_name = self.rest(1)
 
 		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = new_base_name + "%04d" % (index) + splitext(file.relative_path)[1]
+			new_name = new_base_name + "%04d" % (index + 1) + splitext(file.relative_path)[1]
 			if access(new_name, os.F_OK):
 				return self.fm.notify("Batch rename failed, file already exists", bad=True)
 			try:
 				os.rename(file.relative_path, new_name)
+			except OSError as err:
+				self.fm.notify(err)
+				return False
+
+		self.fm.notify("Batch rename successful")
+
+		return None
+
+class batch_rename_filemtime(Command):
+
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		from os.path import splitext
+
+		newBaseName = self.rest(1)
+		if not newBaseName:
+			return self.fm.notify("Base name is required", bad=True)
+
+		for index, file in enumerate( self.fm.thistab.get_selection() ):
+			fileModTimeString = getFormattedModificationTime(file.path)
+			newName = newBaseName + "_" + fileModTimeString + splitext(file.relative_path)[1]
+			if access(newName, os.F_OK):
+				return self.fm.notify("Batch rename failed, file already exists", bad=True)
+			try:
+				os.rename(file.relative_path, newName)
 			except OSError as err:
 				self.fm.notify(err)
 				return False
