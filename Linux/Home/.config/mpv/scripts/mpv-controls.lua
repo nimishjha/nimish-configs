@@ -88,6 +88,7 @@ function cacheFileList()
 	end
 
 	msg.warn(#files .. " playable files found")
+	mp.commandv("show_text", "Refreshed file list")
 
 	settings.fileList = files
 	settings.dir = dir
@@ -371,6 +372,7 @@ end
 -- ____________________________________________________________________________________________________
 
 mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
+mp.add_forced_key_binding('END', 'cacheFileList', cacheFileList)
 mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
 mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
 mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
@@ -437,8 +439,6 @@ mp.add_forced_key_binding('b', 'set_shaders_MonotoneSepia', setShaderGroup('Mono
 mp.add_forced_key_binding('n', 'set_shaders_MonotoneRed', setShaderGroup('MonotoneRed'))
 mp.add_forced_key_binding('m', 'set_shaders_Red', setShaderGroup('Red'))
 
-mp.add_forced_key_binding('=', 'cacheFileList', cacheFileList)
-
 mp.add_forced_key_binding('1', 'set_shader_number_1', setShaderNumber(1))
 mp.add_forced_key_binding('2', 'set_shader_number_2', setShaderNumber(2))
 mp.add_forced_key_binding('3', 'set_shader_number_3', setShaderNumber(3))
@@ -455,9 +455,9 @@ mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
 mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
 mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
 
-mp.add_forced_key_binding('KP7', 'decreaseGain', decreaseGain)
-mp.add_forced_key_binding('KP9', 'increaseGain', increaseGain)
-mp.add_forced_key_binding('[', 'prevFrequencyBand', prevFrequencyBand)
-mp.add_forced_key_binding(']', 'nextFrequencyBand', nextFrequencyBand)
+-- mp.add_forced_key_binding('KP7', 'decreaseGain', decreaseGain)
+-- mp.add_forced_key_binding('KP9', 'increaseGain', increaseGain)
+-- mp.add_forced_key_binding('[', 'prevFrequencyBand', prevFrequencyBand)
+-- mp.add_forced_key_binding(']', 'nextFrequencyBand', nextFrequencyBand)
 
 mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
