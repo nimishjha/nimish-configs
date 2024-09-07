@@ -112,16 +112,17 @@ function getIndexOfCurrentFile(files, currentFileName)
 	local min = 1
 	local max = #files
 	local index
-	local currentFileNameLower = string.lower(currentFileName)
+	-- local currentFileNameLower = string.lower(currentFileName)
 	local found = false
 	while (min < max) do
 		index = math.floor((min + max) / 2)
-		local value = string.lower(files[index])
-		if (currentFileNameLower == value) then
+		-- local value = string.lower(files[index])
+		local value = files[index]
+		if (currentFileName == value) then
 			found = true
 			return index
 		end
-		if (currentFileNameLower < value) then
+		if (currentFileName < value) then
 			max = index - 1
 		else
 			min = index + 1
