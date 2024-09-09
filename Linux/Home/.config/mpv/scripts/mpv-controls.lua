@@ -4,7 +4,7 @@ local msg = require 'mp.msg'
 os.setlocale("")
 
 local settings = {
-	filetypes = { 'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd' },
+	filetypes = { 'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd', 'aac' },
 	fileList = {},
 	dir = "",
 	orderByNaturalNumbers = false,
@@ -15,18 +15,18 @@ local settings = {
 	pass2 = "",
 	whichPass = "pass2",
 	shaderPresets = {
-		{ "BrightnessDecrease_02", "BlendCool_08" },
 		{ "BrightnessDecrease_02", "BlendCool_00" },
-		{ "BrightnessDecrease_02", "BlendCool_03" },
-		{ "BrightnessDecrease_02", "BlendCool_04" },
-		{ "Curve_05", "SaturateSelective_00" },
+		{ "Curve_00", "BlendCool_00" },
+		{ "Curve_01", "BlendCool_00" },
+		{ "BrightnessDecrease_05", "BlendCool_00" },
+		{ "Curve_14", "SaturateSelective_00" },
 		{ "ChannelMixer_07", "" },
 		{ "ChannelMixer_07", "Tint_00" },
 		{ "BrightnessDecrease_02", "ChannelMixer_08" },
 		{ "ChannelMixer_07", "" },
 		{ "ChannelMixer_07", "Tint_00" },
 		{ "BrightnessDecrease_02", "BlendWarm_09" },
-		{ "Curve_07", "BlendWarm_09" },
+		{ "Curve_16", "BlendWarm_09" },
 	},
 }
 
@@ -51,7 +51,6 @@ function parseFiles(res, delimiter)
 				table.insert(playableFiles, line)
 			end
 		end
-		-- table.sort(playableFiles)
 		return playableFiles, nil
 	else
 		return nil, res.error
@@ -104,11 +103,9 @@ function getIndexOfCurrentFile(files, currentFileName)
 	local min = 1
 	local max = #files
 	local index
-	-- local currentFileNameLower = string.lower(currentFileName)
 	local found = false
 	while (min < max) do
 		index = math.floor((min + max) / 2)
-		-- local value = string.lower(files[index])
 		local value = files[index]
 		if (currentFileName == value) then
 			found = true
@@ -156,7 +153,8 @@ function moveToFile(step)
 				nextIndex = #settings.fileList
 			end
 		end
-		loadFile(settings.fileList[nextIndex])
+		local filename = settings.fileList[nextIndex]
+		loadFile(filename)
 	else
 		msg.error("Did not find current file in list")
 	end
@@ -174,6 +172,17 @@ function moveBy(num)
 	return function()
 		moveToFile(num)
 	end
+end
+
+function moveByRandomAmount()
+	local max =#settings.fileList
+	if (not max or max < 2) then
+		mp.commandv("show_text", "max is " .. max)
+		return
+	end
+	local jump = math.random(1, max)
+	-- mp.commandv("show_text", "max is " .. max .. "; jump is " .. jump)
+	moveToFile(jump)
 end
 
 -- ____________________________________________________________________________________________________
@@ -383,6 +392,8 @@ mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
 mp.add_forced_key_binding('Ctrl+PGUP', 'moveBackBy10', moveBy(-10))
 mp.add_forced_key_binding('Ctrl+Shift+PGDWN', 'moveBy50', moveBy(50))
 mp.add_forced_key_binding('Ctrl+Shift+PGUP', 'moveBackBy50', moveBy(-50))
+mp.add_forced_key_binding('Alt+PGDWN', 'moveByRandomAmount', moveByRandomAmount)
+
 
 mp.add_forced_key_binding('Shift+F1', 'saveShader1', saveShaderPreset(1))
 mp.add_forced_key_binding('Shift+F2', 'saveShader2', saveShaderPreset(2))
@@ -415,8 +426,10 @@ mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
 
 mp.add_forced_key_binding('q', 'set_shader_group_Blue', setShaderGroupHandler('Blue_'))
 mp.add_forced_key_binding('w', 'set_shader_group_ComplexBlend', setShaderGroupHandler('ComplexBlend_'))
+mp.add_forced_key_binding('e', 'set_shader_group_RedBlue', setShaderGroupHandler('RedBlue_'))
 mp.add_forced_key_binding('r', 'set_shader_group_Red', setShaderGroupHandler('Red_'))
 mp.add_forced_key_binding('t', 'set_shader_group_Tint', setShaderGroupHandler('Tint_'))
+mp.add_forced_key_binding('y', 'set_shader_group_Green', setShaderGroupHandler('Green_'))
 mp.add_forced_key_binding('u', 'set_shader_group_LightTint', setShaderGroupHandler('LightTint_'))
 mp.add_forced_key_binding('i', 'set_shader_group_Invert', setShaderGroupHandler('Invert'))
 mp.add_forced_key_binding('o', 'set_shader_group_ChannelMixer', setShaderGroupHandler('ChannelMixer_'))
@@ -429,7 +442,8 @@ mp.add_forced_key_binding('g', 'set_shader_group_Grayscale', setShaderGroupHandl
 mp.add_forced_key_binding('h', 'set_shader_group_BlendCool', setShaderGroupHandler('BlendCool_'))
 mp.add_forced_key_binding('j', 'set_shader_group_BlendWarm', setShaderGroupHandler('BlendWarm_'))
 mp.add_forced_key_binding('k', 'set_shader_group_Curve', setShaderGroupHandler('Curve_'))
-mp.add_forced_key_binding('z', 'set_shader_group_Test', setShaderGroupHandler('Test_'))
+mp.add_forced_key_binding('z', 'set_shader_group_Z', setShaderGroupHandler('z_'))
+mp.add_forced_key_binding('x', 'set_shader_group_PsychedelicMix', setShaderGroupHandler('PsychedelicMix_'))
 mp.add_forced_key_binding('v', 'set_shader_group_OrangeBlue', setShaderGroupHandler('OrangeBlue_'))
 mp.add_forced_key_binding('b', 'set_shader_group_MonotoneSepia', setShaderGroupHandler('MonotoneSepia_'))
 mp.add_forced_key_binding('n', 'set_shader_group_MonotoneRed', setShaderGroupHandler('MonotoneRed_'))
