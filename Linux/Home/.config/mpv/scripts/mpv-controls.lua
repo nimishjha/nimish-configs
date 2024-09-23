@@ -85,9 +85,21 @@ function cacheFileList()
 	settings.dir = dir
 end
 
+function checkFileExists(path)
+	local command = {"test", "-e", path}
+	local res = utils.subprocess({args = command, cancellable = false})
+	return res.status == 0
+end
+
 function loadFile(filename)
-	mp.commandv("show_text", filename)
-	mp.commandv("loadfile", utils.join_path(settings.dir, filename), "replace")
+	local fullpath = utils.join_path(settings.dir, filename)
+	local doesFileExist = checkFileExists(fullpath)
+	if (doesFileExist) then
+		mp.commandv("show_text", filename)
+		mp.commandv("loadfile", fullpath, "replace")
+	else
+		cacheFileList()
+	end
 end
 
 function moveToFirstFile()
