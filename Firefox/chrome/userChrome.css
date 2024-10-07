@@ -54,7 +54,6 @@ toolbar { background: #000 !important; }
 .download.download-state[selected] { background-color: #333 !important; color: #AAA !important; }
 .download.download-state[active] { background-color: #333 !important; color: #AAA !important; }
 
-
 #contentAreaDownloadsView { --download-progress-fill-color: #0C0; }
 #contentAreaDownloadsView { background: #000 !important; color: #888 !important; }
 #contentAreaDownloadsView #downloadsListBox.allDownloadsListBox { background: #111 !important; border: 0 !important; }
@@ -68,9 +67,9 @@ xul|richlistbox > xul|richlistitem[selected], xul|treechildren::-moz-tree-row(se
 }
 
 @media (prefers-color-scheme: dark) {
-  #contentAreaDownloadsView {
-    --download-progress-fill-color: #C0C;
-  }
+	#contentAreaDownloadsView {
+		--download-progress-fill-color: #C0C;
+	}
 }
 
 #urlbar:is([focused], [open]) > #urlbar-background, #searchbar:focus-within { background: #000 !important; }
