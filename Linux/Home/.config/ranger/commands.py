@@ -4,7 +4,6 @@ from ranger.api.commands import Command
 
 def getFormattedModificationTime(filepath):
 	from datetime import datetime
-	import os
 	modTime = os.path.getmtime(filepath)
 	dateTime = datetime.fromtimestamp(modTime)
 	return dateTime.strftime("%Y%m%d_%H%M%S")
@@ -65,6 +64,29 @@ class batch_rename(Command):
 
 		for index, file in enumerate( self.fm.thistab.get_selection() ):
 			new_name = new_base_name + "%04d" % (index + 1) + splitext(file.relative_path)[1]
+			if access(new_name, os.F_OK):
+				return self.fm.notify("Batch rename failed, file already exists", bad=True)
+			try:
+				os.rename(file.relative_path, new_name)
+			except OSError as err:
+				self.fm.notify(err)
+				return False
+
+		self.fm.notify("Batch rename successful")
+
+		return None
+
+class batch_rename_two_digits(Command):
+
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		from os.path import splitext
+
+		new_base_name = self.rest(1)
+
+		for index, file in enumerate( self.fm.thistab.get_selection() ):
+			new_name = new_base_name + "%02d" % (index + 1) + splitext(file.relative_path)[1]
 			if access(new_name, os.F_OK):
 				return self.fm.notify("Batch rename failed, file already exists", bad=True)
 			try:
