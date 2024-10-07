@@ -1,0 +1,109 @@
+"type" = "#00FF00"
+"constructor" = { fg = "#90C000", modifiers = ["bold"] }
+"constant" = { fg = "cyan", modifiers = ["bold"] }
+"string" = "stringfg"
+"string.regexp" = { fg = "#AACCEE", bg = "#205090" }
+"string.special" = "blue"
+"comment" = "comment"
+"variable" = "variablefg"
+"variable.parameter" = "variablefg"
+"variable.builtin" = "#AACCEE"
+"label" = "#00DD00"
+"punctuation" = "cyan"
+"keyword" = "keywordfg"
+"keyword.storage" = "cyan"
+"operator" = "cyan"
+"function" = "blue"
+"function.macro" = "cyan"
+"tag" = { fg = "cyan", modifiers = ["bold"] }
+"attribute" = "#FFFF00"
+"namespace" = { fg = "#FF00FF" }
+"special" = "cyan"
+
+"markup.heading.marker" = { fg = "cyan", modifiers = ["bold"] }
+"markup.heading.1" = "cyan"
+"markup.heading.2" = "red"
+"markup.heading.3" = "green"
+"markup.heading.4" = "yellow"
+"markup.heading.5" = "blue"
+"markup.heading.6" = "orange"
+"markup.list" = "purple"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "green", modifiers = ["underlined"] }
+"markup.link.text" = "blue"
+"markup.raw" = "text"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+"ui.background" = { bg = "bg", fg = "text" }
+"ui.text" = { fg = "text" }
+"ui.statusline" = { bg = "bg", fg = "text" }
+"ui.statusline.inactive" = { bg = "bg", fg = "disabled" }
+"ui.statusline.normal" = { bg = "accent", fg = "text" }
+"ui.statusline.insert" = { bg = "green", fg = "text" }
+"ui.statusline.select" = { bg = "purple", fg = "text" }
+"ui.selection" = { bg = "selectionbg", fg = "selectionfg" }
+"ui.linenr" = { fg = "line-number" }
+"ui.linenr.selected" = { fg = "accent" }
+"ui.cursor" = { bg = "cursorbg", fg = "cursorfg" }
+"ui.cursor.primary" = { bg = "cursorprimarybg", fg = "cursorprimaryfg" }
+"ui.cursorline.primary" = { bg = "cursorlineprimary" }
+"ui.virtual" = { fg = "gray" }
+"ui.virtual.ruler" = { bg = "highlight" }
+"ui.virtual.indent-guide" = { fg = "gray" }
+"ui.highlight" = { bg = "#000080", fg = "#DDDD00" }
+"ui.menu" = { bg = "#102030", fg = "#8090A0" }
+"ui.menu.selected" = { bg = "#204060", fg = "#AACCEE" }
+"ui.menu.scroll" = { bg = "#AA00AA", fg = "#6080A0" }
+"ui.help" = { bg = "#102030", fg = "#6080A0" }
+"ui.popup" = { bg = "#102030", fg = "#6080A0" }
+
+warning = "yellow"
+error = "error"
+info = "blue"
+hint = "purple"
+
+[palette]
+bg = "#001020"
+text = "#a0a8c0"
+
+white = "#eeffff"
+green = "#c3e88d"
+yellow = "#FFFF00"
+blue = "#82aaff"
+red = "#00FFFF"
+purple = "#FFFF00"
+orange = "#00FF00"
+cyan = "#80C0E0"
+gray = "#717cb4"
+error = "#ff5370"
+
+disabled = "#464b5d"
+
+accent = "#84ffff"
+
+active = "#1a1c25"
+highlight = "#1f2233"
+
+comment = "#405060"
+
+selection = "#1f2233"
+selectionbg = "#000000"
+selectionfg = "#EEEE00"
+
+line-number = "#3b3f51"
+
+cursorbg = "#880000"
+cursorfg = "#FF0000"
+cursorprimarybg = "#464B5D"
+cursorprimaryfg = "#EEEEEE"
+cursorlineprimary = "#442200"
+highlightbg = "#CC0000"
+highlightfg = "#AACCEE"
+variablefg = "#6060D0"
+keywordfg = "#7070C0"
+stringfg = "#8080A0"

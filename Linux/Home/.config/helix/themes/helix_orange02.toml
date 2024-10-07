@@ -1,0 +1,145 @@
+# Material Theme <https://material-theme.com/> for Helix Editor
+
+# Syntax Highlighting
+
+"type" = "#00FF00"
+"constructor" = { fg = "constructor_fg", modifiers = ["bold"] }
+"constant" = { fg = "constant_fg", modifiers = ["bold"] }
+"string" = "string_fg"
+"string.regexp" = { fg = "string_regexp_fg", bg = "string_regexp_bg" }
+"string.special" = "string_special_fg"
+"comment" = "comment_fg"
+"variable" = "variable_fg"
+"variable.parameter" = "variable_fg"
+"variable.builtin" = "variable_builtin_fg"
+"label" = "label_fg"
+"punctuation" = "punctuation_fg"
+"keyword" = "keyword_fg"
+"keyword.storage" = "keyword_storage_fg"
+"operator" = "operator_fg"
+"function" = "function_fg"
+"function.macro" = "function_macro_fg"
+"tag" = { fg = "tag_fg", modifiers = ["bold"] }
+"attribute" = "attribute_fg"
+"namespace" = { fg = "namespace_fg" }
+"special" = "special_fg"
+
+"markup.heading.marker" = { fg = "cyan", modifiers = ["bold"] }
+"markup.heading.1" = "cyan"
+"markup.heading.2" = "red"
+"markup.heading.3" = "green"
+"markup.heading.4" = "yellow"
+"markup.heading.5" = "blue"
+"markup.heading.6" = "orange"
+"markup.list" = "purple"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "green", modifiers = ["underlined"] }
+"markup.link.text" = "blue"
+"markup.raw" = "text"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+# User Interface
+
+"ui.background" = { bg = "default_bg", fg = "text" }
+"ui.text" = { fg = "default_fg" }
+"ui.statusline" = { fg = "statusbar_fg", bg = "statusbar_bg" }
+"ui.statusline.inactive" = { bg = "bg", fg = "disabled" }
+"ui.statusline.normal" = { bg = "accent", fg = "text" }
+"ui.statusline.insert" = { bg = "green", fg = "text" }
+"ui.statusline.select" = { bg = "purple", fg = "text" }
+"ui.selection" = { bg = "selectionbg", fg = "selectionfg" }
+"ui.linenr" = { fg = "linenr_fg" }
+"ui.linenr.selected" = { fg = "accent" }
+"ui.cursor" = { bg = "cursorbg", fg = "cursorfg" }
+"ui.cursor.primary" = { bg = "cursorprimarybg", fg = "cursorprimaryfg" }
+"ui.cursorline.primary" = { bg = "cursorlineprimary" }
+"ui.virtual" = { fg = "gray" }
+"ui.virtual.ruler" = { bg = "highlight" }
+"ui.virtual.indent-guide" = { fg = "gray" }
+"ui.highlight" = { bg = "highlightbg", fg = "highlightfg" }
+"ui.help" = { bg = "highlight", fg = "text" }
+"ui.menu" = { bg = "menu_bg", fg = "menu_fg" }
+"ui.menu.scroll" = { bg = "#001020", fg = "#8090A0" }
+"ui.menu.selected" = { bg = "menu_selected_bg", fg = "menu_selected_fg" }
+"ui.popup" = { bg = "menu_bg", fg = "#menu_fg" }
+
+warning = "yellow"
+error = "error"
+info = "blue"
+hint = "purple"
+
+[palette]
+bg = "#001020"
+text = "#A09080"
+
+white = "#eeffff"
+green = "#c3e88d"
+yellow = "#FFFF00"
+blue = "#0000FF"
+red = "#00FFFF"
+purple = "#FF00FF"
+orange = "#FF9900"
+cyan = "#00FFFF"
+gray = "#808080"
+error = "#FF0000"
+
+disabled = "#464b5d"
+
+accent = "#84ffff"
+
+active = "#1a1c25"
+highlight = "#1f2233"
+
+comment = "#405060"
+
+selection = "#1f2233"
+selectionbg = "#502000"
+selectionfg = "#E07000"
+
+line-number = "#3b3f51"
+
+cursorbg = "#880000"
+cursorfg = "#FF0000"
+cursorprimarybg = "#464B5D"
+cursorprimaryfg = "#EEEEEE"
+cursorlineprimary = "#442200"
+highlightbg = "#CC0000"
+highlightfg = "#AACCEE"
+variablefg = "#6060D0"
+keywordfg = "#7070C0"
+stringfg = "#8080A0"
+
+default_fg = "#A09080"
+default_bg = "#000000"
+constant_fg = "#A080D0"
+string_fg = "#806040"
+string_regexp_fg = "#D09000"
+string_regexp_bg = "#502000"
+string_special_fg = "#00CCCC"
+comment_fg = "#806040"
+variable_fg = "#D08000"
+variable_builtin_fg = "#D08080"
+label_fg = "#A06030"
+punctuation_fg = "#807060"
+keyword_fg = "#D06000"
+keyword_storage_fg = "#D06060"
+operator_fg = "#807060"
+function_fg = "#C09080"
+function_macro_fg = "#D08080"
+tag_fg = "#B08050"
+attribute_fg = "#A06000"
+namespace_fg = "#00CC00"
+special_fg = "#00CCCC"
+statusbar_fg = "#808080"
+statusbar_bg = "#101010"
+linenr_fg = "#605040"
+constructor_fg = "#C000C0"
+menu_bg = "#202020"
+menu_fg = "#808080"
+menu_selected_bg = "#303030"
+menu_selected_fg = "#AAAAAA"
