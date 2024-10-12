@@ -32,6 +32,12 @@
 	--colorHeadings2: #777;
 	--colorTextEmphasis2: #999;
 
+	--backgroundHtml3: #111111;
+	--backgroundBody3: #1c1c1c;
+	--colorText3: #606060;
+	--colorHeadings3: #808080;
+	--colorTextEmphasis3: #A0A0A0;
+
 	--component-bg-color: #404;
 }
 
@@ -62,6 +68,7 @@
 	html body, #nimbus body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
 	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--backgroundBody1) !important; color: var(--colorText1) !important; }
 	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--backgroundBody2) !important; color: var(--colorText2) !important; }
+	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--backgroundBody3) !important; color: var(--colorText3) !important; }
 
 	html, html body, #nimbus body {
 		font-size: 22px !important;
@@ -84,8 +91,8 @@
 	body.xblack { background: #000 !important; }
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
- 	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
- 		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", Calibri, sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
+	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
+		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", Calibri, sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
 	body.pad100 h1, body.pad100 h1[class], body.pad100 h2, body.pad100 h2[class], body.pad100 h3, body.pad100 h3[class], body.pad100 h4, body.pad100 h4[class], body.pad100 h5, body.pad100 h5[class], body.pad100 h6, body.pad100 h6[class]
 		{ padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
 
@@ -178,9 +185,9 @@
 	tt { color: #06C !important; }
 	kbd { color: #4D4 !important; }
 	samp { color: #0CC !important; }
-	pre { font: bold 20px/1.2 "swis721 cn bt", monospace !important; }
-	body.nimbusTheme1 pre { font: bold 15px/1.2 monospace !important; }
-	body.nimbusTheme2 pre { font: bold 15px/1.2 monospace !important; }
+	pre { font: bold 20px/1.3 "swis721 cn bt", monospace !important; }
+	body.nimbusTheme1 pre { font: bold 15px/1.3 monospace !important; }
+	body.nimbusTheme2 pre { font: bold 15px/1.3 monospace !important; }
 	pre { background: #0C0C0C !important; color: #888 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #444 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
@@ -249,8 +256,8 @@
 		{ color: var(--colorText2) !important; background: var(--backgroundBody2) !important; }
 
 	html.nimbusTheme2 h1, html.nimbusTheme2 h2, html.nimbusTheme2 h3, html.nimbusTheme2 h4, html.nimbusTheme2 h5, html.nimbusTheme2 h6, html.nimbusTheme2 h1[class], html.nimbusTheme2 h2[class], html.nimbusTheme2 h3[class], html.nimbusTheme2 h4[class], html.nimbusTheme2 h5[class], html.nimbusTheme2 h6[class] { padding: 10px 0px !important; color: var(--colorHeadings2) !important; }
-    	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
-    	body.nimbusTheme2 annotation { background: #222 !important; }
+		body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
+		body.nimbusTheme2 annotation { background: #222 !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
 	body.nimbusTheme2 mark { background: #048 !important; color: #6BE !important; }
 	body.nimbusTheme2 markgreen { background: #150 !important; color: #5E0 !important; }
@@ -309,7 +316,7 @@
 
 	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
 
- 	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
+	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
 	span[class*=button]:hover, a[class*=button]:hover, button:hover, input[type="submit"]:hover { filter: contrast(1.3) !important; }
 
 	/* 											 									*/
