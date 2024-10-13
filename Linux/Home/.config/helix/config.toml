@@ -1,0 +1,46 @@
+theme = "helix_blue01"
+
+[editor]
+text-width = 200
+color-modes = true
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-absolute-path", "read-only-indicator", "file-modification-indicator"]
+
+[editor.gutters]
+layout = ["line-numbers", "spacer", "spacer", "spacer", "spacer"]
+
+[editor.gutters.line-numbers]
+min-width = 4
+
+
+[keys.normal]
+C-home = "goto_file_start"
+C-end = "goto_last_line"
+C-q = ":quit"
+C-s = ":write"
+C-a = "select_all"
+C-c = "yank_to_clipboard"
+C-p = "extend_search_prev"
+C-n = "extend_search_next"
+A-x = "extend_to_line_bounds"
+X = "extend_line_up"
+C-b = "make_search_word_bounded"
+C-v = "paste_before"
+C-z = "undo"
+end = "goto_line_end_newline"
+ins = "insert_mode"
+
+[keys.select]
+A-x = "extend_to_line_bounds"
+X = "extend_line_up"
+C-c = "yank_to_clipboard"
