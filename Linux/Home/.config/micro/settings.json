@@ -1,7 +1,17 @@
 {
-    "colorscheme": "aaa_greendark",
+    "autoclose": false,
+    "colorscheme": "green01",
+    "diffgutter": true,
+    "fastdirty": true,
     "ftoptions": false,
+    "hlsearch": true,
+    "hltaberrors": true,
+    "hltrailingws": true,
+    "matchbracestyle": "highlight",
     "rmtrailingws": true,
+    "scrollspeed": 1,
     "softwrap": true,
-    "tabsize": 8
+    "statusformatl": "$(filename) $(modified) $(status.paste) $(line):$(col)",
+    "statusformatr": "filetype: $(opt:filetype) | $(opt:fileformat) | $(opt:encoding) ",
+    "tabhighlight": true
 }
