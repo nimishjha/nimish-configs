@@ -1,6 +1,7 @@
 {
     "autoclose": false,
-    "colorscheme": "green01",
+    "backup": false,
+    "colorscheme": "gray01",
     "diffgutter": true,
     "fastdirty": true,
     "ftoptions": false,
@@ -8,9 +9,10 @@
     "hltaberrors": true,
     "hltrailingws": true,
     "matchbracestyle": "highlight",
+    "pageoverlap": 4,
     "rmtrailingws": true,
+    "scrollmargin": 0,
     "scrollspeed": 1,
-    "softwrap": true,
     "statusformatl": "$(filename) $(modified) $(status.paste) $(line):$(col)",
     "statusformatr": "filetype: $(opt:filetype) | $(opt:fileformat) | $(opt:encoding) ",
     "tabhighlight": true
