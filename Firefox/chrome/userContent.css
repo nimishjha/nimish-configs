@@ -8,21 +8,22 @@
 	--colorLinksHover: #CCC;
 	--colorLinksVisited:  #55C;
 	--backgroundNav: #111;
-	--fontSizeSmall: 0.8rem;
+	--fontSizeNormal: 21px;
+	--fontSizeSmall: 0.8em;
 	--colorBorders: #111;
 
 	--backgroundHtml: #181818;
 	--backgroundBody: #242424;
-	--colorText: #777;
-	--colorTextEmphasis: #999;
+	--colorText: #808080;
+	--colorTextEmphasis: #A0A0A0;
 	--backgroundHeadings: #131313;
-	--colorHeadings: #777;
+	--colorHeadings: #888888;
 	--colorSeparator: #181818;
 	--colorBorderDark: #111;
 	--colorBorderLight: #444;
 
 	--backgroundBody1: #202020;
-	--colorText1: #686868;
+	--colorText1: #808080;
 	--colorHeadings1: #777;
 	--colorTextEmphasis1: #999;
 
@@ -71,13 +72,13 @@
 	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--backgroundBody3) !important; color: var(--colorText3) !important; }
 
 	html, html body, #nimbus body {
-		font-size: 22px !important;
+		font-size: var(--fontSizeNormal) !important;
 		font-family: "Swis721 Cn BT" !important;
 		font-style: normal !important;
 		line-height: var(--lineHeight) !important;
 	}
 
-	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: 22px !important; }
+	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
 	body.pad100 table { width: 100% !important; }
@@ -121,6 +122,7 @@
 	sub, sup { font-size: var(--fontSizeSmall) !important; font-family: inherit !important; line-height: 1.2 !important; }
 	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundNav) !important; }
 	#nimbus header { border-top: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+	#nimbus hgroup { padding: 10px 10px 10px 2rem !important; border: 10px solid var(--backgroundNav) !important; }
 	#nimbus footer { border-bottom: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
 	#nimbus nav { border-right: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
 
@@ -473,7 +475,7 @@
 
 @-moz-document domain(www.amazon.com), domain(amazon.com), domain(www.amazon.com.au), domain(amazon.com.au)
 {
-	html h2, html h2[class], div[class] h2 { font: 22px "Swis721 Cn BT", Calibri, sans-serif !important; }
+	html h2, html h2[class], div[class] h2 { font: var(--fontSizeNormal) "Swis721 Cn BT", Calibri, sans-serif !important; }
 	*::before, *::after { background: transparent !important; }
 	.cr-lightbox-navigator-container { display: none !important; }
 	.filledStar { box-shadow: inset 0 -2000px #666 !important; }
