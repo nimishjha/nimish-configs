@@ -1,7 +1,35 @@
 local utils = require 'mp.utils'
 local msg = require 'mp.msg'
+local presets01 = {
+	{ "Curve_14", "BlueNew_00" },
+	{ "Curve_15", "BlueNew_00" },
+	{ "Curve_16", "BlueNew_00" },
+	{ "Dim_02", "BlueNew_00" },
+	{ "Curve_14", "RedBlue_00" },
+	{ "Curve_15", "RedBlue_00" },
+	{ "Curve_16", "RedBlue_00" },
+	{ "Dim_02", "RedBlue_00" },
+	{ "Curve_14", "ChannelMixer_00" },
+	{ "Curve_15", "zz_42" },
+	{ "Curve_16", "MonotoneRed_30" },
+	{ "Curve_14", "ChannelMixer_80" },
+}
 
 os.setlocale("")
+
+function deepCopy(original)
+    local copy
+    if type(original) == "table" then
+        copy = {}
+        for k, v in next, original, nil do
+            copy[deepCopy(k)] = deepCopy(v)
+        end
+        setmetatable(copy, deepCopy(getmetatable(original)))
+    else
+        copy = original
+    end
+    return copy
+end
 
 local settings = {
 	filetypes = { 'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd', 'aac' },
@@ -9,25 +37,12 @@ local settings = {
 	dir = "",
 	orderByNaturalNumbers = false,
 
-	shaderGroup = "Blue_",
+	shaderGroup = "BlueNew_",
 	shaderNumber = "00",
 	pass1 = "",
 	pass2 = "",
 	whichPass = "pass2",
-	shaderPresets = {
-		{ "BrightnessDecrease_02", "BlendCool_00" },
-		{ "Curve_00", "BlendCool_00" },
-		{ "Curve_01", "BlendCool_00" },
-		{ "BrightnessDecrease_05", "BlendCool_00" },
-		{ "Curve_14", "SaturateSelective_00" },
-		{ "ChannelMixer_07", "" },
-		{ "ChannelMixer_07", "Tint_00" },
-		{ "BrightnessDecrease_02", "ChannelMixer_08" },
-		{ "ChannelMixer_07", "" },
-		{ "ChannelMixer_07", "Tint_00" },
-		{ "BrightnessDecrease_02", "BlendWarm_09" },
-		{ "Curve_16", "BlendWarm_09" },
-	},
+	shaderPresets = deepCopy(presets01),
 }
 
 local fileTypesToHandle = {}
@@ -187,13 +202,12 @@ function moveBy(num)
 end
 
 function moveByRandomAmount()
-	local max =#settings.fileList
+	local max = #settings.fileList
 	if (not max or max < 2) then
 		mp.commandv("show_text", "max is " .. max)
 		return
 	end
-	local jump = math.random(1, max)
-	-- mp.commandv("show_text", "max is " .. max .. "; jump is " .. jump)
+	local jump = math.random(1, math.floor(max / 10))
 	moveToFile(jump)
 end
 
@@ -301,8 +315,8 @@ end
 
 function setShaderNumber(num)
 	return function()
-		if(settings.shaderNumber == nil or string.len(settings.shaderNumber) == 2) then
-			settings.shaderNumber = num
+		if(string.len(settings.shaderNumber) == 2) then
+			settings.shaderNumber = tostring(num)
 			mp.commandv("show_text", "shader number is " .. settings.shaderNumber)
 		else
 			settings.shaderNumber = settings.shaderNumber .. num
@@ -337,7 +351,7 @@ end
 
 function saveShaderPreset(presetNumber)
 	return function()
-		mp.commandv("show_text", "Saved quick shader" .. presetNumber)
+		mp.commandv("show_text", "Saved quick shader " .. presetNumber)
 		settings.shaderPresets[presetNumber][1] = settings.pass1
 		settings.shaderPresets[presetNumber][2] = settings.pass2
 	end
@@ -349,6 +363,11 @@ function loadShaderPreset(presetNumber)
 		settings.pass2 = settings.shaderPresets[presetNumber][2]
 		applyShaders()
 	end
+end
+
+function resetShaderPresets()
+	settings.shaderPresets = deepCopy(presets01)
+	mp.commandv("show_text", "Restored shader presets")
 end
 
 -- ____________________________________________________________________________________________________
@@ -436,41 +455,42 @@ mp.add_forced_key_binding('F12', 'loadShader12', loadShaderPreset(12))
 mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
 mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
 
-mp.add_forced_key_binding('q', 'set_shader_group_Blue', setShaderGroupHandler('Blue_'))
-mp.add_forced_key_binding('w', 'set_shader_group_ComplexBlend', setShaderGroupHandler('ComplexBlend_'))
-mp.add_forced_key_binding('e', 'set_shader_group_RedBlue', setShaderGroupHandler('RedBlue_'))
-mp.add_forced_key_binding('r', 'set_shader_group_Red', setShaderGroupHandler('Red_'))
-mp.add_forced_key_binding('t', 'set_shader_group_Tint', setShaderGroupHandler('Tint_'))
-mp.add_forced_key_binding('y', 'set_shader_group_Green', setShaderGroupHandler('Green_'))
-mp.add_forced_key_binding('u', 'set_shader_group_LightTint', setShaderGroupHandler('LightTint_'))
-mp.add_forced_key_binding('i', 'set_shader_group_Invert', setShaderGroupHandler('Invert'))
-mp.add_forced_key_binding('o', 'set_shader_group_ChannelMixer', setShaderGroupHandler('ChannelMixer_'))
-mp.add_forced_key_binding('p', 'set_shader_group_ColorRamp', setShaderGroupHandler('ColorRamp_'))
-mp.add_forced_key_binding('a', 'set_shader_group_BrightnessIncrease', setShaderGroupHandler('BrightnessIncrease_'))
-mp.add_forced_key_binding('s', 'set_shader_group_BrightnessDecrease', setShaderGroupHandler('BrightnessDecrease_'))
-mp.add_forced_key_binding('d', 'set_shader_group_Saturate', setShaderGroupHandler('Saturate_'))
-mp.add_forced_key_binding('f', 'set_shader_group_SaturateSelective', setShaderGroupHandler('SaturateSelective_'))
-mp.add_forced_key_binding('g', 'set_shader_group_Grayscale', setShaderGroupHandler('Grayscale_'))
-mp.add_forced_key_binding('h', 'set_shader_group_BlendCool', setShaderGroupHandler('BlendCool_'))
-mp.add_forced_key_binding('j', 'set_shader_group_BlendWarm', setShaderGroupHandler('BlendWarm_'))
-mp.add_forced_key_binding('k', 'set_shader_group_Curve', setShaderGroupHandler('Curve_'))
-mp.add_forced_key_binding('z', 'set_shader_group_Z', setShaderGroupHandler('z_'))
-mp.add_forced_key_binding('x', 'set_shader_group_PsychedelicMix', setShaderGroupHandler('PsychedelicMix_'))
-mp.add_forced_key_binding('v', 'set_shader_group_OrangeBlue', setShaderGroupHandler('OrangeBlue_'))
-mp.add_forced_key_binding('b', 'set_shader_group_MonotoneSepia', setShaderGroupHandler('MonotoneSepia_'))
-mp.add_forced_key_binding('n', 'set_shader_group_MonotoneRed', setShaderGroupHandler('MonotoneRed_'))
-mp.add_forced_key_binding('m', 'set_shader_group_MonotoneBlue', setShaderGroupHandler('MonotoneBlue_'))
+mp.add_forced_key_binding('q', 'setShaderGroupBlueNew', setShaderGroupHandler('BlueNew_'))
+mp.add_forced_key_binding('w', 'setShaderGroupPsychedelic', setShaderGroupHandler('Psychedelic_'))
+mp.add_forced_key_binding('e', 'setShaderGroupRedBlue', setShaderGroupHandler('RedBlue_'))
+mp.add_forced_key_binding('r', 'setShaderGroupRed', setShaderGroupHandler('Red_'))
+mp.add_forced_key_binding('t', 'setShaderGroupTint', setShaderGroupHandler('Tint_'))
+mp.add_forced_key_binding('y', 'setShaderGroupGreen', setShaderGroupHandler('Green_'))
+mp.add_forced_key_binding('u', 'setShaderGroupLightTint', setShaderGroupHandler('LightTint_'))
+mp.add_forced_key_binding('i', 'setShaderGroupInvert', setShaderGroupHandler('Invert'))
+mp.add_forced_key_binding('o', 'setShaderGroupChannelMixer', setShaderGroupHandler('ChannelMixer_'))
+mp.add_forced_key_binding('p', 'setShaderGroupColorRamp', setShaderGroupHandler('ColorRamp_'))
+mp.add_forced_key_binding('a', 'setShaderGroupBright', setShaderGroupHandler('Bright_'))
+mp.add_forced_key_binding('s', 'setShaderGroupDim', setShaderGroupHandler('Dim_'))
+mp.add_forced_key_binding('d', 'setShaderGroupSaturate', setShaderGroupHandler('Saturate_'))
+mp.add_forced_key_binding('f', 'setShaderGroupSaturateSelective', setShaderGroupHandler('SaturateSelective_'))
+mp.add_forced_key_binding('g', 'setShaderGroupGrayscale', setShaderGroupHandler('Grayscale_'))
+mp.add_forced_key_binding('h', 'setShaderGroupBlendCool', setShaderGroupHandler('BlendCool_'))
+mp.add_forced_key_binding('j', 'setShaderGroupBlendWarm', setShaderGroupHandler('BlendWarm_'))
+mp.add_forced_key_binding('k', 'setShaderGroupCurve', setShaderGroupHandler('Curve_'))
+mp.add_forced_key_binding('z', 'setShaderGroupZ', setShaderGroupHandler('zz_'))
+mp.add_forced_key_binding('x', 'setShaderGroupx', setShaderGroupHandler('x_'))
+mp.add_forced_key_binding('c', 'setShaderGroupc', setShaderGroupHandler('c_'))
+mp.add_forced_key_binding('v', 'setShaderGroupOrangeBlue', setShaderGroupHandler('OrangeBlue_'))
+mp.add_forced_key_binding('b', 'setShaderGroupMonotoneSepia', setShaderGroupHandler('MonotoneSepia_'))
+mp.add_forced_key_binding('n', 'setShaderGroupMonotoneRed', setShaderGroupHandler('MonotoneRed_'))
+mp.add_forced_key_binding('m', 'setShaderGroupMonotoneBlue', setShaderGroupHandler('MonotoneBlue_'))
 
-mp.add_forced_key_binding('1', 'set_shader_number_1', setShaderNumber(1))
-mp.add_forced_key_binding('2', 'set_shader_number_2', setShaderNumber(2))
-mp.add_forced_key_binding('3', 'set_shader_number_3', setShaderNumber(3))
-mp.add_forced_key_binding('4', 'set_shader_number_4', setShaderNumber(4))
-mp.add_forced_key_binding('5', 'set_shader_number_5', setShaderNumber(5))
-mp.add_forced_key_binding('6', 'set_shader_number_6', setShaderNumber(6))
-mp.add_forced_key_binding('7', 'set_shader_number_7', setShaderNumber(7))
-mp.add_forced_key_binding('8', 'set_shader_number_8', setShaderNumber(8))
-mp.add_forced_key_binding('9', 'set_shader_number_9', setShaderNumber(9))
-mp.add_forced_key_binding('0', 'set_shader_number_0', setShaderNumber(0))
+mp.add_forced_key_binding('1', 'setShaderNumber1', setShaderNumber(1))
+mp.add_forced_key_binding('2', 'setShaderNumber2', setShaderNumber(2))
+mp.add_forced_key_binding('3', 'setShaderNumber3', setShaderNumber(3))
+mp.add_forced_key_binding('4', 'setShaderNumber4', setShaderNumber(4))
+mp.add_forced_key_binding('5', 'setShaderNumber5', setShaderNumber(5))
+mp.add_forced_key_binding('6', 'setShaderNumber6', setShaderNumber(6))
+mp.add_forced_key_binding('7', 'setShaderNumber7', setShaderNumber(7))
+mp.add_forced_key_binding('8', 'setShaderNumber8', setShaderNumber(8))
+mp.add_forced_key_binding('9', 'setShaderNumber9', setShaderNumber(9))
+mp.add_forced_key_binding('0', 'setShaderNumber0', setShaderNumber(0))
 
 mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
 mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
@@ -482,3 +502,4 @@ mp.add_forced_key_binding("]", 'nextShader', nextShader)
 
 mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
 mp.add_forced_key_binding('Ctrl+k', 'setDevShaderGroup', setDevShaderGroup)
+mp.add_forced_key_binding('Ctrl+p', 'resetShaderPresets', resetShaderPresets)
