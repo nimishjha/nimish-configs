@@ -5,13 +5,13 @@ local presets01 = {
 	{ "Curve_15", "BlueNew_00" },
 	{ "Curve_16", "BlueNew_00" },
 	{ "Dim_02", "BlueNew_00" },
-	{ "Curve_14", "RedBlue_00" },
+	{ "Curve_23", "RedBlue_00" },
+	{ "Curve_24", "RedBlue_00" },
 	{ "Curve_15", "RedBlue_00" },
 	{ "Curve_16", "RedBlue_00" },
-	{ "Dim_02", "RedBlue_00" },
 	{ "Curve_14", "ChannelMixer_00" },
 	{ "Curve_15", "zz_42" },
-	{ "Curve_16", "MonotoneRed_30" },
+	{ "Curve_16", "MonotoneRed_01" },
 	{ "Curve_14", "ChannelMixer_80" },
 }
 
@@ -415,6 +415,16 @@ end
 
 -- ____________________________________________________________________________________________________
 
+function setLoopPointA()
+	mp.set_property("ab-loop-a", mp.get_property("time-pos"))
+	mp.commandv("show_text", "Point A set")
+end
+
+function setLoopPointB()
+	mp.set_property("ab-loop-b", mp.get_property("time-pos"))
+	mp.commandv("show_text", "Point B set")
+end
+
 mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
 mp.add_forced_key_binding('END', 'cacheFileList', cacheFileList)
 mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
@@ -503,3 +513,6 @@ mp.add_forced_key_binding("]", 'nextShader', nextShader)
 mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
 mp.add_forced_key_binding('Ctrl+k', 'setDevShaderGroup', setDevShaderGroup)
 mp.add_forced_key_binding('Ctrl+p', 'resetShaderPresets', resetShaderPresets)
+
+mp.add_forced_key_binding("A", 'setLoopPointA', setLoopPointA)
+mp.add_forced_key_binding("S", 'setLoopPointB', setLoopPointB)

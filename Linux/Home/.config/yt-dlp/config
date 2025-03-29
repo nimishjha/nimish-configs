@@ -1,0 +1,6 @@
+-o "%(channel)s - %(title)s.%(ext)s"
+--replace-in-metadata "channel" "[^A-Za-z0-9-]" ""
+--replace-in-metadata "title" "[^A-Za-z0-9-]" " "
+--replace-in-metadata "title" "\s+" " "
+--replace-in-metadata "title" "\s$" ""
+-f "bestvideo[height<=720]+bestaudio"
