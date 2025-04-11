@@ -23,6 +23,7 @@ toolbox#navigator-toolbox
 :root { background-color: #000 !important; }
 
 toolbar { background: #000 !important; }
+#tabbrowser-tabbox { outline: 0 !important; }
 .tabbrowser-tab { padding: 0 !important; }
 .tab-background { box-shadow: none !important; border-radius: 0 !important; margin-block: 0 !important; background-color: #000 !important; }
 .tab-content .tab-label { color: #666 !important; }
@@ -82,3 +83,4 @@ xul|richlistbox > xul|richlistitem[selected], xul|treechildren::-moz-tree-row(se
 
 #urlbar:is([focused], [open]) > #urlbar-background, #searchbar:focus-within { background: #000 !important; }
 #urlbar[focused] > #urlbar-background, #searchbar:focus-within { box-shadow: none !important; }
+
