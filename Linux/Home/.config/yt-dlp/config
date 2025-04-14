@@ -1,5 +1,9 @@
 -o "%(channel)s - %(title)s.%(ext)s"
+--print after_move:filename
+--progress
+--no-warnings
 --replace-in-metadata "channel" "[^A-Za-z0-9-]" ""
+--replace-in-metadata "title" "['’]" ""
 --replace-in-metadata "title" "[^A-Za-z0-9-]" " "
 --replace-in-metadata "title" "\s+" " "
 --replace-in-metadata "title" "\s$" ""
