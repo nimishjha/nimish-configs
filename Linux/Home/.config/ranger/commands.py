@@ -86,7 +86,7 @@ class batch_rename_two_digits(Command):
 		new_base_name = self.rest(1)
 
 		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = new_base_name + "%02d" % (index + 1) + splitext(file.relative_path)[1]
+			new_name = new_base_name + "%02d" % (index) + splitext(file.relative_path)[1]
 			if access(new_name, os.F_OK):
 				return self.fm.notify("Batch rename failed, file already exists", bad=True)
 			try:
@@ -114,7 +114,7 @@ class batch_rename_filemtime(Command):
 			fileModTimeString = getFormattedModificationTime(file.path)
 			newName = newBaseName + "_" + fileModTimeString + splitext(file.relative_path)[1]
 			if access(newName, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
+				return self.fm.notify("Batch rename failed, file already exists: " + newName, bad=True)
 			try:
 				os.rename(file.relative_path, newName)
 			except OSError as err:
@@ -122,6 +122,32 @@ class batch_rename_filemtime(Command):
 				return False
 
 		self.fm.notify("Batch rename successful")
+
+		return None
+
+class setextension(Command):
+
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		from os.path import splitext
+
+		newExtension = self.rest(1)
+		if not newExtension:
+			return self.fm.notify("Extension is required", bad=True)
+
+		for index, file in enumerate( self.fm.thistab.get_selection() ):
+			fileModTimeString = getFormattedModificationTime(file.path)
+			newName = splitext(file.relative_path)[0] + "." + newExtension
+			if access(newName, os.F_OK):
+				return self.fm.notify("Batch rename failed, file already exists: " + newName, bad=True)
+			try:
+				os.rename(file.relative_path, newName)
+			except OSError as err:
+				self.fm.notify(err)
+				return False
+
+		self.fm.notify("Batch setextension successful")
 
 		return None
 
@@ -184,3 +210,25 @@ class cleanup_filenames(Command):
 
 		return None
 
+class sanitize_filename(Command):
+
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		import os
+		import re
+
+		for index, file in enumerate(self.fm.thistab.get_selection()):
+			base, ext = os.path.splitext(file.relative_path)
+			new_base = re.sub(r'[^a-zA-Z0-9]', '', base).lower()
+			new_name = new_base + ext.lower()
+
+			if access(new_name, os.F_OK):
+				return self.fm.notify("Batch rename failed, file already exists", bad=True)
+			try:
+				os.rename(file.relative_path, new_name)
+			except OSError as err:
+				self.fm.notify(err)
+				return False
+
+		return None
