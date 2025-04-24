@@ -18,7 +18,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-HISTIGNORE="&:ll:ls:[bf]g:exit:pwd:clear:mount:umount:htop:man:[ \t]*"
+# HISTIGNORE="&:ll:ls:[bf]g:exit:pwd:clear:mount:umount:htop:man:[ \t]*"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -120,3 +120,13 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$PATH:$HOME/bin/helix:/home/terminator/bin/zed/bin:/usr/local/go/bin"
+export LADSPA_PATH=/usr/lib/ladspa
+
+export LESS_TERMCAP_so=$'\E[38;5;214;48;5;52m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_md=$'\E[38;5;15;48;5;235m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[38;5;69;48;5;17m'
+export LESS_TERMCAP_ue=$'\E[0m'
