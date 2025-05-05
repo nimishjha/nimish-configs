@@ -1,16 +1,16 @@
 local utils = require 'mp.utils'
 local msg = require 'mp.msg'
 local presets01 = {
-	{ "Curve_14", "BlueNew_00" },
+	{ "Curve_02", "Dim_02" },
 	{ "Curve_15", "BlueNew_00" },
 	{ "Curve_16", "BlueNew_00" },
 	{ "Dim_02", "BlueNew_00" },
-	{ "Curve_23", "RedBlue_00" },
-	{ "Curve_24", "RedBlue_00" },
+	{ "Curve_14", "RedBlue_00" },
 	{ "Curve_15", "RedBlue_00" },
 	{ "Curve_16", "RedBlue_00" },
+	{ "Curve_17", "RedBlue_00" },
 	{ "Curve_14", "ChannelMixer_00" },
-	{ "Curve_15", "zz_42" },
+	{ "Curve_15", "RedBlue_30" },
 	{ "Curve_16", "MonotoneRed_01" },
 	{ "Curve_14", "ChannelMixer_80" },
 }
@@ -483,7 +483,7 @@ mp.add_forced_key_binding('g', 'setShaderGroupGrayscale', setShaderGroupHandler(
 mp.add_forced_key_binding('h', 'setShaderGroupBlendCool', setShaderGroupHandler('BlendCool_'))
 mp.add_forced_key_binding('j', 'setShaderGroupBlendWarm', setShaderGroupHandler('BlendWarm_'))
 mp.add_forced_key_binding('k', 'setShaderGroupCurve', setShaderGroupHandler('Curve_'))
-mp.add_forced_key_binding('z', 'setShaderGroupZ', setShaderGroupHandler('zz_'))
+mp.add_forced_key_binding('z', 'setShaderGroupZ', setShaderGroupHandler('z_'))
 mp.add_forced_key_binding('x', 'setShaderGroupx', setShaderGroupHandler('x_'))
 mp.add_forced_key_binding('c', 'setShaderGroupc', setShaderGroupHandler('c_'))
 mp.add_forced_key_binding('v', 'setShaderGroupOrangeBlue', setShaderGroupHandler('OrangeBlue_'))
