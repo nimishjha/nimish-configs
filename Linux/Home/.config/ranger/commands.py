@@ -220,7 +220,8 @@ class sanitize_filename(Command):
 
 		for index, file in enumerate(self.fm.thistab.get_selection()):
 			base, ext = os.path.splitext(file.relative_path)
-			new_base = re.sub(r'[^a-zA-Z0-9]', '', base).lower()
+			new_base = re.sub(r'[^a-zA-Z0-9 ]', '', base).lower()
+			new_base = re.sub(r'\s+', ' ', new_base)
 			new_name = new_base + ext.lower()
 
 			if access(new_name, os.F_OK):
@@ -230,5 +231,46 @@ class sanitize_filename(Command):
 			except OSError as err:
 				self.fm.notify(err)
 				return False
+
+		return None
+
+class copy_and_increment(Command):
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		import os
+		import re
+		import shutil
+
+		for file in self.fm.thistab.get_selection():
+			# Extract base name and extension
+			base, ext = os.path.splitext(file.basename)
+
+			# Match pattern like Filename_02
+			match = re.match(r'^(.*?_)(\d+)$', base)
+			if not match:
+				self.fm.notify(f"File {file.basename} doesn't match expected pattern", bad=True)
+				continue
+
+			# Get prefix and number
+			prefix, num = match.groups()
+			new_num = int(num) + 1
+			new_name = f"{prefix}{new_num:0{len(num)}d}{ext}"
+			new_path = os.path.join(os.path.dirname(file.path), new_name)
+			# self.fm.notify(new_path, bad=True)
+			# return None
+
+			# Check if new file already exists
+			if access(new_path, os.F_OK):
+				self.fm.notify(f"Copy failed, {new_name} already exists", bad=True)
+				continue
+
+			try:
+				# Copy the file
+				shutil.copy2(file.path, new_path)
+				self.fm.notify(f"Copied {file.basename} to {new_name}")
+			except OSError as err:
+				self.fm.notify(f"Error copying {file.basename}: {err}", bad=True)
+				continue
 
 		return None
