@@ -184,14 +184,14 @@ class cleanup_filenames(Command):
 			base_name = splat[0]
 			extension = splat[1]
 			replacements = [
-				("\[[A-Za-z0-9_-]+\]", ""),
-				("[\._]", " "),
+				("\\[[A-Za-z0-9_-]+\\]", ""),
+				("[\\._]", " "),
 				("[^A-Za-z0-9 ]", " "),
-				("\s+", " "),
+				("\\s+", " "),
 				(" s ", "s "),
 				(" t ", "t "),
-				("^\s+", ""),
-				("\s+$", ""),
+				("^\\s+", ""),
+				("\\s+$", ""),
 			]
 			for pattern, replacement in replacements:
 				base_name = re.sub(pattern, replacement, base_name)
