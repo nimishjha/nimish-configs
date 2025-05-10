@@ -84,3 +84,25 @@ xul|richlistbox > xul|richlistitem[selected], xul|treechildren::-moz-tree-row(se
 #urlbar:is([focused], [open]) > #urlbar-background, #searchbar:focus-within { background: #000 !important; }
 #urlbar[focused] > #urlbar-background, #searchbar:focus-within { box-shadow: none !important; }
 
+findbar { background: #000 !important; }
+
+findbar .findbar-textbox					{ border: 0 !important; border-radius: 0 !important; font-size: 20px !important; }
+findbar .findbar-textbox[focus]				{ background-color: #000 !important; color: #C33 !important; outline: 0 !important; box-shadow: none !important; }
+findbar .findbar-textbox[status="notfound"] {
+	background-color: #200 !important; color: #A00 !important;
+	&:focus {
+		background-color: #400 !important; color: #C33 !important;
+	}
+}
+findbar .findbar-textbox {
+  &:focus { background-color: #000 !important; color: #777 !important; border: none !important; outline: none !important; box-shadow: none !important; }
+}
+
+.findbar-find-status[status="notfound"] { color: #C33 !important; }
+
+findbar checkbox					{ color: #666 !important; }
+findbar checkbox image				{ opacity: 0 !important; }
+findbar checkbox[checked] image		{ opacity: 1 !important; }
+
+/* #statuspanel[type="overLink"] { } */
+#statuspanel-label { background: #000 !important; color: #666 !important; border-radius: 0 !important; border: 0 !important; font-size: 20px !important; padding: 4px 10px !important; }
