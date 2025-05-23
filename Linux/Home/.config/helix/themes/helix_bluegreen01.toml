@@ -1,0 +1,56 @@
+inherits = "base_bluegreen"
+
+"constant" = "#88BBCC"
+"constant.builtin" = "#00CCAA"
+"constant.builtin.boolean" = "#00CCCC"
+"constant.builtin.character" = "#CC00CC"
+"constant.character.escape" = "#EECC88"
+"constant.macro" = "#80A0C0"
+"constant.numeric" = "#B0C0D0"
+"constructor" = "#88C0D0"
+
+"function" = "#88C0D0"
+"function.builtin" = "#90BBBB"
+"function.method" = "#88C0D0"
+"function.macro" = "#80A0C0"
+"function.special" = "#80A0C0"
+
+"keyword" = "#80A0C0"
+"keyword.control.conditional" = "#80A0C0"
+"keyword.control.exception" = "#80A0C0"
+"keyword.control.repeat" = "#80A0C0"
+"keyword.directive" = "#80A0C0"
+"keyword.function" = "#80A0C0"
+"keyword.operator" = "#80A0C0"
+"keyword.return" = "#80A0C0"
+"keyword.storage.modifier" = "#80A0C0"
+"keyword.storage.type" = "#80A0C0"
+
+"punctuation" = "#A0C0D0"
+"punctuation.bracket" = "#A0C0D0"
+"punctuation.delimiter" = "#A0C0D0"
+"punctuation.special" = "#80A0C0"
+
+"string" = "#007080"
+"string.escape" = "#EECC88"
+"string.regex" = "#EECC88"
+"string.special" = "#EECC88"
+
+"type" = "#90BBBB"
+"type.builtin" = "#90BBBB"
+
+"variable" = "#00A0C0"
+"variable.builtin" = "#80A0C0"
+"variable.other.member" = "#0099CC"
+"variable.parameter" = "#88C0D0"
+"attribute" = "#80A0C0"
+
+"label" = "#90BBBB"
+"namespace" = "#0099CC"
+"operator" = "#80A0C0"
+"special" = "#00A0C0"
+"tag" = "#90BBBB"
+"comment" = { fg = "#666688", modifiers = ["italic"] }
+
+"ui.background" = { bg = "#001020", fg = "#405060" }
+"ui.statusline" = { bg = "#000818", fg = "#8090A0" }

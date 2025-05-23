@@ -1,0 +1,81 @@
+"comment" = { fg = "#406080" }
+"comment.block.documentation" = { bg = "#204060", modifiers = ["italic"] }
+
+"constant" = { fg = "#A0B0C0" }
+"function" = { fg = "#6070A0" }
+"function.method" = { fg = "#6070A0" }
+"function.macro" = { fg = "#6070A0" }
+"keyword" = { fg = "#6070D0" }
+"keyword.storage" = { fg = "#6070CC" }
+"keyword.directive" = "#0000CC"
+"operator" = { fg = "#8088A0" }
+"punctuation" = { fg = "#707090" }
+"string" = { fg = "#888480", modifiers = ["italic"] }
+"string.regexp" = { fg = "#888480" }
+"tag" = { fg = "#0077CC" }
+"type" = { fg = "#8088A0", modifiers = ["bold"] }
+"namespace" = { fg = "#888480", modifiers = ["bold"] }
+"variable" = { fg = "#606070" }
+"label" = { fg = "#606070" }
+
+"diff.delta" = { bg = "#303030", fg = "#808080" }
+"diff.delta.moved" = { bg = "#003030", fg = "#00A0A0" }
+"diff.minus" = { bg = "#300000", fg = "#B00000" }
+"diff.plus" = { bg = "#002000", fg = "#00B000" }
+
+"ui.linenr" = "#405060"
+"ui.linenr.selected" = { fg = "#7090A0" }
+"ui.gutter" = { bg = "#001020" }
+
+"ui.background" = { bg = "#001020" }
+"ui.background.separator" = { fg = "#2b3444" }
+"ui.window" = { fg = "#606070" }
+"ui.bufferline" = { bg = "400000" }
+
+"ui.selection" = { bg = "#502000", fg = "#CC8800" }
+"ui.selection.primary" = { bg = "#603000", fg = "#DDDD00" }
+
+"ui.cursor" = { bg = "#405060", fg = "D0D8E0" }
+"ui.cursor.insert" = { bg = "#405060", fg = "#00DDDD" }
+"ui.cursor.match" = { bg = "#405060", fg = "#DDDD00" }
+"ui.cursor.primary" = { bg = "#405060", fg = "#00DD00" }
+"ui.cursor.select" = { bg = "#405060", fg = "#0000DD" }
+"ui.cursorline.primary" = { bg = "#204060", fg = "#00CC00" }
+"ui.help" = { fg = "#607080", bg = "#102030" }
+"ui.menu" = { bg = "#102030", fg = "#8090A0" }
+"ui.menu.scroll" = { bg = "#AA00AA", fg = "#6080A0" }
+"ui.menu.selected" = { bg = "#204060", fg = "#AACCEE" }
+"ui.popup" = { bg = "#102030", fg = "#6080A0" }
+"ui.statusline" = { fg = "#606070", bg = "#081009" }
+"ui.statusline.inactive" = { bg = "#101010", fg = "#406080" }
+"ui.statusline.insert" = { bg = "#006666", fg = "#00CCCC", modifiers = ["bold"] }
+"ui.statusline.normal" = { bg = "#001020", fg = "#406080", modifiers = ["bold"] }
+"ui.statusline.select" = { bg = "#006000", fg = "#00CC00", modifiers = ["bold"] }
+
+"ui.text" = { fg = "#8080A0", modifiers = ["bold"] }
+"ui.text.focus" = { bg = "#003060", fg = "#3377CC", modifiers = ["bold"] }
+
+"ui.virtual.ruler" = { bg = "t1" }
+"ui.virtual.indent-guide" = { fg = "#2b3444" }
+"ui.virtual.whitespace" = { fg = "#2b3444" }
+
+"diagnostic.error" = { underline = { color = "#CC0000", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#CC9900", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#0099CC", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "#6080A0", style = "curl" } }
+
+"error" = { bg = "#600000", fg = "#CC0000" }
+"hint" = { bg = "#404040", fg = "#CCCCCC" }
+"info" = { bg = "#003060", fg = "#80A0C0" }
+"warning" = { bg = "#402000", fg = "#CCAA00" }
+"special" = { fg = "#0077CC" }
+
+"markup.heading" = { fg = "#606070" }
+"markup.list" = { fg = "#606070" }
+"markup.bold" = { fg = "#606070" }
+"markup.italic" = { fg = "#606070" }
+"markup.strikethrough" = { fg = "#606070", modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "#606070", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "#606070" }
+"markup.quote" = { fg = "#606070" }
+"markup.raw" = { fg = "#606070" }

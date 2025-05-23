@@ -1,0 +1,93 @@
+"type" = "#C090E0"
+"constructor" = "blue"
+"constant" = "#CCCC88"
+"string" = "#00CC99"
+"string.regexp" = "#CCCC88"
+"string.special" = "blue"
+"comment" = { fg = "comment" }
+"variable" = "text"
+"variable.parameter" = { fg = "#CC9966" }
+"variable.builtin" = "#CCCC88"
+"label" = "#CC9966"
+"punctuation" = "#88CCDD"
+"keyword" = "#50AACC"
+"keyword.storage" = "#88CCDD"
+"operator" = "#88CCDD"
+"function" = "blue"
+"function.macro" = "#88CCDD"
+"tag" = "#00CCCC"
+"attribute" = "#C090E0"
+"namespace" = { fg = "#CCCC88" }
+"special" = "#00CC00"
+
+"markup.heading" = { fg = "#88CCDD", modifiers = ["bold"] }
+"markup.list" = "#C090E0"
+"markup.bold" = { fg = "#88CCDD", modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "#00CC99", modifiers = ["underlined"] }
+"markup.link.text" = "blue"
+"markup.raw" = "text"
+
+"diff.plus" = "#00CC99"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+"ui.background" = { bg = "#0f111A", fg = "text" }
+"ui.text" = { fg = "text" }
+"ui.statusline" = { fg = "#606070", bg = "#081009" }
+"ui.statusline.inactive" = { bg = "#101010", fg = "#406080" }
+"ui.statusline.insert" = { bg = "#006666", fg = "#00CCCC", modifiers = ["bold"] }
+"ui.statusline.normal" = { bg = "#001020", fg = "#406080", modifiers = ["bold"] }
+"ui.statusline.select" = { bg = "#006000", fg = "#00CC00", modifiers = ["bold"] }
+"ui.selection" = { bg = "#004050", fg = "#00DDDD" }
+"ui.linenr" = "#405060"
+"ui.linenr.selected" = "#7090B0"
+"ui.cursor" = { bg = "cursorbg", fg = "cursorfg" }
+"ui.cursor.primary" = { bg = "cursorprimarybg", fg = "cursorprimaryfg" }
+"ui.cursorline.primary" = { bg = "cursorlineprimary" }
+"ui.virtual" = { fg = "gray" }
+"ui.virtual.ruler" = { bg = "highlight" }
+"ui.virtual.indent-guide" = { fg = "gray" }
+"ui.highlight" = { bg = "highlightbg", fg = "highlightfg" }
+"ui.menu" = { bg = "highlight", fg = "text" }
+"ui.menu.selected" = { bg = "#004060", fg = "#AABBDD" }
+"ui.help" = { bg = "highlight", fg = "text" }
+"ui.popup" = { bg = "highlight", fg = "text" }
+
+warning = "#CC9900"
+error = "#CC0000"
+info = "#0077CC"
+hint = "#8090A0"
+
+[palette]
+bg = "#0f111a"
+text = "#a6accd"
+
+blue = "#82aaff"
+red = "#f07178"
+gray = "#717cb4"
+error = "#ff5370"
+
+disabled = "#464b5d"
+
+accent = "#84ffff"
+
+active = "#1a1c25"
+highlight = "#1f2233"
+
+comment = "#464b5d"
+
+selection = "#1f2233"
+selectionbg = "#000000"
+selectionfg = "#EEEE00"
+
+line-number = "#3b3f51"
+
+cursorbg = "#880000"
+cursorfg = "#FF0000"
+cursorprimarybg = "#464B5D"
+cursorprimaryfg = "#EEEEEE"
+cursorlineprimary = "#442200"
+highlightbg = "#CC0000"
+highlightfg = "#AACCEE"

@@ -1,0 +1,81 @@
+"attribute" = { fg = "#90A0B0" }
+"keyword" = "#00A0C0"
+"keyword.directive" = "#A0A8C0"
+"keyword.storage.type" = "#90A0B0"
+"keyword.storage.modifier" = "#60B0A0"
+"keyword.other" = "#5DE4c7"
+"keyword.operator" = "#90A0B0"
+"namespace" = "#A0C000"
+"punctuation" = "#A0A8C0"
+"punctuation.bracket" = "#90A0B0"
+"operator" = "#90A0B0"
+"special" = "#00CCAA"
+"variable" = "#33CC99"
+"variable.parameter" = { fg = "#33CC99" }
+"variable.builtin" = { fg = "#AADDCC" }
+"type" = { fg = "#90A0C0" }
+"type.builtin" = { fg = "#90A0B0" }
+"constructor" = "#AACCDD"
+"function" = "function_fg"
+"function.method" = { fg = "#AACCDD" }
+"tag" = "#00CC99"
+"comment" = { fg = "#669988" }
+"constant" = "#90CCAA"
+"constant.character.escape" = { fg = "#B0C0D0" }
+"constant.numeric" = { fg = "#5DE4C8" }
+"constant.builtin" = { fg = "#5DE4C8" }
+"label" = { fg = "#90A0C0" }
+"string" = { fg = "#309060" }
+
+"markup.heading" = { fg = "#5DE4C8" }
+"markup.bold" = { fg = "#7090AA" }
+"markup.italic" = { fg = "#7090AA" }
+"markup.strikethrough" = { modifiers = ["italic", "crossed_out"] }
+"markup.link.url" = { fg = "#AACCDD", modifiers = ["underlined"] }
+"markup.link.text" = { fg = "#AACCDD", modifiers = ["underlined"] }
+"markup.raw" = { fg = "#AACCDD" }
+
+"ui.background" = { bg = "#1b1e28" }
+# "ui.background" = { bg = "#252b37" }
+"ui.background.separator" = { fg = "#305040" }
+"ui.linenr" = "#404850"
+"ui.linenr.selected" = "#009080"
+"ui.cursor" = { bg = "#A0A8C0", fg = "#1b1e28" }
+"ui.cursor.match" = { bg = "#303840" }
+"ui.cursorline" = { bg = "#242837" }
+
+"ui.popup" = { bg = "#20232d" }
+"ui.window" = "#A0A8C0"
+
+"ui.text" = "#A0A8C0"
+"ui.text.focus" = { fg = "#B0C0D0", bg = "#303840", modifiers = ["bold"] }
+"ui.text.inactive" = "#406050"
+"ui.virtual" = { fg = "comment_fg" }
+"ui.virtual.indent-guide" = "#303442"
+
+"ui.selection" = { bg = "#004030" }
+"ui.selection.primary" = { bg = "#004030" }
+
+"ui.menu" = { fg = "#B0C0D0", bg = "#1b1e28" }
+"ui.menu.selected" = { fg = "#1b1e28", bg = "#A0A8C0" }
+"ui.menu.scroll" = { fg = "#A0A8C0", bg = "#1b1e28" }
+
+"ui.statusline" = { fg = "#B0C0D0", bg = "#002010" }
+"ui.statusline.inactive" = { fg = "#AACCDD", bg = "#1b1e28" }
+"ui.statusline.normal" = { bg = "#AACCDD", fg = "#1b1e28", modifiers = ["bold"] }
+"ui.statusline.insert" = { bg = "#5DE4C8", fg = "#1b1e28", modifiers = ["bold"] }
+"ui.statusline.select" = { bg = "#DDDD00", fg = "#1b1e28", modifiers = ["bold"] }
+
+"diagnostic.hint" = { underline = { color = "#60B0A0", style = "curl" } }
+"diagnostic.info" = { underline = { color = "#AACCDD", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "#DDDD00", style = "curl" } }
+"diagnostic.error" = { underline = { color = "#DDDD00", style = "curl" } }
+
+"hint" = "#60B0A0"
+"info" = "#406858"
+"warning" = "#DDDD00"
+"error" = "#DDDD00"
+
+"diff.plus" = "#60B0A0"
+"diff.minus" = "#DDDD00"
+"diff.delta" = "#AACCDD"

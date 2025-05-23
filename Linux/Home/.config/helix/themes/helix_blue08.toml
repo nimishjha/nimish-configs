@@ -1,0 +1,34 @@
+inherits = "base_blue"
+
+attribute = { fg = "#00CC00" }
+comment = { fg = "#506090" }
+constant = { fg = "#AAAACC" }
+"constant.numeric" = "#AADD00"
+"constant.builtin" = "#AADD00"
+"constant.character" = "#CC9900"
+"constant.character.escape" = "#CC9900"
+constructor = { fg = "#D09000" }
+function = { fg = "#7070CC" }
+keyword = { fg = "#6060D0" }
+label = { fg = "#CCCC00" }
+namespace = { fg = "#00CC00" }
+operator = { fg = "#6080A0" }
+punctuation = { fg = "#6080A0" }
+special = { fg = "#0099CC" }
+string = { fg = "#606090" }
+"string.regexp" = { bg = "#004060", fg="#AACCEE" }
+tag = { fg = "#00AACC" }
+type = { fg = "#00CC00" }
+variable = { fg = "#8080B0" }
+
+"ui.background" = { bg = "#000818", fg = "#405060" }
+"ui.gutter" = { bg = "#000818" }
+"ui.selection" = { bg = "#003880", fg = "#CC00CC" }
+"ui.selection.primary" = { bg = "#003880", fg = "#33AACC" }
+
+"ui.statusline" = { fg = "#606070", bg = "#001020" }
+
+"ui.text" = { fg = "#8090A0" }
+"ui.text.inactive" = { fg = "#607080" }
+"ui.text.info" = { bg = "#002030", fg = "#7090B0" }
+"ui.window" = { fg = "border", modifiers = ["bold"] }
