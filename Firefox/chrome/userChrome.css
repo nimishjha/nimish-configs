@@ -106,3 +106,6 @@ findbar checkbox[checked] image		{ opacity: 1 !important; }
 
 /* #statuspanel[type="overLink"] { } */
 #statuspanel-label { background: #000 !important; color: #666 !important; border-radius: 0 !important; border: 0 !important; font-size: 20px !important; padding: 4px 10px !important; }
+
+/* Show keyword field in 'add bookmark' popup */
+#editBMPanel_keywordRow { visibility:visible !important; }
