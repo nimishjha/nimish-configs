@@ -1,0 +1,409 @@
+:root {
+	--lineHeight: 1.35;
+	--backgroundFormElements: #111;
+	--backgroundFormElementsFocused: #000;
+	--colorFormElements: #999;
+	--colorFormElementsFocused: #CCC;
+	--colorLinks: #77D;
+	--colorLinksHover: #CCC;
+	--colorLinksVisited:  #55C;
+	--backgroundNav: #111;
+	--fontSizeNormal: 21px;
+	--fontSizeSmall: 0.8em;
+	--colorBorders: #111;
+
+	--backgroundHtml: #181818;
+	--backgroundBody: #242424;
+	--colorText: #808080;
+	--colorTextEmphasis: #A0A0A0;
+	--backgroundHeadings: #131313;
+	--colorHeadings: #888888;
+	--colorSeparator: #181818;
+	--colorBorderDark: #111;
+	--colorBorderLight: #444;
+
+	--backgroundBody1: #202020;
+	--colorText1: #707070;
+	--colorHeadings1: #808080;
+	--colorTextEmphasis1: #909090;
+
+	--backgroundHtml2: #000;
+	--backgroundBody2: #000;
+	--colorText2: #707070;
+	--colorHeadings2: #888;
+	--colorTextEmphasis2: #999;
+
+	--backgroundHtml3: #000000;
+	--backgroundBody3: #1D1D1D;
+	--colorText3: #606060;
+	--colorHeadings3: #888;
+	--colorTextEmphasis3: #777;
+
+	--component-bg-color: #404;
+}
+
+@-moz-document url-prefix(about:blank), url-prefix(about:newtab)
+{
+	html, body, #newtab-customize-overlay { background: #000 !important; }
+	#newtab-grid { display: none !important; }
+	#root, #snippets-container { display: none !important; }
+}
+
+	::-moz-selection { color: #000; background: #777; }
+	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
+	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
+		{ box-shadow: inset 0px 2000px 0 #000 !important; }
+
+	html { background: var(--backgroundHtml) !important; }
+	html body, #nimbus body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
+	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--backgroundBody1) !important; color: var(--colorText1) !important; }
+	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--backgroundBody2) !important; color: var(--colorText2) !important; }
+	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--backgroundBody3) !important; color: var(--colorText3) !important; }
+
+	html, html body, #nimbus body {
+		font-size: var(--fontSizeNormal) !important;
+		font-family: "Swis721 Cn BT" !important;
+		font-style: normal !important;
+		line-height: var(--lineHeight) !important;
+	}
+
+	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
+
+	body.pad100 { padding: 100px 200px !important; }
+	body.pad100 table { width: 100% !important; }
+	body.pad100 td, body.pad100 th { padding: 3px 10px !important; vertical-align: top !important; text-align: left !important; }
+	body.pad100 ul { list-style: none !important; }
+	body.pad100 li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; }
+	body.pad100 ul li { border-left: 5px solid #0C0C0C !important; }
+	body.pad100 img { max-width: 100% !important; display: block !important; }
+	body.pad100 section { padding: 10px !important; border: 2px solid #111 !important; margin: 100px 0 !important; }
+	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
+
+	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
+		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", Calibri, sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
+	body.pad100 h1, body.pad100 h1[class], body.pad100 h2, body.pad100 h2[class], body.pad100 h3, body.pad100 h3[class], body.pad100 h4, body.pad100 h4[class], body.pad100 h5, body.pad100 h5[class], body.pad100 h6, body.pad100 h6[class]
+		{ padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
+
+	.pad100 h1 { font-size: 2.0rem !important; }
+	.pad100 h2 { font-size: 1.8rem !important; }
+	.pad100 h3 { font-size: 1.6rem !important; }
+	.pad100 h4 { font-size: 1.4rem !important; }
+	.pad100 h5 { font-size: 1.2rem !important; }
+	.pad100 h6 { font-size: 1.0rem !important; }
+
+	quote, quoteauthor, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
+	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: #141414 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; color: var(--colorText) !important; font-size: 1rem !important; }
+	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; font-size: 1rem !important; text-align: right !important; }
+	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; color: var(--colorText) !important; }
+	right { text-align: right !important; }
+	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: #141414; border-width: 10px 0; }
+	documentheading h1 { font-size: 2.8rem !important; }
+	slideshow { background: #111 !important; padding: 10px !important; }
+	slideshow::after { content: " "; clear: both; display: block; }
+
+	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
+		{ background: transparent !important; color: inherit !important; border: none !important; font-family: "Swis721 Cn BT" !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
+	section { background: inherit !important; color: inherit !important; }
+	aside { background-color: #333 !important; color: var(--colorText) !important; padding: 10px !important; }
+
+	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, small, source, strike, strong, time, title, u, var, wbr, xmp
+		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
+	sub, sup { font-size: var(--fontSizeSmall) !important; font-family: inherit !important; line-height: 1.2 !important; }
+	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundNav) !important; }
+	#nimbus header { border-top: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+	#nimbus hgroup { padding: 10px !important; background: #000 !important; padding-left: 30px !important; margin-left: -30px !important; }
+	#nimbus footer { border-bottom: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+	#nimbus nav { border-right: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+
+	span, span[class] { font-family: inherit !important; font-size: inherit !important; line-height: inherit !important; color: inherit !important; background: inherit !important; }
+
+	span.italic, span.txit { color: #CCA !important; }
+	span.bold, span.txbd { color: #CCA !important; font-weight: bold !important; }
+	div[class*="modal"], div[class*="popover"] { background: var(--backgroundFormElements) !important; }
+
+	hr { height: 4px !important; background: var(--colorSeparator) !important; border-color: var(--colorSeparator) !important; border-style: solid !important; border-width: 0 !important; margin: 40px 0 !important; }
+	legend { background: #181818 !important; }
+	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
+	figure { border: 0 !important; background: #111 !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
+	figcaption { background: #111 !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
+	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
+	ruby { margin: 10px 0 !important; background: #F90 !important; color: #FFF !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
+	rp { margin: 10px 0 !important; background: #181818 !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
+	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: #181818 !important; font-family: inherit !important; font-size: inherit !important; overflow-x: hidden; }
+	rt:before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 4px 20px 0 0 !important; }
+
+	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
+	textarea.monospace { font: bold 16px "SF Mono", Consolas !important; }
+	select, textarea { border: 0 !important; box-shadow: none !important; }
+	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
+	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #FFF !important; }
+	select:focus, textarea:focus, input:focus { color: #BBB !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
+	html small textarea[class] { font: 12px Verdana !important; }
+	span[class*="button"] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; border: 0 !important; border-radius: 0 !important; }
+	span[class*="button"]:hover, span[class*="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; }
+
+	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
+	a[class*="btn"] { background: #333 !important; }
+	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6F0 !important; }
+	a:visited, a:visited * { color: var(--colorLinksVisited)!important; text-decoration: none !important; }
+	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
+	.pagination a:link { font: bold 30px "Swis721 Cn BT" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
+
+	p { margin: 0 !important; padding: 5px 0 !important; }
+	blockquote { margin: 0 0 6px 0 !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorders) !important;  }
+	blockquote blockquote { padding: 0 0 0 40px !important; }
+
+	table { border-collapse: collapse !important; }
+	table, tr, td, th { margin: 0 !important; padding: 0 !important; line-height: inherit !important; color: inherit !important; border: 0 !important; }
+	table, tbody, tr, td { background: inherit !important; }
+	thead, th { background: var(--backgroundHeadings) !important; }
+	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: #181818 !important; }
+	tr:nth-child(even) td , tr:nth-child(even) th { background-color: #202020 !important; }
+
+	dl, dl[class] { border-left: 20px solid #111 !important; background: #181818 !important; font: inherit !important; line-height: inherit !important; }
+	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; font: inherit !important; line-height: inherit !important; }
+	dd, dd[class] { padding: 0.25em 10px !important; margin: 2px 0 !important; background: #202020 !important; border-width: 0 0 0 60px !important; border-style: solid !important; border-color: #0C0C0C !important; font: inherit !important; line-height: inherit !important; }
+
+	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
+	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
+	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
+	small { font-size: 80% !important; }
+
+	code { font: inherit !important; padding: 1px 2px !important; background: #111 !important; color: #666 !important; }
+	tt, kbd, samp { font-family: "SF Mono", Consolas, monospace !important; font-weight: bold !important; font-size: 18px !important; background: #0c0c0c !important; padding: 1px 2px !important; }
+	tt { color: #AAA !important; }
+	kbd { color: #0B0 !important; }
+	samp { color: #07C !important; }
+	pre { font: bold 20px/1.3 "swis721 cn bt", monospace !important; }
+	body.nimbusTheme1 pre { font: bold 14px/1.3 "SF Mono", monospace !important; }
+	body.nimbusTheme2 pre { font: bold 14px/1.3 "SF Mono", monospace !important; background: #222 !important; color: #888 !important; }
+	pre { background: #111 !important; color: #707070 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
+	pre p { margin: 0 !important; padding: 0 !important; }
+	pre * { font: inherit !important; text-recoration: none !important; }
+
+	pre em { color: #00AAFF !important; }
+	pre i { color: #0088CC !important; }
+	pre b { color: #CC8800 !important; }
+	pre u { color: #6677EE !important; }
+	pre dfn { color: #8888CC !important; }
+	pre s { color: #6677CC !important; }
+	pre q1 { color: #1CF; background: #003040; }
+	pre q2 { color: #57F; background: #203040; }
+	pre c1 { color: #AABBCC; background: #303840; }
+	pre c2 { color: #88BBEE; background: #304050; }
+	pre b1 { color: #11FF00; }
+	pre b2 { color: #00FFFF; }
+	pre b3 { color: #EEAAFF; }
+	pre xk { color: #0099FF; }
+	pre xh { color: #AADDCC; }
+	pre xv { color: #C36; }
+
+	X0 { color: #664477; }
+	X1 { color: #6677CC; }
+	X2 { color: #6644BB; }
+	X3 { color: #666688; }
+	X4 { color: #6666FF; }
+	X5 { color: #774488; }
+	X6 { color: #667777; }
+	X7 { color: #667766; }
+	X8 { color: #6655DD; }
+	X9 { color: #666677; }
+	X10 { color: #6644AA; }
+	X11 { color: #777788; }
+	X12 { color: #665566; }
+	X13 { color: #7744DD; }
+	X14 { color: #774488; }
+	X15 { color: #6677EE; }
+
+	XC { color: #1CF; background: #247; }
+	XK { color: #1177CC; }
+	XO { color: #11AACC; }
+	XP { color: #11CC00; }
+	XS { color: #1CF; background: #113060; }
+
+	body.nimbusTheme1 a, body.nimbusTheme1 a *, body.nimbusTheme1 a:link { color: #666 !important; text-decoration: none !important; }
+	body.nimbusTheme1 a:visited *, body.nimbusTheme1 a:visited { color: #666 !important; text-decoration: none !important; }
+	body.nimbusTheme1 a:hover *, body.nimbusTheme1 a:focus *, body.nimbusTheme1 a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
+	body.nimbusTheme1 cite,
+	body.nimbusTheme1 u,
+	body.nimbusTheme1 em,
+	body.nimbusTheme1 i,
+	body.nimbusTheme1 b,
+	body.nimbusTheme1 strong
+		{ color: var(--colorTextEmphasis1) !important; }
+
+	body.nimbusTheme1 img, body.nimbusTheme1 video { filter: saturate(0) brightness(0.7) !important; }
+	body.nimbusTheme1 img:hover, body.nimbusTheme1 video:hover { filter: saturate(0) brightness(1) !important; }
+
+	html.nimbusTheme2 { background: var(--backgroundHtml2) !important;  }
+	body.nimbusTheme2,
+	html.nimbusTheme2 body,
+	html.nimbusTheme2 body[class],
+	html.nimbusTheme2 p,
+	html.nimbusTheme2 li
+		{ color: var(--colorText2) !important; background: var(--backgroundBody2) !important; }
+
+	html.nimbusTheme2 h1,
+	html.nimbusTheme2 h2,
+	html.nimbusTheme2 h3,
+	html.nimbusTheme2 h4,
+	html.nimbusTheme2 h5,
+	html.nimbusTheme2 h6,
+	html.nimbusTheme2 h1[class],
+	html.nimbusTheme2 h2[class],
+	html.nimbusTheme2 h3[class],
+	html.nimbusTheme2 h4[class],
+	html.nimbusTheme2 h5[class],
+	html.nimbusTheme2 h6[class]
+		{ color: var(--colorHeadings2) !important; background: var(--backgroundBody2) !important; }
+	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
+	body.nimbusTheme2 annotation { background: #222 !important; }
+	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
+	body.nimbusTheme2 markwhite { background: #333 !important; color: #DDD !important; }
+	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
+	body.nimbusTheme2 em,
+	body.nimbusTheme2 i,
+	body.nimbusTheme2 b,
+	body.nimbusTheme2 strong
+	/* body.nimbusTheme2 mark b, */
+	/* body.nimbusTheme2 markyellow b, */
+	/* body.nimbusTheme2 markred b, */
+	/* body.nimbusTheme2 markgreen b, */
+	/* body.nimbusTheme2 markpurple b, */
+	/* body.nimbusTheme2 markblue b, */
+	/* body.nimbusTheme2 markwhite b, */
+	/* body.nimbusTheme2 mark strong, */
+	/* body.nimbusTheme2 markyellow strong, */
+	/* body.nimbusTheme2 markred strong, */
+	/* body.nimbusTheme2 markgreen strong, */
+	/* body.nimbusTheme2 markpurple strong, */
+	/* body.nimbusTheme2 markblue strong, */
+	/* body.nimbusTheme2 markwhite strong, */
+	/* body.nimbusTheme2 mark em, */
+	/* body.nimbusTheme2 markyellow em, */
+	/* body.nimbusTheme2 markred em, */
+	/* body.nimbusTheme2 markgreen em, */
+	/* body.nimbusTheme2 markpurple em, */
+	/* body.nimbusTheme2 markblue em, */
+	/* body.nimbusTheme2 markwhite em, */
+	/* body.nimbusTheme2 mark i, */
+	/* body.nimbusTheme2 markyellow i, */
+	/* body.nimbusTheme2 markred i, */
+	/* body.nimbusTheme2 markgreen i, */
+	/* body.nimbusTheme2 markpurple i, */
+	/* body.nimbusTheme2 markblue i, */
+	/* body.nimbusTheme2 markwhite i */
+		{ color: var(--colorTextEmphasis2) !important; background: transparent !important; }
+
+	html.nimbusTheme3 { background: var(--backgroundHtml3) !important;  }
+	body.nimbusTheme3 a, body.nimbusTheme3 a *, body.nimbusTheme3 a:link { color: var(--colorText3) !important; text-decoration: none !important; }
+	body.nimbusTheme3 a:visited *, body.nimbusTheme3 a:visited { color: var(--colorText3) !important; text-decoration: none !important; }
+	body.nimbusTheme3 a:hover *, body.nimbusTheme3 a:focus *, body.nimbusTheme3 a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
+	body.nimbusTheme3 cite,
+	body.nimbusTheme3 u,
+	body.nimbusTheme3 em,
+	body.nimbusTheme3 i,
+	body.nimbusTheme3 b,
+	body.nimbusTheme3 strong
+		{ color: var(--colorTextEmphasis3) !important; }
+
+
+	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #C00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
+	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #C00 !important; }
+	html a[href*=".pdf"]:active, html a[href*=".pdf"]:hover, html a[href*=".pdf"]:focus { background: #600 !important; }
+
+	a[href*=".zip"]:link, a[href*=".zip"] { background: #000 !important; color: #CCC !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
+	a[href*=".zip"]:visited, a[href*=".zip"]:visited { background: #000 !important; color: #999 !important; border-color: #999 !important; }
+	a[href*=".zip"]:active, a[href*=".zip"]:hover, a[href*=".zip"]:focus { background: #000 !important; color: #FFF !important; border-color: #FFF !important; }
+
+	a[href*="magnet:"]:link, a[href*="magnet:"] { background: #404 !important; color: #a0a !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
+	a[href*="magnet:"]:visited, a[href*="magnet:"]:visited { background: #202 !important; color: #808 !important; border-color: #999 !important; }
+	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #FFF !important; }
+
+	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
+
+	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
+	span[class*=button]:hover, a[class*=button]:hover, button:hover, input[type="submit"]:hover { filter: contrast(1.3) !important; }
+
+	/* 											 									*/
+	/* 										Inspector 									*/
+	/* 											 									*/
+	body.inspector { padding-bottom: 30vh !important; }
+	div#inspector { padding: 5px 10px !important; position: fixed !important; left: 0; bottom: 0; width: 50% !important; height: 30vh !important; overflow: hidden !important; background: #000 !important; color: #aaa !important; text-align: left !important; z-index: 2147483647 !important; }
+	div#inspector b { color: #09f !important; }
+	div#inspector div { padding: 0 !important; }
+	div#inspector em { font-style: normal; color: #F80 !important; }
+	div#inspector::after, #inspector div::after { display: none !important; }
+	.hovered { filter: contrast(1.5) !important; }
+
+	/* 										jotti 										*/
+	.result-infected { box-shadow: inset 0 -200px #800 !important; }
+	.result-clean { box-shadow: inset 0 -200px #080 !important; }
+
+	/* Google images */
+	body .rg_ilmbg { box-shadow: inset 40px 40px rgba(0, 0, 0, 0.8) !important; font: 12px verdana !important; }
+	body .rg_ilmn { box-shadow: inset 40px 40px rgba(0, 0, 0, 0.8) !important; font: 12px verdana !important; }
+
+	.markd { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00 !important; background: #000 !important; }
+	.focused { box-shadow: inset 0px 1000px #000 !important; color: #FFF !important; }
+	.nimbusHide { display: none !important; }
+	.nimbusFade { opacity: 0.25 !important; }
+
+	table.markd { outline: 2px solid red !important; }
+	th.markd, td.markd, tr.markd td, tr.markd th { box-shadow: inset 0 10000px #048 !important; color: #FFF !important; }
+	th.markYellow, td.markYellow, tr.markYellow td, tr.markYellow th { box-shadow: inset 0 10000px #660 !important; color: #FFF !important; }
+	th.markRed, td.markRed, tr.markRed td, tr.markRed th { box-shadow: inset 0 10000px #800 !important; color: #FFF !important; }
+	th.markGreen, td.markGreen, tr.markGreen td, tr.markGreen th { box-shadow: inset 0 10000px #060 !important; color: #FFF !important; }
+	th.markBlue, td.markBlue, tr.markBlue td, tr.markBlue th { box-shadow: inset 0 10000px #008 !important; color: #FFF !important; }
+	th.markPurple, td.markPurple, tr.markPurple td, tr.markPurple th { box-shadow: inset 0 10000px #505 !important; color: #FFF !important; }
+	th.markWhite, td.markWhite, tr.markWhite td, tr.markWhite th { box-shadow: inset 0 10000px #555 !important; color: #FFF !important; }
+
+	.markd2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
+	.markd3 { box-shadow: inset 2px 2px #1F0, inset -2px -2px #1F0 !important; }
+	.markd.markd2 { box-shadow: inset 2px 2px #F90, inset -2px -2px #F90 !important; }
+	.markd::after { content: ""; display: block; clear: both; }
+	a.markd::after, span.markd::after { content: ""; display: inline; clear: none; }
+	span.markd, em.markd, i.markd, b.markd, strong.markd { display: inline-block !important; min-height: 1rem !important; }
+
+	/*																	*/
+	/*							Custom Tags								*/
+	/*																	*/
+	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
+	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #FFF !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
+	reference, internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
+	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #111 !important; background: #202020 !important; margin-bottom: 2px !important; }
+	comment comment { padding: 0 40px !important; }
+	ind { display: block !important; padding-left: 50px !important; }
+	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; background: #281800; color: #C70; font-family: monospace; font-weight: bold; font-size: 16px; }
+
+	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
+	mark { background: #003878 !important; color: #5599DD !important; }
+	markgreen { background: #150 !important; color: #2B0 !important; }
+	markred { background: #500 !important; color: #E33 !important; }
+	markblue { background: #005 !important; color: #66D !important; }
+	markpurple { background: #204 !important; color: #C7E !important; }
+	markyellow { background: #740 !important; color: #DD5 !important; }
+	markwhite { background: #000 !important; color: #DDD !important; }
+
+	warning, info, error { display: block; border-width: 2px 2px 2px 20px; border-style: solid; padding: 1rem 2rem; margin: 10px 0; }
+	warning { background: #420; border-color: #C70; }
+	info { background: #035; border-color: #07C; }
+	error { background: #600; border-color: #D40; }
+	tag { background: #333 !important; color: #888 !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
+
+	autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 40px !important; color: #D0D0D0 !important; }
+	#xxdialog input { font-size: 40px !important; color: #D0D0D0 !important; }
+	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #D0D0D0 !important; }
+
+	button[aria-pressed="true"] { outline: 2px solid #0C0 !important; }
+
+	img[srcset] { border: 2px solid #08C !important; }
+	img { filter: brightness(0.7) !important; }
+	img:hover { filter: brightness(1) !important; }
+	img.dark { filter: invert(1) hue-rotate(180deg) !important; }
+	img.markd { border: 2px solid #F00 !important; }
+	body.nimbusTheme2 img { filter: unset !important; }
+
+	brk { display: inline-block; background: #000; color: #CC0; padding: 5px 10px; }
+	brk::after { content: "BRK"; }
+}
