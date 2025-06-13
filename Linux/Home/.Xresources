@@ -1,2 +1,9 @@
+! to apply setting, run:
+!	xrdb -merge ~/.Xresources
+
 Xft.dpi: 96
 Xcursor.size: 24
+
+XTerm*foreground: rgb:AA/AA/AA
+XTerm*background: rgb:00/00/00
+XTerm*faceName: SF Mono:size=12:style=bold
