@@ -8,25 +8,6 @@ def getFormattedModificationTime(filepath):
 	dateTime = datetime.fromtimestamp(modTime)
 	return dateTime.strftime("%Y%m%d_%H%M%S")
 
-class prepend_aaa(Command):
-
-	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = "aaa " + file.relative_path
-			if access(new_name, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		return None
-
 class prefix(Command):
 
 	def execute(self):
@@ -38,10 +19,10 @@ class prefix(Command):
 			return self.fm.notify("Prefix is required", bad=True)
 
 		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = prefix + " " + file.relative_path
+			new_name = prefix + file.relative_path
 			if access(new_name, os.F_OK):
 				# return self.fm.notify("rename failed, file already exists", bad=True)
-				new_name = prefix + "%04d" % (index) + " " + file.relative_path
+				new_name = prefix + "%04d" % (index) + file.relative_path
 			try:
 				os.rename(file.relative_path, new_name)
 			except OSError as err:

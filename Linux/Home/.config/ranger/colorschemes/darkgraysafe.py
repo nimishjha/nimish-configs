@@ -1,7 +1,7 @@
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
-class DarkGray(ColorScheme):
+class DarkGraySafe(ColorScheme):
 	progress_bar_color = 240
 
 	def use(self, context):
@@ -17,29 +17,26 @@ class DarkGray(ColorScheme):
 			if context.border:
 				fg = 240
 			if context.audio:
-				fg = 136
-			if context.video:
-				fg = 99
-			if context.image:
-				fg = 33
-			if context.document:
-				fg = 36
-			if context.customtype01:
-				fg = 134
-			if context.customtype02:
-				fg = 73
-			if context.customtype03:
-				attr |= bold
-				fg = 99
-			if context.customtype04:
-				attr |= bold
-				fg = 105
-			if context.customtype05:
-				fg = 40
-			if context.customtype06:
+				# fg = 94
 				fg = 130
-			if context.customtype07:
-				fg = 172
+			if context.video:
+				fg = 33
+			if context.image:
+				fg = 63
+			if context.document:
+				fg = 108
+			# if context.customtype01:
+			# 	fg = 125
+			# if context.customtype02:
+			# 	fg = 73
+			# if context.customtype03:
+			# 	attr |= bold
+			# 	fg = 99
+			# if context.customtype04:
+			# 	attr |= bold
+			# 	fg = 105
+			# if context.customtype05:
+			# 	fg = 34
 			if context.container:
 				attr |= bold
 				fg = 111
