@@ -82,7 +82,7 @@
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
-		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", Calibri, sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
+		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
 	body.pad100 h1, body.pad100 h1[class], body.pad100 h2, body.pad100 h2[class], body.pad100 h3, body.pad100 h3[class], body.pad100 h4, body.pad100 h4[class], body.pad100 h5, body.pad100 h5[class], body.pad100 h6, body.pad100 h6[class]
 		{ padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
 
@@ -93,10 +93,11 @@
 	.pad100 h5 { font-size: 1.2rem !important; }
 	.pad100 h6 { font-size: 1.0rem !important; }
 
+	quote, quoteauthor, footnote, right, documentheading, slideshow, aside { color: var(--colorText) !important; }
 	quote, quoteauthor, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
-	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: #141414 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; color: var(--colorText) !important; font-size: 1rem !important; }
+	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: #141414 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; font-size: 1rem !important; }
 	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; font-size: 1rem !important; text-align: right !important; }
-	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; color: var(--colorText) !important; }
+	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: #141414; border-width: 10px 0; }
 	documentheading h1 { font-size: 2.8rem !important; }
@@ -106,7 +107,7 @@
 	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
 		{ background: transparent !important; color: inherit !important; border: none !important; font-family: "Swis721 Cn BT" !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	section { background: inherit !important; color: inherit !important; }
-	aside { background-color: #333 !important; color: var(--colorText) !important; padding: 10px !important; }
+	aside { background-color: #333 !important; padding: 10px !important; }
 
 	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, small, source, strike, strong, time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
@@ -129,16 +130,16 @@
 	figure { border: 0 !important; background: #111 !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
 	figcaption { background: #111 !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
 	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
-	ruby { margin: 10px 0 !important; background: #F90 !important; color: #FFF !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
+	ruby { margin: 10px 0 !important; background: #F90 !important; color: #CDCDCD !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
 	rp { margin: 10px 0 !important; background: #181818 !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
-	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: #181818 !important; font-family: inherit !important; font-size: inherit !important; overflow-x: hidden; }
-	rt:before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 4px 20px 0 0 !important; }
+	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: #181818 !important; font-family: inherit !important; font-size: 16px !important; font-weight: bold !important; overflow-x: hidden; }
+	rt::before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 0px 20px 0 0 !important; }
 
 	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
 	textarea.monospace { font: bold 16px "SF Mono", Consolas !important; }
-	select, textarea { border: 0 !important; box-shadow: none !important; }
+	select, textarea { border: 0 !important; outline: 0 !important; box-shadow: none !important; }
 	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
-	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #FFF !important; }
+	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #CDCDCD !important; }
 	select:focus, textarea:focus, input:focus { color: #BBB !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
 	html small textarea[class] { font: 12px Verdana !important; }
 	span[class*="button"] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; border: 0 !important; border-radius: 0 !important; }
@@ -146,8 +147,8 @@
 
 	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
 	a[class*="btn"] { background: #333 !important; }
-	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6F0 !important; }
-	a:visited, a:visited * { color: var(--colorLinksVisited)!important; text-decoration: none !important; }
+	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
+	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font: bold 30px "Swis721 Cn BT" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
 
@@ -182,6 +183,7 @@
 	pre { background: #111 !important; color: #707070 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
+	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; background: #281800; color: #C70; font-family: monospace; font-weight: bold; font-size: 16px; }
 
 	pre em { color: #00AAFF !important; }
 	pre i { color: #0088CC !important; }
@@ -316,11 +318,11 @@
 
 	a[href*=".zip"]:link, a[href*=".zip"] { background: #000 !important; color: #CCC !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
 	a[href*=".zip"]:visited, a[href*=".zip"]:visited { background: #000 !important; color: #999 !important; border-color: #999 !important; }
-	a[href*=".zip"]:active, a[href*=".zip"]:hover, a[href*=".zip"]:focus { background: #000 !important; color: #FFF !important; border-color: #FFF !important; }
+	a[href*=".zip"]:active, a[href*=".zip"]:hover, a[href*=".zip"]:focus { background: #000 !important; color: #CDCDCD !important; border-color: #CDCDCD !important; }
 
 	a[href*="magnet:"]:link, a[href*="magnet:"] { background: #404 !important; color: #a0a !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
 	a[href*="magnet:"]:visited, a[href*="magnet:"]:visited { background: #202 !important; color: #808 !important; border-color: #999 !important; }
-	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #FFF !important; }
+	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #CDCDCD !important; }
 
 	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
 
@@ -338,27 +340,19 @@
 	div#inspector::after, #inspector div::after { display: none !important; }
 	.hovered { filter: contrast(1.5) !important; }
 
-	/* 										jotti 										*/
-	.result-infected { box-shadow: inset 0 -200px #800 !important; }
-	.result-clean { box-shadow: inset 0 -200px #080 !important; }
-
-	/* Google images */
-	body .rg_ilmbg { box-shadow: inset 40px 40px rgba(0, 0, 0, 0.8) !important; font: 12px verdana !important; }
-	body .rg_ilmn { box-shadow: inset 40px 40px rgba(0, 0, 0, 0.8) !important; font: 12px verdana !important; }
-
 	.markd { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00 !important; background: #000 !important; }
-	.focused { box-shadow: inset 0px 1000px #000 !important; color: #FFF !important; }
+	.focused { box-shadow: inset 0px 1000px #000 !important; color: #CDCDCD !important; }
 	.nimbusHide { display: none !important; }
 	.nimbusFade { opacity: 0.25 !important; }
 
 	table.markd { outline: 2px solid red !important; }
-	th.markd, td.markd, tr.markd td, tr.markd th { box-shadow: inset 0 10000px #048 !important; color: #FFF !important; }
-	th.markYellow, td.markYellow, tr.markYellow td, tr.markYellow th { box-shadow: inset 0 10000px #660 !important; color: #FFF !important; }
-	th.markRed, td.markRed, tr.markRed td, tr.markRed th { box-shadow: inset 0 10000px #800 !important; color: #FFF !important; }
-	th.markGreen, td.markGreen, tr.markGreen td, tr.markGreen th { box-shadow: inset 0 10000px #060 !important; color: #FFF !important; }
-	th.markBlue, td.markBlue, tr.markBlue td, tr.markBlue th { box-shadow: inset 0 10000px #008 !important; color: #FFF !important; }
-	th.markPurple, td.markPurple, tr.markPurple td, tr.markPurple th { box-shadow: inset 0 10000px #505 !important; color: #FFF !important; }
-	th.markWhite, td.markWhite, tr.markWhite td, tr.markWhite th { box-shadow: inset 0 10000px #555 !important; color: #FFF !important; }
+	th.markd, td.markd, tr.markd td, tr.markd th { box-shadow: inset 0 10000px #048 !important; color: #CDCDCD !important; }
+	th.markYellow, td.markYellow, tr.markYellow td, tr.markYellow th { box-shadow: inset 0 10000px #660 !important; color: #CDCDCD !important; }
+	th.markRed, td.markRed, tr.markRed td, tr.markRed th { box-shadow: inset 0 10000px #800 !important; color: #CDCDCD !important; }
+	th.markGreen, td.markGreen, tr.markGreen td, tr.markGreen th { box-shadow: inset 0 10000px #060 !important; color: #CDCDCD !important; }
+	th.markBlue, td.markBlue, tr.markBlue td, tr.markBlue th { box-shadow: inset 0 10000px #008 !important; color: #CDCDCD !important; }
+	th.markPurple, td.markPurple, tr.markPurple td, tr.markPurple th { box-shadow: inset 0 10000px #505 !important; color: #CDCDCD !important; }
+	th.markWhite, td.markWhite, tr.markWhite td, tr.markWhite th { box-shadow: inset 0 10000px #555 !important; color: #CDCDCD !important; }
 
 	.markd2 { box-shadow: inset 2px 2px #00F, inset -2px -2px #00F !important; }
 	.markd3 { box-shadow: inset 2px 2px #1F0, inset -2px -2px #1F0 !important; }
@@ -371,12 +365,11 @@
 	/*							Custom Tags								*/
 	/*																	*/
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
-	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #FFF !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
+	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #CDCDCD !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
 	reference, internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #111 !important; background: #202020 !important; margin-bottom: 2px !important; }
 	comment comment { padding: 0 40px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
-	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; background: #281800; color: #C70; font-family: monospace; font-weight: bold; font-size: 16px; }
 
 	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
 	mark { background: #003878 !important; color: #5599DD !important; }
@@ -398,7 +391,7 @@
 	autocompleteinputwrapper input { width: 100% !important; height: 3rem !important; font-size: 32px !important; background: #000 !important; color: #DDD !important; outline: 0 !important; display: block !important; font-family: inherit !important; }
 	autocompleteinputwrapper matches { display: block !important; background: #222 !important; color: #CCC !important; }
 	autocompleteinputwrapper match { display: block !important; padding: 2px 10px !important; font-size: 24px !important; }
-	autocompleteinputwrapper match.current { background: #303030 !important; color: #FFF !important; }
+	autocompleteinputwrapper match.current { background: #303030 !important; color: #CDCDCD !important; }
 	autocompleteinputwrapper em { display: inline-block !important; width: 200px !important; }
 
 	#xxdialog input, autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 32px !important; color: #AAA !important; }
@@ -435,10 +428,10 @@
 {
 	.progbar_empty { box-shadow: inset 0 1000px #555; }
 	.progbar_fill { box-shadow: inset 0 1000px #999; }
-	.thumb { box-shadow: inset 0 1000px #FFF; }
+	.thumb { box-shadow: inset 0 1000px #CDCDCD; }
 
 	clipboard-copy, summary, button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; }
-	clipboard-copy:hover, clipboard-copy:focus, summary:hover, summary:focus, button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #FFF !important; }
+	clipboard-copy:hover, clipboard-copy:focus, summary:hover, summary:focus, button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #CDCDCD !important; }
 	.svg-tip { background: #000 !important; box-shadow: inset 100px 100px #000 !important; }
 	.blob-code-deletion { filter: brightness(0.75); }
 	.blob-code-addition { filter: brightness(1.5); }
@@ -565,8 +558,11 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 
 :root {
 	--monospace-font-family: "Swis721 Cn BT", "Adwaita Sans", "SF Mono", monospace !important;
-	--theme-code-font-size: 18px !important;
+	--theme-code-font-size: 14px !important;
 }
+
+#devtools-webconsole { opacity: 0.5 !important; }
+#devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; }
 
 .download.download-state { background: #000 !important; color: #888 !important; }
 .download.download-state[active] { background: #111 !important; color: #888 !important; }
