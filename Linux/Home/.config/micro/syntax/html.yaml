@@ -1,0 +1,11 @@
+filetype: html
+
+detect:
+    filename: "\\.htm[l]?$"
+
+rules:
+    # - statement:
+    #     start: "<"
+    #     end: ">"
+
+    - statement: "<[^>]+>"

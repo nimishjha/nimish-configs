@@ -1,48 +1,31 @@
 filetype: javascript
 
 detect:
-    filename: "(\\.js$|\\.es[5678]?$|\\.mjs$)"
-    header: "^#!.*/(env +)?node( |$)"
+    filename: "\\.js$"
 
 rules:
     - constant: "\\b(globalThis|Infinity|null|undefined|NaN|null|undefined|true|false)\\b"
-    - constant.number: "\\b[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\\b"
-    - constant.number: "\\b[-+]?([0-9]+\\.[0-9]*|[0-9]*\\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
-    - constant.number: "\\b[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
-    - constant: "\\b[A-Z_]{2,}\\b"
-    - constant.bool: "\\b(true|false)\\b"
-    # - statement.function: "[A-Za-z]+\\([^\\)]*\\)"
-    #- identifier: "[A-Za-z_][A-Za-z0-9_]*[[:space:]]*[(]"
-    # ^ this is not correct usage of the identifier color
-    - symbol.brackets: "[(){}]|\\[|\\]"
-    - symbol.operator: "([-+/*=<>!~%?:&|]|[.]{3})"
-    - statement: "\\b(async|await|break|case|catch|console|const|continue|debugger|default|const|delete|do|else|export|finally|for|function\\*?|class|extends|if|import|from|in|of|instanceof|let|new|reject|resolve|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield|enum|implements|interface|package|private|protected|public)\\b"
-    # reserved but unassigned
-    # - error: "\\b()\\b"
-    - type: "\\b(Array|Boolean|Date|Enumerator|Error|Function|Generator|Map|Math|Number|Object|Promise|Proxy|Reflect|RegExp|Set|String|Symbol|WeakMap|WeakSet|BigInt64Array|BigUint64Array|Float32Array|Float64Array|Int16Array)\\b"
-    - constant: "\\\\[0-7][0-7]?[0-7]?|\\\\x[0-9a-fA-F]+|\\\\[bfnrt'\"\\?\\\\]"
-    - comment: "^#!.*/(env +)?node( |$)"
-
-    - statement: "\\b(alert|decodeURI|decodeURIComponent|document|encodeURI|encodeURIComponent|escape|eval|isFinite|isNaN|parseFloat|parseInt|unescape|uneval|window|Intl|WebAssembly|Arguments)\\b"
-    - statement: "\\b(trim|appendChild|parentNode|replaceChild|insertBefore|createElement|textContent|indexOf|setAttribute|firstChild|lastChild|nodeType|tagName)\\b"
+    - comment: "//.*$"
+    - constant: "\\b([0-9]+|[A-Z]|[A-Z][A-Z0-9_]+)\\b"
+    - statement: "\\b(switch|case|break|default|if|else|for|while|return|this|let|const|function|import|export|class|Math)\\b"
+    # - symbol: "[(){}\\[\\]]"
 
     - comment:
         start: "//"
         end: "$"
-        rules:
-            - todo: "(TODO|XXX|FIXME)"
 
     - comment:
         start: "/\\*"
         end: "\\*/"
-        skip: "\\\\."
-        rules:
-            - constant.specialChar: "\\\\."
-            - identifier: "\\s\\*\\s.*"
-            - todo: "(TODO|XXX|FIXME)"
+        # skip: "\\\\."
+        # rules:
+        #     - constant.specialChar: "\\\\."
+        #     - identifier: "\\s\\*\\s.*"
 
-    - constant.regex: "/[^/<>]+/[gim]*"
+    - comment:
+        start: "`"
+        end: "`"
+
     - constant.string: "\"[^\"]+\""
     - constant.string: "'[^\']+'"
-    - constant.string: "`[^`]+`"
-    - special: "\\$\\{[^\\}]*\\}"
+    # - constant.string: "`[^`]+`"
