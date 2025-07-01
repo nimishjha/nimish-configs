@@ -44,3 +44,14 @@ user_pref("browser.sessionstore.max_windows_undo", 1);
 user_pref("browser.sessionstore.resume_from_crash", false);
 
 
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.unified", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("toolkit.telemetry.server", "");
+
+user_pref("browser.download.dir", "/mnt/ramdisk");
+user_pref("browser.download.lastDir", "/mnt/ramdisk");
