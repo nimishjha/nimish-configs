@@ -64,10 +64,13 @@
 
 	html, html body, #nimbus body {
 		font-size: var(--fontSizeNormal) !important;
-		font-family: "Swis721 Cn BT" !important;
 		font-style: normal !important;
 		line-height: var(--lineHeight) !important;
 	}
+
+	html, html body, #nimbus body, h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class],
+	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
+		{ font-family: "Swis721 Cn BT", sans-serif !important; }
 
 	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
 
@@ -82,7 +85,7 @@
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
-		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-family: "Swis721 Cn BT", sans-serif !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
+		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
 	body.pad100 h1, body.pad100 h1[class], body.pad100 h2, body.pad100 h2[class], body.pad100 h3, body.pad100 h3[class], body.pad100 h4, body.pad100 h4[class], body.pad100 h5, body.pad100 h5[class], body.pad100 h6, body.pad100 h6[class]
 		{ padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
 
@@ -105,7 +108,7 @@
 	slideshow::after { content: " "; clear: both; display: block; }
 
 	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
-		{ background: transparent !important; color: inherit !important; border: none !important; font-family: "Swis721 Cn BT" !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
+		{ background: transparent !important; color: inherit !important; border: none !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	section { background: inherit !important; color: inherit !important; }
 	aside { background-color: #333 !important; padding: 10px !important; }
 
@@ -150,7 +153,7 @@
 	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
-	.pagination a:link { font: bold 30px "Swis721 Cn BT" !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
+	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
 
 	p { margin: 0 !important; padding: 5px 0 !important; }
 	blockquote { margin: 0 0 6px 0 !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorders) !important;  }
@@ -323,8 +326,6 @@
 	a[href*="magnet:"]:link, a[href*="magnet:"] { background: #404 !important; color: #a0a !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
 	a[href*="magnet:"]:visited, a[href*="magnet:"]:visited { background: #202 !important; color: #808 !important; border-color: #999 !important; }
 	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #CDCDCD !important; }
-
-	.pagination a { font: bold 24px "Swis721 Cn BT" !important; }
 
 	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
 	span[class*=button]:hover, a[class*=button]:hover, button:hover, input[type="submit"]:hover { filter: contrast(1.3) !important; }
