@@ -55,3 +55,12 @@ user_pref("toolkit.telemetry.server", "");
 
 user_pref("browser.download.dir", "/mnt/ramdisk");
 user_pref("browser.download.lastDir", "/mnt/ramdisk");
+
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
+user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
+user_pref("browser.newtabpage.activity-stream.showSearch", false);
+user_pref("browser.newtabpage.activity-stream.showWeather", false);
+user_pref("browser.newtabpage.enabled", false);
+
+user_pref("general.smoothScroll", false);

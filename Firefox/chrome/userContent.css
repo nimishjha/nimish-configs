@@ -1,27 +1,34 @@
 :root {
 	--lineHeight: 1.35;
-	--backgroundFormElements: #111;
+	--backgroundFormElements: #080c10;
 	--backgroundFormElementsFocused: #000;
 	--colorFormElements: #999;
 	--colorFormElementsFocused: #CCC;
 	--colorLinks: #77D;
 	--colorLinksHover: #CCC;
 	--colorLinksVisited:  #55C;
-	--backgroundNav: #111;
+	--backgroundNav: #080c10;
 	--fontSizeNormal: 21px;
 	--fontSizeSmall: 0.8em;
-	--colorBorders: #111;
+	--colorBorders: #080c10;
 
-	--backgroundHtml: #181818;
-	--backgroundBody: #242424;
-	--colorText: #808080;
-	--colorTextEmphasis: #A0A0A0;
-	--backgroundHeadings: #131313;
-	--colorHeadings: #888888;
-	--colorSeparator: #181818;
-	--colorBorderDark: #111;
-	--colorBorderLight: #444;
+	--backgroundHtml: #14181c;
+	--backgroundBody: #202428;
+	--colorText: #788088;
+	--colorTextEmphasis: #98a0a8;
+	--backgroundHeadings: #12161a;
+	--backgroundDark: #14181c;
+	--backgroundLessDark: #1b2024;
+	--colorHeadings: #808890;
+	--colorSeparator: #14181c;
+	--colorBorderDark: #080c10;
+	--colorBorderLight: #404448;
+	--backgroundPre: #12161c;
+	--colorPre: #707880;
+	--tableRowOdd: #14181c;
+	--tableRowEven: #101418;
 
+	--backgroundHtml1: #141414;
 	--backgroundBody1: #242424;
 	--colorText1: #707070;
 	--colorHeadings1: #808080;
@@ -33,13 +40,15 @@
 	--colorHeadings2: #888;
 	--colorTextEmphasis2: #999;
 
-	--backgroundHtml3: #000000;
+	--backgroundHtml3: #101010;
 	--backgroundBody3: #1D1D1D;
 	--colorText3: #606060;
 	--colorHeadings3: #888;
 	--colorTextEmphasis3: #777;
 
 	--component-bg-color: #404;
+
+	zoom: 1.0;
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -51,12 +60,16 @@
 
 @-moz-document url-prefix(https:), url-prefix(http:), url-prefix(file:)
 {
-	::-moz-selection { color: #000; background: #777; }
+	/* svg, rect { fill: #000; } */
+	/* svg { background: #000; } */
+
+	::-moz-selection { color: #000; background: #70767C; }
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
 		{ box-shadow: inset 0px 2000px 0 #000 !important; }
 
 	html { background: var(--backgroundHtml) !important; }
+	html.nimbusTheme1 { background: var(--backgroundHtml1) !important; }
 	html body, #nimbus body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
 	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--backgroundBody1) !important; color: var(--colorText1) !important; }
 	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--backgroundBody2) !important; color: var(--colorText2) !important; }
@@ -81,7 +94,7 @@
 	body.pad100 li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; }
 	body.pad100 ul li { border-left: 5px solid #0C0C0C !important; }
 	body.pad100 img { max-width: 100% !important; display: block !important; }
-	body.pad100 section { padding: 10px !important; border: 2px solid #111 !important; margin: 100px 0 !important; }
+	body.pad100 section { padding: 10px !important; border: 2px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
 
 	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
@@ -98,19 +111,19 @@
 
 	quote, quoteauthor, footnote, right, documentheading, slideshow, aside { color: var(--colorText) !important; }
 	quote, quoteauthor, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
-	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: #141414 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; font-size: 1rem !important; }
-	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important;  border-color: #0C0C0C !important; font-size: 1rem !important; text-align: right !important; }
-	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
+	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; }
+	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; text-align: right !important; }
+	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
 	right { text-align: right !important; }
-	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: #141414; border-width: 10px 0; }
+	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
 	documentheading h1 { font-size: 2.8rem !important; }
-	slideshow { background: #111 !important; padding: 10px !important; }
+	slideshow { background: var(--colorBorderDark) !important; padding: 10px !important; }
 	slideshow::after { content: " "; clear: both; display: block; }
 
 	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
 		{ background: transparent !important; color: inherit !important; border: none !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	section { background: inherit !important; color: inherit !important; }
-	aside { background-color: #333 !important; padding: 10px !important; }
+	aside { background-color: #303438 !important; padding: 10px !important; }
 
 	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, small, source, strike, strong, time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
@@ -128,14 +141,14 @@
 	div[class*="modal"], div[class*="popover"] { background: var(--backgroundFormElements) !important; }
 
 	hr { height: 4px !important; background: var(--colorSeparator) !important; border-color: var(--colorSeparator) !important; border-style: solid !important; border-width: 0 !important; margin: 40px 0 !important; }
-	legend { background: #181818 !important; }
+	legend { background: var(--backgroundDark) !important; }
 	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
-	figure { border: 0 !important; background: #111 !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
-	figcaption { background: #111 !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
+	figure { border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
+	figcaption { background: var(--colorBorderDark) !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
 	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
 	ruby { margin: 10px 0 !important; background: #F90 !important; color: #CDCDCD !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
-	rp { margin: 10px 0 !important; background: #181818 !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
-	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: #181818 !important; font-family: inherit !important; font-size: 16px !important; font-weight: bold !important; overflow-x: hidden; }
+	rp { margin: 10px 0 !important; background: var(--backgroundDark) !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
+	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: var(--backgroundDark) !important; font-family: inherit !important; font-size: 16px !important; font-weight: bold !important; overflow-x: hidden; }
 	rt::before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 0px 20px 0 0 !important; }
 
 	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
@@ -153,9 +166,10 @@
 	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
-	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: #111 !important; padding: 10px !important; }
+	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
 
 	p { margin: 0 !important; padding: 5px 0 !important; }
+	p p { margin: 4px 9px !important; }
 	blockquote { margin: 0 0 6px 0 !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorders) !important;  }
 	blockquote blockquote { padding: 0 0 0 40px !important; }
 
@@ -163,19 +177,19 @@
 	table, tr, td, th { margin: 0 !important; padding: 0 !important; line-height: inherit !important; color: inherit !important; border: 0 !important; }
 	table, tbody, tr, td { background: inherit !important; }
 	thead, th { background: var(--backgroundHeadings) !important; }
-	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: #181818 !important; }
-	tr:nth-child(even) td , tr:nth-child(even) th { background-color: #202020 !important; }
+	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--tableRowOdd) !important; }
+	tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--tableRowEven) !important; }
 
-	dl, dl[class] { border-left: 20px solid #111 !important; background: #181818 !important; font: inherit !important; line-height: inherit !important; }
-	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: #181818 !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: #0C0C0C !important; font: inherit !important; line-height: inherit !important; }
-	dd, dd[class] { padding: 0.25em 10px !important; margin: 2px 0 !important; background: #202020 !important; border-width: 0 0 0 60px !important; border-style: solid !important; border-color: #0C0C0C !important; font: inherit !important; line-height: inherit !important; }
+	dl, dl[class] { border-left: 20px solid var(--colorBorderDark) !important; background: var(--backgroundHeadings) !important; font: inherit !important; line-height: inherit !important; }
+	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
+	dd, dd[class] { padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-width: 0 0 0 60px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
 
 	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
 	small { font-size: 80% !important; }
 
-	code { font: inherit !important; padding: 1px 2px !important; background: #111 !important; color: #666 !important; }
+	code { font: inherit !important; padding: 1px 2px !important; background: var(--colorBorderDark) !important; color: #606468 !important; }
 	tt, kbd, samp { font-family: "SF Mono", Consolas, monospace !important; font-weight: bold !important; font-size: 18px !important; background: #0c0c0c !important; padding: 1px 2px !important; }
 	tt { color: #AAA !important; }
 	kbd { color: #0B0 !important; }
@@ -183,14 +197,16 @@
 	pre { font: bold 20px/1.3 "swis721 cn bt", monospace !important; }
 	body.nimbusTheme1 pre { font: bold 14px/1.3 "SF Mono", monospace !important; }
 	body.nimbusTheme2 pre { font: bold 14px/1.3 "SF Mono", monospace !important; background: #222 !important; color: #888 !important; }
-	pre { background: #111 !important; color: #707070 !important; border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
+	pre { background: var(--backgroundPre) !important; color: var(--colorPre) !important;  }
+	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
-	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; background: #281800; color: #C70; font-family: monospace; font-weight: bold; font-size: 16px; }
+	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; font: bold 18px "swis271 cn bt"; background: #12161c; color: #707880; }
+	prey { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; font: bold 18px "swis271 cn bt"; background: #12161c; color: #708090; }
 
 	pre em { color: #00AAFF !important; }
 	pre i { color: #0088CC !important; }
-	pre b { color: #CC8800 !important; }
+	pre b { color: #8090C0 !important; }
 	pre u { color: #6677EE !important; }
 	pre dfn { color: #8888CC !important; }
 	pre s { color: #6677CC !important; }
@@ -263,10 +279,10 @@
 	html.nimbusTheme2 h5[class],
 	html.nimbusTheme2 h6[class]
 		{ color: var(--colorHeadings2) !important; background: var(--backgroundBody2) !important; }
-	body.nimbusTheme2 hr { background: #666 !important; border-color: #666 !important; }
+	body.nimbusTheme2 hr { background: #222 !important; border-color: #222 !important; }
 	body.nimbusTheme2 annotation { background: #222 !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
-	body.nimbusTheme2 markwhite { background: #333 !important; color: #DDD !important; }
+	body.nimbusTheme2 markwhite { background: #333 !important; color: #c0c4c8 !important; }
 	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
 	body.nimbusTheme2 em,
 	body.nimbusTheme2 i,
@@ -330,9 +346,6 @@
 	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
 	span[class*=button]:hover, a[class*=button]:hover, button:hover, input[type="submit"]:hover { filter: contrast(1.3) !important; }
 
-	/* 											 									*/
-	/* 										Inspector 									*/
-	/* 											 									*/
 	body.inspector { padding-bottom: 30vh !important; }
 	div#inspector { padding: 5px 10px !important; position: fixed !important; left: 0; bottom: 0; width: 50% !important; height: 30vh !important; overflow: hidden !important; background: #000 !important; color: #aaa !important; text-align: left !important; z-index: 2147483647 !important; }
 	div#inspector b { color: #09f !important; }
@@ -362,13 +375,10 @@
 	a.markd::after, span.markd::after { content: ""; display: inline; clear: none; }
 	span.markd, em.markd, i.markd, b.markd, strong.markd { display: inline-block !important; min-height: 1rem !important; }
 
-	/*																	*/
-	/*							Custom Tags								*/
-	/*																	*/
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
-	author { display: block !important; font-size: 24px !important; background: #111 !important; color: #CDCDCD !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
+	author { display: block !important; font-size: 24px !important; background: var(--colorBorderDark) !important; color: #CDCDCD !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
 	reference, internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
-	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid #111 !important; background: #202020 !important; margin-bottom: 2px !important; }
+	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorderDark) !important; background: var(--backgroundLessDark) !important; margin-bottom: 2px !important; }
 	comment comment { padding: 0 40px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
 
@@ -379,7 +389,7 @@
 	markblue { background: #005 !important; color: #66D !important; }
 	markpurple { background: #204 !important; color: #C7E !important; }
 	markyellow { background: #740 !important; color: #DD5 !important; }
-	markwhite { background: #000 !important; color: #DDD !important; }
+	markwhite { background: #000 !important; color: #c0c4c8 !important; }
 
 	warning, info, error { display: block; border-width: 2px 2px 2px 20px; border-style: solid; padding: 1rem 2rem; margin: 10px 0; }
 	warning { background: #420; border-color: #C70; }
@@ -398,8 +408,8 @@
 	#xxdialog input, autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 32px !important; color: #AAA !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #AAA !important; }
 
-	#xxdialog { position: fixed !important; margin: auto !important; z-index: 10000 !important; height: 90px !important; top: 0 !important; left: 0px !important; bottom: 0px !important; right: 0 !important; background: #111 !important; color: #AAA !important; border: 10px solid #000 !important; display: block !important; text-transform: none !important; width: 60vw !important; }
-	#xxdialog heading { height: 30px !important; line-height: 30px !important; padding: 0 10px !important; background: #111 !important; display: block !important; margin: 0 !important; }
+	#xxdialog { position: fixed !important; margin: auto !important; z-index: 10000 !important; height: 90px !important; top: 0 !important; left: 0px !important; bottom: 0px !important; right: 0 !important; background: var(--colorBorderDark) !important; color: #AAA !important; border: 10px solid #000 !important; display: block !important; text-transform: none !important; width: 60vw !important; }
+	#xxdialog heading { height: 30px !important; line-height: 30px !important; padding: 0 10px !important; background: var(--colorBorderDark) !important; display: block !important; margin: 0 !important; }
 	#xxdialog input { font: 32px "swis721 cn bt" !important; line-height: 60px !important; verdana !important; background: #000 !important; color: #AAA !important; padding: 0 0 !important; margin: 0 !important; border-width: 0 10px !important; border-color: #000 !important; width: 100% !important; height: 60px !important; overflow: hidden !important; box-sizing: border-box !important; }
 
 	button[aria-pressed="true"] { outline: 2px solid #0C0 !important; }
@@ -431,13 +441,11 @@
 	.progbar_fill { box-shadow: inset 0 1000px #999; }
 	.thumb { box-shadow: inset 0 1000px #CDCDCD; }
 
-	clipboard-copy, summary, button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: #111 !important; }
+	clipboard-copy, summary, button, html input[type="submit"], html input[type="button"] { box-shadow: none !important; background: var(--colorBorderDark) !important; }
 	clipboard-copy:hover, clipboard-copy:focus, summary:hover, summary:focus, button:hover, button:focus, html input[type="submit"]:hover, input[type="submit"]:focus, html input[type="button"]:hover, html input[type="button"]:focus { background: #000 !important; color: #CDCDCD !important; }
 	.svg-tip { background: #000 !important; box-shadow: inset 100px 100px #000 !important; }
 	.blob-code-deletion { filter: brightness(0.75); }
 	.blob-code-addition { filter: brightness(1.5); }
-	/* .blob-code-deletion { box-shadow: inset 100px 100px 0 #800; } */
-	/* .blob-code-addition { box-shadow: inset 100px 100px 0 #060; } */
 	.file-header { box-shadow: inset 100px 100px 0 #000; }
 	.blob-code-addition span.blob-code-inner { color: #777 !important; }
 	.blob-code-deletion span.blob-code-inner { color: #777 !important; }
@@ -522,11 +530,11 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 
 @-moz-document url-prefix(moz-extension:)
 {
-	html, body { background: #111 !important; color: #888 !important; }
-	#editor { background: #111 !important; color: #999 !important; }
-	#editor textarea { background: #111 !important; color: #999 !important; font-family: "Swis721 Cn BT" !important; font-size: 20px !important; font-weight: bold !important; }
+	html, body { background: var(--colorBorderDark) !important; color: #888 !important; }
+	#editor { background: var(--colorBorderDark) !important; color: #999 !important; }
+	#editor textarea { background: var(--colorBorderDark) !important; color: #999 !important; font-family: "Swis721 Cn BT" !important; font-size: 20px !important; font-weight: bold !important; }
 	.tab-bar { background: #222 !important; color: #555 !important; }
-	#tabs .tab.active { background: #111 !important; color: #999 !important; }
+	#tabs .tab.active { background: var(--colorBorderDark) !important; color: #999 !important; }
 	.command-item { background: transparent !important; }
 	.CodeMirror { background: #000 !important; font-family: "Swis721 Cn BT", "SF Mono" !important; color: #789 !important; }
 	.CodeMirror-gutters { background: #000 !important; border-right: 10px solid #000 !important; }
@@ -567,7 +575,7 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 #devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; }
 
 .download.download-state { background: #000 !important; color: #888 !important; }
-.download.download-state[active] { background: #111 !important; color: #888 !important; }
+.download.download-state[active] { background: var(--colorBorderDark) !important; color: #888 !important; }
 #downloadsListBox { border: 0; }
 
 #viewsource {
