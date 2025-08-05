@@ -1,31 +1,29 @@
+function clamp(value, min, max)
+	if value < min then return min
+	elseif value > max then return max
+	else return value
+	end
+end
+
+function modifiedLog(intValue)
+	if intValue == 0 then return 0
+	-- else return clamp(math.floor(math.log(intValue, 10)) - 1, 1, 10)
+	else return clamp(math.log(intValue, 10) - 1, 1, 10)
+	end
+end
+
 do
 
-	function conky_netInLinear()
+	function conky_netInLogarithmic()
 		local netInStr = conky_parse('${to_bytes ${downspeed enp6s0}}')
 		local netInInt = tonumber( string.match(netInStr, "%d+") )
-		local netInLinear = (netInInt / 1000000)
-		return netInLinear
+		return modifiedLog(netInInt)
 	end
 
-	function conky_netOutLinear()
+	function conky_netOutLogarithmic()
 		local netOutStr = conky_parse('${to_bytes ${upspeed enp6s0}}')
 		local netOutInt = tonumber( string.match(netOutStr, "%d+") )
-		local netOutLinear = (netOutInt / 100000)
-		return netOutLinear
-	end
-
-	function conky_netInNonLinear()
-		local netInStr = conky_parse('${to_bytes ${downspeed enp6s0}}')
-		local netInInt = tonumber( string.match(netInStr, "%d+") )
-		local netInNonLinear = (netInInt / 20000000) ^ 0.2
-		return netInNonLinear
-	end
-
-	function conky_netOutNonLinear()
-		local netOutStr = conky_parse('${to_bytes ${upspeed enp6s0}}')
-		local netOutInt = tonumber( string.match(netOutStr, "%d+") )
-		local netOutNonLinear = (netOutInt / 2000000) ^ 0.2
-		return netOutNonLinear
+		return modifiedLog(netOutInt)
 	end
 
 	function conky_gpuFrequency()
@@ -48,8 +46,8 @@ do
 
 	function conky_gpuPowerDraw()
 		local str = conky_parse('${exec nvidia-smi --query-gpu=power.draw --format=csv,noheader }')
-		local int = tonumber( string.match(str, "%d+") )
-		return int
+		local intVal = tonumber( string.match(str, "%d+") )
+		return intVal
 	end
 
 	function conky_cpuFrequency()
@@ -58,18 +56,24 @@ do
 		return cpuFreqInt
 	end
 
-	function conky_diskIoReadNonLinear()
+	function conky_diskIoReadLogarithmic()
 		local diskIoReadStr = conky_parse('${to_bytes ${diskio_read}}')
-		local diskIoReadInt = tonumber( string.match(diskIoReadStr, "%d+") )
-		local diskIoReadNonLinear = (diskIoReadInt / 20000000) ^ 0.2
-		return diskIoReadNonLinear
+		return modifiedLog(tonumber(string.match(diskIoReadStr, "%d+")))
 	end
 
-	function conky_diskIoWriteNonLinear()
+	function conky_diskIoWriteLogarithmic()
 		local diskIoWriteStr = conky_parse('${to_bytes ${diskio_write}}')
-		local diskIoWriteInt = tonumber( string.match(diskIoWriteStr, "%d+") )
-		local diskIoWriteNonLinear = (diskIoWriteInt / 20000000) ^ 0.2
-		return diskIoWriteNonLinear
+		return modifiedLog(tonumber(string.match(diskIoWriteStr, "%d+")))
+	end
+
+	function conky_diskIoReadLinear()
+		local diskIoReadStr = conky_parse('${to_bytes ${diskio_read}}')
+		return tonumber(string.match(diskIoReadStr, "%d+"))
+	end
+
+	function conky_diskIoWriteLinear()
+		local diskIoWriteStr = conky_parse('${to_bytes ${diskio_write}}')
+		return tonumber(string.match(diskIoWriteStr, "%d+"))
 	end
 
 end

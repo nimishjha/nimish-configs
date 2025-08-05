@@ -1,0 +1,8 @@
+	${goto 30}${voffset -10}${cpugraph cpu1 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu2 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu3 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu4 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu5 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu6 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu7 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu8 30,3600 404448 404448 1}
