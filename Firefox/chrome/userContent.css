@@ -11,6 +11,7 @@
 	--fontSizeNormal: 21px;
 	--fontSizeSmall: 0.8em;
 	--colorBorders: #080c10;
+	--color30: #303438;
 
 	--backgroundHtml: #14181c;
 	--backgroundBody: #202428;
@@ -28,17 +29,17 @@
 	--tableRowOdd: #14181c;
 	--tableRowEven: #101418;
 
-	--backgroundHtml1: #141414;
-	--backgroundBody1: #242424;
-	--colorText1: #707070;
-	--colorHeadings1: #808080;
-	--colorTextEmphasis1: #909090;
+	--backgroundHtml1: #101418;
+	--backgroundBody1: #181c22;
+	--colorText1: #687078;
+	--colorHeadings1: #707880;
+	--colorTextEmphasis1: #889098;
 
-	--backgroundHtml2: #000;
-	--backgroundBody2: #000;
-	--colorText2: #707070;
-	--colorHeadings2: #888;
-	--colorTextEmphasis2: #999;
+	--backgroundHtml2: #000000;
+	--backgroundBody2: #000000;
+	--colorText2: #687078;
+	--colorHeadings2: #707880;
+	--colorTextEmphasis2: #889098;
 
 	--backgroundHtml3: #101010;
 	--backgroundBody3: #1D1D1D;
@@ -109,10 +110,12 @@
 	.pad100 h5 { font-size: 1.2rem !important; }
 	.pad100 h6 { font-size: 1.0rem !important; }
 
-	quote, quoteauthor, footnote, right, documentheading, slideshow, aside { color: var(--colorText) !important; }
-	quote, quoteauthor, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
+	quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow, aside { color: var(--colorText) !important; }
+	quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
 	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; }
 	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; text-align: right !important; }
+	postauthor { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
+	postdate { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
 	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
@@ -194,9 +197,9 @@
 	tt { color: #AAA !important; }
 	kbd { color: #0B0 !important; }
 	samp { color: #07C !important; }
-	pre { font: bold 20px/1.3 "swis721 cn bt", monospace !important; }
-	body.nimbusTheme1 pre { font: bold 14px/1.3 "SF Mono", monospace !important; }
-	body.nimbusTheme2 pre { font: bold 14px/1.3 "SF Mono", monospace !important; background: #222 !important; color: #888 !important; }
+	pre { font: bold 18px/1.3 "swis721 cn bt", monospace !important; }
+	body.nimbusTheme1 pre { font: bold 15px/1.3 "SF Mono", monospace !important; }
+	body.nimbusTheme2 pre { font: bold 15px/1.3 "SF Mono", monospace !important; background: #222 !important; color: #888 !important; }
 	pre { background: var(--backgroundPre) !important; color: var(--colorPre) !important;  }
 	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
@@ -395,7 +398,7 @@
 	warning { background: #420; border-color: #C70; }
 	info { background: #035; border-color: #07C; }
 	error { background: #600; border-color: #D40; }
-	tag { background: #333 !important; color: #888 !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
+	tag { background: var(--color30) !important; color: var(--colorText) !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
 
 	autocompleteinputwrapper { display: block !important; width: 800px !important; height: 40vh !important; position: fixed !important; left: 0 !important; top: 0 !important; right: 0 !important; bottom: 0 !important; margin: auto !important; z-index: 2147483647 !important; font-family: "swis721 cn bt" !important; }
 	inputelementwrapper { display: block !important; border: 2px solid #07C !important; }
