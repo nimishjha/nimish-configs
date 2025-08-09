@@ -1,21 +1,112 @@
 local utils = require 'mp.utils'
 local msg = require 'mp.msg'
+
 local presets01 = {
-	{ "Curve_02", "Dim_02" },
-	{ "Curve_15", "BlueNew_00" },
-	{ "Curve_16", "BlueNew_00" },
-	{ "Dim_02", "BlueNew_00" },
-	{ "Curve_14", "RedBlue_00" },
-	{ "Curve_15", "RedBlue_00" },
-	{ "Curve_16", "RedBlue_00" },
-	{ "Curve_17", "RedBlue_00" },
-	{ "Curve_14", "ChannelMixer_00" },
-	{ "Curve_15", "RedBlue_30" },
-	{ "Curve_16", "MonotoneRed_01" },
-	{ "Curve_14", "ChannelMixer_80" },
+	{ "Curve_06.glsl", "Blue_00.glsl" },
+	{ "Curve_16.glsl", "Blue_00.glsl" },
+	{ "Curve_26.glsl", "Blue_00.glsl" },
+	{ "Curve_29.glsl", "Blue_00.glsl" },
+	{ "Curve_06.glsl", "Blue_00.glsl" },
+	{ "Curve_16.glsl", "Blue_00.glsl" },
+	{ "Curve_26.glsl", "Blue_00.glsl" },
+	{ "Curve_29.glsl", "Blue_00.glsl" },
+	{ "Curve_06.glsl", "Blue_00.glsl" },
+	{ "Curve_16.glsl", "Blue_00.glsl" },
+	{ "Curve_26.glsl", "Blue_00.glsl" },
+	{ "Curve_29.glsl", "Blue_00.glsl" },
 }
 
-os.setlocale("")
+local shaderGroupsByKey = {
+	q = 'Blue_',
+	w = 'Psychedelic_',
+	e = 'RedBlue_',
+	r = 'Red_',
+	t = 'Tint_',
+	y = 'Green_',
+	u = 'LightTint_',
+	i = 'Invert',
+	o = 'ChannelMixer_',
+	p = 'ColorRamp_',
+	a = 'Bright_',
+	s = 'Dim_',
+	d = 'Saturation_',
+	f = 'SaturateSelective_',
+	F = 'FilmicCurve_',
+	g = 'Grayscale_',
+	h = 'Blend_',
+	k = 'Curve_',
+	z = 'zzz_',
+	x = 'zzx_',
+	c = 'zzc_',
+	C = 'crop_',
+	v = 'OrangeBlue_',
+	b = 'MonotoneSepia_',
+	n = 'MonotoneRed_',
+	m = 'MonotoneBlue_',
+
+	j = 'seek',
+	E = 'equalizer',
+}
+
+local equalizerPresets = {
+	"",
+	"equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=12000:t=o:w=3:g=-24",
+	"equalizer=f=500:t=o:w=2:g=-6,equalizer=f=1000:t=o:w=2:g=-6,equalizer=f=4000:t=o:w=2:g=-9,equalizer=f=8000:t=o:w=3:g=-24",
+	"equalizer=f=500:t=o:w=1:g=-18,equalizer=f=1000:t=o:w=1:g=-18,equalizer=f=2000:t=o:w=1:g=-18,equalizer=f=4000:t=o:w=1:g=-18,equalizer=f=8000:t=o:w=1:g=-18,equalizer=f=16000:t=o:w=1:g=-18",
+	"equalizer=f=500:t=o:w=1:g=-6,equalizer=f=1000:t=o:w=1:g=-12,equalizer=f=2000:t=o:w=1:g=-12,equalizer=f=4000:t=o:w=1:g=-12,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
+	"equalizer=f=500:t=o:w=1:g=-6,equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=2000:t=o:w=1:g=-12,equalizer=f=4000:t=o:w=1:g=-12,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
+	"equalizer=f=500:t=o:w=1:g=-6,equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=2000:t=o:w=1:g=-9,equalizer=f=4000:t=o:w=1:g=-12,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
+	"equalizer=f=500:t=o:w=1:g=-3,equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=2000:t=o:w=1:g=-9,equalizer=f=4000:t=o:w=1:g=-9,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
+}
+
+-- os.setlocale("")
+
+local settings = {
+	fileTypesToHandle = {
+		jpg = true,
+		jpeg = true,
+		png = true,
+		gif = true,
+		webp = true,
+		bmp = true,
+		mp3 = true,
+		wav = true,
+		ogm = true,
+		flac = true,
+		m4a = true,
+		wma = true,
+		ogg = true,
+		opus = true,
+		mkv = true,
+		avi = true,
+		mp4 = true,
+		ogv = true,
+		webm = true,
+		rmvb = true,
+		flv = true,
+		wmv = true,
+		mpeg = true,
+		mpg = true,
+		m4v = true,
+		m2ts = true,
+		mov = true,
+		psd = true,
+		aac = true,
+	},
+	fileList = {},
+	dir = "",
+	orderByNaturalNumbers = false,
+	orderBySize = false,
+
+	shadersDir = mp.command_native({"expand-path", "~~home/"}) .. "/shaders",
+	shaderGroup = "Blue_",
+	shaderNumber = "00",
+	pass1 = "",
+	pass2 = "",
+	whichPass = "pass2",
+	shadersGrouped = {},
+	shaderPresets = {},
+}
 
 function deepCopy(original)
     local copy
@@ -31,27 +122,48 @@ function deepCopy(original)
     return copy
 end
 
-local settings = {
-	filetypes = { 'jpg', 'jpeg', 'png', 'gif', 'webp', 'bmp', 'mp3', 'wav', 'ogm', 'flac', 'm4a', 'wma', 'ogg', 'opus', 'mkv', 'avi', 'mp4', 'ogv', 'webm', 'rmvb', 'flv', 'wmv', 'mpeg', 'mpg', 'm4v', '3gp', 'm2ts', 'mov', 'psd', 'aac' },
-	fileList = {},
-	dir = "",
-	orderByNaturalNumbers = false,
+function toggleOrderBySize()
+	if (settings.orderBySize == true) then
+		settings.orderBySize = false
+		cacheFileList()
+	else
+		settings.orderBySize = true
+		cacheFileList()
+	end
+end
 
-	shaderGroup = "BlueNew_",
-	shaderNumber = "00",
-	pass1 = "",
-	pass2 = "",
-	whichPass = "pass2",
-	shaderPresets = deepCopy(presets01),
-}
+function getShaders()
+	local directoryListing, error = utils.readdir(settings.shadersDir, "files")
+	if error ~= nil then
+		msg.error("getShaders error: " .. error)
+		return
+	end
 
-local fileTypesToHandle = {}
-for _, ext in ipairs(settings.filetypes) do
-	fileTypesToHandle[ext] = true
+	table.sort(directoryListing)
+
+	settings.shadersGrouped = {}
+	for _, shaderFileName in ipairs(directoryListing) do
+		local prefix = string.match(shaderFileName, "%w+")
+		if prefix then
+			if not settings.shadersGrouped[prefix] then
+				settings.shadersGrouped[prefix] = {}
+			end
+			table.insert(settings.shadersGrouped[prefix], shaderFileName)
+		end
+	end
+
+	local numShadersMessage = string.format("Found %d shader files", #directoryListing)
+	msg.warn(numShadersMessage)
+	mp.commandv("show_text", numShadersMessage)
 end
 
 function getFilesLinux(dir)
-	local flags = ('-1p' .. (orderByNaturalNumbers and 'v' or ''))
+	local flags
+	if settings.orderBySize == true then
+		flags = ('-1Sp')
+	else
+		flags = ('-1p' .. (orderByNaturalNumbers and 'v' or ''))
+	end
 	local args = { 'ls', flags, dir }
 	local directoryListing = utils.subprocess({ args = args, cancellable = false })
 	return parseFiles(directoryListing, '\n')
@@ -62,7 +174,7 @@ function parseFiles(res, delimiter)
 		local playableFiles = {}
 		for line in res.stdout:gmatch("[^"..delimiter.."]+") do
 			local ext = line:match("^.+%.(.+)$")
-			if ext and fileTypesToHandle[ext:lower()] then
+			if ext and settings.fileTypesToHandle[ext:lower()] then
 				table.insert(playableFiles, line)
 			end
 		end
@@ -94,7 +206,11 @@ function cacheFileList()
 	end
 
 	msg.warn(#files .. " playable files found")
-	mp.commandv("show_text", "Refreshed file list")
+	if (settings.orderBySize == true) then
+		mp.commandv("show_text", "Refreshed file list (ordered by size)")
+	else
+		mp.commandv("show_text", "Refreshed file list (ordered by name)")
+	end
 
 	settings.fileList = files
 	settings.dir = dir
@@ -127,34 +243,40 @@ function moveToFirstFile()
 end
 
 function getIndexOfCurrentFile(files, currentFileName)
-	local min = 1
-	local max = #files
-	local index
-	local found = false
-	while (min < max) do
-		index = math.floor((min + max) / 2)
-		local value = files[index]
-		if (currentFileName == value) then
-			found = true
+-- 	local min = 1
+-- 	local max = #files
+-- 	local index
+-- 	local found = false
+-- 	while (min < max) do
+-- 		index = math.floor((min + max) / 2)
+-- 		local value = files[index]
+-- 		if (currentFileName == value) then
+-- 			found = true
+-- 			return index
+-- 		end
+-- 		if (currentFileName < value) then
+-- 			max = index - 1
+-- 		else
+-- 			min = index + 1
+-- 		end
+-- 	end
+--
+-- 	if (min == max) then
+-- 		return min
+-- 	end
+--
+-- 	if not (found) then
+-- 		msg.warn("File not found using binary search: ", currentFileName)
+-- 		for index, fileName in ipairs(files) do
+-- 			if (fileName == currentFileName) then
+-- 				return index
+-- 			end
+-- 		end
+-- 	end
+
+	for index, fileName in ipairs(files) do
+		if (fileName == currentFileName) then
 			return index
-		end
-		if (currentFileName < value) then
-			max = index - 1
-		else
-			min = index + 1
-		end
-	end
-
-	if (min == max) then
-		return min
-	end
-
-	if not (found) then
-		msg.warn("File not found using binary search: ", currentFileName)
-		for index, fileName in ipairs(files) do
-			if (fileName == currentFileName) then
-				return index
-			end
 		end
 	end
 
@@ -172,6 +294,7 @@ function moveToFile(step)
 	local foundIndex = getIndexOfCurrentFile(settings.fileList, currentFileName)
 
 	if (foundIndex ~= -1) then
+		clearLoopPoints()
 		nextIndex = foundIndex + step
 		if (nextIndex > #settings.fileList) then
 			nextIndex = 1
@@ -211,13 +334,17 @@ function moveByRandomAmount()
 	moveToFile(jump)
 end
 
--- ____________________________________________________________________________________________________
+
+
+
 
 function loadSplashScreen()
-	mp.commandv("loadfile", "/home/terminator/Pictures/plainGreyBackground.png", "replace")
+	mp.commandv("loadfile", "~/dump/mpv.png", "replace")
 end
 
--- ____________________________________________________________________________________________________
+
+
+
 
 function toggleShaderPass()
 	if (settings.whichPass == "pass1") then
@@ -251,39 +378,80 @@ function clearShaderPass2()
 	setShaderPass2()
 end
 
-function setShaderFileAndPass()
+function seekByAbsolutePercent(percentValue)
+	mp.commandv("seek", percentValue, "absolute-percent")
+end
+
+function executeCommand()
 	if(string.len(settings.shaderNumber) ~= 2) then
 		mp.commandv("show_text", "Shader number is" .. settings.shaderNumber .. "; needs to be two digits")
 		return
 	end
-	local shaderName = settings.shaderGroup .. settings.shaderNumber
-	if (settings.whichPass == "pass1") then
-		settings.pass1 = shaderName
-	else
-		settings.pass2 = shaderName
+
+	if settings.shaderGroup == "seek" then
+		local seekPercent = tonumber(settings.shaderNumber)
+		if seekPercent ~= 0 then
+			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, settings.shaderNumber))
+			seekByAbsolutePercent(seekPercent)
+		else
+			mp.commandv("show_text", settings.shaderGroup)
+		end
+		return
+	elseif settings.shaderGroup == "equalizer" then
+		local presetIndex = tonumber(settings.shaderNumber) + 1
+		if presetIndex > #equalizerPresets then
+			mp.commandv("show_text", string.format("There are only %d equalizer presets", #equalizerPresets))
+		else
+			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, presetIndex))
+			mp.commandv("set", "af", equalizerPresets[presetIndex])
+		end
+		return
 	end
-	applyShaders()
+
+	local shaderFile
+	local shaderGroupNameSanitized = string.gsub(settings.shaderGroup, "_", "")
+	local shaderIndex = tonumber(settings.shaderNumber) + 1
+	if settings.shadersGrouped[shaderGroupNameSanitized] then
+		shaderFile = settings.shadersGrouped[shaderGroupNameSanitized][shaderIndex]
+		if shaderFile == nil then
+			local message = string.format("No shader for group %s at index %d", shaderGroupNameSanitized, shaderIndex - 1)
+			mp.commandv("show_text", message)
+			msg.error(message)
+		end
+	else
+		msg.error(string.format("settings.shadersGrouped[shaderGroupNameSanitized] is %s", settings.shadersGrouped[shaderGroupNameSanitized]))
+	end
+
+	if shaderFile ~= nil then
+		settings[settings.whichPass] = shaderFile
+		applyShaders()
+	end
 end
 
 function isValidShaderName(str)
 	return str ~= nil and string.len(str) > 0
 end
 
+function removeExtension(fileName)
+	return string.gsub(fileName, "%.glsl", "")
+end
+
 function applyShaders()
 	local message = ""
+	local SHADERS_DIR = "~/.config/mpv/shaders/"
 	if(isValidShaderName(settings.pass1)) then
 		if (isValidShaderName(settings.pass2)) then
-			message = settings.pass1 .. " + " .. settings.pass2
-			mp.commandv("change-list", "glsl-shaders", "set", "~/.config/mpv/shaders/" .. settings.pass1 .. ".glsl")
-			mp.commandv("change-list", "glsl-shaders", "append", "~/.config/mpv/shaders/" .. settings.pass2 .. ".glsl")
+			message = removeExtension(settings.pass1) .. " + " .. removeExtension(settings.pass2)
+			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
+			mp.commandv("change-list", "glsl-shaders", "append", SHADERS_DIR .. settings.pass2)
 		else
-			message = "Pass 1: " .. settings.pass1
-			mp.commandv("change-list", "glsl-shaders", "set", "~/.config/mpv/shaders/" .. settings.pass1 .. ".glsl")
+			message = "Pass 1: " .. removeExtension(settings.pass1)
+			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
 		end
 	else
 		if (isValidShaderName(settings.pass2)) then
-			message = "Pass 2:" .. settings.pass2
-			mp.commandv("change-list", "glsl-shaders", "set", "~/.config/mpv/shaders/" .. settings.pass2 .. ".glsl")
+			message = "Pass 2: " .. removeExtension(settings.pass2)
+			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass2)
 		else
 			clearShaders()
 		end
@@ -310,17 +478,17 @@ end
 function setShaderGroup(groupName)
 	settings.shaderGroup = groupName
 	settings.shaderNumber = "00"
-	setShaderFileAndPass()
+	executeCommand()
 end
 
 function setShaderNumber(num)
 	return function()
 		if(string.len(settings.shaderNumber) == 2) then
 			settings.shaderNumber = tostring(num)
-			mp.commandv("show_text", "shader number is " .. settings.shaderNumber)
+			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, settings.shaderNumber))
 		else
 			settings.shaderNumber = settings.shaderNumber .. num
-			setShaderFileAndPass()
+			executeCommand()
 		end
 	end
 end
@@ -334,7 +502,7 @@ function nextShader()
 	if(string.len(settings.shaderNumber) < 2) then
 		settings.shaderNumber = "0" .. settings.shaderNumber
 	end
-	setShaderFileAndPass()
+	executeCommand()
 end
 
 function prevShader()
@@ -346,7 +514,7 @@ function prevShader()
 	if(string.len(settings.shaderNumber) < 2) then
 		settings.shaderNumber = "0" .. settings.shaderNumber
 	end
-	setShaderFileAndPass()
+	executeCommand()
 end
 
 function saveShaderPreset(presetNumber)
@@ -370,7 +538,9 @@ function resetShaderPresets()
 	mp.commandv("show_text", "Restored shader presets")
 end
 
--- ____________________________________________________________________________________________________
+
+
+
 
 function getFirstFile(res, delimiter)
 	if not res.error and res.status == 0 then
@@ -388,9 +558,8 @@ function getLastModifiedFile(dir)
 end
 
 function loadLastModifiedShader()
-	local dir = mp.command_native({"expand-path", "~~home/"}) .. "/shaders"
 	local file, error
-	file, error = getLastModifiedFile(dir)
+	file, error = getLastModifiedFile(settings.shadersDir)
 	if not file then
 		msg.error("Subprocess failed: " .. (error or ''))
 		return
@@ -400,10 +569,9 @@ function loadLastModifiedShader()
 end
 
 function setDevShaderGroup()
-	local dir = mp.command_native({"expand-path", "~~home/"}) .. "/shaders"
 	local file, error
 	local group
-	file, error = getLastModifiedFile(dir)
+	file, error = getLastModifiedFile(settings.shadersDir)
 	if not file then
 		msg.error("Subprocess failed: " .. (error or ''))
 		return
@@ -413,7 +581,9 @@ function setDevShaderGroup()
 	mp.commandv("show_text", "Shader group set to " .. group)
 end
 
--- ____________________________________________________________________________________________________
+
+
+
 
 function setLoopPointA()
 	mp.set_property("ab-loop-a", mp.get_property("time-pos"))
@@ -425,94 +595,90 @@ function setLoopPointB()
 	mp.commandv("show_text", "Point B set")
 end
 
-mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
-mp.add_forced_key_binding('END', 'cacheFileList', cacheFileList)
-mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
-mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
-mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
-mp.add_forced_key_binding('Ctrl+PGUP', 'moveBackBy10', moveBy(-10))
-mp.add_forced_key_binding('Ctrl+Shift+PGDWN', 'moveBy50', moveBy(50))
-mp.add_forced_key_binding('Ctrl+Shift+PGUP', 'moveBackBy50', moveBy(-50))
-mp.add_forced_key_binding('Alt+PGDWN', 'moveByRandomAmount', moveByRandomAmount)
+function clearLoopPoints()
+	mp.set_property("ab-loop-a", "no")
+	mp.set_property("ab-loop-b", "no")
+end
 
 
-mp.add_forced_key_binding('Shift+F1', 'saveShader1', saveShaderPreset(1))
-mp.add_forced_key_binding('Shift+F2', 'saveShader2', saveShaderPreset(2))
-mp.add_forced_key_binding('Shift+F3', 'saveShader3', saveShaderPreset(3))
-mp.add_forced_key_binding('Shift+F4', 'saveShader4', saveShaderPreset(4))
-mp.add_forced_key_binding('Shift+F5', 'saveShader5', saveShaderPreset(5))
-mp.add_forced_key_binding('Shift+F6', 'saveShader6', saveShaderPreset(6))
-mp.add_forced_key_binding('Shift+F7', 'saveShader7', saveShaderPreset(7))
-mp.add_forced_key_binding('Shift+F8', 'saveShader8', saveShaderPreset(8))
-mp.add_forced_key_binding('Shift+F9', 'saveShader9', saveShaderPreset(9))
-mp.add_forced_key_binding('Shift+F10', 'saveShader10', saveShaderPreset(10))
-mp.add_forced_key_binding('Shift+F11', 'saveShader11', saveShaderPreset(11))
-mp.add_forced_key_binding('Shift+F12', 'saveShader12', saveShaderPreset(12))
 
-mp.add_forced_key_binding('F1', 'loadShader1', loadShaderPreset(1))
-mp.add_forced_key_binding('F2', 'loadShader2', loadShaderPreset(2))
-mp.add_forced_key_binding('F3', 'loadShader3', loadShaderPreset(3))
-mp.add_forced_key_binding('F4', 'loadShader4', loadShaderPreset(4))
-mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
-mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
-mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
-mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
-mp.add_forced_key_binding('F9', 'loadShader9', loadShaderPreset(9))
-mp.add_forced_key_binding('F10', 'loadShader10', loadShaderPreset(10))
-mp.add_forced_key_binding('F11', 'loadShader11', loadShaderPreset(11))
-mp.add_forced_key_binding('F12', 'loadShader12', loadShaderPreset(12))
 
-mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
-mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
 
-mp.add_forced_key_binding('q', 'setShaderGroupBlueNew', setShaderGroupHandler('BlueNew_'))
-mp.add_forced_key_binding('w', 'setShaderGroupPsychedelic', setShaderGroupHandler('Psychedelic_'))
-mp.add_forced_key_binding('e', 'setShaderGroupRedBlue', setShaderGroupHandler('RedBlue_'))
-mp.add_forced_key_binding('r', 'setShaderGroupRed', setShaderGroupHandler('Red_'))
-mp.add_forced_key_binding('t', 'setShaderGroupTint', setShaderGroupHandler('Tint_'))
-mp.add_forced_key_binding('y', 'setShaderGroupGreen', setShaderGroupHandler('Green_'))
-mp.add_forced_key_binding('u', 'setShaderGroupLightTint', setShaderGroupHandler('LightTint_'))
-mp.add_forced_key_binding('i', 'setShaderGroupInvert', setShaderGroupHandler('Invert'))
-mp.add_forced_key_binding('o', 'setShaderGroupChannelMixer', setShaderGroupHandler('ChannelMixer_'))
-mp.add_forced_key_binding('p', 'setShaderGroupColorRamp', setShaderGroupHandler('ColorRamp_'))
-mp.add_forced_key_binding('a', 'setShaderGroupBright', setShaderGroupHandler('Bright_'))
-mp.add_forced_key_binding('s', 'setShaderGroupDim', setShaderGroupHandler('Dim_'))
-mp.add_forced_key_binding('d', 'setShaderGroupSaturate', setShaderGroupHandler('Saturate_'))
-mp.add_forced_key_binding('f', 'setShaderGroupSaturateSelective', setShaderGroupHandler('SaturateSelective_'))
-mp.add_forced_key_binding('g', 'setShaderGroupGrayscale', setShaderGroupHandler('Grayscale_'))
-mp.add_forced_key_binding('h', 'setShaderGroupBlendCool', setShaderGroupHandler('BlendCool_'))
-mp.add_forced_key_binding('j', 'setShaderGroupBlendWarm', setShaderGroupHandler('BlendWarm_'))
-mp.add_forced_key_binding('k', 'setShaderGroupCurve', setShaderGroupHandler('Curve_'))
-mp.add_forced_key_binding('z', 'setShaderGroupZ', setShaderGroupHandler('z_'))
-mp.add_forced_key_binding('x', 'setShaderGroupx', setShaderGroupHandler('x_'))
-mp.add_forced_key_binding('c', 'setShaderGroupc', setShaderGroupHandler('c_'))
-mp.add_forced_key_binding('v', 'setShaderGroupOrangeBlue', setShaderGroupHandler('OrangeBlue_'))
-mp.add_forced_key_binding('b', 'setShaderGroupMonotoneSepia', setShaderGroupHandler('MonotoneSepia_'))
-mp.add_forced_key_binding('n', 'setShaderGroupMonotoneRed', setShaderGroupHandler('MonotoneRed_'))
-mp.add_forced_key_binding('m', 'setShaderGroupMonotoneBlue', setShaderGroupHandler('MonotoneBlue_'))
+function bindKeys()
+	for key, shaderGroup in pairs(shaderGroupsByKey) do
+		mp.add_forced_key_binding(key, 'setShaderGroup' .. shaderGroup, setShaderGroupHandler(shaderGroup))
+	end
 
-mp.add_forced_key_binding('1', 'setShaderNumber1', setShaderNumber(1))
-mp.add_forced_key_binding('2', 'setShaderNumber2', setShaderNumber(2))
-mp.add_forced_key_binding('3', 'setShaderNumber3', setShaderNumber(3))
-mp.add_forced_key_binding('4', 'setShaderNumber4', setShaderNumber(4))
-mp.add_forced_key_binding('5', 'setShaderNumber5', setShaderNumber(5))
-mp.add_forced_key_binding('6', 'setShaderNumber6', setShaderNumber(6))
-mp.add_forced_key_binding('7', 'setShaderNumber7', setShaderNumber(7))
-mp.add_forced_key_binding('8', 'setShaderNumber8', setShaderNumber(8))
-mp.add_forced_key_binding('9', 'setShaderNumber9', setShaderNumber(9))
-mp.add_forced_key_binding('0', 'setShaderNumber0', setShaderNumber(0))
+	for i = 0, 9 do
+		mp.add_forced_key_binding(tostring(i), 'setShaderNumber' .. i, setShaderNumber(i))
+	end
 
-mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
-mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
-mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
-mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
+	mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
+	mp.add_forced_key_binding('END', 'cacheFileList', cacheFileList)
+	mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
+	mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
+	mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
+	mp.add_forced_key_binding('Ctrl+PGUP', 'moveBackBy10', moveBy(-10))
+	mp.add_forced_key_binding('Ctrl+Shift+PGDWN', 'moveBy50', moveBy(50))
+	mp.add_forced_key_binding('Ctrl+Shift+PGUP', 'moveBackBy50', moveBy(-50))
+	mp.add_forced_key_binding('Alt+PGDWN', 'moveByRandomAmount', moveByRandomAmount)
 
-mp.add_forced_key_binding("[", 'prevShader', prevShader)
-mp.add_forced_key_binding("]", 'nextShader', nextShader)
+	mp.add_forced_key_binding('Shift+F1', 'saveShader1', saveShaderPreset(1))
+	mp.add_forced_key_binding('Shift+F2', 'saveShader2', saveShaderPreset(2))
+	mp.add_forced_key_binding('Shift+F3', 'saveShader3', saveShaderPreset(3))
+	mp.add_forced_key_binding('Shift+F4', 'saveShader4', saveShaderPreset(4))
+	mp.add_forced_key_binding('Shift+F5', 'saveShader5', saveShaderPreset(5))
+	mp.add_forced_key_binding('Shift+F6', 'saveShader6', saveShaderPreset(6))
+	mp.add_forced_key_binding('Shift+F7', 'saveShader7', saveShaderPreset(7))
+	mp.add_forced_key_binding('Shift+F8', 'saveShader8', saveShaderPreset(8))
+	mp.add_forced_key_binding('Shift+F9', 'saveShader9', saveShaderPreset(9))
+	mp.add_forced_key_binding('Shift+F10', 'saveShader10', saveShaderPreset(10))
+	mp.add_forced_key_binding('Shift+F11', 'saveShader11', saveShaderPreset(11))
+	mp.add_forced_key_binding('Shift+F12', 'saveShader12', saveShaderPreset(12))
 
-mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
-mp.add_forced_key_binding('Ctrl+k', 'setDevShaderGroup', setDevShaderGroup)
-mp.add_forced_key_binding('Ctrl+p', 'resetShaderPresets', resetShaderPresets)
+	mp.add_forced_key_binding('F1', 'loadShader1', loadShaderPreset(1))
+	mp.add_forced_key_binding('F2', 'loadShader2', loadShaderPreset(2))
+	mp.add_forced_key_binding('F3', 'loadShader3', loadShaderPreset(3))
+	mp.add_forced_key_binding('F4', 'loadShader4', loadShaderPreset(4))
+	mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
+	mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
+	mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
+	mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
+	mp.add_forced_key_binding('F9', 'loadShader9', loadShaderPreset(9))
+	mp.add_forced_key_binding('F10', 'loadShader10', loadShaderPreset(10))
+	mp.add_forced_key_binding('F11', 'loadShader11', loadShaderPreset(11))
+	mp.add_forced_key_binding('F12', 'loadShader12', loadShaderPreset(12))
 
-mp.add_forced_key_binding("A", 'setLoopPointA', setLoopPointA)
-mp.add_forced_key_binding("S", 'setLoopPointB', setLoopPointB)
+	mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
+	mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
+
+	mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
+	mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
+	mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
+	mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
+
+	mp.add_forced_key_binding("[", 'prevShader', prevShader)
+	mp.add_forced_key_binding("]", 'nextShader', nextShader)
+
+	mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
+	mp.add_forced_key_binding('Ctrl+k', 'setDevShaderGroup', setDevShaderGroup)
+	mp.add_forced_key_binding('Ctrl+p', 'resetShaderPresets', resetShaderPresets)
+
+	mp.add_forced_key_binding("A", 'setLoopPointA', setLoopPointA)
+	mp.add_forced_key_binding("S", 'setLoopPointB', setLoopPointB)
+
+	mp.add_forced_key_binding('Ctrl+o', 'toggleOrderBySize', toggleOrderBySize)
+	mp.add_forced_key_binding('Ctrl+u', 'getShaders', getShaders)
+end
+
+
+
+
+
+function main()
+	getShaders()
+	settings.shaderPresets = deepCopy(presets01)
+	bindKeys()
+end
+
+main()
