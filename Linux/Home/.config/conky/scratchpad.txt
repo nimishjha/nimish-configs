@@ -1,8 +1,27 @@
-	${goto 30}${voffset -10}${cpugraph cpu1 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu2 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu3 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu4 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu5 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu6 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu7 30,3600 404448 404448 1}
-	${goto 30}${voffset -10}${cpugraph cpu8 30,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu1 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu2 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu3 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu4 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu5 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu6 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu7 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu8 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu9 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu10 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu11 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu12 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu13 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu14 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu15 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu16 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu17 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu18 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu19 50,3600 404448 404448 1}
+	${goto 30}${voffset -10}${cpugraph cpu20 50,3600 404448 404448 1}
+
+
+${goto 30}${voffset 0}${template2}${fs_free_perc /home/main/doomtda_binds.txt}${font}
+
+
+	${goto 3000}${voffset 0}${fs_bar 10, 100 /home/main/doomtda_binds.txt}${font}
+	${goto 3000}${voffset 0}${fs_bar 10, 100 /mnt/PopOS/home/terminator/Downloads/youtubeFormats.txt}${font}
