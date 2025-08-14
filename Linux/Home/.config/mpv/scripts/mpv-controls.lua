@@ -439,11 +439,13 @@ end
 function applyShaders()
 	local message = ""
 	local SHADERS_DIR = "~/.config/mpv/shaders/"
+	local LIST_SEPARATOR_UNIX = ":"
+	local LIST_SEPARATOR_WINDOWS = ";"
+
 	if(isValidShaderName(settings.pass1)) then
 		if (isValidShaderName(settings.pass2)) then
 			message = removeExtension(settings.pass1) .. " + " .. removeExtension(settings.pass2)
-			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
-			mp.commandv("change-list", "glsl-shaders", "append", SHADERS_DIR .. settings.pass2)
+			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1 .. LIST_SEPARATOR_UNIX .. SHADERS_DIR .. settings.pass2)
 		else
 			message = "Pass 1: " .. removeExtension(settings.pass1)
 			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
@@ -456,6 +458,7 @@ function applyShaders()
 			clearShaders()
 		end
 	end
+
 	if(string.len(message) > 0) then
 		mp.commandv("show_text", message)
 	end
@@ -519,7 +522,7 @@ end
 
 function saveShaderPreset(presetNumber)
 	return function()
-		mp.commandv("show_text", "Saved quick shader " .. presetNumber)
+		mp.commandv("show_text", "Saved shader preset " .. presetNumber)
 		settings.shaderPresets[presetNumber][1] = settings.pass1
 		settings.shaderPresets[presetNumber][2] = settings.pass2
 	end
