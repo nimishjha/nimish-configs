@@ -67,7 +67,7 @@ class batch_rename_two_digits(Command):
 		new_base_name = self.rest(1)
 
 		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = new_base_name + "%02d" % (index) + splitext(file.relative_path)[1]
+			new_name = new_base_name + "%02d" % (index + 1) + splitext(file.relative_path)[1]
 			if access(new_name, os.F_OK):
 				return self.fm.notify("Batch rename failed, file already exists", bad=True)
 			try:
@@ -228,7 +228,7 @@ class copy_and_increment(Command):
 			base, ext = os.path.splitext(file.basename)
 
 			# Match pattern like Filename_02
-			match = re.match(r'^(.*?_)(\d+)$', base)
+			match = re.match(r'^(.*?)(\d+)$', base)
 			if not match:
 				self.fm.notify(f"File {file.basename} doesn't match expected pattern", bad=True)
 				continue
