@@ -2,47 +2,47 @@ local utils = require 'mp.utils'
 local msg = require 'mp.msg'
 
 local presets01 = {
-	{ "Curve_06.glsl", "Blue_00.glsl" },
-	{ "Curve_16.glsl", "Blue_00.glsl" },
-	{ "Curve_26.glsl", "Blue_00.glsl" },
-	{ "Curve_29.glsl", "Blue_00.glsl" },
-	{ "Curve_06.glsl", "Blue_00.glsl" },
-	{ "Curve_16.glsl", "Blue_00.glsl" },
-	{ "Curve_26.glsl", "Blue_00.glsl" },
-	{ "Curve_29.glsl", "Blue_00.glsl" },
-	{ "Curve_06.glsl", "Blue_00.glsl" },
-	{ "Curve_16.glsl", "Blue_00.glsl" },
-	{ "Curve_26.glsl", "Blue_00.glsl" },
-	{ "Curve_29.glsl", "Blue_00.glsl" },
+	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
+	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
 }
 
 local shaderGroupsByKey = {
-	q = 'Blue_',
-	w = 'Psychedelic_',
-	e = 'RedBlue_',
-	r = 'Red_',
-	t = 'Tint_',
-	y = 'Green_',
-	u = 'LightTint_',
+	q = 'Blue',
+	w = 'Psychedelic',
+	e = 'RedBlue',
+	r = 'Red',
+	t = 'Tint',
+	y = 'Green',
+	u = 'LightTint',
 	i = 'Invert',
-	o = 'ChannelMixer_',
-	p = 'ColorRamp_',
-	a = 'Bright_',
-	s = 'Dim_',
-	d = 'Saturation_',
-	f = 'SaturateSelective_',
-	F = 'FilmicCurve_',
-	g = 'Grayscale_',
-	h = 'Blend_',
-	k = 'Curve_',
-	z = 'zzz_',
-	x = 'zzx_',
-	c = 'zzc_',
-	C = 'crop_',
-	v = 'OrangeBlue_',
-	b = 'MonotoneSepia_',
-	n = 'MonotoneRed_',
-	m = 'MonotoneBlue_',
+	o = 'ChannelMixer',
+	p = 'ColorRamp',
+	a = 'Bright',
+	s = 'Dim',
+	d = 'Saturate',
+	f = 'SaturateSelective',
+	F = 'FilmicCurve',
+	g = 'Grayscale',
+	h = 'Blend',
+	k = 'Curve',
+	z = 'ExperimentalZ',
+	x = 'ExperimentalX',
+	c = 'ExperimentalC',
+	C = 'Crop',
+	v = 'OrangeBlue',
+	b = 'MonotoneSepia',
+	n = 'MonotoneRed',
+	m = 'MonotoneBlue',
 
 	j = 'seek',
 	E = 'equalizer',
@@ -58,8 +58,6 @@ local equalizerPresets = {
 	"equalizer=f=500:t=o:w=1:g=-6,equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=2000:t=o:w=1:g=-9,equalizer=f=4000:t=o:w=1:g=-12,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
 	"equalizer=f=500:t=o:w=1:g=-3,equalizer=f=1000:t=o:w=1:g=-6,equalizer=f=2000:t=o:w=1:g=-9,equalizer=f=4000:t=o:w=1:g=-9,equalizer=f=8000:t=o:w=1:g=-12,equalizer=f=16000:t=o:w=1:g=-12",
 }
-
--- os.setlocale("")
 
 local settings = {
 	fileTypesToHandle = {
@@ -99,12 +97,14 @@ local settings = {
 	orderBySize = false,
 
 	shadersDir = mp.command_native({"expand-path", "~~home/"}) .. "/shaders",
-	shaderGroup = "Blue_",
-	shaderNumber = "00",
+	shaderGroup = "Curve",
+	shaderDigits = "00",
+	shaderIndexByFileName = {},
 	pass1 = "",
 	pass2 = "",
 	whichPass = "pass2",
 	shadersGrouped = {},
+	shaderCountsByGroup = {},
 	shaderPresets = {},
 }
 
@@ -123,7 +123,7 @@ function deepCopy(original)
 end
 
 function toggleOrderBySize()
-	if (settings.orderBySize == true) then
+	if settings.orderBySize == true then
 		settings.orderBySize = false
 		cacheFileList()
 	else
@@ -132,29 +132,46 @@ function toggleOrderBySize()
 	end
 end
 
-function getShaders()
-	local directoryListing, error = utils.readdir(settings.shadersDir, "files")
+function padToWidth(str, width)
+	local len = string.len(str)
+	if len > width then return str end
+	return str .. string.rep(" ", width - len)
+end
+
+function generateShaderFileData()
+	local shaderDirs, error = utils.readdir(settings.shadersDir, "dirs")
 	if error ~= nil then
-		msg.error("getShaders error: " .. error)
+		msg.error("generateShaderFileData error: " .. error)
 		return
 	end
 
-	table.sort(directoryListing)
+	table.sort(shaderDirs)
 
 	settings.shadersGrouped = {}
-	for _, shaderFileName in ipairs(directoryListing) do
-		local prefix = string.match(shaderFileName, "%w+")
-		if prefix then
-			if not settings.shadersGrouped[prefix] then
-				settings.shadersGrouped[prefix] = {}
+	local groupNames = {}
+
+	for _, shaderDirName in ipairs(shaderDirs) do
+		local shaderFiles, error = utils.readdir(settings.shadersDir .. "/" .. shaderDirName, "files")
+		if error == nil then
+			table.sort(shaderFiles)
+			for _, shaderFileName in ipairs(shaderFiles) do
+				if not settings.shadersGrouped[shaderDirName] then
+					settings.shadersGrouped[shaderDirName] = {}
+					settings.shaderCountsByGroup[shaderDirName] = 0
+					table.insert(groupNames, shaderDirName)
+				end
+				table.insert(settings.shadersGrouped[shaderDirName], shaderFileName)
+				settings.shaderCountsByGroup[shaderDirName] = settings.shaderCountsByGroup[shaderDirName] + 1
+				settings.shaderIndexByFileName[shaderDirName .. "/" .. shaderFileName] = settings.shaderCountsByGroup[shaderDirName]
 			end
-			table.insert(settings.shadersGrouped[prefix], shaderFileName)
+		else
+			msg.error("Error reading files in " .. shaderDirName)
 		end
 	end
 
-	local numShadersMessage = string.format("Found %d shader files", #directoryListing)
-	msg.warn(numShadersMessage)
-	mp.commandv("show_text", numShadersMessage)
+	for _, groupName in ipairs(groupNames) do
+		msg.warn(string.format("        %s %02s", padToWidth(groupName, 20), settings.shaderCountsByGroup[groupName]))
+	end
 end
 
 function getFilesLinux(dir)
@@ -206,7 +223,7 @@ function cacheFileList()
 	end
 
 	msg.warn(#files .. " playable files found")
-	if (settings.orderBySize == true) then
+	if settings.orderBySize == true then
 		mp.commandv("show_text", "Refreshed file list (ordered by size)")
 	else
 		mp.commandv("show_text", "Refreshed file list (ordered by name)")
@@ -225,7 +242,7 @@ end
 function loadFile(filename)
 	local fullpath = utils.join_path(settings.dir, filename)
 	local doesFileExist = checkFileExists(fullpath)
-	if (doesFileExist) then
+	if doesFileExist then
 		mp.commandv("show_text", filename)
 		mp.commandv("loadfile", fullpath, "replace")
 	else
@@ -243,43 +260,11 @@ function moveToFirstFile()
 end
 
 function getIndexOfCurrentFile(files, currentFileName)
--- 	local min = 1
--- 	local max = #files
--- 	local index
--- 	local found = false
--- 	while (min < max) do
--- 		index = math.floor((min + max) / 2)
--- 		local value = files[index]
--- 		if (currentFileName == value) then
--- 			found = true
--- 			return index
--- 		end
--- 		if (currentFileName < value) then
--- 			max = index - 1
--- 		else
--- 			min = index + 1
--- 		end
--- 	end
---
--- 	if (min == max) then
--- 		return min
--- 	end
---
--- 	if not (found) then
--- 		msg.warn("File not found using binary search: ", currentFileName)
--- 		for index, fileName in ipairs(files) do
--- 			if (fileName == currentFileName) then
--- 				return index
--- 			end
--- 		end
--- 	end
-
 	for index, fileName in ipairs(files) do
-		if (fileName == currentFileName) then
+		if fileName == currentFileName then
 			return index
 		end
 	end
-
 	return -1
 end
 
@@ -293,13 +278,13 @@ function moveToFile(step)
 	local nextIndex = 0
 	local foundIndex = getIndexOfCurrentFile(settings.fileList, currentFileName)
 
-	if (foundIndex ~= -1) then
+	if foundIndex ~= -1 then
 		clearLoopPoints()
 		nextIndex = foundIndex + step
-		if (nextIndex > #settings.fileList) then
+		if nextIndex > #settings.fileList then
 			nextIndex = 1
 		else
-			if (nextIndex < 1) then
+			if nextIndex < 1 then
 				nextIndex = #settings.fileList
 			end
 		end
@@ -326,7 +311,7 @@ end
 
 function moveByRandomAmount()
 	local max = #settings.fileList
-	if (not max or max < 2) then
+	if not max or max < 2 then
 		mp.commandv("show_text", "max is " .. max)
 		return
 	end
@@ -347,7 +332,7 @@ end
 
 
 function toggleShaderPass()
-	if (settings.whichPass == "pass1") then
+	if settings.whichPass == "pass1" then
 		mp.commandv("show_text", "mode: pass2")
 		settings.whichPass = "pass2"
 	else
@@ -378,27 +363,45 @@ function clearShaderPass2()
 	setShaderPass2()
 end
 
+function isValidShaderName(str)
+	return str ~= nil and string.len(str) > 0
+end
+
+function removeExtension(fileName)
+	return string.gsub(fileName, "%.glsl", "")
+end
+
+function getIndexByFileName(fileName)
+	local index = settings.shaderIndexByFileName[fileName]
+	if type(index) == "number" then
+		index = tostring(string.format("%02d", index - 1))
+	else
+		index = fileName .. "ERROR_BAD_INDEX"
+	end
+	return index
+end
+
 function seekByAbsolutePercent(percentValue)
 	mp.commandv("seek", percentValue, "absolute-percent")
 end
 
 function executeCommand()
-	if(string.len(settings.shaderNumber) ~= 2) then
-		mp.commandv("show_text", "Shader number is" .. settings.shaderNumber .. "; needs to be two digits")
+	if string.len(settings.shaderDigits) ~= 2 then
+		msg.error("show_text", "executeCommand: shader number is " .. settings.shaderDigits .. "; needs to be two digits")
 		return
 	end
 
 	if settings.shaderGroup == "seek" then
-		local seekPercent = tonumber(settings.shaderNumber)
+		local seekPercent = tonumber(settings.shaderDigits)
 		if seekPercent ~= 0 then
-			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, settings.shaderNumber))
+			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, settings.shaderDigits))
 			seekByAbsolutePercent(seekPercent)
 		else
 			mp.commandv("show_text", settings.shaderGroup)
 		end
 		return
 	elseif settings.shaderGroup == "equalizer" then
-		local presetIndex = tonumber(settings.shaderNumber) + 1
+		local presetIndex = tonumber(settings.shaderDigits) + 1
 		if presetIndex > #equalizerPresets then
 			mp.commandv("show_text", string.format("There are only %d equalizer presets", #equalizerPresets))
 		else
@@ -409,31 +412,23 @@ function executeCommand()
 	end
 
 	local shaderFile
-	local shaderGroupNameSanitized = string.gsub(settings.shaderGroup, "_", "")
-	local shaderIndex = tonumber(settings.shaderNumber) + 1
-	if settings.shadersGrouped[shaderGroupNameSanitized] then
-		shaderFile = settings.shadersGrouped[shaderGroupNameSanitized][shaderIndex]
-		if shaderFile == nil then
-			local message = string.format("No shader for group %s at index %d", shaderGroupNameSanitized, shaderIndex - 1)
-			mp.commandv("show_text", message)
-			msg.error(message)
-		end
+	local shaderIndex = tonumber(settings.shaderDigits) + 1
+	local group = settings.shaderGroup
+
+	if settings.shadersGrouped[group] then
+		shaderFile = settings.shadersGrouped[group][shaderIndex]
 	else
-		msg.error(string.format("settings.shadersGrouped[shaderGroupNameSanitized] is %s", settings.shadersGrouped[shaderGroupNameSanitized]))
+		msg.error(string.format("settings.shadersGrouped[%s] is %s", group, settings.shadersGrouped[settings.shaderGroup]))
 	end
 
 	if shaderFile ~= nil then
-		settings[settings.whichPass] = shaderFile
+		settings[settings.whichPass] = group .. "/" .. shaderFile
 		applyShaders()
+	else
+		local message = string.format("No shader for group %s at index %d", group, shaderIndex - 1)
+		mp.commandv("show_text", message)
+		msg.error(message)
 	end
-end
-
-function isValidShaderName(str)
-	return str ~= nil and string.len(str) > 0
-end
-
-function removeExtension(fileName)
-	return string.gsub(fileName, "%.glsl", "")
 end
 
 function applyShaders()
@@ -442,24 +437,28 @@ function applyShaders()
 	local LIST_SEPARATOR_UNIX = ":"
 	local LIST_SEPARATOR_WINDOWS = ";"
 
-	if(isValidShaderName(settings.pass1)) then
-		if (isValidShaderName(settings.pass2)) then
-			message = removeExtension(settings.pass1) .. " + " .. removeExtension(settings.pass2)
+	if isValidShaderName(settings.pass1) then
+		if isValidShaderName(settings.pass2) then
+			local index1 = getIndexByFileName(settings.pass1)
+			local index2 = getIndexByFileName(settings.pass2)
+			message =  string.format("%s [%s] + %s [%s]", removeExtension(settings.pass1), index1, removeExtension(settings.pass2), index2)
 			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1 .. LIST_SEPARATOR_UNIX .. SHADERS_DIR .. settings.pass2)
 		else
-			message = "Pass 1: " .. removeExtension(settings.pass1)
+			local index = getIndexByFileName(settings.pass1)
+			message = string.format("Pass 1: %s [%s]", removeExtension(settings.pass1), index)
 			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
 		end
 	else
-		if (isValidShaderName(settings.pass2)) then
-			message = "Pass 2: " .. removeExtension(settings.pass2)
+		if isValidShaderName(settings.pass2) then
+			local index = getIndexByFileName(settings.pass2)
+			message = string.format("Pass 2: %s [%s]", removeExtension(settings.pass2), index)
 			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass2)
 		else
 			clearShaders()
 		end
 	end
 
-	if(string.len(message) > 0) then
+	if string.len(message) > 0 then
 		mp.commandv("show_text", message)
 	end
 end
@@ -472,6 +471,27 @@ function clearShaders()
 	mp.commandv("show_text", "GLSL shaders cleared")
 end
 
+function setShaderNumber(num)
+	return function()
+		if string.len(settings.shaderDigits) == 2 then
+			settings.shaderDigits = tostring(num)
+			mp.commandv("show_text", string.format("%s %s, awaiting input", settings.shaderGroup, settings.shaderDigits))
+		else
+			settings.shaderDigits = settings.shaderDigits .. num
+
+			local shaderNumber = tonumber(settings.shaderDigits)
+			local maxIndex = getCurrentGroupShaderCount()
+			if shaderNumber > maxIndex then
+				settings.shaderDigits = tostring(string.format("%02d", maxIndex))
+			end
+
+			if string.len(settings.shaderDigits) == 2 then
+				executeCommand()
+			end
+		end
+	end
+end
+
 function setShaderGroupHandler(groupName)
 	return function()
 		setShaderGroup(groupName)
@@ -480,43 +500,34 @@ end
 
 function setShaderGroup(groupName)
 	settings.shaderGroup = groupName
-	settings.shaderNumber = "00"
+	settings.shaderDigits = "00"
 	executeCommand()
 end
 
-function setShaderNumber(num)
-	return function()
-		if(string.len(settings.shaderNumber) == 2) then
-			settings.shaderNumber = tostring(num)
-			mp.commandv("show_text", string.format("%s %s", settings.shaderGroup, settings.shaderNumber))
-		else
-			settings.shaderNumber = settings.shaderNumber .. num
-			executeCommand()
-		end
+function getCurrentGroupShaderCount()
+	if settings.shaderGroup == "seek" then return 99 end
+
+	local groupShaderCount = settings.shaderCountsByGroup[settings.shaderGroup]
+
+	if type(groupShaderCount) ~= "number" then
+		msg.error("getCurrentGroupShaderCount: groupShaderCount is " .. type(groupShaderCount))
+		groupShaderCount = 99
+	else
+		groupShaderCount = groupShaderCount - 1
 	end
+
+	return groupShaderCount
 end
 
 function nextShader()
-	local shaderNumber = tonumber(settings.shaderNumber) + 1
-	if shaderNumber > 99 then
-		shaderNumber = 99
-	end
-	settings.shaderNumber = tostring(shaderNumber)
-	if(string.len(settings.shaderNumber) < 2) then
-		settings.shaderNumber = "0" .. settings.shaderNumber
-	end
+	local shaderNumber = math.min(tonumber(settings.shaderDigits) + 1, math.min(99, getCurrentGroupShaderCount()))
+	settings.shaderDigits = tostring(string.format("%02d", shaderNumber))
 	executeCommand()
 end
 
 function prevShader()
-	local shaderNumber = tonumber(settings.shaderNumber) - 1
-	if shaderNumber < 0 then
-		shaderNumber = 0
-	end
-	settings.shaderNumber = tostring(shaderNumber)
-	if(string.len(settings.shaderNumber) < 2) then
-		settings.shaderNumber = "0" .. settings.shaderNumber
-	end
+	local shaderNumber = math.max(tonumber(settings.shaderDigits) - 1, 0)
+	settings.shaderDigits = tostring(string.format("%02d", shaderNumber))
 	executeCommand()
 end
 
@@ -671,7 +682,7 @@ function bindKeys()
 	mp.add_forced_key_binding("S", 'setLoopPointB', setLoopPointB)
 
 	mp.add_forced_key_binding('Ctrl+o', 'toggleOrderBySize', toggleOrderBySize)
-	mp.add_forced_key_binding('Ctrl+u', 'getShaders', getShaders)
+	mp.add_forced_key_binding('Ctrl+u', 'generateShaderFileData', generateShaderFileData)
 end
 
 
@@ -679,7 +690,7 @@ end
 
 
 function main()
-	getShaders()
+	generateShaderFileData()
 	settings.shaderPresets = deepCopy(presets01)
 	bindKeys()
 end
