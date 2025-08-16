@@ -169,9 +169,14 @@ function generateShaderFileData()
 		end
 	end
 
+	local shaderCount = 0
 	for _, groupName in ipairs(groupNames) do
 		msg.warn(string.format("        %s %02s", padToWidth(groupName, 20), settings.shaderCountsByGroup[groupName]))
+		shaderCount = shaderCount + settings.shaderCountsByGroup[groupName]
 	end
+	local numShadersMessage = string.format("Found %d shaders", shaderCount)
+	msg.warn(numShadersMessage)
+	mp.commandv("show_text", numShadersMessage)
 end
 
 function getFilesLinux(dir)
