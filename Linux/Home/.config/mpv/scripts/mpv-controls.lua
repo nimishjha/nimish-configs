@@ -381,7 +381,7 @@ function getIndexByFileName(fileName)
 	if type(index) == "number" then
 		index = tostring(string.format("%02d", index - 1))
 	else
-		index = fileName .. "ERROR_BAD_INDEX"
+		index = "ERROR_BAD_INDEX"
 	end
 	return index
 end
@@ -392,7 +392,7 @@ end
 
 function executeCommand()
 	if string.len(settings.shaderDigits) ~= 2 then
-		msg.error("show_text", "executeCommand: shader number is " .. settings.shaderDigits .. "; needs to be two digits")
+		msg.error("executeCommand: shader number is " .. settings.shaderDigits .. "; needs to be two digits")
 		return
 	end
 
