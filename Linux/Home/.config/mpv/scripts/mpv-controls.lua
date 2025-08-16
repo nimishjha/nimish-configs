@@ -561,7 +561,7 @@ end
 
 
 
-function getFirstFile(res, delimiter)
+function getFirstEntry(res, delimiter)
 	if not res.error and res.status == 0 then
 		return string.match(res.stdout, "[^"..delimiter.."]+"), nil
 	else
@@ -573,7 +573,10 @@ function getLastModifiedFile(dir)
 	local flags = ('-1c')
 	local args = { 'ls', flags, dir }
 	local directoryListing = utils.subprocess({ args = args, cancellable = false })
-	return getFirstFile(directoryListing, '\n')
+	local lastModifiedDir = getFirstEntry(directoryListing, '\n')
+	local args2 = { 'ls', flags, dir .. "/" .. lastModifiedDir }
+	local subdirectoryListing = utils.subprocess({ args = args2, cancellable = false })
+	return lastModifiedDir .. "/" .. getFirstEntry(subdirectoryListing, '\n')
 end
 
 function loadLastModifiedShader()
