@@ -109,17 +109,17 @@ local settings = {
 }
 
 function deepCopy(original)
-    local copy
-    if type(original) == "table" then
-        copy = {}
-        for k, v in next, original, nil do
-            copy[deepCopy(k)] = deepCopy(v)
-        end
-        setmetatable(copy, deepCopy(getmetatable(original)))
-    else
-        copy = original
-    end
-    return copy
+	local copy
+	if type(original) == "table" then
+		copy = {}
+		for k, v in next, original, nil do
+			copy[deepCopy(k)] = deepCopy(v)
+		end
+		setmetatable(copy, deepCopy(getmetatable(original)))
+	else
+		copy = original
+	end
+	return copy
 end
 
 function toggleOrderBySize()
@@ -212,6 +212,7 @@ function getCurrentDir()
 	if not pwd or not relpath then return end
 	local path = utils.join_path(pwd, relpath)
 	local dir = utils.split_path(path)
+	-- msg.warn(string.format("pwd %s\nrelpath %s\npath %s\ndir %s\n", pwd, relpath, path, dir))
 	return dir
 end
 
@@ -346,6 +347,17 @@ function toggleShaderPass()
 	end
 end
 
+function swapShaderPasses()
+	if isValidShaderName(settings.pass1) and isValidShaderName(settings.pass2) then
+		local temp = settings.pass1
+		settings.pass1 = settings.pass2
+		settings.pass2 = temp
+		applyShaders()
+	else
+		mp.commandv("show_text", "Both shader passes need to be set")
+	end
+end
+
 function setShaderPass1()
 	mp.commandv("show_text", "mode: Pass 1")
 	settings.whichPass = "pass1"
@@ -438,7 +450,7 @@ end
 
 function applyShaders()
 	local message = ""
-	local SHADERS_DIR = "~/.config/mpv/shaders/"
+	local SHADERS_DIR = settings.shadersDir .. "/"
 	local LIST_SEPARATOR_UNIX = ":"
 	local LIST_SEPARATOR_WINDOWS = ";"
 
@@ -590,19 +602,6 @@ function loadLastModifiedShader()
 	mp.commandv("show_text", "loaded shader " .. file)
 end
 
-function setDevShaderGroup()
-	local file, error
-	local group
-	file, error = getLastModifiedFile(settings.shadersDir)
-	if not file then
-		msg.error("Subprocess failed: " .. (error or ''))
-		return
-	end
-	group = string.match(file, "[^_]+") .. "_"
-	setShaderGroup(group)
-	mp.commandv("show_text", "Shader group set to " .. group)
-end
-
 
 
 
@@ -678,6 +677,7 @@ function bindKeys()
 	mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
 	mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
 	mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
+	mp.add_forced_key_binding('=', 'swapShaderPasses', swapShaderPasses)
 
 	mp.add_forced_key_binding("[", 'prevShader', prevShader)
 	mp.add_forced_key_binding("]", 'nextShader', nextShader)
