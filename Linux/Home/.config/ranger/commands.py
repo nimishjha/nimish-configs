@@ -8,6 +8,7 @@ def getFormattedModificationTime(filepath):
 	dateTime = datetime.fromtimestamp(modTime)
 	return dateTime.strftime("%Y%m%d_%H%M%S")
 
+
 class prefix(Command):
 
 	def execute(self):
@@ -30,6 +31,37 @@ class prefix(Command):
 				return False
 
 		self.fm.notify("Batch prefix successful")
+
+		return None
+
+
+class rename_basename(Command):
+
+	def execute(self):
+		from ranger.container.file import File
+		from os import access
+		from os.path import splitext
+
+		newBaseName = self.rest(1)
+
+		if newBaseName:
+			file = self.fm.thisfile
+			basename = file.basename
+			ext = splitext(file.relative_path)[1]
+			newName = newBaseName + ext
+
+			if access(newName, os.F_OK):
+				return self.fm.notify("Cannot rename, file already exists", bad=True)
+
+			try:
+				os.rename(file.relative_path, newName)
+			except OSError as err:
+				self.fm.notify(err)
+				return False
+
+			self.fm.notify(f"Renamed {basename} to {newName}")
+		else:
+			self.fm.notify("Usage: rename_basename <newbasename>")
 
 		return None
 
@@ -57,6 +89,7 @@ class batch_rename(Command):
 
 		return None
 
+
 class batch_rename_two_digits(Command):
 
 	def execute(self):
@@ -79,6 +112,7 @@ class batch_rename_two_digits(Command):
 		self.fm.notify("Batch rename successful")
 
 		return None
+
 
 class batch_rename_filemtime(Command):
 
@@ -106,6 +140,7 @@ class batch_rename_filemtime(Command):
 
 		return None
 
+
 class setextension(Command):
 
 	def execute(self):
@@ -131,6 +166,7 @@ class setextension(Command):
 		self.fm.notify("Batch setextension successful")
 
 		return None
+
 
 class remove_underscores(Command):
 
@@ -191,6 +227,7 @@ class cleanup_filenames(Command):
 
 		return None
 
+
 class sanitize_filename(Command):
 
 	def execute(self):
@@ -215,6 +252,7 @@ class sanitize_filename(Command):
 
 		return None
 
+
 class copy_and_increment(Command):
 	def execute(self):
 		from ranger.container.file import File
@@ -224,30 +262,23 @@ class copy_and_increment(Command):
 		import shutil
 
 		for file in self.fm.thistab.get_selection():
-			# Extract base name and extension
 			base, ext = os.path.splitext(file.basename)
 
-			# Match pattern like Filename_02
 			match = re.match(r'^(.*?)(\d+)$', base)
 			if not match:
 				self.fm.notify(f"File {file.basename} doesn't match expected pattern", bad=True)
 				continue
 
-			# Get prefix and number
 			prefix, num = match.groups()
 			new_num = int(num) + 1
 			new_name = f"{prefix}{new_num:0{len(num)}d}{ext}"
 			new_path = os.path.join(os.path.dirname(file.path), new_name)
-			# self.fm.notify(new_path, bad=True)
-			# return None
 
-			# Check if new file already exists
 			if access(new_path, os.F_OK):
 				self.fm.notify(f"Copy failed, {new_name} already exists", bad=True)
 				continue
 
 			try:
-				# Copy the file
 				shutil.copy2(file.path, new_path)
 				self.fm.notify(f"Copied {file.basename} to {new_name}")
 			except OSError as err:
@@ -255,3 +286,26 @@ class copy_and_increment(Command):
 				continue
 
 		return None
+
+
+class compress7z(Command):
+	def execute(self):
+		commandString = "7z a -mx9 /mnt/ramdisk/"
+		if self.arg(1):
+			commandString += self.arg(1) + ".7z "
+		else:
+			commandString += "temp.7z "
+
+		for index, file in enumerate(self.fm.thistab.get_selection()):
+			commandString += '"' + file.path + '" '
+		self.fm.execute_command(commandString)
+
+		return None
+
+
+class test(Command):
+	def execute(self):
+		if self.arg(1):
+			self.fm.notify("arg(1) is " + self.arg(1))
+		else:
+			self.fm.notify("no args")
