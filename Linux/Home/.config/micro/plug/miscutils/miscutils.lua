@@ -24,6 +24,7 @@ end
 function toggleBooleanOption(optionName)
 	return function()
 		config.SetGlobalOption(optionName, tostring(not config.GetGlobalOption(optionName)))
+		showMessage(string.format("%s: %s", optionName, config.GetGlobalOption(optionName)))
 	end
 end
 
@@ -50,6 +51,7 @@ function init()
 	config.MakeCommand("insertNumbersInColumn", insertNumbersInColumn, config.NoComplete)
 	config.MakeCommand("toggleSyntaxHighlighting", toggleBooleanOption("syntax"), config.NoComplete)
 	config.MakeCommand("toggleWordWrap", toggleBooleanOption("softwrap"), config.NoComplete)
+	config.MakeCommand("toggleCaseSensitivity", toggleBooleanOption("ignorecase"), config.NoComplete)
 	config.MakeCommand("showKeyIsUnbound", showKeyIsUnbound, config.NoComplete)
 	config.MakeCommand("showUnboundKeys", showUnboundKeysInBindingsJson, config.NoComplete)
 end
