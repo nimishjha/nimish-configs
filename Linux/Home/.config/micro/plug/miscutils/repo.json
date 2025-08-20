@@ -1,0 +1,14 @@
+[
+	{
+		"Name": "miscutils",
+		"Description": "Miscellaneous utilities",
+		"Tags": ["utilities"],
+		"Website": "www.nimishjha.com",
+		"Versions": [
+			{
+				"Version": "0.0.1",
+				"Url": "",
+			},
+		]
+	}
+]

@@ -46,31 +46,32 @@ function showUnboundKeysInBindingsJson()
 	for _, key in ipairs(keys) do
 		config.TryBindKey("Alt-" .. key, "command:showKeyIsUnbound", false)
 	end
+	local ctrlKeys = stringToCharList("bdjklmnprtuw")
+	for _, key in ipairs(ctrlKeys) do
+		config.TryBindKey("Ctrl-" .. key, "command:showKeyIsUnbound", false)
+	end
 end
 
 function flattenWhitespace(bp)
 	local cursor = bp.Cursor
-	local hasSel = cursor:HasSelection()
-
 	if cursor and cursor:HasSelection() then
 		local selectionString = util.String(cursor:GetSelection())
 		selectionString = string.gsub(selectionString, "%s+", " ")
-
-		bp.Cursor:DeleteSelection()
-		bp.Cursor:ResetSelection()
-
+		cursor:DeleteSelection()
+		cursor:ResetSelection()
 		local cursorPosition = buffer.Loc(cursor.X, cursor.Y)
 		bp.Buf:insert(cursorPosition, selectionString)
 	end
-
 end
 
 function init()
-	config.MakeCommand("insertNumbersInColumn", insertNumbersInColumn, config.NoComplete)
-	config.MakeCommand("toggleSyntaxHighlighting", toggleBooleanOption("syntax"), config.NoComplete)
-	config.MakeCommand("toggleWordWrap", toggleBooleanOption("softwrap"), config.NoComplete)
-	config.MakeCommand("toggleCaseSensitivity", toggleBooleanOption("ignorecase"), config.NoComplete)
-	config.MakeCommand("showKeyIsUnbound", showKeyIsUnbound, config.NoComplete)
-	config.MakeCommand("showUnboundKeys", showUnboundKeysInBindingsJson, config.NoComplete)
-	config.MakeCommand("flattenWhitespace", flattenWhitespace, config.NoComplete)
+	config.MakeCommand("insertNumbersInColumn",    insertNumbersInColumn,               config.NoComplete)
+	config.MakeCommand("toggleSyntaxHighlighting", toggleBooleanOption("syntax"),       config.NoComplete)
+	config.MakeCommand("toggleWordWrap",           toggleBooleanOption("softwrap"),     config.NoComplete)
+	config.MakeCommand("toggleCaseSensitivity",    toggleBooleanOption("ignorecase"),   config.NoComplete)
+	config.MakeCommand("toggleHltaberrors",        toggleBooleanOption("hltaberrors"),  config.NoComplete)
+	config.MakeCommand("toggleHltrailingws",       toggleBooleanOption("hltrailingws"), config.NoComplete)
+	config.MakeCommand("showKeyIsUnbound",         showKeyIsUnbound,                    config.NoComplete)
+	config.MakeCommand("showUnboundKeys",          showUnboundKeysInBindingsJson,       config.NoComplete)
+	config.MakeCommand("flattenWhitespace",        flattenWhitespace,                   config.NoComplete)
 end
