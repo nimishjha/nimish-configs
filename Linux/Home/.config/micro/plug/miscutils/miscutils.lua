@@ -1,6 +1,7 @@
 local micro = import("micro")
 local config = import("micro/config")
 local buffer = import("micro/buffer")
+local util = import("micro/util")
 
 function showMessage(s)
 	micro.InfoBar():Message(s)
@@ -43,8 +44,25 @@ end
 function showUnboundKeysInBindingsJson()
 	local keys = stringToCharList("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 	for _, key in ipairs(keys) do
-		config.TryBindKey("Alt-" .. key, "command:showUnbound", false)
+		config.TryBindKey("Alt-" .. key, "command:showKeyIsUnbound", false)
 	end
+end
+
+function flattenWhitespace(bp)
+	local cursor = bp.Cursor
+	local hasSel = cursor:HasSelection()
+
+	if cursor and cursor:HasSelection() then
+		local selectionString = util.String(cursor:GetSelection())
+		selectionString = string.gsub(selectionString, "%s+", " ")
+
+		bp.Cursor:DeleteSelection()
+		bp.Cursor:ResetSelection()
+
+		local cursorPosition = buffer.Loc(cursor.X, cursor.Y)
+		bp.Buf:insert(cursorPosition, selectionString)
+	end
+
 end
 
 function init()
@@ -54,4 +72,5 @@ function init()
 	config.MakeCommand("toggleCaseSensitivity", toggleBooleanOption("ignorecase"), config.NoComplete)
 	config.MakeCommand("showKeyIsUnbound", showKeyIsUnbound, config.NoComplete)
 	config.MakeCommand("showUnboundKeys", showUnboundKeysInBindingsJson, config.NoComplete)
+	config.MakeCommand("flattenWhitespace", flattenWhitespace, config.NoComplete)
 end
