@@ -87,6 +87,7 @@
 		{ font-family: "Swis721 Cn BT", sans-serif !important; }
 
 	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
+	body.nimbusTheme1 textarea { font: bold 15px/1.3 "SF Mono", monospace !important; }
 
 	body.pad100 { padding: 100px 200px !important; }
 	body.pad100 table { width: 100% !important; }
