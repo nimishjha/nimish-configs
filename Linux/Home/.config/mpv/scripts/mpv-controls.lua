@@ -61,35 +61,35 @@ local equalizerPresets = {
 
 local settings = {
 	fileTypesToHandle = {
-		jpg = true,
+		jpg  = true,
 		jpeg = true,
-		png = true,
-		gif = true,
+		png  = true,
+		gif  = true,
 		webp = true,
-		bmp = true,
-		mp3 = true,
-		wav = true,
-		ogm = true,
+		bmp  = true,
+		mp3  = true,
+		wav  = true,
+		ogm  = true,
 		flac = true,
-		m4a = true,
-		wma = true,
-		ogg = true,
+		m4a  = true,
+		wma  = true,
+		ogg  = true,
 		opus = true,
-		mkv = true,
-		avi = true,
-		mp4 = true,
-		ogv = true,
+		mkv  = true,
+		avi  = true,
+		mp4  = true,
+		ogv  = true,
 		webm = true,
 		rmvb = true,
-		flv = true,
-		wmv = true,
+		flv  = true,
+		wmv  = true,
 		mpeg = true,
-		mpg = true,
-		m4v = true,
+		mpg  = true,
+		m4v  = true,
 		m2ts = true,
-		mov = true,
-		psd = true,
-		aac = true,
+		mov  = true,
+		psd  = true,
+		aac  = true,
 	},
 	fileList = {},
 	dir = "",
@@ -634,63 +634,63 @@ function bindKeys()
 		mp.add_forced_key_binding(tostring(i), 'setShaderNumber' .. i, setShaderNumber(i))
 	end
 
-	mp.add_forced_key_binding('HOME', 'moveToFirstFile', moveToFirstFile)
-	mp.add_forced_key_binding('END', 'cacheFileList', cacheFileList)
-	mp.add_forced_key_binding('PGDWN', 'moveToNextFile', moveToNextFile)
-	mp.add_forced_key_binding('PGUP', 'moveToPreviousFile', moveToPreviousFile)
-	mp.add_forced_key_binding('Ctrl+PGDWN', 'moveBy10', moveBy(10))
-	mp.add_forced_key_binding('Ctrl+PGUP', 'moveBackBy10', moveBy(-10))
-	mp.add_forced_key_binding('Ctrl+Shift+PGDWN', 'moveBy50', moveBy(50))
-	mp.add_forced_key_binding('Ctrl+Shift+PGUP', 'moveBackBy50', moveBy(-50))
-	mp.add_forced_key_binding('Alt+PGDWN', 'moveByRandomAmount', moveByRandomAmount)
+	mp.add_forced_key_binding('HOME',             'moveToFirstFile',        moveToFirstFile)
+	mp.add_forced_key_binding('END',              'cacheFileList',          cacheFileList)
+	mp.add_forced_key_binding('PGDWN',            'moveToNextFile',         moveToNextFile)
+	mp.add_forced_key_binding('PGUP',             'moveToPreviousFile',     moveToPreviousFile)
+	mp.add_forced_key_binding('Ctrl+PGDWN',       'moveBy10',               moveBy(10))
+	mp.add_forced_key_binding('Ctrl+PGUP',        'moveBackBy10',           moveBy(-10))
+	mp.add_forced_key_binding('Ctrl+Shift+PGDWN', 'moveBy50',               moveBy(50))
+	mp.add_forced_key_binding('Ctrl+Shift+PGUP',  'moveBackBy50',           moveBy(-50))
+	mp.add_forced_key_binding('Alt+PGDWN',        'moveByRandomAmount',     moveByRandomAmount)
 
-	mp.add_forced_key_binding('Shift+F1', 'saveShader1', saveShaderPreset(1))
-	mp.add_forced_key_binding('Shift+F2', 'saveShader2', saveShaderPreset(2))
-	mp.add_forced_key_binding('Shift+F3', 'saveShader3', saveShaderPreset(3))
-	mp.add_forced_key_binding('Shift+F4', 'saveShader4', saveShaderPreset(4))
-	mp.add_forced_key_binding('Shift+F5', 'saveShader5', saveShaderPreset(5))
-	mp.add_forced_key_binding('Shift+F6', 'saveShader6', saveShaderPreset(6))
-	mp.add_forced_key_binding('Shift+F7', 'saveShader7', saveShaderPreset(7))
-	mp.add_forced_key_binding('Shift+F8', 'saveShader8', saveShaderPreset(8))
-	mp.add_forced_key_binding('Shift+F9', 'saveShader9', saveShaderPreset(9))
-	mp.add_forced_key_binding('Shift+F10', 'saveShader10', saveShaderPreset(10))
-	mp.add_forced_key_binding('Shift+F11', 'saveShader11', saveShaderPreset(11))
-	mp.add_forced_key_binding('Shift+F12', 'saveShader12', saveShaderPreset(12))
+	mp.add_forced_key_binding('Shift+F1',         'saveShader1',            saveShaderPreset(1))
+	mp.add_forced_key_binding('Shift+F2',         'saveShader2',            saveShaderPreset(2))
+	mp.add_forced_key_binding('Shift+F3',         'saveShader3',            saveShaderPreset(3))
+	mp.add_forced_key_binding('Shift+F4',         'saveShader4',            saveShaderPreset(4))
+	mp.add_forced_key_binding('Shift+F5',         'saveShader5',            saveShaderPreset(5))
+	mp.add_forced_key_binding('Shift+F6',         'saveShader6',            saveShaderPreset(6))
+	mp.add_forced_key_binding('Shift+F7',         'saveShader7',            saveShaderPreset(7))
+	mp.add_forced_key_binding('Shift+F8',         'saveShader8',            saveShaderPreset(8))
+	mp.add_forced_key_binding('Shift+F9',         'saveShader9',            saveShaderPreset(9))
+	mp.add_forced_key_binding('Shift+F10',        'saveShader10',           saveShaderPreset(10))
+	mp.add_forced_key_binding('Shift+F11',        'saveShader11',           saveShaderPreset(11))
+	mp.add_forced_key_binding('Shift+F12',        'saveShader12',           saveShaderPreset(12))
 
-	mp.add_forced_key_binding('F1', 'loadShader1', loadShaderPreset(1))
-	mp.add_forced_key_binding('F2', 'loadShader2', loadShaderPreset(2))
-	mp.add_forced_key_binding('F3', 'loadShader3', loadShaderPreset(3))
-	mp.add_forced_key_binding('F4', 'loadShader4', loadShaderPreset(4))
-	mp.add_forced_key_binding('F5', 'loadShader5', loadShaderPreset(5))
-	mp.add_forced_key_binding('F6', 'loadShader6', loadShaderPreset(6))
-	mp.add_forced_key_binding('F7', 'loadShader7', loadShaderPreset(7))
-	mp.add_forced_key_binding('F8', 'loadShader8', loadShaderPreset(8))
-	mp.add_forced_key_binding('F9', 'loadShader9', loadShaderPreset(9))
-	mp.add_forced_key_binding('F10', 'loadShader10', loadShaderPreset(10))
-	mp.add_forced_key_binding('F11', 'loadShader11', loadShaderPreset(11))
-	mp.add_forced_key_binding('F12', 'loadShader12', loadShaderPreset(12))
+	mp.add_forced_key_binding('F1',               'loadShader1',            loadShaderPreset(1))
+	mp.add_forced_key_binding('F2',               'loadShader2',            loadShaderPreset(2))
+	mp.add_forced_key_binding('F3',               'loadShader3',            loadShaderPreset(3))
+	mp.add_forced_key_binding('F4',               'loadShader4',            loadShaderPreset(4))
+	mp.add_forced_key_binding('F5',               'loadShader5',            loadShaderPreset(5))
+	mp.add_forced_key_binding('F6',               'loadShader6',            loadShaderPreset(6))
+	mp.add_forced_key_binding('F7',               'loadShader7',            loadShaderPreset(7))
+	mp.add_forced_key_binding('F8',               'loadShader8',            loadShaderPreset(8))
+	mp.add_forced_key_binding('F9',               'loadShader9',            loadShaderPreset(9))
+	mp.add_forced_key_binding('F10',              'loadShader10',           loadShaderPreset(10))
+	mp.add_forced_key_binding('F11',              'loadShader11',           loadShaderPreset(11))
+	mp.add_forced_key_binding('F12',              'loadShader12',           loadShaderPreset(12))
 
-	mp.add_forced_key_binding('`', 'clearShaders', clearShaders)
-	mp.add_forced_key_binding('Ctrl+w', 'loadSplashScreen', loadSplashScreen)
+	mp.add_forced_key_binding('`',                'clearShaders',           clearShaders)
+	mp.add_forced_key_binding('Ctrl+w',           'loadSplashScreen',       loadSplashScreen)
 
-	mp.add_forced_key_binding(';', 'setShaderPass1', setShaderPass1)
-	mp.add_forced_key_binding("'", 'setShaderPass2', setShaderPass2)
-	mp.add_forced_key_binding(":", 'clearShaderPass1', clearShaderPass1)
-	mp.add_forced_key_binding('"', 'clearShaderPass2', clearShaderPass2)
-	mp.add_forced_key_binding('=', 'swapShaderPasses', swapShaderPasses)
+	mp.add_forced_key_binding(';',                'setShaderPass1',         setShaderPass1)
+	mp.add_forced_key_binding("'",                'setShaderPass2',         setShaderPass2)
+	mp.add_forced_key_binding(":",                'clearShaderPass1',       clearShaderPass1)
+	mp.add_forced_key_binding('"',                'clearShaderPass2',       clearShaderPass2)
+	mp.add_forced_key_binding('=',                'swapShaderPasses',       swapShaderPasses)
 
-	mp.add_forced_key_binding("[", 'prevShader', prevShader)
-	mp.add_forced_key_binding("]", 'nextShader', nextShader)
+	mp.add_forced_key_binding("[",                'prevShader',             prevShader)
+	mp.add_forced_key_binding("]",                'nextShader',             nextShader)
 
-	mp.add_forced_key_binding('Ctrl+l', 'loadLastModifiedShader', loadLastModifiedShader)
-	mp.add_forced_key_binding('Ctrl+k', 'setDevShaderGroup', setDevShaderGroup)
-	mp.add_forced_key_binding('Ctrl+p', 'resetShaderPresets', resetShaderPresets)
+	mp.add_forced_key_binding('Ctrl+l',           'loadLastModifiedShader', loadLastModifiedShader)
+	mp.add_forced_key_binding('Ctrl+k',           'setDevShaderGroup',      setDevShaderGroup)
+	mp.add_forced_key_binding('Ctrl+p',           'resetShaderPresets',     resetShaderPresets)
 
-	mp.add_forced_key_binding("A", 'setLoopPointA', setLoopPointA)
-	mp.add_forced_key_binding("S", 'setLoopPointB', setLoopPointB)
+	mp.add_forced_key_binding("A",                'setLoopPointA',          setLoopPointA)
+	mp.add_forced_key_binding("S",                'setLoopPointB',          setLoopPointB)
 
-	mp.add_forced_key_binding('Ctrl+o', 'toggleOrderBySize', toggleOrderBySize)
-	mp.add_forced_key_binding('Ctrl+u', 'generateShaderFileData', generateShaderFileData)
+	mp.add_forced_key_binding('Ctrl+o',           'toggleOrderBySize',      toggleOrderBySize)
+	mp.add_forced_key_binding('Ctrl+u',           'generateShaderFileData', generateShaderFileData)
 end
 
 
