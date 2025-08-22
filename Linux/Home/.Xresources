@@ -7,3 +7,13 @@ Xcursor.size: 24
 XTerm*foreground: rgb:AA/AA/AA
 XTerm*background: rgb:00/00/00
 XTerm*faceName: SF Mono:size=12:style=bold
+
+xterm-256color*foreground: white
+xterm-256color*background: black
+xterm-256color*cursorColor: green
+
+! When i3 shows error messages, it runs xterm with 'xterm -class UXTerm ...'
+UXTerm*foreground: rgb:AA/AA/AA
+UXTerm*background: rgb:00/00/00
+UXTerm*cursorColor: rgb:AA/AA/AA
+UXTerm*faceName: SF Mono:size=12:style=bold
