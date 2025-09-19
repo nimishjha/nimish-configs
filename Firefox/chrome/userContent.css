@@ -41,11 +41,12 @@
 	--colorHeadings2: #707880;
 	--colorTextEmphasis2: #889098;
 
-	--backgroundHtml3: #101010;
-	--backgroundBody3: #1D1D1D;
-	--colorText3: #606060;
-	--colorHeadings3: #888;
-	--colorTextEmphasis3: #777;
+	--backgroundHtml3: #080c12;
+	--backgroundBody3: #0c1016;
+	--colorText3: #5c6064;
+	--colorHeadings3: #687078;
+	--backgroundHeadings3: #04080c;
+	--colorTextEmphasis3: #889098;
 
 	--component-bg-color: #404;
 
@@ -321,6 +322,20 @@
 	/* body.nimbusTheme2 markblue i, */
 	/* body.nimbusTheme2 markwhite i */
 		{ color: var(--colorTextEmphasis2) !important; background: transparent !important; }
+
+	html.nimbusTheme3 h1,
+	html.nimbusTheme3 h2,
+	html.nimbusTheme3 h3,
+	html.nimbusTheme3 h4,
+	html.nimbusTheme3 h5,
+	html.nimbusTheme3 h6,
+	html.nimbusTheme3 h1[class],
+	html.nimbusTheme3 h2[class],
+	html.nimbusTheme3 h3[class],
+	html.nimbusTheme3 h4[class],
+	html.nimbusTheme3 h5[class],
+	html.nimbusTheme3 h6[class]
+		{ color: var(--colorHeadings3) !important; background: var(--backgroundHeadings3) !important; }
 
 	html.nimbusTheme3 { background: var(--backgroundHtml3) !important;  }
 	body.nimbusTheme3 a, body.nimbusTheme3 a *, body.nimbusTheme3 a:link { color: var(--colorText3) !important; text-decoration: none !important; }
