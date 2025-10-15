@@ -287,6 +287,7 @@
 	body.nimbusTheme2 hr { background: #222 !important; border-color: #222 !important; }
 	body.nimbusTheme2 annotation { background: #222 !important; }
 	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
+	body.nimbusTheme2 mark { background: #333 !important; color: #808488 !important; }
 	body.nimbusTheme2 markwhite { background: #333 !important; color: #c0c4c8 !important; }
 	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
 	body.nimbusTheme2 em,
@@ -393,6 +394,10 @@
 	.markd::after { content: ""; display: block; clear: both; }
 	a.markd::after, span.markd::after { content: ""; display: inline; clear: none; }
 	span.markd, em.markd, i.markd, b.markd, strong.markd { display: inline-block !important; min-height: 1rem !important; }
+	text.markd { fill: #c00; }
+	path.markd { stroke: #c00; }
+	rect.markd { fill: #c00; }
+	path[fill!=none].markd { fill: rgba(255, 0, 0, 0.5); }
 
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
 	author { display: block !important; font-size: 24px !important; background: var(--colorBorderDark) !important; color: #CDCDCD !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
@@ -591,8 +596,10 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 	--theme-code-font-size: 14px !important;
 }
 
-#devtools-webconsole { opacity: 0.5 !important; }
-#devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; }
+/* #devtools-webconsole { opacity: 0.5 !important; } */
+/* #devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; } */
+/* .webconsole-app { background: #080808 !important; } */
+/* .flexible-output-input { background: #080808 !important; } */
 
 .download.download-state { background: #000 !important; color: #888 !important; }
 .download.download-state[active] { background: var(--colorBorderDark) !important; color: #888 !important; }
@@ -602,4 +609,10 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 	font-family: "sf mono" !important;
 	font-weight: bold !important;
 	color: #777 !important;
+}
+
+@-moz-document url-prefix("chrome://devtools/content/webconsole/") {
+	#toolbox-panel-webconsole { background-color: #121212 !important; color: #909090 !important; }
+	/* .devtools-monospace, .CodeMirror, .message-body { font-family: monospace !important; font-size: 13px !important; line-height: 1.4 !important; } */
+	/* #input-wrapper .jsterm-input-node { background-color: #2d2d2d !important; color: #ffffff !important; border: 1px solid #555 !important; } */
 }
