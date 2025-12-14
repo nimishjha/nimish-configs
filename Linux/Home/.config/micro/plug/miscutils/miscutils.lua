@@ -5,6 +5,7 @@ local util = import("micro/util")
 local ioutil = import("ioutil")
 local os = import("os")
 local filepath = import("filepath")
+local time = import("time")
 
 local settings = {
 	filesInCurrentDir = {}
@@ -19,6 +20,21 @@ function forceLog(arg)
 	buffer.Log(arg .. "\n")
 end
 
+function logTable(tableInstance, indentLevel)
+	assert(type(tableInstance) == "table", "Expected table, received " .. type(tableInstance))
+	if not indentLevel then indentLevel = 0 end
+	for key, value in pairs(tableInstance) do
+		local indentString = string.rep("\t", indentLevel) .. key .. " = "
+	  	if type(value) == "table" then
+			forceLog(indentString .. "(table)")
+			logTable(value, indentLevel + 1)
+	  	elseif type(value) == nil then
+			forceLog(indentString .. " nil")
+		else
+			forceLog(indentString .. tostring(value))
+		end
+	end
+end
 
 
 
@@ -210,6 +226,17 @@ function openNextFile(bp)
 	end
 end
 
+function insertTimestamp(bp)
+	local curPaneBuf = bp.Buf
+	local numCursors = curPaneBuf:NumCursors()
+	for i = 0, numCursors - 1 do
+		local cursor = curPaneBuf:GetCursor(i)
+		local cursorPos = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
+		local timestamp = time.Now():Format("2006-01-02 15:04")
+		bp.Buf:insert(cursorPos, timestamp)
+	end
+end
+
 function init()
 	config.MakeCommand("muInsertNumbersInColumn",    insertNumbersInColumn,               config.NoComplete)
 	config.MakeCommand("muToggleSyntaxHighlighting", toggleBooleanOption("syntax"),       config.NoComplete)
@@ -223,4 +250,5 @@ function init()
 	config.MakeCommand("muShowCurrentDir",           showCurDir,                          config.NoComplete)
 	config.MakeCommand("muOpenNextFile",             openNextFile,                        config.NoComplete)
 	config.MakeCommand("muOpenPreviousFile",         openPreviousFile,                    config.NoComplete)
+	config.MakeCommand("muTimestamp",                insertTimestamp,                     config.NoComplete)
 end
