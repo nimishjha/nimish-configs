@@ -13,6 +13,15 @@
 	--colorBorders: #080c10;
 	--color30: #303438;
 
+	--bgMark_blue: #003878;
+	--fgMark_blue: #5599DD;
+
+	--bgMark: #333;
+	--fgMark: #808488;
+
+	--theme3_bgMark: #422;
+	--theme3_fgMark: #a77;
+
 	--backgroundHtml: #14181c;
 	--backgroundBody: #202428;
 	--colorText: #788088;
@@ -35,18 +44,21 @@
 	--colorHeadings1: #707880;
 	--colorTextEmphasis1: #889098;
 
+	--colorLinkGray: #687078;
+	--colorLinkGrayVisited: #485058;
+
 	--backgroundHtml2: #000000;
 	--backgroundBody2: #000000;
 	--colorText2: #687078;
 	--colorHeadings2: #707880;
 	--colorTextEmphasis2: #889098;
 
-	--backgroundHtml3: #080c12;
-	--backgroundBody3: #0c1016;
-	--colorText3: #5c6064;
-	--colorHeadings3: #687078;
-	--backgroundHeadings3: #04080c;
-	--colorTextEmphasis3: #889098;
+	--backgroundHtml3: #000000;
+	--backgroundBody3: #280000;
+	--colorText3: #900000;
+	--colorHeadings3: #900000;
+	--backgroundHeadings3: #120000;
+	--colorTextEmphasis3: #c06060;
 
 	--component-bg-color: #404;
 
@@ -62,9 +74,6 @@
 
 @-moz-document url-prefix(https:), url-prefix(http:), url-prefix(file:)
 {
-	/* svg, rect { fill: #000; } */
-	/* svg { background: #000; } */
-
 	::-moz-selection { color: #000; background: #70767C; }
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
@@ -121,7 +130,7 @@
 	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
-	documentheading h1 { font-size: 2.8rem !important; }
+
 	slideshow { background: var(--colorBorderDark) !important; padding: 10px !important; }
 	slideshow::after { content: " "; clear: both; display: block; }
 
@@ -169,6 +178,11 @@
 	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
 	a[class*="btn"] { background: #333 !important; }
 	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
+
+	.statusOk { box-shadow: inset 2px 2px #0c0, inset -2px -2px #0c0; }
+	.statusWarning { box-shadow: inset 2px 2px #C90, inset -2px -2px #C90; }
+	.statusError { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00; }
+
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
@@ -188,6 +202,12 @@
 	dl, dl[class] { border-left: 20px solid var(--colorBorderDark) !important; background: var(--backgroundHeadings) !important; font: inherit !important; line-height: inherit !important; }
 	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
 	dd, dd[class] { padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-width: 0 0 0 60px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
+
+	d1, d2, d3, d4 { display: block !important; padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
+	d1 { border-width: 0 0 0 40px !important; background: var(--backgroundHeadings) !important; }
+	d2 { border-width: 0 0 0 80px !important; }
+	d3 { border-width: 0 0 0 120px !important; }
+	d4 { border-width: 0 0 0 160px !important; }
 
 	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
@@ -249,108 +269,6 @@
 	XP { color: #11CC00; }
 	XS { color: #1CF; background: #113060; }
 
-	body.nimbusTheme1 a, body.nimbusTheme1 a *, body.nimbusTheme1 a:link { color: #666 !important; text-decoration: none !important; }
-	body.nimbusTheme1 a:visited *, body.nimbusTheme1 a:visited { color: #666 !important; text-decoration: none !important; }
-	body.nimbusTheme1 a:hover *, body.nimbusTheme1 a:focus *, body.nimbusTheme1 a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
-	body.nimbusTheme1 cite,
-	body.nimbusTheme1 u,
-	body.nimbusTheme1 em,
-	body.nimbusTheme1 i,
-	body.nimbusTheme1 b,
-	body.nimbusTheme1 strong
-		{ color: var(--colorTextEmphasis1) !important; }
-
-	body.nimbusTheme1 img, body.nimbusTheme1 video { filter: saturate(0) brightness(0.7) !important; }
-	body.nimbusTheme1 img:hover, body.nimbusTheme1 video:hover { filter: saturate(0) brightness(1) !important; }
-
-	html.nimbusTheme2 { background: var(--backgroundHtml2) !important;  }
-	body.nimbusTheme2,
-	html.nimbusTheme2 body,
-	html.nimbusTheme2 body[class],
-	html.nimbusTheme2 p,
-	html.nimbusTheme2 li
-		{ color: var(--colorText2) !important; background: var(--backgroundBody2) !important; }
-
-	html.nimbusTheme2 h1,
-	html.nimbusTheme2 h2,
-	html.nimbusTheme2 h3,
-	html.nimbusTheme2 h4,
-	html.nimbusTheme2 h5,
-	html.nimbusTheme2 h6,
-	html.nimbusTheme2 h1[class],
-	html.nimbusTheme2 h2[class],
-	html.nimbusTheme2 h3[class],
-	html.nimbusTheme2 h4[class],
-	html.nimbusTheme2 h5[class],
-	html.nimbusTheme2 h6[class]
-		{ color: var(--colorHeadings2) !important; background: var(--backgroundBody2) !important; }
-	body.nimbusTheme2 hr { background: #222 !important; border-color: #222 !important; }
-	body.nimbusTheme2 annotation { background: #222 !important; }
-	body.nimbusTheme2 autocompleteinputwrapper input { color: #AAA !important; }
-	body.nimbusTheme2 mark { background: #333 !important; color: #808488 !important; }
-	body.nimbusTheme2 markwhite { background: #333 !important; color: #c0c4c8 !important; }
-	body.nimbusTheme2 reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
-	body.nimbusTheme2 em,
-	body.nimbusTheme2 i,
-	body.nimbusTheme2 b,
-	body.nimbusTheme2 strong
-	/* body.nimbusTheme2 mark b, */
-	/* body.nimbusTheme2 markyellow b, */
-	/* body.nimbusTheme2 markred b, */
-	/* body.nimbusTheme2 markgreen b, */
-	/* body.nimbusTheme2 markpurple b, */
-	/* body.nimbusTheme2 markblue b, */
-	/* body.nimbusTheme2 markwhite b, */
-	/* body.nimbusTheme2 mark strong, */
-	/* body.nimbusTheme2 markyellow strong, */
-	/* body.nimbusTheme2 markred strong, */
-	/* body.nimbusTheme2 markgreen strong, */
-	/* body.nimbusTheme2 markpurple strong, */
-	/* body.nimbusTheme2 markblue strong, */
-	/* body.nimbusTheme2 markwhite strong, */
-	/* body.nimbusTheme2 mark em, */
-	/* body.nimbusTheme2 markyellow em, */
-	/* body.nimbusTheme2 markred em, */
-	/* body.nimbusTheme2 markgreen em, */
-	/* body.nimbusTheme2 markpurple em, */
-	/* body.nimbusTheme2 markblue em, */
-	/* body.nimbusTheme2 markwhite em, */
-	/* body.nimbusTheme2 mark i, */
-	/* body.nimbusTheme2 markyellow i, */
-	/* body.nimbusTheme2 markred i, */
-	/* body.nimbusTheme2 markgreen i, */
-	/* body.nimbusTheme2 markpurple i, */
-	/* body.nimbusTheme2 markblue i, */
-	/* body.nimbusTheme2 markwhite i */
-		{ color: var(--colorTextEmphasis2) !important; background: transparent !important; }
-
-	html.nimbusTheme3 h1,
-	html.nimbusTheme3 h2,
-	html.nimbusTheme3 h3,
-	html.nimbusTheme3 h4,
-	html.nimbusTheme3 h5,
-	html.nimbusTheme3 h6,
-	html.nimbusTheme3 h1[class],
-	html.nimbusTheme3 h2[class],
-	html.nimbusTheme3 h3[class],
-	html.nimbusTheme3 h4[class],
-	html.nimbusTheme3 h5[class],
-	html.nimbusTheme3 h6[class]
-		{ color: var(--colorHeadings3) !important; background: var(--backgroundHeadings3) !important; }
-
-	html.nimbusTheme3 { background: var(--backgroundHtml3) !important;  }
-	body.nimbusTheme3 a, body.nimbusTheme3 a *, body.nimbusTheme3 a:link { color: var(--colorText3) !important; text-decoration: none !important; }
-	body.nimbusTheme3 a:visited *, body.nimbusTheme3 a:visited { color: var(--colorText3) !important; text-decoration: none !important; }
-	body.nimbusTheme3 a:hover *, body.nimbusTheme3 a:focus *, body.nimbusTheme3 a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
-	body.nimbusTheme3 cite,
-	body.nimbusTheme3 u,
-	body.nimbusTheme3 em,
-	body.nimbusTheme3 i,
-	body.nimbusTheme3 b,
-	body.nimbusTheme3 strong
-		{ color: var(--colorTextEmphasis3) !important; }
-
-
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #C00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #C00 !important; }
 	html a[href*=".pdf"]:active, html a[href*=".pdf"]:hover, html a[href*=".pdf"]:focus { background: #600 !important; }
@@ -392,6 +310,7 @@
 	.markd3 { box-shadow: inset 2px 2px #1F0, inset -2px -2px #1F0 !important; }
 	.markd.markd2 { box-shadow: inset 2px 2px #F90, inset -2px -2px #F90 !important; }
 	.markd::after { content: ""; display: block; clear: both; }
+	a.markd { margin-right: 4px; }
 	a.markd::after, span.markd::after { content: ""; display: inline; clear: none; }
 	span.markd, em.markd, i.markd, b.markd, strong.markd { display: inline-block !important; min-height: 1rem !important; }
 	text.markd { fill: #c00; }
@@ -407,13 +326,61 @@
 	ind { display: block !important; padding-left: 50px !important; }
 
 	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
-	mark { background: #003878 !important; color: #5599DD !important; }
-	markgreen { background: #150 !important; color: #2B0 !important; }
+	mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
+	markgreen { background: #040 !important; color: #0B0 !important; }
 	markred { background: #500 !important; color: #E33 !important; }
 	markblue { background: #005 !important; color: #66D !important; }
 	markpurple { background: #204 !important; color: #C7E !important; }
 	markyellow { background: #740 !important; color: #DD5 !important; }
 	markwhite { background: #000 !important; color: #c0c4c8 !important; }
+
+	body.nimbusTheme1
+	{
+		a, a *, a:link { color: var(--colorLinkGray) !important; text-decoration: none !important; }
+		a:visited *, a:visited { color: var(--colorLinkGrayVisited) !important; text-decoration: none !important; }
+		a:hover *, a:focus *, a:hover, a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
+		cite, u, em, i, b, strong { color: var(--colorTextEmphasis1) !important; }
+		img, video { filter: saturate(0) brightness(0.7) !important; }
+		img:hover, video:hover { filter: saturate(0) brightness(1) !important; }
+	}
+
+	html.nimbusTheme2
+	{
+		background: var(--backgroundHtml2) !important;
+		body, body[class], p, li { color: var(--colorText2) !important; background: var(--backgroundBody2) !important; }
+		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--colorHeadings2) !important; background: var(--backgroundBody2) !important; }
+	}
+
+	body.nimbusTheme2
+	{
+		hr { background: #222 !important; border-color: #222 !important; }
+		annotation { background: #222 !important; }
+		autocompleteinputwrapper input { color: #AAA !important; }
+		mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
+		markwhite { background: #222 !important; color: #c0c4c8 !important; }
+		reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
+		em, i, b, strong { color: var(--colorTextEmphasis2) !important; background: transparent !important; }
+	}
+
+	html.nimbusTheme3
+	{
+		background: var(--backgroundHtml3) !important;
+		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--colorHeadings3) !important; background: var(--backgroundHeadings3) !important; }
+	}
+
+	body.nimbusTheme3
+	{
+		a, a *, a:link { color: var(--colorText3) !important; text-decoration: none !important; }
+		a:visited *, a:visited { color: var(--colorText3) !important; text-decoration: none !important; }
+		a:hover *, a:focus *, a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
+		cite, u, em, i, b, strong { color: var(--colorTextEmphasis3) !important; }
+		mark { background: var(--theme3_bgMark) !important; color: var(--theme3_fgMark) !important; }
+	}
+
+	a1, a2, a3 { background: #000; font-weight: bold; padding: 1px 10px; }
+	a1 { color: #c0c; }
+	a2 { color: #c90; }
+	a3 { color: #0c0; }
 
 	warning, info, error { display: block; border-width: 2px 2px 2px 20px; border-style: solid; padding: 1rem 2rem; margin: 10px 0; }
 	warning { background: #420; border-color: #C70; }
@@ -423,11 +390,14 @@
 
 	autocompleteinputwrapper { display: block !important; width: 800px !important; height: 40vh !important; position: fixed !important; left: 0 !important; top: 0 !important; right: 0 !important; bottom: 0 !important; margin: auto !important; z-index: 2147483647 !important; font-family: "swis721 cn bt" !important; }
 	inputelementwrapper { display: block !important; border: 2px solid #07C !important; }
-	autocompleteinputwrapper input { width: 100% !important; height: 3rem !important; font-size: 32px !important; background: #000 !important; color: #DDD !important; outline: 0 !important; display: block !important; font-family: inherit !important; }
-	autocompleteinputwrapper matches { display: block !important; background: #222 !important; color: #CCC !important; }
-	autocompleteinputwrapper match { display: block !important; padding: 2px 10px !important; font-size: 24px !important; }
-	autocompleteinputwrapper match.current { background: #303030 !important; color: #CDCDCD !important; }
-	autocompleteinputwrapper em { display: inline-block !important; width: 200px !important; }
+	autocompleteinputwrapper
+	{
+		input { width: 100% !important; height: 3rem !important; font-size: 32px !important; background: #000 !important; color: #DDD !important; outline: 0 !important; display: block !important; font-family: inherit !important; }
+		matches { display: block !important; background: #222 !important; color: #CCC !important; }
+		match { display: block !important; padding: 2px 10px !important; font-size: 24px !important; }
+		match.current { background: #303030 !important; color: #CDCDCD !important; }
+		em { display: inline-block !important; width: 200px !important; }
+	}
 
 	#xxdialog input, autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 32px !important; color: #AAA !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #AAA !important; }
