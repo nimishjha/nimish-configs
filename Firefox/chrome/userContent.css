@@ -1,66 +1,82 @@
-:root {
+:root
+{
+	--monospace-font-family: "Swis721 Cn BT", "Adwaita Sans", "SF Mono", monospace !important;
+	--theme-code-font-size: 14px !important;
+
 	--lineHeight: 1.35;
+	--fontSizeNormal: 20px;
+	--fontSizeSmall: 0.8em;
+
+	--baseHue: 200;
+	--baseSaturation: 12;
+
+	--colorText:			hsl(var(--baseHue) 10 45);
+	--colorTextEmphasis:	hsl(var(--baseHue) 10 60);
+	--backgroundLessDark:	hsl(var(--baseHue) 14 12);
+	--backgroundHeadings:	hsl(var(--baseHue) 18 8);
+	--backgroundDark:		hsl(var(--baseHue) 18 8);
+	--colorSeparator:		hsl(var(--baseHue) 18 8);
+	--backgroundHtml:		hsl(var(--baseHue) 20 8);
+	--backgroundPre:		hsl(var(--baseHue) 22 9);
+	--colorBorderDark:		hsl(var(--baseHue) 35 5);
+	--colorLinksVisited:	hsl(var(--baseHue) 40 36);
+	--colorHeadings:		hsl(var(--baseHue) 7  53);
+	--colorLinks:			hsl(var(--baseHue) 70 38);
+	--colorLinksHover:		hsl(var(--baseHue) 80 60);
+	--backgroundLight:		hsl(var(--baseHue) var(--baseSaturation) 16);
+	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 11);
+	--colorBorderLight:		hsl(var(--baseHue) var(--baseSaturation) 20);
+	--colorPre:				hsl(var(--baseHue) var(--baseSaturation) 47);
+
 	--backgroundFormElements: #080c10;
 	--backgroundFormElementsFocused: #000;
 	--colorFormElements: #999;
 	--colorFormElementsFocused: #CCC;
-	--colorLinks: #77D;
-	--colorLinksHover: #CCC;
-	--colorLinksVisited:  #55C;
 	--backgroundNav: #080c10;
-	--fontSizeNormal: 21px;
-	--fontSizeSmall: 0.8em;
-	--colorBorders: #080c10;
-	--color30: #303438;
 
-	--bgMark_blue: #003878;
-	--fgMark_blue: #5599DD;
-
-	--bgMark: #333;
+	--bgMark: #303336;
 	--fgMark: #808488;
 
-	--theme3_bgMark: #422;
-	--theme3_fgMark: #a77;
-
-	--backgroundHtml: #14181c;
-	--backgroundBody: #202428;
-	--colorText: #788088;
-	--colorTextEmphasis: #98a0a8;
-	--backgroundHeadings: #12161a;
-	--backgroundDark: #14181c;
-	--backgroundLessDark: #1b2024;
-	--colorHeadings: #808890;
-	--colorSeparator: #14181c;
-	--colorBorderDark: #080c10;
-	--colorBorderLight: #404448;
-	--backgroundPre: #12161c;
-	--colorPre: #707880;
-	--tableRowOdd: #14181c;
-	--tableRowEven: #101418;
-
-	--backgroundHtml1: #101418;
-	--backgroundBody1: #181c22;
-	--colorText1: #687078;
-	--colorHeadings1: #707880;
-	--colorTextEmphasis1: #889098;
+	--theme1_backgroundHTML: #101418;
+	--theme1_backgroundBody: #181c22;
+	--theme1_colorText: #687078;
+	--theme1_backgroundHeadings: #080c12;
+	--theme1_colorHeadings: #707880;
+	--theme1_colorTextEmphasis: #889098;
 
 	--colorLinkGray: #687078;
 	--colorLinkGrayVisited: #485058;
 
-	--backgroundHtml2: #000000;
-	--backgroundBody2: #000000;
-	--colorText2: #687078;
-	--colorHeadings2: #707880;
-	--colorTextEmphasis2: #889098;
+	--theme2_backgroundHTML: #000000;
+	--theme2_backgroundBody: #000000;
+	--theme2_colorText: #687078;
+	--theme2_colorHeadings: #707880;
+	--theme2_colorTextEmphasis: #889098;
 
-	--backgroundHtml3: #000000;
-	--backgroundBody3: #280000;
-	--colorText3: #900000;
-	--colorHeadings3: #900000;
-	--backgroundHeadings3: #120000;
-	--colorTextEmphasis3: #c06060;
+	--theme3_backgroundHTML:		#000000;
+	--theme3_colorSeparator:		#000;
+	--theme3_colorBorderDark:		#000;
+	--theme3_colorBorders:			#000;
+	--theme3_colorBorderDark:		#000;
+	--theme3_colorBorderLight:		#400;
+	--theme3_baseHue:				0;
+	--theme3_linkHue:				30;
+	--theme3_bgMark:				hsl(0 10 20);
+	--theme3_fgMark:				hsl(0 10 60);
+	--theme3_colorText:				hsl(var(--theme3_baseHue) 100 32);
+	--theme3_colorHeadings:			hsl(var(--theme3_baseHue) 100 35);
+	--theme3_backgroundDark:		hsl(var(--theme3_baseHue) 100 4);
+	--theme3_backgroundHeadings:	hsl(var(--theme3_baseHue) 100 4);
+	--theme3_backgroundLessDark:	hsl(var(--theme3_baseHue) 100 6);
+	--theme3_backgroundBody:		hsl(var(--theme3_baseHue) 100 7);
+	--theme3_colorTextEmphasis:		hsl(var(--theme3_baseHue) 20 60);
+	--theme3_colorLinksVisited:		hsl(var(--theme3_linkHue) 100 30);
+	--theme3_colorLinks:			hsl(var(--theme3_linkHue) 100 40);
+	--theme3_colorLinksHover:		hsl(var(--theme3_linkHue) 70 70);
 
 	--component-bg-color: #404;
+
+	--toolbarbutton-border-radius: 0;
 
 	zoom: 1.0;
 }
@@ -72,6 +88,17 @@
 	#root, #snippets-container { display: none !important; }
 }
 
+@-moz-document url-prefix(about:downloads)
+{
+	.download.download-state { background: #000 !important; color: #888 !important; }
+	.download.download-state[active] { background: var(--colorBorderDark) !important; color: #888 !important; }
+	#downloadsListBox { border: 0 !important; }
+	.downloadTypeIcon { opacity: 0 !important; }
+	.downloadProgress { height: 8px !important; border-radius: 0 !important; background-color: #303030 !important; }
+	.downloadProgress::-moz-progress-bar { background-color: #0c0 !important; border-radius: 0 !important; }
+}
+
+
 @-moz-document url-prefix(https:), url-prefix(http:), url-prefix(file:)
 {
 	::-moz-selection { color: #000; background: #70767C; }
@@ -80,11 +107,15 @@
 		{ box-shadow: inset 0px 2000px 0 #000 !important; }
 
 	html { background: var(--backgroundHtml) !important; }
-	html.nimbusTheme1 { background: var(--backgroundHtml1) !important; }
 	html body, #nimbus body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
-	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--backgroundBody1) !important; color: var(--colorText1) !important; }
-	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--backgroundBody2) !important; color: var(--colorText2) !important; }
-	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--backgroundBody3) !important; color: var(--colorText3) !important; }
+
+	html.nimbusTheme1 { background: var(--theme1_backgroundHTML) !important; }
+	html.nimbusTheme2 { background: var(--theme2_backgroundHTML) !important; }
+	html.nimbusTheme3 { background: var(--theme3_backgroundHTML) !important; }
+
+	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--theme1_backgroundBody) !important; color: var(--theme1_colorText) !important; }
+	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--theme2_backgroundBody) !important; color: var(--theme2_colorText) !important; }
+	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--theme3_backgroundBody) !important; color: var(--theme3_colorText) !important; }
 
 	html, html body, #nimbus body {
 		font-size: var(--fontSizeNormal) !important;
@@ -99,27 +130,29 @@
 	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
 	body.nimbusTheme1 textarea { font: bold 15px/1.3 "SF Mono", monospace !important; }
 
-	body.pad100 { padding: 100px 200px !important; }
-	body.pad100 table { width: 100% !important; }
-	body.pad100 td, body.pad100 th { padding: 3px 10px !important; vertical-align: top !important; text-align: left !important; }
-	body.pad100 ul { list-style: none !important; }
-	body.pad100 li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; }
-	body.pad100 ul li { border-left: 5px solid #0C0C0C !important; }
-	body.pad100 img { max-width: 100% !important; display: block !important; }
-	body.pad100 section { padding: 10px !important; border: 2px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
+	h1, h2, h3, h4, h5, h6 { color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
+
+	body.pad100
+	{
+		padding: 100px 200px !important;
+
+		h1, h2, h3, h4, h5, h6 { padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
+		table { width: 100% !important; }
+		td, th { padding: 3px 10px !important; vertical-align: top !important; text-align: left !important; }
+		ul { list-style: none !important; }
+		li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; }
+		ul li { border-left: 5px solid #0C0C0C !important; }
+		img { max-width: 100% !important; display: block !important; }
+		section { padding: 10px !important; border: 2px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
+		h1 { font-size: 2.0rem !important; }
+		h2 { font-size: 1.8rem !important; }
+		h3 { font-size: 1.6rem !important; }
+		h4 { font-size: 1.4rem !important; }
+		h5 { font-size: 1.2rem !important; }
+		h6 { font-size: 1.0rem !important; }
+	}
+
 	body.xwrap { width: 1200px !important; margin: 0 auto !important; padding: 100px 200px !important; }
-
-	h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class]
-		{ color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
-	body.pad100 h1, body.pad100 h1[class], body.pad100 h2, body.pad100 h2[class], body.pad100 h3, body.pad100 h3[class], body.pad100 h4, body.pad100 h4[class], body.pad100 h5, body.pad100 h5[class], body.pad100 h6, body.pad100 h6[class]
-		{ padding: 10px 1rem !important; margin: 2px 0 2px -1rem !important; }
-
-	.pad100 h1 { font-size: 2.0rem !important; }
-	.pad100 h2 { font-size: 1.8rem !important; }
-	.pad100 h3 { font-size: 1.6rem !important; }
-	.pad100 h4 { font-size: 1.4rem !important; }
-	.pad100 h5 { font-size: 1.2rem !important; }
-	.pad100 h6 { font-size: 1.0rem !important; }
 
 	quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow, aside { color: var(--colorText) !important; }
 	quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
@@ -127,7 +160,7 @@
 	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; text-align: right !important; }
 	postauthor { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
 	postdate { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
-	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: #555 !important; }
+	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: var(--colorBorderLight) !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
 
@@ -137,7 +170,7 @@
 	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
 		{ background: transparent !important; color: inherit !important; border: none !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	section { background: inherit !important; color: inherit !important; }
-	aside { background-color: #303438 !important; padding: 10px !important; }
+	aside { background-color: var(--backgroundLight) !important; padding: 10px !important; }
 
 	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, small, source, strike, strong, time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
@@ -166,38 +199,38 @@
 	rt::before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 0px 20px 0 0 !important; }
 
 	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
+	input[type=checkbox]:checked { box-shadow: inset -2px -2px #0c0, inset 2px 2px #0c0 !important; }
 	textarea.monospace { font: bold 16px "SF Mono", Consolas !important; }
 	select, textarea { border: 0 !important; outline: 0 !important; box-shadow: none !important; }
 	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
 	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #CDCDCD !important; }
+	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
 	select:focus, textarea:focus, input:focus { color: #BBB !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
 	html small textarea[class] { font: 12px Verdana !important; }
 	span[class*="button"] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; border: 0 !important; border-radius: 0 !important; }
 	span[class*="button"]:hover, span[class*="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; }
 
-	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
-	a[class*="btn"] { background: #333 !important; }
-	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
-
 	.statusOk { box-shadow: inset 2px 2px #0c0, inset -2px -2px #0c0; }
 	.statusWarning { box-shadow: inset 2px 2px #C90, inset -2px -2px #C90; }
 	.statusError { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00; }
 
+	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
+	a[class*="btn"] { background: #333 !important; }
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
 
 	p { margin: 0 !important; padding: 5px 0 !important; }
 	p p { margin: 4px 9px !important; }
-	blockquote { margin: 0 0 6px 0 !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorders) !important;  }
+	blockquote { margin: 0 0 6px 0 !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorderDark) !important;  }
 	blockquote blockquote { padding: 0 0 0 40px !important; }
 
 	table { border-collapse: collapse !important; }
 	table, tr, td, th { margin: 0 !important; padding: 0 !important; line-height: inherit !important; color: inherit !important; border: 0 !important; }
 	table, tbody, tr, td { background: inherit !important; }
 	thead, th { background: var(--backgroundHeadings) !important; }
-	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--tableRowOdd) !important; }
-	tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--tableRowEven) !important; }
+	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--backgroundLessDark) !important; }
+	tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--backgroundDark) !important; }
 
 	dl, dl[class] { border-left: 20px solid var(--colorBorderDark) !important; background: var(--backgroundHeadings) !important; font: inherit !important; line-height: inherit !important; }
 	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
@@ -327,54 +360,88 @@
 
 	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
 	mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
-	markgreen { background: #040 !important; color: #0B0 !important; }
-	markred { background: #500 !important; color: #E33 !important; }
-	markblue { background: #005 !important; color: #66D !important; }
-	markpurple { background: #204 !important; color: #C7E !important; }
-	markyellow { background: #740 !important; color: #DD5 !important; }
-	markwhite { background: #000 !important; color: #c0c4c8 !important; }
+	markgreen { background: #040; color: #0B0; }
+	markred { background: #500; color: #E33; }
+	markblue { background: #005; color: #66D; }
+	markpurple { background: #204; color: #C7E; }
+	markyellow { background: #630; color: #d0a000; }
+	markwhite { background: #000; color: #c0c4c8; }
+
+	html.nimbusTheme1
+	{
+		body, body[class], p, li { color: var(--theme1_colorText) !important; background: var(--theme1_backgroundBody) !important; }
+		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme1_colorHeadings) !important; background: var(--theme1_backgroundHeadings) !important; }
+	}
 
 	body.nimbusTheme1
 	{
 		a, a *, a:link { color: var(--colorLinkGray) !important; text-decoration: none !important; }
 		a:visited *, a:visited { color: var(--colorLinkGrayVisited) !important; text-decoration: none !important; }
 		a:hover *, a:focus *, a:hover, a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
-		cite, u, em, i, b, strong { color: var(--colorTextEmphasis1) !important; }
+		cite, u, em, i, b, strong { color: var(--theme1_colorTextEmphasis) !important; }
 		img, video { filter: saturate(0) brightness(0.7) !important; }
 		img:hover, video:hover { filter: saturate(0) brightness(1) !important; }
 	}
 
 	html.nimbusTheme2
 	{
-		background: var(--backgroundHtml2) !important;
-		body, body[class], p, li { color: var(--colorText2) !important; background: var(--backgroundBody2) !important; }
-		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--colorHeadings2) !important; background: var(--backgroundBody2) !important; }
+		body, body[class], p, li { color: var(--theme2_colorText) !important; background: var(--theme2_backgroundBody) !important; }
+		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme2_colorHeadings) !important; background: var(--theme2_backgroundHeadings) !important; }
 	}
 
 	body.nimbusTheme2
 	{
-		hr { background: #222 !important; border-color: #222 !important; }
+		hr { background: var(--theme2_colorSeparator) !important; border-color: var(--theme2_colorSeparator) !important; }
 		annotation { background: #222 !important; }
 		autocompleteinputwrapper input { color: #AAA !important; }
 		mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
 		markwhite { background: #222 !important; color: #c0c4c8 !important; }
 		reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
-		em, i, b, strong { color: var(--colorTextEmphasis2) !important; background: transparent !important; }
+		em, i, b, strong { color: var(--theme2_colorTextEmphasis) !important; background: transparent !important; }
 	}
 
 	html.nimbusTheme3
 	{
-		background: var(--backgroundHtml3) !important;
-		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--colorHeadings3) !important; background: var(--backgroundHeadings3) !important; }
+		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme3_colorHeadings) !important; background: var(--theme3_backgroundHeadings) !important; }
+	}
+
+	#nimbus body.nimbusTheme3
+	{
+		header, footer { border-color: var(--theme3_colorBorderLight) !important; }
 	}
 
 	body.nimbusTheme3
 	{
-		a, a *, a:link { color: var(--colorText3) !important; text-decoration: none !important; }
-		a:visited *, a:visited { color: var(--colorText3) !important; text-decoration: none !important; }
-		a:hover *, a:focus *, a:hover, body.nimbusTheme1 a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
-		cite, u, em, i, b, strong { color: var(--colorTextEmphasis3) !important; }
+		quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow, aside { color: var(--theme3_colorText) !important; }
+		aside { background: hsl(0 40 20) !important; }
+		footnote { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderLight) !important; }
+		blockquote { border-left: 10px solid var(--theme3_colorBorders) !important;  }
+		hr { background: var(--theme3_colorSeparator) !important; border-color: var(--theme3_colorSeparator) !important; }
+		header, footer { border-color: var(--theme3_colorBorderLight) !important; }
+
+		a, a *, a:link { color: var(--theme3_colorLinks) !important; }
+		a:visited *, a:visited { color: var(--theme3_colorLinksVisited) !important; }
+		a:hover *, a:focus *, a:hover, body.nimbusTheme1 a:focus { color: var(--theme3_colorLinksHover) !important; }
+
+		cite, u, em, i, b, strong { color: var(--theme3_colorTextEmphasis) !important; }
 		mark { background: var(--theme3_bgMark) !important; color: var(--theme3_fgMark) !important; }
+		section { border: 2px solid #000 !important; }
+
+		dl, dl[class] { border-color: var(--theme3_colorBorderDark) !important; background: var(--theme3_backgroundHeadings) !important; }
+		dt, dt[class] { background: var(--theme3_backgroundHeadings) !important; border-color: var(--theme3_colorBorderDark) !important; }
+		dd, dd[class] { background: var(--theme3_backgroundLessDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
+
+		quote { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
+		quoteauthor { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
+
+		figure { background: var(--theme3_colorBorderDark) !important; }
+		figcaption { background: var(--theme3_colorBorderDark) !important; }
+		rt { background: var(--theme3_backgroundDark) !important; }
+
+		tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--theme3_backgroundLessDark) !important; }
+		tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--theme3_backgroundDark) !important; }
+
+		pre { background: hsl(0 100 4) !important; color: hsl(0 30 50) !important; }
 	}
 
 	a1, a2, a3 { background: #000; font-weight: bold; padding: 1px 10px; }
@@ -386,7 +453,7 @@
 	warning { background: #420; border-color: #C70; }
 	info { background: #035; border-color: #07C; }
 	error { background: #600; border-color: #D40; }
-	tag { background: var(--color30) !important; color: var(--colorText) !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
+	tag { background: var(--backgroundLessDark) !important; color: var(--colorText) !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
 
 	autocompleteinputwrapper { display: block !important; width: 800px !important; height: 40vh !important; position: fixed !important; left: 0 !important; top: 0 !important; right: 0 !important; bottom: 0 !important; margin: auto !important; z-index: 2147483647 !important; font-family: "swis721 cn bt" !important; }
 	inputelementwrapper { display: block !important; border: 2px solid #07C !important; }
@@ -561,19 +628,10 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 #intStatus.icon-Cross { box-shadow: 0 20px 0px #C00; }
 #intStatus.icon-Yes { box-shadow: 0 20px 0px #0C0; }
 
-:root {
-	--monospace-font-family: "Swis721 Cn BT", "Adwaita Sans", "SF Mono", monospace !important;
-	--theme-code-font-size: 14px !important;
-}
-
 /* #devtools-webconsole { opacity: 0.5 !important; } */
 /* #devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; } */
 /* .webconsole-app { background: #080808 !important; } */
 /* .flexible-output-input { background: #080808 !important; } */
-
-.download.download-state { background: #000 !important; color: #888 !important; }
-.download.download-state[active] { background: var(--colorBorderDark) !important; color: #888 !important; }
-#downloadsListBox { border: 0; }
 
 #viewsource {
 	font-family: "sf mono" !important;
