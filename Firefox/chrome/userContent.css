@@ -1,30 +1,34 @@
 :root
 {
-	--monospace-font-family: "Swis721 Cn BT", "Adwaita Sans", "SF Mono", monospace !important;
-	--theme-code-font-size: 14px !important;
+	--monospace-font-family: "Swis721 Cn BT", "SF Mono", monospace !important;
+
 
 	--lineHeight: 1.35;
 	--fontSizeNormal: 20px;
 	--fontSizeSmall: 0.8em;
 
 	--baseHue: 200;
+	--baseFont: "Swis721 Cn BT";
+	--preFont: "Swis721 Cn BT";
+	--textareaFont: "Swis721 Cn BT";
 	--baseSaturation: 12;
+	--linkHue: 240;
 
-	--colorText:			hsl(var(--baseHue) 10 45);
+	--colorText:			hsl(var(--baseHue) 10 50);
 	--colorTextEmphasis:	hsl(var(--baseHue) 10 60);
-	--backgroundLessDark:	hsl(var(--baseHue) 14 12);
-	--backgroundHeadings:	hsl(var(--baseHue) 18 8);
+	--backgroundLessDark:	hsl(var(--baseHue) 14 11);
+	--backgroundHeadings:	hsl(var(--baseHue) 18 6);
 	--backgroundDark:		hsl(var(--baseHue) 18 8);
 	--colorSeparator:		hsl(var(--baseHue) 18 8);
-	--backgroundHtml:		hsl(var(--baseHue) 20 8);
+	--backgroundHTML:		hsl(var(--baseHue) 20 8);
 	--backgroundPre:		hsl(var(--baseHue) 22 9);
 	--colorBorderDark:		hsl(var(--baseHue) 35 5);
-	--colorLinksVisited:	hsl(var(--baseHue) 40 36);
 	--colorHeadings:		hsl(var(--baseHue) 7  53);
-	--colorLinks:			hsl(var(--baseHue) 70 38);
-	--colorLinksHover:		hsl(var(--baseHue) 80 60);
+	--colorLinks:			hsl(var(--linkHue) 45 55);
+	--colorLinksHover:		hsl(var(--linkHue) 20 65);
+	--colorLinksVisited:	hsl(var(--linkHue) 40 36);
 	--backgroundLight:		hsl(var(--baseHue) var(--baseSaturation) 16);
-	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 11);
+	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 12);
 	--colorBorderLight:		hsl(var(--baseHue) var(--baseSaturation) 20);
 	--colorPre:				hsl(var(--baseHue) var(--baseSaturation) 47);
 
@@ -32,53 +36,61 @@
 	--backgroundFormElementsFocused: #000;
 	--colorFormElements: #999;
 	--colorFormElementsFocused: #CCC;
-	--backgroundNav: #080c10;
 
 	--bgMark: #303336;
 	--fgMark: #808488;
 
-	--theme1_backgroundHTML: #101418;
-	--theme1_backgroundBody: #181c22;
-	--theme1_colorText: #687078;
-	--theme1_backgroundHeadings: #080c12;
-	--theme1_colorHeadings: #707880;
-	--theme1_colorTextEmphasis: #889098;
-
-	--colorLinkGray: #687078;
-	--colorLinkGrayVisited: #485058;
-
-	--theme2_backgroundHTML: #000000;
-	--theme2_backgroundBody: #000000;
-	--theme2_colorText: #687078;
-	--theme2_colorHeadings: #707880;
-	--theme2_colorTextEmphasis: #889098;
-
-	--theme3_backgroundHTML:		#000000;
-	--theme3_colorSeparator:		#000;
-	--theme3_colorBorderDark:		#000;
-	--theme3_colorBorders:			#000;
-	--theme3_colorBorderDark:		#000;
-	--theme3_colorBorderLight:		#400;
-	--theme3_baseHue:				0;
-	--theme3_linkHue:				30;
-	--theme3_bgMark:				hsl(0 10 20);
-	--theme3_fgMark:				hsl(0 10 60);
-	--theme3_colorText:				hsl(var(--theme3_baseHue) 100 32);
-	--theme3_colorHeadings:			hsl(var(--theme3_baseHue) 100 35);
-	--theme3_backgroundDark:		hsl(var(--theme3_baseHue) 100 4);
-	--theme3_backgroundHeadings:	hsl(var(--theme3_baseHue) 100 4);
-	--theme3_backgroundLessDark:	hsl(var(--theme3_baseHue) 100 6);
-	--theme3_backgroundBody:		hsl(var(--theme3_baseHue) 100 7);
-	--theme3_colorTextEmphasis:		hsl(var(--theme3_baseHue) 20 60);
-	--theme3_colorLinksVisited:		hsl(var(--theme3_linkHue) 100 30);
-	--theme3_colorLinks:			hsl(var(--theme3_linkHue) 100 40);
-	--theme3_colorLinksHover:		hsl(var(--theme3_linkHue) 70 70);
-
-	--component-bg-color: #404;
-
-	--toolbarbutton-border-radius: 0;
-
 	zoom: 1.0;
+}
+
+.nimbusTheme1
+{
+	--colorLinksVisited:	hsl(var(--baseHue) 10 40);
+	--colorLinks:			hsl(var(--baseHue) 10 50);
+	--colorLinksHover:		hsl(var(--linkHue) 70 70);
+	--preFont:				"SF Mono";
+	--textareaFont:			"SF Mono";
+}
+
+.nimbusTheme2
+{
+	--backgroundHTML:		#000;
+	--backgroundBody:		#000;
+	--colorBorderDark:		#121212;
+	--colorBorderLight:		#181818;
+	--baseHue:				0;
+	--linkHue:				30;
+	--colorTextEmphasis:	#999;
+	--colorText:			#666;
+	--colorHeadings:		#777;
+	--backgroundHeadings:	#000;
+	--backgroundDark:		#121212;
+	--backgroundLessDark:	#202020;
+	--colorLinksVisited:	hsl(var(--linkHue) 100 30);
+	--colorLinks:			hsl(var(--linkHue) 100 40);
+	--colorLinksHover:		hsl(var(--linkHue) 70 70);
+}
+
+.nimbusTheme3
+{
+	--backgroundHTML:		#000;
+	--colorBorderDark:		#000;
+	--colorBorderLight:		#400;
+	--colorSeparator:		#000;
+	--baseHue:				0;
+	--linkHue:				30;
+	--bgMark:				hsl(0 0 15);
+	--fgMark:				hsl(0 0 60);
+	--colorTextEmphasis:	hsl(var(--baseHue)  40 60);
+	--colorText:			hsl(var(--baseHue) 100 32);
+	--colorHeadings:		hsl(var(--baseHue) 100 35);
+	--backgroundDark:		hsl(var(--baseHue) 100 4);
+	--backgroundHeadings:	hsl(var(--baseHue) 100 4);
+	--backgroundLessDark:	hsl(var(--baseHue) 100 6);
+	--backgroundBody:		hsl(var(--baseHue) 100 7);
+	--colorLinksVisited:	hsl(var(--linkHue) 100 30);
+	--colorLinks:			hsl(var(--linkHue) 100 40);
+	--colorLinksHover:		hsl(var(--linkHue)  70 70);
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -102,33 +114,21 @@
 @-moz-document url-prefix(https:), url-prefix(http:), url-prefix(file:)
 {
 	::-moz-selection { color: #000; background: #70767C; }
+
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
+
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
-		{ box-shadow: inset 0px 2000px 0 #000 !important; }
+		{ box-shadow: inset 0px 2000px 0 #000 !important; outline: 2px solid #c00 !important; }
 
-	html { background: var(--backgroundHtml) !important; }
-	html body, #nimbus body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
+	html { background: var(--backgroundHTML) !important; }
+	body { background: var(--backgroundBody) !important; color: var(--colorText) !important; border: 0 !important; }
 
-	html.nimbusTheme1 { background: var(--theme1_backgroundHTML) !important; }
-	html.nimbusTheme2 { background: var(--theme2_backgroundHTML) !important; }
-	html.nimbusTheme3 { background: var(--theme3_backgroundHTML) !important; }
-
-	html body.nimbusTheme1, html#nimbus body.nimbusTheme1 { background: var(--theme1_backgroundBody) !important; color: var(--theme1_colorText) !important; }
-	html body.nimbusTheme2, html#nimbus body.nimbusTheme2 { background: var(--theme2_backgroundBody) !important; color: var(--theme2_colorText) !important; }
-	html body.nimbusTheme3, html#nimbus body.nimbusTheme3 { background: var(--theme3_backgroundBody) !important; color: var(--theme3_colorText) !important; }
-
-	html, html body, #nimbus body {
-		font-size: var(--fontSizeNormal) !important;
-		font-style: normal !important;
-		line-height: var(--lineHeight) !important;
-	}
-
+	html, html body, #nimbus body { font-size: var(--fontSizeNormal) !important; font-style: normal !important; line-height: var(--lineHeight) !important; }
 	html, html body, #nimbus body, h1, h1[class], h2, h2[class], h3, h3[class], h4, h4[class], h5, h5[class], h6, h6[class],
 	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
-		{ font-family: "Swis721 Cn BT", sans-serif !important; }
+		{ font-family: var(--baseFont), sans-serif !important; }
 
-	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: inherit !important; font-size: var(--fontSizeNormal) !important; }
-	body.nimbusTheme1 textarea { font: bold 15px/1.3 "SF Mono", monospace !important; }
+	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: var(--textareaFont) !important; font-size: var(--fontSizeNormal) !important; }
 
 	h1, h2, h3, h4, h5, h6 { color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
 
@@ -141,10 +141,10 @@
 		td, th { padding: 3px 10px !important; vertical-align: top !important; text-align: left !important; }
 		ul { list-style: none !important; }
 		li { padding: 5px 0 5px 10px !important; margin: 0 0 2px 0 !important; }
-		ul li { border-left: 5px solid #0C0C0C !important; }
+		ul li { border-left: 5px solid var(--colorBorderDark) !important; }
 		img { max-width: 100% !important; display: block !important; }
 		section { padding: 10px !important; border: 2px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
-		h1 { font-size: 2.0rem !important; }
+		h1 { font-size: 2.2rem !important; }
 		h2 { font-size: 1.8rem !important; }
 		h3 { font-size: 1.6rem !important; }
 		h4 { font-size: 1.4rem !important; }
@@ -172,14 +172,18 @@
 	section { background: inherit !important; color: inherit !important; }
 	aside { background-color: var(--backgroundLight) !important; padding: 10px !important; }
 
-	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, small, source, strike, strong, time, title, u, var, wbr, xmp
+	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, dl, dt, dd, d1, d2, d3, d4, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, source, strike, strong, time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	sub, sup { font-size: var(--fontSizeSmall) !important; font-family: inherit !important; line-height: 1.2 !important; }
-	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundNav) !important; }
-	#nimbus header { border-top: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
-	#nimbus hgroup { padding: 10px !important; background: #000 !important; padding-left: 30px !important; margin-left: -30px !important; }
-	#nimbus footer { border-bottom: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
-	#nimbus nav { border-right: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundDark) !important; border-color: var(--colorBorderLight) !important; }
+
+	#nimbus
+	{
+		header { border-style: solid !important; border-width: 10px 0 !important; padding: 10px !important; }
+		hgroup { padding: 10px !important; background: #000 !important; padding-left: 30px !important; margin-left: -30px !important; }
+		footer { border-bottom: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+		nav { border-right: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+	}
 
 	span, span[class] { font-family: inherit !important; font-size: inherit !important; line-height: inherit !important; color: inherit !important; background: inherit !important; }
 
@@ -189,7 +193,7 @@
 
 	hr { height: 4px !important; background: var(--colorSeparator) !important; border-color: var(--colorSeparator) !important; border-style: solid !important; border-width: 0 !important; margin: 40px 0 !important; }
 	legend { background: var(--backgroundDark) !important; }
-	container { border: 2px solid #F00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
+	container { border: 2px solid #C00 !important; margin: 10px !important; display: block !important; padding: 10px !important; }
 	figure { border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px 0 !important; margin: 2px 0 0 0; }
 	figcaption { background: var(--colorBorderDark) !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
 	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: #AAA !important; border-width: 2px 2px 2px 20px !important; }
@@ -199,10 +203,10 @@
 	rt::before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid #777 !important; float: left !important; margin: 0px 20px 0 0 !important; }
 
 	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
+	input[type=checkbox] { width: 24px !important; height: 24px !important; background: #242424 !important; }
 	input[type=checkbox]:checked { box-shadow: inset -2px -2px #0c0, inset 2px 2px #0c0 !important; }
 	textarea.monospace { font: bold 16px "SF Mono", Consolas !important; }
 	select, textarea { border: 0 !important; outline: 0 !important; box-shadow: none !important; }
-	html input[type="checkbox"] { width: 24px !important; height: 24px !important; background: #242424 !important; }
 	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #CDCDCD !important; }
 	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
 	select:focus, textarea:focus, input:focus { color: #BBB !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
@@ -210,14 +214,15 @@
 	span[class*="button"] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; border: 0 !important; border-radius: 0 !important; }
 	span[class*="button"]:hover, span[class*="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; }
 
-	.statusOk { box-shadow: inset 2px 2px #0c0, inset -2px -2px #0c0; }
+	.statusOk      { box-shadow: inset 2px 2px #0c0, inset -2px -2px #0c0; }
 	.statusWarning { box-shadow: inset 2px 2px #C90, inset -2px -2px #C90; }
-	.statusError { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00; }
+	.statusError   { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00; }
 
-	a, a:link, a[class], a[id] { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font: inherit !important; border: 0 !important; background: inherit !important; }
+	a, a:link, a:link * { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font-family: inherit !important; border: 0 !important; }
+	a, a:link { background: inherit !important; }
 	a[class*="btn"] { background: #333 !important; }
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
-	a:active, a:hover, a:focus, a:hover *, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
+	a:active, a:active *, a:hover, a:hover *, a:focus, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
 
 	p { margin: 0 !important; padding: 5px 0 !important; }
@@ -229,14 +234,15 @@
 	table, tr, td, th { margin: 0 !important; padding: 0 !important; line-height: inherit !important; color: inherit !important; border: 0 !important; }
 	table, tbody, tr, td { background: inherit !important; }
 	thead, th { background: var(--backgroundHeadings) !important; }
-	tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--backgroundLessDark) !important; }
-	tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--backgroundDark) !important; }
+	tr:nth-child(odd)  td, tr:nth-child(odd)  th { background-color: var(--backgroundLessDark) !important; }
+	tr:nth-child(even) td, tr:nth-child(even) th { background-color: var(--backgroundDark) !important; }
 
-	dl, dl[class] { border-left: 20px solid var(--colorBorderDark) !important; background: var(--backgroundHeadings) !important; font: inherit !important; line-height: inherit !important; }
-	dt, dt[class] { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
-	dd, dd[class] { padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-width: 0 0 0 60px !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
+	dl, dt, dd { border-style: solid !important; border-color: var(--colorBorderDark) !important; }
+	dl { background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; }
+	dt { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; }
+	dd { padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-width: 0 0 0 60px !important; }
 
-	d1, d2, d3, d4 { display: block !important; padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font: inherit !important; line-height: inherit !important; }
+	d1, d2, d3, d4 { display: block !important; padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; }
 	d1 { border-width: 0 0 0 40px !important; background: var(--backgroundHeadings) !important; }
 	d2 { border-width: 0 0 0 80px !important; }
 	d3 { border-width: 0 0 0 120px !important; }
@@ -244,18 +250,14 @@
 
 	cite, u, em, i { font-weight: normal !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
-	a u, a em, a i, a b, a strong, a div, a span { color: inherit !important; }
-	small { font-size: 80% !important; }
+	small { background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; font-size: 80% !important; }
 
-	code { font: inherit !important; padding: 1px 2px !important; background: var(--colorBorderDark) !important; color: #606468 !important; }
-	tt, kbd, samp { font-family: "SF Mono", Consolas, monospace !important; font-weight: bold !important; font-size: 18px !important; background: #0c0c0c !important; padding: 1px 2px !important; }
+	code { font: inherit !important; padding: 1px 2px !important; background: var(--colorBorderDark) !important; color: var(--colorPre) !important; }
+	tt, kbd, samp { font-family: "SF Mono", Consolas, monospace !important; font-weight: bold !important; font-size: 18px !important; background: var(--backgroundDark) !important; padding: 1px 2px !important; }
 	tt { color: #AAA !important; }
 	kbd { color: #0B0 !important; }
 	samp { color: #07C !important; }
-	pre { font: bold 18px/1.3 "swis721 cn bt", monospace !important; }
-	body.nimbusTheme1 pre { font: bold 15px/1.3 "SF Mono", monospace !important; }
-	body.nimbusTheme2 pre { font: bold 15px/1.3 "SF Mono", monospace !important; background: #222 !important; color: #888 !important; }
-	pre { background: var(--backgroundPre) !important; color: var(--colorPre) !important;  }
+	pre { font: bold 18px/1.3 var(--preFont), monospace !important; background: var(--backgroundPre) !important; color: var(--colorPre) !important; }
 	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
@@ -279,16 +281,16 @@
 	pre xh { color: #AADDCC; }
 	pre xv { color: #C36; }
 
-	X0 { color: #664477; }
-	X1 { color: #6677CC; }
-	X2 { color: #6644BB; }
-	X3 { color: #666688; }
-	X4 { color: #6666FF; }
-	X5 { color: #774488; }
-	X6 { color: #667777; }
-	X7 { color: #667766; }
-	X8 { color: #6655DD; }
-	X9 { color: #666677; }
+	X0  { color: #664477; }
+	X1  { color: #6677CC; }
+	X2  { color: #6644BB; }
+	X3  { color: #666688; }
+	X4  { color: #6666FF; }
+	X5  { color: #774488; }
+	X6  { color: #667777; }
+	X7  { color: #667766; }
+	X8  { color: #6655DD; }
+	X9  { color: #666677; }
 	X10 { color: #6644AA; }
 	X11 { color: #777788; }
 	X12 { color: #665566; }
@@ -312,7 +314,7 @@
 
 	a[href*="magnet:"]:link, a[href*="magnet:"] { background: #404 !important; color: #a0a !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
 	a[href*="magnet:"]:visited, a[href*="magnet:"]:visited { background: #202 !important; color: #808 !important; border-color: #999 !important; }
-	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #F0F !important; border-color: #CDCDCD !important; }
+	a[href*="magnet:"]:active, a[href*="magnet:"]:hover, a[href*="magnet:"]:focus { background: #202 !important; color: #c0c !important; border-color: #CDCDCD !important; }
 
 	span[class*=button], a[class*=button], button, input[type="submit"] { line-height: inherit !important; box-shadow: none !important; border-radius: 0 !important; border: 0 !important; filter: brightness(0.9) !important; }
 	span[class*=button]:hover, a[class*=button]:hover, button:hover, input[type="submit"]:hover { filter: contrast(1.3) !important; }
@@ -352,97 +354,19 @@
 	path[fill!=none].markd { fill: rgba(255, 0, 0, 0.5); }
 
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
-	author { display: block !important; font-size: 24px !important; background: var(--colorBorderDark) !important; color: #CDCDCD !important; padding: 2px 10px !important; border-left: 10px solid #AF0 !important; margin: 0 !important; }
-	reference, internalref { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
+	reference { background: #000 !important; color: #AAA !important; padding: 1px 5px !important; }
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorderDark) !important; background: var(--backgroundLessDark) !important; margin-bottom: 2px !important; }
 	comment comment { padding: 0 40px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
 
 	mark, markgreen, markred, markblue, markpurple, markyellow, markwhite { padding: 2px 0 !important; line-height: inherit !important; }
 	mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
-	markgreen { background: #040; color: #0B0; }
-	markred { background: #500; color: #E33; }
-	markblue { background: #005; color: #66D; }
+	markgreen  { background: #040; color: #0B0; }
+	markred    { background: #500; color: #E33; }
+	markblue   { background: #005; color: #66D; }
 	markpurple { background: #204; color: #C7E; }
 	markyellow { background: #630; color: #d0a000; }
-	markwhite { background: #000; color: #c0c4c8; }
-
-	html.nimbusTheme1
-	{
-		body, body[class], p, li { color: var(--theme1_colorText) !important; background: var(--theme1_backgroundBody) !important; }
-		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme1_colorHeadings) !important; background: var(--theme1_backgroundHeadings) !important; }
-	}
-
-	body.nimbusTheme1
-	{
-		a, a *, a:link { color: var(--colorLinkGray) !important; text-decoration: none !important; }
-		a:visited *, a:visited { color: var(--colorLinkGrayVisited) !important; text-decoration: none !important; }
-		a:hover *, a:focus *, a:hover, a:focus { color: var(--colorLinksHover) !important; text-decoration: none !important; }
-		cite, u, em, i, b, strong { color: var(--theme1_colorTextEmphasis) !important; }
-		img, video { filter: saturate(0) brightness(0.7) !important; }
-		img:hover, video:hover { filter: saturate(0) brightness(1) !important; }
-	}
-
-	html.nimbusTheme2
-	{
-		body, body[class], p, li { color: var(--theme2_colorText) !important; background: var(--theme2_backgroundBody) !important; }
-		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme2_colorHeadings) !important; background: var(--theme2_backgroundHeadings) !important; }
-	}
-
-	body.nimbusTheme2
-	{
-		hr { background: var(--theme2_colorSeparator) !important; border-color: var(--theme2_colorSeparator) !important; }
-		annotation { background: #222 !important; }
-		autocompleteinputwrapper input { color: #AAA !important; }
-		mark { background: var(--bgMark) !important; color: var(--fgMark) !important; }
-		markwhite { background: #222 !important; color: #c0c4c8 !important; }
-		reference { background: #181818 !important; color: #555 !important; padding: 1px 5px !important; }
-		em, i, b, strong { color: var(--theme2_colorTextEmphasis) !important; background: transparent !important; }
-	}
-
-	html.nimbusTheme3
-	{
-		h1, h2, h3, h4, h5, h6, h1[class], h2[class], h3[class], h4[class], h5[class], h6[class] { color: var(--theme3_colorHeadings) !important; background: var(--theme3_backgroundHeadings) !important; }
-	}
-
-	#nimbus body.nimbusTheme3
-	{
-		header, footer { border-color: var(--theme3_colorBorderLight) !important; }
-	}
-
-	body.nimbusTheme3
-	{
-		quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow, aside { color: var(--theme3_colorText) !important; }
-		aside { background: hsl(0 40 20) !important; }
-		footnote { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderLight) !important; }
-		blockquote { border-left: 10px solid var(--theme3_colorBorders) !important;  }
-		hr { background: var(--theme3_colorSeparator) !important; border-color: var(--theme3_colorSeparator) !important; }
-		header, footer { border-color: var(--theme3_colorBorderLight) !important; }
-
-		a, a *, a:link { color: var(--theme3_colorLinks) !important; }
-		a:visited *, a:visited { color: var(--theme3_colorLinksVisited) !important; }
-		a:hover *, a:focus *, a:hover, body.nimbusTheme1 a:focus { color: var(--theme3_colorLinksHover) !important; }
-
-		cite, u, em, i, b, strong { color: var(--theme3_colorTextEmphasis) !important; }
-		mark { background: var(--theme3_bgMark) !important; color: var(--theme3_fgMark) !important; }
-		section { border: 2px solid #000 !important; }
-
-		dl, dl[class] { border-color: var(--theme3_colorBorderDark) !important; background: var(--theme3_backgroundHeadings) !important; }
-		dt, dt[class] { background: var(--theme3_backgroundHeadings) !important; border-color: var(--theme3_colorBorderDark) !important; }
-		dd, dd[class] { background: var(--theme3_backgroundLessDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
-
-		quote { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
-		quoteauthor { background: var(--theme3_backgroundDark) !important; border-color: var(--theme3_colorBorderDark) !important; }
-
-		figure { background: var(--theme3_colorBorderDark) !important; }
-		figcaption { background: var(--theme3_colorBorderDark) !important; }
-		rt { background: var(--theme3_backgroundDark) !important; }
-
-		tr:nth-child(odd) td , tr:nth-child(odd) th { background-color: var(--theme3_backgroundLessDark) !important; }
-		tr:nth-child(even) td , tr:nth-child(even) th { background-color: var(--theme3_backgroundDark) !important; }
-
-		pre { background: hsl(0 100 4) !important; color: hsl(0 30 50) !important; }
-	}
+	markwhite  { background: #000; color: #c0c0c0; }
 
 	a1, a2, a3 { background: #000; font-weight: bold; padding: 1px 10px; }
 	a1 { color: #c0c; }
@@ -455,7 +379,7 @@
 	error { background: #600; border-color: #D40; }
 	tag { background: var(--backgroundLessDark) !important; color: var(--colorText) !important; padding: 2px 4px !important; margin: 0 5px 0 0 !important; }
 
-	autocompleteinputwrapper { display: block !important; width: 800px !important; height: 40vh !important; position: fixed !important; left: 0 !important; top: 0 !important; right: 0 !important; bottom: 0 !important; margin: auto !important; z-index: 2147483647 !important; font-family: "swis721 cn bt" !important; }
+	autocompleteinputwrapper { display: block !important; width: 800px !important; height: 40vh !important; position: fixed !important; left: 0 !important; top: 0 !important; right: 0 !important; bottom: 0 !important; margin: auto !important; z-index: 2147483647 !important; font-family: var(--baseFont) !important; }
 	inputelementwrapper { display: block !important; border: 2px solid #07C !important; }
 	autocompleteinputwrapper
 	{
@@ -471,7 +395,7 @@
 
 	#xxdialog { position: fixed !important; margin: auto !important; z-index: 10000 !important; height: 90px !important; top: 0 !important; left: 0px !important; bottom: 0px !important; right: 0 !important; background: var(--colorBorderDark) !important; color: #AAA !important; border: 10px solid #000 !important; display: block !important; text-transform: none !important; width: 60vw !important; }
 	#xxdialog heading { height: 30px !important; line-height: 30px !important; padding: 0 10px !important; background: var(--colorBorderDark) !important; display: block !important; margin: 0 !important; }
-	#xxdialog input { font: 32px "swis721 cn bt" !important; line-height: 60px !important; verdana !important; background: #000 !important; color: #AAA !important; padding: 0 0 !important; margin: 0 !important; border-width: 0 10px !important; border-color: #000 !important; width: 100% !important; height: 60px !important; overflow: hidden !important; box-sizing: border-box !important; }
+	#xxdialog input { font: 32px var(--baseFont) !important; line-height: 60px !important; verdana !important; background: #000 !important; color: #AAA !important; padding: 0 0 !important; margin: 0 !important; border-width: 0 10px !important; border-color: #000 !important; width: 100% !important; height: 60px !important; overflow: hidden !important; box-sizing: border-box !important; }
 
 	button[aria-pressed="true"] { outline: 2px solid #0C0 !important; }
 
@@ -480,7 +404,7 @@
 	img.invert { filter: invert(1) hue-rotate(180deg) brightness(0.7) !important; }
 	img:hover { filter: brightness(1) !important; }
 	img.dark { filter: invert(1) hue-rotate(180deg) !important; }
-	img.markd { border: 2px solid #F00 !important; }
+	img.markd { border: 2px solid #c00 !important; }
 	body.nimbusTheme2 img { filter: unset !important; }
 
 	brk { display: inline-block; background: #000; color: #CC0; padding: 5px 10px; }
@@ -554,38 +478,15 @@
 	c-wiz::before { background: #222 !important; }
 }
 
-@-moz-document domain(www.amazon.com), domain(amazon.com), domain(www.amazon.com.au), domain(amazon.com.au)
-{
-	html h2, html h2[class], div[class] h2 { font: var(--fontSizeNormal) "Swis721 Cn BT", Calibri, sans-serif !important; }
-	*::before, *::after { background: transparent !important; }
-	.cr-lightbox-navigator-container { display: none !important; }
-	.filledStar { box-shadow: inset 0 -2000px #666 !important; }
-	.unfilledStar { box-shadow: inset 0 -2000px #333 !important; }
-	*::after { background: #000; }
-	.a-meter { box-shadow: inset 0 1000px #555 !important; }
-	.a-meter-bar { box-shadow: inset 0 1000px #AAA !important; }
-	i.a-star-5::after { content: "5 stars"; }
-	i.a-star-4-5::after { content: "4.5 stars"; }
-	i.a-star-4::after { content: "4 stars"; }
-	i.a-star-3-5::after { content: "3.5 stars"; }
-	i.a-star-3::after { content: "3 stars"; }
-	i.a-star-2-5::after { content: "2.5 stars"; }
-	i.a-star-2::after { content: "2 stars"; }
-	i.a-star-1-5::after { content: "1.5 stars"; }
-	i.a-star-1::after { content: "1 stars"; }
-}
-
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
 	body { opacity: 0.65 !important; }
 	body.nimbusTheme2 { opacity: 0.9 !important; }
 	body.nimbusTheme3 { opacity: 0.9 !important; }
-	body, body * { font-family: "swis721 cn bt" !important; font-size: 18px !important; }
+	body, body * { font-family: var(--baseFont) !important; font-size: 18px !important; }
 	.ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 0 200px #000; }
 	ytd-app, ytd-browse { background: #000 !important; }
 }
-
-/* .devtools-monospace, .devtools-monospace span, .devtools-monospace *, .CodeMirror.cm-s-mozilla, .CodeMirror.cm-s-default, .CodeMirror { font: 9pt Verdana !important; } */
 
 input[type="checkbox"].toggle-button:checked { background: #357 !important; border-color: #357 !important; }
 input[type="checkbox"].toggle-button::before { background: #ACE !important; }
@@ -594,11 +495,11 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 {
 	html, body { background: var(--colorBorderDark) !important; color: #888 !important; }
 	#editor { background: var(--colorBorderDark) !important; color: #999 !important; }
-	#editor textarea { background: var(--colorBorderDark) !important; color: #999 !important; font-family: "Swis721 Cn BT" !important; font-size: 20px !important; font-weight: bold !important; }
+	#editor textarea { background: var(--colorBorderDark) !important; color: #999 !important; font-family: var(--baseFont) !important; font-size: 20px !important; font-weight: bold !important; }
 	.tab-bar { background: #222 !important; color: #555 !important; }
 	#tabs .tab.active { background: var(--colorBorderDark) !important; color: #999 !important; }
 	.command-item { background: transparent !important; }
-	.CodeMirror { background: #000 !important; font-family: "Swis721 Cn BT", "SF Mono" !important; color: #789 !important; }
+	.CodeMirror { background: #000 !important; font-family: var(--baseFont), "SF Mono" !important; color: #789 !important; }
 	.CodeMirror-gutters { background: #000 !important; border-right: 10px solid #000 !important; }
 	.CodeMirror-line { font-size: 16px !important; font-weight: bold !important; }
 	.CodeMirror-selected { background: #008 !important; }
@@ -628,11 +529,6 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 #intStatus.icon-Cross { box-shadow: 0 20px 0px #C00; }
 #intStatus.icon-Yes { box-shadow: 0 20px 0px #0C0; }
 
-/* #devtools-webconsole { opacity: 0.5 !important; } */
-/* #devtools-webconsole span { font-weight: bold !important; line-height: 1.4 !important; } */
-/* .webconsole-app { background: #080808 !important; } */
-/* .flexible-output-input { background: #080808 !important; } */
-
 #viewsource {
 	font-family: "sf mono" !important;
 	font-weight: bold !important;
@@ -641,6 +537,4 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 
 @-moz-document url-prefix("chrome://devtools/content/webconsole/") {
 	#toolbox-panel-webconsole { background-color: #121212 !important; color: #909090 !important; }
-	/* .devtools-monospace, .CodeMirror, .message-body { font-family: monospace !important; font-size: 13px !important; line-height: 1.4 !important; } */
-	/* #input-wrapper .jsterm-input-node { background-color: #2d2d2d !important; color: #ffffff !important; border: 1px solid #555 !important; } */
 }
