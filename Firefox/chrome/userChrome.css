@@ -20,7 +20,13 @@ toolbox#navigator-toolbox
 
 */
 
-:root { background-color: #000 !important; }
+:root
+{
+	background-color: #000 !important;
+	--urlbarView-highlight-color: #204;
+}
+
+* { border-radius: 0 !important; }
 
 toolbar { background: #000 !important; }
 #tabbrowser-tabbox { outline: 0 !important; }
@@ -46,6 +52,23 @@ toolbar { background: #000 !important; }
 #navigator-toolbox:hover .urlbar-input-container,
 #urlbar[focused] #urlbar
 	{ opacity: 1 !important; }
+
+
+#urlbar-results { background: #000 !important; }
+
+.urlbarView { margin-inline: 0 !important; width: 100% !important; }
+.urlbarView-body-inner { margin-inline: 0 !important; width: 100% !important; }
+
+.urlbarView-type-icon { display: none !important; }
+.urlbarView-title { min-width: 300px !important; }
+.urlbarView-title-separator { display: none !important; }
+
+.urlbarView-no-wrap img { display: none !important; }
+.urlbarView-row-inner { padding-inline: 0 !important; padding-block: 0 !important; }
+.urlbarView-row { border: 0 !important; }
+.urlbarView-row[selected] { background-color: #101418 !important; }
+
+
 
 #navigator-toolbox { background: #000 !important; border-bottom: 1px solid #000 !important; }
 #titlebar, #nav-bar toolbarbutton, #page-action-buttons { opacity: 0 !important; }
