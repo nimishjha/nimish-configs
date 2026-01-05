@@ -23,7 +23,7 @@ toolbox#navigator-toolbox
 :root
 {
 	background-color: #000 !important;
-	--urlbarView-highlight-color: #204;
+	--urlbarView-highlight-color: #999 !important;
 }
 
 * { border-radius: 0 !important; }
