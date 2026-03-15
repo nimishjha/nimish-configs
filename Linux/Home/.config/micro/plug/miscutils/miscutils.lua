@@ -133,6 +133,29 @@ function collapseWhitespace(bp)
 	end
 end
 
+function insertForLoop(indexVarName)
+	return function(bp)
+		local cursor = bp.Cursor
+		if cursor and cursor:HasSelection() then
+			local selectionString = util.String(cursor:GetSelection())
+			selectionString = string.gsub(selectionString, "%s+", " ")
+			local forLoopString = string.format("for(let %s = 0, %s = %s.length; %s < %s; %s++)", indexVarName, indexVarName .. indexVarName, selectionString, indexVarName, indexVarName .. indexVarName, indexVarName)
+			cursor:DeleteSelection()
+			cursor:ResetSelection()
+			local cursorPosition = buffer.Loc(cursor.X, cursor.Y)
+			bp.Buf:insert(cursorPosition, forLoopString)
+		end
+	end
+end
+
+function insertForLoopI(bp)
+	insertForLoop("i")(bp)
+end
+
+function insertForLoopJ(bp)
+	insertForLoop("j")(bp)
+end
+
 function padToWidth(str, width)
 	local len = string.len(str)
 	if len > width then return str end
@@ -238,6 +261,10 @@ function insertTimestamp(bp)
 	end
 end
 
+
+
+
+
 function init()
 	config.MakeCommand("muInsertNumbersInColumn",    insertNumbersInColumn,               config.NoComplete)
 	config.MakeCommand("muToggleSyntaxHighlighting", toggleBooleanOption("syntax"),       config.NoComplete)
@@ -252,4 +279,6 @@ function init()
 	config.MakeCommand("muOpenNextFile",             openNextFile,                        config.NoComplete)
 	config.MakeCommand("muOpenPreviousFile",         openPreviousFile,                    config.NoComplete)
 	config.MakeCommand("muTimestamp",                insertTimestamp,                     config.NoComplete)
+	config.MakeCommand("muInsertForLoopI",           insertForLoopI,                      config.NoComplete)
+	config.MakeCommand("muInsertForLoopJ",           insertForLoopJ,                      config.NoComplete)
 end
