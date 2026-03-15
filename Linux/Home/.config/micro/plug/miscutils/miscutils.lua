@@ -92,7 +92,8 @@ end
 
 function toggleBooleanOption(optionName)
 	return function()
-		config.SetGlobalOption(optionName, tostring(not config.GetGlobalOption(optionName)))
+		-- config.SetGlobalOption(optionName, tostring(not config.GetGlobalOption(optionName)), true)
+		micro.CurPane():HandleCommand("set " .. optionName .. " " .. tostring(not config.GetGlobalOption(optionName)))
 		showMessage(string.format("%s: %s", optionName, config.GetGlobalOption(optionName)))
 	end
 end
