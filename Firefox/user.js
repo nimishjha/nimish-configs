@@ -64,3 +64,4 @@ user_pref("browser.newtabpage.activity-stream.showWeather", false);
 user_pref("browser.newtabpage.enabled", false);
 
 user_pref("general.smoothScroll", false);
+user_pref("devtools.toolbox.zoomValue", "1.0");
