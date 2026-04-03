@@ -133,6 +133,19 @@ function collapseWhitespace(bp)
 	end
 end
 
+function insertLogStatement(bp)
+	local cursor = bp.Cursor
+	if cursor and cursor:HasSelection() then
+		local varName = util.String(cursor:GetSelection())
+		varName = string.gsub(varName, "%s+", " ")
+		local consoleLogString = string.format("console.log(\"%s:\", %s);", varName, varName);
+		cursor:DeleteSelection()
+		cursor:ResetSelection()
+		local cursorPosition = buffer.Loc(cursor.X, cursor.Y)
+		bp.Buf:insert(cursorPosition, consoleLogString)
+	end
+end
+
 function insertForLoop(indexVarName)
 	return function(bp)
 		local cursor = bp.Cursor
@@ -281,4 +294,5 @@ function init()
 	config.MakeCommand("muTimestamp",                insertTimestamp,                     config.NoComplete)
 	config.MakeCommand("muInsertForLoopI",           insertForLoopI,                      config.NoComplete)
 	config.MakeCommand("muInsertForLoopJ",           insertForLoopJ,                      config.NoComplete)
+	config.MakeCommand("muInsertLogStatement",       insertLogStatement,                  config.NoComplete)
 end
