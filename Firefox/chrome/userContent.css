@@ -44,6 +44,7 @@
 	--linkHue:				30;
 	--bgMark:				#303030;
 	--fgMark:				#808080;
+	--bgMarkTableCell:		#500;
 	--colorMarkd:			#888;
 	--colorTextEmphasis:	hsl(var(--baseHue)  40 60);
 	--colorText:			hsl(var(--baseHue) 100 32);
@@ -68,8 +69,22 @@
 	--imgFilter: brightness(0.66);
 	--imgHoverFilter: brightness(1);
 
+	--fgTt:		#864;
+	--fgKbd:	#860;
+	--fgSamp:	#800;
+
 	zoom: 1.0;
 }
+
+.nimbusPreFontMonospace
+{
+	--fontPre: "SF Mono";
+	--fontTextarea: "SF Mono";
+}
+
+.nimbusPreFontSizeSmall  { --fontSizePre: 12px; }
+.nimbusPreFontSizeMedium { --fontSizePre: 15px; }
+.nimbusPreFontSizeLarge  { --fontSizePre: 18px; }
 
 .nimbusThemeGrey
 {
@@ -135,9 +150,6 @@
 	--colorLinks:			hsl(var(--baseHue) 10 50);
 	--colorLinksHover:		hsl(var(--linkHue) 70 70);
 	--colorLinksVisited:	hsl(var(--baseHue) 10 40);
-	--fontPre:				"SF Mono";
-	--fontSizePre:			15px;
-	--fontTextarea:			"SF Mono";
 	--imgFilter:			saturate(0) brightness(0.66);
 	--imgHoverFilter:		saturate(0) brightness(1);
 }
@@ -169,7 +181,6 @@
 	--colorBorderLight:		hsl(var(--baseHue) var(--baseSaturation) 20);
 	--colorPre:				hsl(var(--baseHue) var(--baseSaturation) 47);
 
-	--fontPre:				"SF Mono";
 	--fontSizePre:			15px;
 }
 
@@ -241,6 +252,7 @@
 	--backgroundHeadings:	#000;
 	--colorBorderDark:		#121212;
 	--colorBorderLight:		#181818;
+	--colorSeparator:		#121212;
 	--colorHeadings:		#777;
 	--backgroundPre:		#080808;
 	--colorPre:				#808080;
@@ -252,6 +264,9 @@
 	--imgFilter:			unset;
 	--bgMark: #303336;
 	--fgMark: #808488;
+
+	markwhite { background: #222; color: #c0c0c0; }
+	reference { background: #222 !important; }
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -305,6 +320,8 @@
 		ul li { border-left: 5px solid var(--colorBorderDark) !important; }
 		img { max-width: 100% !important; display: block !important; }
 		section { padding: 10px !important; border: var(--borderWidth) solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
+		main { padding: 10px !important; border: 6px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
+		article { padding: 10px !important; border: 6px solid var(--colorBorderDark) !important; margin: 100px 0 !important; }
 		section section { margin: 10px 0 !important; }
 		h1 { font-size: 2.2rem !important; }
 		h2 { font-size: 2rem !important; }
@@ -322,7 +339,8 @@
 	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; text-align: right !important; }
 	postauthor { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
 	postdate { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
-	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important;  border-color: var(--colorBorderLight) !important; }
+	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important; border-color: var(--colorBorderLight) !important; }
+	footnote[id] { border-color: #b00 !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
 
@@ -360,8 +378,17 @@
 	figcaption { background: var(--colorBorderDark) !important; color: inherit !important; padding: 10px 20px !important; margin-left: 20px !important; }
 	annotation { background: #000 !important; color: inherit !important; padding: 1rem 2rem !important; display: block !important; margin: 10px 0 10px -30px !important; border-style: solid !important; border-color: var(--colorBorderLight) !important; border-width: 2px 2px 2px 20px !important; }
 	ruby { margin: 10px 0 !important; background: #F90 !important; color: #CDCDCD !important; padding: 20px 30px !important; display: block !important; border-left: 10px solid #F90 !important; }
-	rp { margin: 10px 0 !important; background: var(--backgroundDark) !important; color: inherit !important; padding: 40px !important; display: block !important; font-family: inherit !important; border-top: 50px solid #000 !important; border-bottom: 50px solid #000 !important; overflow-x: hidden; }
-	rt { margin: 10px 0 !important; padding: 10px 20px !important; display: block !important; background: var(--backgroundDark) !important; font-family: inherit !important; font-size: 16px !important; font-weight: bold !important; overflow-x: hidden; }
+	picture { display: block !important; padding: 10px !important; background: #000 !important; margin: 10px 0 !important; }
+
+	rp, rt, videoph, imageph, pictureph { display: block !important; margin: 10px 0 !important; background: var(--backgroundDark) !important; font-family: inherit !important; font-size: 16px !important; font-weight: bold !important; overflow-x: hidden !important; }
+	rp { padding: 40px !important; border-style: solid; border-width: 50px 0; border-color: #000; }
+	rt { padding: 10px 20px !important; }
+	videoph { padding: 20px 20px !important; }
+	imageph { padding: 10px 20px !important; }
+	pictureph { padding: 10px 20px !important; border-style: solid; border-color: var(--colorBorderLight); border-width: 10px 0; }
+
+	videosrcph { display: block !important; }
+	imagesrcph { display: block !important; }
 	rt::before { content: "" !important; display: block !important; width: 10px !important; height: 15px !important; border: 2px solid var(--colorBorderLight) !important; float: left !important; margin: 0px 20px 0 0 !important; }
 
 	button, select, textarea, input, input[class], input[type] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; -moz-appearance: none !important; border-radius: 0 !important; border: 0 !important; }
@@ -371,7 +398,7 @@
 	select, textarea { border: 0 !important; outline: 0 !important; box-shadow: none !important; }
 	button:hover, button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; border-color: #CDCDCD !important; }
 	button[class*="active"], a[class*="active"], a[class*="selected"] { outline: 2px solid #6C0 !important; }
-	select:focus, textarea:focus, input:focus { color: #BBB !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
+	select:focus, textarea:focus, input:focus { color: #888 !important; outline: 0 !important; background: #0C0C0C !important; box-shadow: none !important; }
 	html small textarea[class] { font: 12px Verdana !important; }
 	span[class*="button"] { background: var(--backgroundFormElements) !important; color: var(--colorFormElements) !important; border: 0 !important; border-radius: 0 !important; }
 	span[class*="button"]:hover, span[class*="button"]:focus { background: var(--backgroundFormElementsFocused) !important; color: var(--colorFormElementsFocused) !important; }
@@ -380,9 +407,11 @@
 	.statusWarning { box-shadow: inset 2px 2px #C90, inset -2px -2px #C90; }
 	.statusError   { box-shadow: inset 2px 2px #C00, inset -2px -2px #C00; }
 
+	a.statusOk, a.statusWarning, a.statusError { display: inline-block !important; min-width: 20px !important; min-height: 20px !important; }
+
 	a, a:link, a:link * { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font-family: inherit !important; }
-	a, a:link { background: inherit !important; border: 0 !important; }
-	a[class*="btn"] { background: #333 !important; }
+	/* a, a:link { background: inherit !important; border: 0 !important; } */
+	/* a[class*="btn"] { background: #333 !important; } */
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:active *, a:hover, a:hover *, a:focus, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
@@ -404,7 +433,7 @@
 	dt { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; }
 	dd { padding: 0.25em 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-width: 0 0 0 60px !important; }
 
-	d1, d2, d3, d4, d5, d6, d7 { display: block !important; padding: 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
+	d1, d2, d3, d4, d5, d6, d7 { display: block !important; padding: 0 10px !important; margin: 2px 0 !important; background: var(--backgroundLessDark) !important; border-style: solid !important; border-color: var(--colorBorderDark) !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	d1 { border-width: 0 0 0 40px !important; background: var(--backgroundHeadings) !important; }
 	d2 { border-width: 0 0 0 80px !important; }
 	d3 { border-width: 0 0 0 120px !important; }
@@ -417,11 +446,11 @@
 	b, strong { font-weight: bold !important; font-style: normal !important; text-decoration: none !important; color: var(--colorTextEmphasis) !important; }
 	small { background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; font-size: 80% !important; }
 
-	code { font: inherit !important; padding: 1px 2px !important; background: var(--colorBorderDark) !important; color: var(--colorPre) !important; }
+	code { font-family: inherit !important; font-size: inherit !important; font-weight: bold !important; padding: 1px 2px !important; background: var(--colorBorderDark) !important; color: var(--colorPre) !important; }
 	tt, kbd, samp { font-family: "SF Mono", Consolas, monospace !important; font-weight: bold !important; font-size: 18px !important; background: var(--backgroundDark) !important; padding: 1px 2px !important; }
-	tt { color: #AAA !important; }
-	kbd { color: #0B0 !important; }
-	samp { color: #07C !important; }
+	tt { color: var(--fgTt) !important; }
+	kbd { color: var(--fgKbd) !important; }
+	samp { color: var(--fgSamp) !important; }
 	pre { font-family: var(--fontPre), monospace !important; font-size: var(--fontSizePre) !important; font-weight: var(--fontWeightPre) !important; line-height: var(--lineHeightPre) !important; background: var(--backgroundPre) !important; color: var(--colorPre) !important; }
 	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
@@ -429,45 +458,39 @@
 	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; font: bold 18px "swis271 cn bt"; background: #12161c; color: #707880; }
 	prey { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; font: bold 18px "swis271 cn bt"; background: #12161c; color: #708090; }
 
-	pre em { color: #00AAFF !important; }
-	pre i { color: #0088CC !important; }
-	pre b { color: #8090C0 !important; }
-	pre u { color: #6677EE !important; }
-	pre dfn { color: #8888CC !important; }
-	pre s { color: #6677CC !important; }
-	pre q1 { color: #1CF; background: #003040; }
-	pre q2 { color: #57F; background: #203040; }
-	pre c1 { color: #AABBCC; background: #303840; }
-	pre c2 { color: #88BBEE; background: #304050; }
-	pre b1 { color: #11FF00; }
-	pre b2 { color: #00FFFF; }
-	pre b3 { color: #EEAAFF; }
-	pre xk { color: #0099FF; }
-	pre xh { color: #AADDCC; }
-	pre xv { color: #C36; }
+	pre em  { color: #c85b60; }
+	pre i   { color: #c85b60; }
+	pre b   { color: #884962; }
+	pre u   { color: #c86b8f; }
+	pre dfn { color: #ba1c24; }
+	pre s   { color: #99242a; }
+	pre q1  { color: #c84f55; }
+	pre q2  { color: #c33c72; }
+	pre c1  { color: #c8000a; }
+	pre c2  { color: #c82a69; }
+	pre b1  { color: #be6488; }
+	pre b2  { color: #c83e45; }
+	pre b3  { color: #673234; }
+	pre xk  { color: #783a3d; }
+	pre xh  { color: #b46468; }
+	pre xv  { color: #783a3d; }
 
-	X0  { color: #664477; }
-	X1  { color: #6677CC; }
-	X2  { color: #6644BB; }
-	X3  { color: #666688; }
-	X4  { color: #6666FF; }
-	X5  { color: #774488; }
-	X6  { color: #667777; }
-	X7  { color: #667766; }
-	X8  { color: #6655DD; }
-	X9  { color: #666677; }
-	X10 { color: #6644AA; }
-	X11 { color: #777788; }
-	X12 { color: #665566; }
-	X13 { color: #7744DD; }
-	X14 { color: #774488; }
-	X15 { color: #6677EE; }
-
-	XC { color: #1CF; background: #247; }
-	XK { color: #1177CC; }
-	XO { color: #11AACC; }
-	XP { color: #11CC00; }
-	XS { color: #1CF; background: #113060; }
+	x0  { color: #c85b60; }
+	x1  { color: #c85b60; }
+	x2  { color: #884962; }
+	x3  { color: #c86b8f; }
+	x4  { color: #ba1c24; }
+	x5  { color: #99242a; }
+	x6  { color: #c84f55; }
+	x7  { color: #c33c72; }
+	x8  { color: #c8000a; }
+	x9  { color: #c82a69; }
+	x10 { color: #be6488; }
+	x11 { color: #c83e45; }
+	x12 { color: #673234; }
+	x13 { color: #783a3d; }
+	x14 { color: #b46468; }
+	x15 { color: #783a3d; }
 
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #C00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #C00 !important; }
@@ -498,7 +521,7 @@
 	.nimbusFade { opacity: 0.25 !important; }
 
 	table.markd { outline: 2px solid var(--colorMarkd) !important; }
-	th.markd, td.markd, tr.markd td, tr.markd th { box-shadow: inset 0 10000px #048 !important; color: #CDCDCD !important; }
+	th.markd, td.markd, tr.markd td, tr.markd th { box-shadow: inset 0 10000px var(--bgMarkTableCell) !important; color: #CDCDCD !important; }
 	th.markYellow, td.markYellow, tr.markYellow td, tr.markYellow th { box-shadow: inset 0 10000px #660 !important; color: #CDCDCD !important; }
 	th.markRed, td.markRed, tr.markRed td, tr.markRed th { box-shadow: inset 0 10000px #800 !important; color: #CDCDCD !important; }
 	th.markGreen, td.markGreen, tr.markGreen td, tr.markGreen th { box-shadow: inset 0 10000px #060 !important; color: #CDCDCD !important; }
