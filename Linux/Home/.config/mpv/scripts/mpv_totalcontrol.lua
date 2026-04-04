@@ -1,20 +1,8 @@
 local utils = require 'mp.utils'
 local msg = require 'mp.msg'
+local input = require 'mp.input'
 
-local presets01 = {
-	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_06.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_16.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_26.glsl", "Blue/Blue_00.glsl" },
-	{ "Curve/Curve_29.glsl", "Blue/Blue_00.glsl" },
-}
+local shaderPresetsFromConfig = {}
 
 local shaderGroupsByKey = {
 	q = 'Blue',
@@ -25,16 +13,19 @@ local shaderGroupsByKey = {
 	y = 'Green',
 	u = 'LightTint',
 	i = 'Invert',
-	o = 'ChannelMixer',
+	o = 'Orange',
 	p = 'ColorRamp',
 	a = 'Bright',
 	s = 'Dim',
 	d = 'Saturate',
+	D = 'Distort',
 	f = 'SaturateSelective',
 	F = 'FilmicCurve',
 	g = 'Grayscale',
 	h = 'Blend',
+	H = 'HueRotate',
 	k = 'Curve',
+	l = 'ChannelMixer',
 	z = 'ExperimentalZ',
 	x = 'ExperimentalX',
 	c = 'ExperimentalC',
@@ -60,6 +51,7 @@ local equalizerPresets = {
 }
 
 local settings = {
+	shaderPresetsFilePath = "/mnt/ramdisk/mpvShaderPresets.lua",
 	fileTypesToHandle = {
 		jpg  = true,
 		jpeg = true,
@@ -77,6 +69,7 @@ local settings = {
 		opus = true,
 		mkv  = true,
 		avi  = true,
+		avif = true,
 		mp4  = true,
 		ogv  = true,
 		webm = true,
@@ -106,7 +99,34 @@ local settings = {
 	shadersGrouped = {},
 	shaderCountsByGroup = {},
 	shaderPresets = {},
+	debugMode = false
 }
+
+
+
+
+
+function showText(str)
+	mp.commandv("show_text", str)
+	msg.warn(str)
+end
+
+function loadShaderPresets()
+	local file = loadfile(settings.shaderPresetsFilePath)
+	if file then
+		local success, result = pcall(file)
+		if success and type(result) == "table" then
+			shaderPresetsFromConfig = result
+			msg.warn("Loaded shader presets from " .. settings.shaderPresetsFilePath)
+			return true
+		else
+			msg.error("Error loading shader presets:" .. tostring(result))
+		end
+	else
+		msg.error("Could not open file:", settings.shaderPresetsFilePath)
+	end
+	return false
+end
 
 function deepCopy(original)
 	local copy
@@ -174,9 +194,9 @@ function generateShaderFileData()
 		msg.warn(string.format("        %s %02s", padToWidth(groupName, 20), settings.shaderCountsByGroup[groupName]))
 		shaderCount = shaderCount + settings.shaderCountsByGroup[groupName]
 	end
+
 	local numShadersMessage = string.format("Found %d shaders", shaderCount)
-	msg.warn(numShadersMessage)
-	mp.commandv("show_text", numShadersMessage)
+	showText(numShadersMessage)
 end
 
 function getFilesLinux(dir)
@@ -258,6 +278,7 @@ function loadFile(filename)
 	if doesFileExist then
 		mp.commandv("show_text", filename)
 		mp.commandv("loadfile", fullpath, "replace")
+		msg.warn(filename)
 	else
 		cacheFileList()
 	end
@@ -291,8 +312,12 @@ function moveToFile(step)
 	local nextIndex = 0
 	local foundIndex = getIndexOfCurrentFile(settings.fileList, currentFileName)
 
+	if foundIndex == -1 then
+		cacheFileList()
+		foundIndex = getIndexOfCurrentFile(settings.fileList, currentFileName)
+	end
+
 	if foundIndex ~= -1 then
-		clearLoopPoints()
 		nextIndex = foundIndex + step
 		if nextIndex > #settings.fileList then
 			nextIndex = 1
@@ -571,8 +596,22 @@ function loadShaderPreset(presetNumber)
 	end
 end
 
+function dumpShaderPresets()
+	local outputFilePath = "/mnt/ramdisk/mpvShaderPresets.txt"
+	local shaderPresets = {}
+	for _, preset in ipairs(settings.shaderPresets) do
+		table.insert(shaderPresets, '{ "' .. preset[1] .. '", "' .. preset[2] .. '" },\n')
+	end
+	local writeStatus = writeStringToFile(outputFilePath, "\n" .. table.concat(shaderPresets))
+	if writeStatus == 0 then
+		mp.commandv("show_text", "Dumped shader presets to " .. outputFilePath)
+	else
+		mp.commandv("show_text", "Could not write to file " .. outputFilePath)
+	end
+end
+
 function resetShaderPresets()
-	settings.shaderPresets = deepCopy(presets01)
+	settings.shaderPresets = deepCopy(shaderPresetsFromConfig)
 	mp.commandv("show_text", "Restored shader presets")
 end
 
@@ -614,18 +653,93 @@ end
 
 
 function setLoopPointA()
-	mp.set_property("ab-loop-a", mp.get_property("time-pos"))
-	mp.commandv("show_text", "Point A set")
+	local timePos = mp.get_property("time-pos")
+	mp.set_property("ab-loop-a", timePos)
+	local message = "Point A set to " .. timePos
+	mp.commandv("show_text", message)
+	msg.warn(message)
 end
 
 function setLoopPointB()
-	mp.set_property("ab-loop-b", mp.get_property("time-pos"))
-	mp.commandv("show_text", "Point B set")
+	local timePos = mp.get_property("time-pos")
+	mp.set_property("ab-loop-b", timePos)
+	local message = "Point B set to " .. timePos
+	mp.commandv("show_text", message)
+	msg.warn(message)
 end
 
 function clearLoopPoints()
 	mp.set_property("ab-loop-a", "no")
 	mp.set_property("ab-loop-b", "no")
+end
+
+
+
+
+
+function writeStringToFile(outputFilePath, str)
+	local file = io.open(outputFilePath, "a")
+	if file then
+		file:write(str)
+		file:close()
+		return 0
+	else
+		mp.msg.error("Could not open file for writing: " .. outputFilePath)
+		return 1
+	end
+end
+
+
+
+
+
+function generateDeleteCommand()
+	local currentFilePath = mp.get_property("path")
+	local outputFilePath = "/mnt/ramdisk/mpvDelete.sh"
+
+	if currentFilePath then
+		local writeStatus = writeStringToFile(outputFilePath, "rm '" .. currentFilePath .. "'\n")
+		if writeStatus == 0 then
+			mp.commandv("show_text", "marked for deletion")
+		else
+			mp.commandv("show_text", "Could not write to file " .. outputFilePath)
+		end
+	end
+end
+
+function generateRenameCommand()
+	local currentFilePath = mp.get_property("path")
+	local outputFilePath = "/mnt/ramdisk/mpvRename.sh"
+
+	if currentFilePath then
+		local dir = utils.split_path(currentFilePath)
+		local filename = mp.get_property("filename")
+		local newPath = utils.join_path(dir, "aaa " .. filename)
+		local writeStatus = writeStringToFile(outputFilePath, "mv '" .. currentFilePath .. "' '" .. newPath .. "'\n")
+		if writeStatus == 0 then
+			mp.commandv("show_text", "marked for rename")
+		else
+			mp.commandv("show_text", "Could not write to file " .. outputFilePath)
+		end
+	end
+end
+
+
+
+
+
+function seekToSeconds(secondsString)
+	local secondsInt = tonumber(secondsString)
+	if type(secondsInt) == "number" then
+		mp.commandv("seek", secondsString, "absolute+keyframes")
+	end
+end
+
+function getSecondsToSeekTo()
+	input.get({
+		prompt = "Enter the position to seek to in seconds:",
+		submit = seekToSeconds
+	})
 end
 
 
@@ -690,14 +804,31 @@ function bindKeys()
 	mp.add_forced_key_binding("]",                'nextShader',             nextShader)
 
 	mp.add_forced_key_binding('Ctrl+l',           'loadLastModifiedShader', loadLastModifiedShader)
-	mp.add_forced_key_binding('Ctrl+k',           'setDevShaderGroup',      setDevShaderGroup)
 	mp.add_forced_key_binding('Ctrl+p',           'resetShaderPresets',     resetShaderPresets)
 
-	mp.add_forced_key_binding("A",                'setLoopPointA',          setLoopPointA)
-	mp.add_forced_key_binding("S",                'setLoopPointB',          setLoopPointB)
+	mp.add_forced_key_binding("Ctrl+s",           'getSecondsToSeekTo',     getSecondsToSeekTo)
 
 	mp.add_forced_key_binding('Ctrl+o',           'toggleOrderBySize',      toggleOrderBySize)
 	mp.add_forced_key_binding('Ctrl+u',           'generateShaderFileData', generateShaderFileData)
+
+	mp.add_forced_key_binding('Ctrl+z',           'generateDeleteCommand',  generateDeleteCommand)
+	mp.add_forced_key_binding('Ctrl+x',           'generateRenameCommand',  generateRenameCommand)
+	mp.add_forced_key_binding('Ctrl+v',           'dumpShaderPresets',      dumpShaderPresets)
+
+	mp.add_forced_key_binding('KP7',              'kp7',                    setLoopPointA)
+	mp.add_forced_key_binding('KP8',              'kp8',                    clearLoopPoints)
+	mp.add_forced_key_binding('KP9',              'kp9',                    setLoopPointB)
+end
+
+
+
+
+
+function handleEndFile(evt)
+	if settings.debugMode then
+		showText("handleEndFile: reason is " .. evt.reason)
+	end
+	clearLoopPoints()
 end
 
 
@@ -706,8 +837,12 @@ end
 
 function main()
 	generateShaderFileData()
-	settings.shaderPresets = deepCopy(presets01)
+	local didLoadShaderPresets = loadShaderPresets()
+	if didLoadShaderPresets then
+		settings.shaderPresets = deepCopy(shaderPresetsFromConfig)
+	end
 	bindKeys()
+	mp.register_event("end-file", handleEndFile)
 end
 
 main()
