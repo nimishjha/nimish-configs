@@ -48,6 +48,7 @@
 	--colorMarkd:			#888;
 	--colorTextEmphasis:	hsl(var(--baseHue)  40 60);
 	--colorText:			hsl(var(--baseHue) 100 32);
+	--colorTextDark:		hsl(var(--baseHue) 100 20);
 	--colorHeadings:		hsl(var(--baseHue) 100 35);
 	--backgroundDark:		hsl(var(--baseHue) 100 4);
 	--backgroundHeadings:	hsl(var(--baseHue) 100 4);
@@ -163,13 +164,14 @@
 	--bgMark: #303336;
 	--fgMark: #808488;
 
-	--colorText:			hsl(var(--baseHue) 10 44);
-	--colorTextEmphasis:	hsl(var(--baseHue) 10 60);
+	--colorText:			hsl(var(--baseHue) 10 35);
+	--colorTextEmphasis:	hsl(var(--baseHue) 10 50);
 	--backgroundLessDark:	hsl(var(--baseHue) 14 11);
-	--backgroundHeadings:	hsl(var(--baseHue) 18 6);
+	--backgroundHeadings:	hsl(var(--baseHue) 18 4);
 	--backgroundDark:		hsl(var(--baseHue) 18 8);
 	--colorSeparator:		hsl(var(--baseHue) 18 8);
-	--backgroundHTML:		hsl(var(--baseHue) 20 6);
+	--backgroundHTML:		hsl(var(--baseHue) 20 4);
+	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 7);
 	--backgroundPre:		hsl(var(--baseHue) 10 5.5);
 	--colorBorderDark:		hsl(var(--baseHue) 35 5);
 	--colorHeadings:		hsl(var(--baseHue) 7  53);
@@ -177,7 +179,6 @@
 	--colorLinksHover:		hsl(var(--linkHue) 20 65);
 	--colorLinksVisited:	hsl(var(--linkHue) 40 36);
 	--backgroundLight:		hsl(var(--baseHue) var(--baseSaturation) 16);
-	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 9);
 	--colorBorderLight:		hsl(var(--baseHue) var(--baseSaturation) 20);
 	--colorPre:				hsl(var(--baseHue) var(--baseSaturation) 47);
 
@@ -214,7 +215,7 @@
 
 .nimbusThemeRed
 {
-	::-moz-selection { color: #000; background: #800; }
+	::-moz-selection { color: #000; background: #600; }
 	--backgroundHTML:		#100;
 	--backgroundLight:		#300;
 	--colorBorderDark:		#000;
@@ -222,8 +223,6 @@
 	--colorSeparator:		#000;
 	--baseHue:				0;
 	--linkHue:				30;
-	--bgMark:				hsl(10 10 18);
-	--fgMark:				hsl(10 10 60);
 	--colorTextEmphasis:	hsl(var(--baseHue)  40 60);
 	--colorText:			hsl(var(--baseHue) 100 32);
 	--colorHeadings:		hsl(var(--baseHue) 100 35);
@@ -236,7 +235,17 @@
 	--colorLinksHover:		hsl(var(--linkHue)  70 70);
 	--backgroundPre:		hsl(var(--baseHue) 100 4.5);
 	--colorPre: 			hsl(var(--baseHue) 100 30);
-	markwhite { color: #b0a8a0; }
+
+	--fgMark: #700;
+	--bgMark: #300;
+	markyellow { background: #000; color: #860; }
+	markpurple { background: #102; color: #406; }
+	markgreen { background: #030; color: #070; }
+	markred { background: #500; color: #b00; }
+	markblue { background: #003; color: #35a; }
+	markwhite { background: #000; color: #777; }
+
+	reference a { opacity: 0.5; }
 }
 
 .nimbusThemeBlack
@@ -347,13 +356,14 @@
 	slideshow { background: var(--colorBorderDark) !important; padding: 10px !important; }
 	slideshow::after { content: " "; clear: both; display: block; }
 
-	hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, p, section, summary, ul, video
+	p, hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, section, summary, ul, video
 		{ background: transparent !important; color: inherit !important; border: none !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	section { background: inherit !important; color: inherit !important; }
 	aside { background-image: none !important; background-color: var(--backgroundLight) !important; padding: 10px !important; }
 
 	abbr, acronym, address, applet, area, audio, b, base, bdo, big, cite, code, command, datalist, dl, dt, dd, del, details, dfn, dir, em, fieldset, font, i, ins, label, legend, link, mark, meter, optgroup, option, output, param, progress, q, rp, rt, ruby, s, select, source, strike, strong, time, title, u, var, wbr, xmp
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
+	fieldset { border-style: solid !important; border-color: var(--colorBorderDark) !important; }
 	sub, sup { font-size: var(--fontSizeSmall) !important; font-family: inherit !important; line-height: 1.2 !important; }
 	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundDark) !important; border-color: var(--colorBorderLight) !important; }
 
@@ -363,6 +373,7 @@
 		footer { border-style: solid !important; border-width: 0 0 10px 0 !important; padding: 10px !important; }
 		hgroup { padding: 10px !important; background: #000 !important; padding-left: 30px !important; margin-left: -30px !important; }
 		nav { border-right: 10px solid var(--colorBorderLight) !important; padding: 10px !important; }
+		fieldset { border-width: 3px !important; }
 	}
 
 	span, span[class] { font-family: inherit !important; font-size: inherit !important; line-height: inherit !important; color: inherit !important; background: inherit !important; }
@@ -415,6 +426,7 @@
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
 	a:active, a:active *, a:hover, a:hover *, a:focus, a:focus * { color: var(--colorLinksHover) !important; text-decoration: none !important; outline: 0 !important; }
 	.pagination a:link { font-size: 24px !important; font-weight: bold !important; border: 0 !important; background: var(--colorBorderDark) !important; padding: 10px !important; }
+	li a { background: transparent !important; border: none !important; }
 
 	p { margin: 0 !important; padding: 5px 0 !important; }
 	p p { margin: 4px 9px !important; }
@@ -542,7 +554,7 @@
 	path[fill!=none].markd { fill: rgba(255, 0, 0, 0.5); }
 
 	user { background: #000 !important; padding: 2px 10px !important; border-left: 10px solid #09F !important; margin: 0 !important; }
-	reference { display: inline-block; background: #000 !important; color: var(--colorTextEmphasis) !important; padding: 1px 5px !important; margin: 0 2px 0 0 !important; }
+	reference { display: inline-block; background: #000 !important; color: var(--colorTextDark) !important; padding: 1px 5px !important; margin: 0 0 0 2px !important; }
 	comment { display: block !important; padding: 20px 40px !important; border-left: 10px solid var(--colorBorderDark) !important; background: var(--backgroundLessDark) !important; margin-bottom: 2px !important; }
 	comment comment { padding: 0 40px !important; }
 	ind { display: block !important; padding-left: 50px !important; }
@@ -596,9 +608,13 @@
 
 	brk { display: inline-block; background: #000; color: #CC0; padding: 5px 10px; }
 	brk::after { content: "BRK"; }
+}
 
-	/* DDG */
-	div[role="listbox"], div[data-testid*=dropdown] * { box-shadow: inset 0 2000px #000;  }
+@-moz-document domain(duckduckgo.com)
+{
+	div[role="listbox"], div[data-testid*=dropdown] * { box-shadow: inset 0 2000px #000; }
+	.footer a { background: transparent; }
+	.footer svg { display: none; }
 }
 
 @-moz-document domain(store.steampowered.com)
