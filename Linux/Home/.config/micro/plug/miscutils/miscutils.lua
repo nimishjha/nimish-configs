@@ -274,6 +274,17 @@ function insertTimestamp(bp)
 	end
 end
 
+function insertConsoleTimer(bp)
+	local curPaneBuf = bp.Buf
+	local numCursors = curPaneBuf:NumCursors()
+	for i = 0, numCursors - 1 do
+		local cursor = curPaneBuf:GetCursor(i)
+		local cursorPos = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
+		local consoleTimer = "const t1 = new Date();\n" .. "const t2 = new Date(); console.log((t2 - t1) ms)"
+		bp.Buf:insert(cursorPos, consoleTimer)
+	end
+end
+
 
 
 
@@ -295,4 +306,5 @@ function init()
 	config.MakeCommand("muInsertForLoopI",           insertForLoopI,                      config.NoComplete)
 	config.MakeCommand("muInsertForLoopJ",           insertForLoopJ,                      config.NoComplete)
 	config.MakeCommand("muInsertLogStatement",       insertLogStatement,                  config.NoComplete)
+	config.MakeCommand("muInsertConsoleTimer",       insertConsoleTimer,                  config.NoComplete)
 end
