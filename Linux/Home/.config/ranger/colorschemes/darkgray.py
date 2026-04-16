@@ -23,7 +23,7 @@ class DarkGray(ColorScheme):
 			if context.image:
 				fg = 33
 			if context.document:
-				fg = 36
+				fg = 30
 			if context.customtype01:
 				fg = 134
 			if context.customtype02:
@@ -40,14 +40,35 @@ class DarkGray(ColorScheme):
 				fg = 130
 			if context.customtype07:
 				fg = 172
+			if context.videompeg4:
+				fg = 100
+			if context.videomkv:
+				fg = 101
+			if context.videowebm:
+				fg = 102
+			if context.videoavi:
+				fg = 103
+			if context.videoflv:
+				fg = 104
+			if context.imagejpeg:
+				fg = 110
+			if context.imagepng:
+				fg = 111
+			if context.imagegif:
+				fg = 112
+			if context.imagewebp:
+				fg = 113
 			if context.container:
 				attr |= bold
-				fg = 111
+				fg = 120
+			if context.compressed:
+				attr |= bold
+				fg = 121
 			if context.marked:
 				bg = 17
 			if context.directory:
 				attr |= bold
-				fg = 248
+				fg = 244
 			elif context.executable and not any((context.media, context.container, context.fifo, context.socket)):
 				attr |= bold
 				fg = red
