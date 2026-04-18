@@ -1,2 +1,5 @@
 xset r rate 250 40
+xset s off
+xset -dpms
 
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
