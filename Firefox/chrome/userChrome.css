@@ -132,3 +132,4 @@ findbar checkbox[checked] image		{ opacity: 1 !important; }
 
 /* Show keyword field in 'add bookmark' popup */
 #editBMPanel_keywordRow { visibility:visible !important; }
+

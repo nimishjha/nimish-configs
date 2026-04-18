@@ -67,7 +67,7 @@
 
 	markwhite { color: #b0a8a0; }
 
-	--imgFilter: brightness(0.66);
+	--imgFilter: brightness(0.5);
 	--imgHoverFilter: brightness(1);
 
 	--fgTt:		#864;
@@ -234,8 +234,8 @@
 	--backgroundPre:		hsl(var(--baseHue) 100 4.5);
 	--colorPre: 			hsl(var(--baseHue) 100 30);
 
-	--fgMark: #700;
-	--bgMark: #300;
+	--fgMark: #666;
+	--bgMark: #222;
 	markyellow { background: #000; color: #860; }
 	markpurple { background: #102; color: #406; }
 	markgreen { background: #030; color: #070; }
@@ -420,6 +420,7 @@
 	a.statusOk, a.statusWarning, a.statusError { display: inline-block !important; min-width: 20px !important; min-height: 20px !important; }
 
 	a, a:link, a:link * { color: var(--colorLinks) !important; text-decoration: none !important; text-shadow: none !important; font-family: inherit !important; }
+	a, a:link { background: transparent !important; }
 	/* a, a:link { background: inherit !important; border: 0 !important; } */
 	/* a[class*="btn"] { background: #333 !important; } */
 	a:visited, a:visited * { color: var(--colorLinksVisited) !important; text-decoration: none !important; }
@@ -507,7 +508,7 @@
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #C00 !important; }
 	html a[href*=".pdf"]:active, html a[href*=".pdf"]:hover, html a[href*=".pdf"]:focus { background: #600 !important; }
 
-	a[href*=".zip"]:link, a[href*=".zip"] { background: #000 !important; color: #CCC !important; padding: 0px 5px !important; border-left: 10px solid #CCC !important; display: inline-block !important; margin: 1px !important; }
+	a[href*=".zip"]:link, a[href*=".zip"] { background: #000 !important; color: #AAA !important; padding: 0px 5px !important; border-left: 10px solid #AAA !important; display: inline-block !important; margin: 1px !important; }
 	a[href*=".zip"]:visited, a[href*=".zip"]:visited { background: #000 !important; color: #999 !important; border-color: #999 !important; }
 	a[href*=".zip"]:active, a[href*=".zip"]:hover, a[href*=".zip"]:focus { background: #000 !important; color: #CDCDCD !important; border-color: #CDCDCD !important; }
 
@@ -751,3 +752,5 @@ input[type="checkbox"].toggle-button::before { background: #ACE !important; }
 	--theme-code-font-size: 18px;
 	--theme-body-font-size: 18px;
 }
+
+recommended-extensions-section { display: none !important; }
