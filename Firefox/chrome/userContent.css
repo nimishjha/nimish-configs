@@ -435,10 +435,10 @@
 
 	table { border-collapse: collapse !important; }
 	table, tr, td, th { margin: 0 !important; padding: 0 !important; line-height: inherit !important; color: inherit !important; border: 0 !important; }
-	table, tbody, tr, td { background: inherit !important; }
+	table, tbody, tr, td { background: var(--backgroundLessDark) !important; }
 	thead, th { background: var(--backgroundHeadings) !important; }
-	tr:nth-child(odd)  td, tr:nth-child(odd)  th { background-color: var(--backgroundLessDark) !important; }
-	tr:nth-child(even) td, tr:nth-child(even) th { background-color: var(--backgroundDark) !important; }
+	/* tr:nth-child(odd)  td, tr:nth-child(odd)  th { background-color: var(--backgroundLessDark) !important; } */
+	/* tr:nth-child(even) td, tr:nth-child(even) th { background-color: var(--backgroundLessDark) !important; } */
 
 	dl, dt, dd { border-style: solid !important; border-color: var(--colorBorderDark) !important; }
 	dl { background: var(--backgroundHeadings) !important; border-width: 0 0 0 20px !important; }
@@ -476,16 +476,19 @@
 	pre u   { color: #c86b8f; }
 	pre dfn { color: #ba1c24; }
 	pre s   { color: #99242a; }
-	pre q1  { color: #c84f55; }
-	pre q2  { color: #c33c72; }
-	pre c1  { color: #c8000a; }
-	pre c2  { color: #c82a69; }
-	pre b1  { color: #be6488; }
-	pre b2  { color: #c83e45; }
-	pre b3  { color: #673234; }
-	pre xk  { color: #783a3d; }
-	pre xh  { color: #b46468; }
-	pre xv  { color: #783a3d; }
+	q1  { color: #c84f55; }
+	q2  { color: #c33c72; }
+	c1  { color: #c8000a; }
+	c2  { color: #c82a69; }
+	b1  { color: #be6488; }
+	b2  { color: #c83e45; }
+	b3  { color: #673234; }
+	xk  { color: #783a3d; }
+	xh  { color: #b46468; }
+	xv  { color: #783a3d; }
+	xs  { color: #783a3d; }
+	xc  { color: #b46468; }
+	xp  { color: #c82a69; }
 
 	x0  { color: #c85b60; }
 	x1  { color: #c85b60; }
