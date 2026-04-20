@@ -108,6 +108,10 @@ local settings = {
 
 function showText(str)
 	mp.commandv("show_text", str)
+end
+
+function showTextAndLog(str)
+	mp.commandv("show_text", str)
 	msg.warn(str)
 end
 
