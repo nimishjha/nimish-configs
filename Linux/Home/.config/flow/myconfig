@@ -1,0 +1,10 @@
+show_fileicons false
+tab_width 4
+bottom_bar "mode file log selection diagnostics keybind branch linenumber clock spacer"
+highlight_current_line false
+show_bottom_bar_grip false
+whitespace_mode "none"
+highlight_columns_enabled false
+enable_auto_find false
+completion_trigger "manual"
+panel_style "spacious"
