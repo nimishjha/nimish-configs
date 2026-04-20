@@ -1,205 +1,120 @@
 import os
-
+import re
+import logging
+from os.path import splitext
 from ranger.api.commands import Command
+from utils import notify, getStem, getExt, checkIfFileExists, getFormattedModificationTime, getSafeName, renameFileIncrementOnCollision, renameFileFailOnCollision, renameSequential, copyFile
 
-def getFormattedModificationTime(filepath):
-	from datetime import datetime
-	modTime = os.path.getmtime(filepath)
-	dateTime = datetime.fromtimestamp(modTime)
-	return dateTime.strftime("%Y%m%d_%H%M%S")
+
+logger = logging.getLogger("RangerCustomCommands")
 
 
 class prefix(Command):
-
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-
 		prefix = self.rest(1)
 		if not prefix:
-			return self.fm.notify("Prefix is required", bad=True)
+			return self.fm.notify("Prefix is required", bad = True)
 
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = prefix + file.relative_path
-			if access(new_name, os.F_OK):
-				# return self.fm.notify("rename failed, file already exists", bad=True)
-				new_name = prefix + "%04d" % (index) + file.relative_path
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		self.fm.notify("Batch prefix successful")
-
-		return None
-
-
-class rename_basename(Command):
-
-	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-
-		newBaseName = self.rest(1)
-
-		if newBaseName:
-			file = self.fm.thisfile
-			basename = file.basename
-			ext = splitext(file.relative_path)[1]
-			newName = newBaseName + ext
-
-			if access(newName, os.F_OK):
-				return self.fm.notify("Cannot rename, file already exists", bad=True)
-
-			try:
-				os.rename(file.relative_path, newName)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-			self.fm.notify(f"Renamed {basename} to {newName}")
+		numNotRenamed = sum( bool( renameFileIncrementOnCollision(file.relative_path, prefix + file.relative_path) ) for file in self.fm.thistab.get_selection() )
+		if numNotRenamed > 0:
+			self.fm.notify(f"{numNotRenamed} rename attempts failed", bad = True)
 		else:
-			self.fm.notify("Usage: rename_basename <newbasename>")
-
-		return None
+			self.fm.notify("All files renamed successfully")
 
 
-class batch_rename(Command):
-
+class renameStem(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
+		newStem = self.rest(1)
+		if not newStem:
+			self.fm.notify("Usage: renameStem <newStem>")
+			return False
 
-		new_base_name = self.rest(1)
+		selection = self.fm.thistab.get_selection()
+		if len(selection) > 1:
+			self.fm.notify("renameStem must only be called with one file selected")
+			return False
 
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = new_base_name + "%04d" % (index + 1) + splitext(file.relative_path)[1]
-			if access(new_name, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		self.fm.notify("Batch rename successful")
-
-		return None
+		file = self.fm.thisfile
+		newName = newStem + getExt(file.relative_path)
+		error = renameFileFailOnCollision(file.relative_path, newName)
+		notify(self.fm, error, f"Renamed {file.relative_path} to {newName}")
 
 
-class batch_rename_two_digits(Command):
-
+class batchRenameFourDigits(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-
-		new_base_name = self.rest(1)
-
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = new_base_name + "%02d" % (index + 1) + splitext(file.relative_path)[1]
-			if access(new_name, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		self.fm.notify("Batch rename successful")
-
-		return None
+		prefix = self.rest(1)
+		if not prefix:
+			return self.fm.notify("A prefix is required", bad = True)
+		selection = self.fm.thistab.get_selection()
+		error = renameSequential(selection, prefix, 4)
+		notify(self.fm, error, f"Renamed {len(selection)} files")
 
 
-class batch_rename_filemtime(Command):
-
+class batchRenameTwoDigits(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
+		prefix = self.rest(1)
+		if not prefix:
+			return self.fm.notify("A prefix is required", bad = True)
+		selection = self.fm.thistab.get_selection()
+		error = renameSequential(selection, prefix, 2)
+		notify(self.fm, error, f"Renamed {len(selection)} files")
 
+
+class batchRenameFilemtime(Command):
+	def execute(self):
 		newBaseName = self.rest(1)
 		if not newBaseName:
-			return self.fm.notify("Base name is required", bad=True)
+			return self.fm.notify("Base name is required", bad = True)
 
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			fileModTimeString = getFormattedModificationTime(file.path)
-			newName = newBaseName + "_" + fileModTimeString + splitext(file.relative_path)[1]
-			if access(newName, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists: " + newName, bad=True)
-			try:
-				os.rename(file.relative_path, newName)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
+		selection = self.fm.thistab.get_selection()
 
-		self.fm.notify("Batch rename successful")
+		names = list()
+		for index, file in enumerate(selection):
+			name = newBaseName + "_" + getFormattedModificationTime(file.path) + splitext(file.relative_path)[1]
+			if checkIfFileExists(name):
+				return self.fm.notify(f"Cannot proceed with batch rename, there would be at least one collision with {name}", bad = True)
+			names.append(name)
 
-		return None
+		numNotRenamed = 0
+		for index, file in enumerate(selection):
+			numNotRenamed += bool(renameFileIncrementOnCollision(file.relative_path, names[index]))
+
+		if numNotRenamed > 0:
+			self.fm.notify(f"There were {numNotRenamed} errors while renaming", bad = True)
+		else:
+			self.fm.notify("Batch rename successful")
 
 
-class setextension(Command):
-
+class setExtension(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-
-		newExtension = self.rest(1)
+		newExtension = self.args(1)
 		if not newExtension:
-			return self.fm.notify("Extension is required", bad=True)
+			return self.fm.notify("Extension is required", bad = True)
 
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			fileModTimeString = getFormattedModificationTime(file.path)
-			newName = splitext(file.relative_path)[0] + "." + newExtension
-			if access(newName, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists: " + newName, bad=True)
-			try:
-				os.rename(file.relative_path, newName)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
+		selection = self.fm.thistab.get_selection()
 
-		self.fm.notify("Batch setextension successful")
+		names = list()
+		for index, file in enumerate(selection):
+			name = getStem(file.relative_path) + "." + newExtension
+			if checkIfFileExists(name):
+				return self.fm.notify(f"Cannot proceed, there would be at least one collision with {name}", bad = True)
+			names.append(name)
 
-		return None
+		numNotRenamed = 0
+		for index, file in enumerate(selection):
+			numNotRenamed += bool(renameFileFailOnCollision(file.relative_path, names[index]))
+
+		if numNotRenamed > 0:
+			self.fm.notify(f"Failed to rename {numNotRenamed} files", bad = True)
+		else:
+			self.fm.notify(f"Set the extension to {newExtention} on {len(selection)} files")
 
 
-class remove_underscores(Command):
-
+class cleanupFilenames(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			new_name = file.relative_path.replace("_", " ")
-			if access(new_name, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		return None
-
-
-class cleanup_filenames(Command):
-
-	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		from os.path import splitext
-		import re
-
-		for index, file in enumerate( self.fm.thistab.get_selection() ):
-			splat = splitext(file.relative_path)
-			base_name = splat[0]
-			extension = splat[1]
+		numNotRenamed = 0
+		for file in enumerate( self.fm.thistab.get_selection() ):
+			stem, ext = splitext(file.relative_path)
 			replacements = [
 				("\\[[A-Za-z0-9_-]+\\]", ""),
 				("[\\._]", " "),
@@ -207,105 +122,102 @@ class cleanup_filenames(Command):
 				("\\s+", " "),
 				(" s ", "s "),
 				(" t ", "t "),
-				("^\\s+", ""),
-				("\\s+$", ""),
 			]
 			for pattern, replacement in replacements:
-				base_name = re.sub(pattern, replacement, base_name)
-			new_name = base_name + extension
-			count = 0
-			while access(new_name, os.F_OK) and count < 10:
-				new_name = base_name + "_" + "%02d" % (count) + extension
-				count += 1
-			if access(new_name, os.F_OK):
-				continue
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
+				stem = re.sub(pattern, replacement, stem)
+			newName = stem.strip() + ext
+			numNotRenamed += bool( renameFileFailOnCollision(file.relative_path, newName) )
 
-		return None
+		if numNotRenamed > 0:
+			self.fm.notify(f"{numNotRenamed} rename attempts failed", bad = True)
+		else:
+			self.fm.notify(f"All files renamed successfully")
 
 
-class sanitize_filename(Command):
+def sanitizeFilenameActual(file):
+	stem, ext = os.path.splitext(file.relative_path)
+	newStem = re.sub(r'[^a-zA-Z0-9 ]', '', stem).lower()
+	newStem = re.sub(r'\s+', ' ', newStem)
+	return newStem + ext.lower()
 
+
+class sanitizeFilename(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		import os
-		import re
+		numNotRenamed = 0
+		for file in enumerate(self.fm.thistab.get_selection()):
+			numNotRenamed += bool( renameFileIncrementOnCollision(file.relative_path, sanitizeFilenameActual(file)) )
 
-		for index, file in enumerate(self.fm.thistab.get_selection()):
-			base, ext = os.path.splitext(file.relative_path)
-			new_base = re.sub(r'[^a-zA-Z0-9 ]', '', base).lower()
-			new_base = re.sub(r'\s+', ' ', new_base)
-			new_name = new_base + ext.lower()
-
-			if access(new_name, os.F_OK):
-				return self.fm.notify("Batch rename failed, file already exists", bad=True)
-			try:
-				os.rename(file.relative_path, new_name)
-			except OSError as err:
-				self.fm.notify(err)
-				return False
-
-		return None
+		if numNotRenamed:
+			self.fm.notify(f"{numNotRenamed} rename attempts failed", bad = True)
 
 
-class copy_and_increment(Command):
+class copyAndIncrement(Command):
 	def execute(self):
-		from ranger.container.file import File
-		from os import access
-		import os
-		import re
-		import shutil
-
 		for file in self.fm.thistab.get_selection():
-			base, ext = os.path.splitext(file.basename)
+			stem, ext = os.path.splitext(file.basename)
 
-			match = re.match(r'^(.*?)(\d+)$', base)
-			if not match:
-				self.fm.notify(f"File {file.basename} doesn't match expected pattern", bad=True)
-				continue
+			match = re.match(r'^(.*?)(\d+)$', stem)
+			if match:
+				prefix, num = match.groups()
+				newNum = int(num) + 1
+				newName = f"{prefix}{newNum:0{len(num)}d}{ext}"
+			else:
+				newName = f"{stem}01{ext}"
 
-			prefix, num = match.groups()
-			new_num = int(num) + 1
-			new_name = f"{prefix}{new_num:0{len(num)}d}{ext}"
-			new_path = os.path.join(os.path.dirname(file.path), new_name)
+			newSafeName = getSafeName(newName)
 
-			if access(new_path, os.F_OK):
-				self.fm.notify(f"Copy failed, {new_name} already exists", bad=True)
-				continue
-
-			try:
-				shutil.copy2(file.path, new_path)
-				self.fm.notify(f"Copied {file.basename} to {new_name}")
-			except OSError as err:
-				self.fm.notify(f"Error copying {file.basename}: {err}", bad=True)
-				continue
-
-		return None
+			if newSafeName:
+				error = copyFile(file.basename, newSafeName)
+				notify(self.fm, error, f"Copied {file.basename} to {newSafeName}")
+			else:
+				self.fm.notify(f"Could not get safe name for {newName}", bad = True)
 
 
 class compress7z(Command):
 	def execute(self):
-		commandString = "7z a -mx9 /mnt/ramdisk/"
-		if self.arg(1):
-			commandString += self.arg(1) + ".7z "
-		else:
-			commandString += "temp.7z "
+		stem = self.arg(1)
+		if not stem:
+			self.fm.notify("A filename is required", bad = True)
+			return False
 
-		for index, file in enumerate(self.fm.thistab.get_selection()):
-			commandString += '"' + file.path + '" '
+		commandString = f"7z a -mx9 /mnt/ramdisk/{stem}.7z "
+
+		files = list()
+		for file in self.fm.thistab.get_selection():
+			files.append('"' + file.path + '"')
+
+		commandString += ' '.join(files)
 		self.fm.execute_command(commandString)
 
-		return None
+
+def logItem(item):
+	logger.info(f"\t item.basename:      {item.basename}")
+	logger.info(f"\t item.relative_path: {item.relative_path}")
+	logger.info(f"\t item.path:          {item.path}")
+	logger.info(f"\t is_directory:       {item.is_directory}")
+	logger.info(f"\t is_file:            {item.is_file}")
+	logger.info(f"\t is_link:            {item.is_link}")
+	logger.info(f"\t directory:          {os.path.dirname(item.path)}")
 
 
 class test(Command):
 	def execute(self):
-		if self.arg(1):
-			self.fm.notify("arg(1) is " + self.arg(1))
-		else:
-			self.fm.notify("no args")
+		logger.info(" ")
+		for index, arg in enumerate(self.args):
+			logger.info(f"arg {index}: {arg}")
+
+		logger.info(" ")
+		for i in range(0, len(self.args)):
+			logger.info(f"rest {i}: {self.rest(i)}")
+
+		logger.info(" ")
+		selection = self.fm.thistab.get_selection()
+		logger.info(f"{len(selection)} items selected:")
+		logger.info(" ")
+		for item in self.fm.thistab.get_selection():
+			logItem(item)
+			logger.info(" ")
+
+		logger.info("self.fm.thisfile:")
+		logger.info(" ")
+		logItem(self.fm.thisfile)
