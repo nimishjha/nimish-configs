@@ -16,6 +16,7 @@ prompt_bg = "#111111"
 prompt_bg_selected = "#222222"
 prompt_fg = "#909090"
 selection_bg = "#444444"
+statusbar_bg = "#000"
 statusbar_fg = "#444"
 statusbar_insert_bg = "#333"
 tab_bg = "#000000"
@@ -80,7 +81,7 @@ c.colors.prompts.selected.bg = prompt_bg_selected
 c.colors.prompts.selected.fg = prompt_fg
 
 c.colors.statusbar.normal.fg = statusbar_fg
-c.colors.statusbar.normal.bg = default_bg
+c.colors.statusbar.normal.bg = statusbar_bg
 c.colors.statusbar.insert.fg = statusbar_fg
 c.colors.statusbar.insert.bg = statusbar_insert_bg
 c.colors.statusbar.passthrough.fg = statusbar_fg
