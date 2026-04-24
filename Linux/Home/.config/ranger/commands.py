@@ -1,5 +1,6 @@
 import os
 import re
+import pprint
 import logging
 from os.path import splitext
 from ranger.api.commands import Command
@@ -113,7 +114,7 @@ class setExtension(Command):
 class cleanupFilenames(Command):
 	def execute(self):
 		numNotRenamed = 0
-		for file in enumerate( self.fm.thistab.get_selection() ):
+		for file in self.fm.thistab.get_selection():
 			stem, ext = splitext(file.relative_path)
 			replacements = [
 				("\\[[A-Za-z0-9_-]+\\]", ""),
@@ -144,7 +145,7 @@ def sanitizeFilenameActual(file):
 class sanitizeFilename(Command):
 	def execute(self):
 		numNotRenamed = 0
-		for file in enumerate(self.fm.thistab.get_selection()):
+		for file in self.fm.thistab.get_selection():
 			numNotRenamed += bool( renameFileIncrementOnCollision(file.relative_path, sanitizeFilenameActual(file)) )
 
 		if numNotRenamed:
@@ -191,33 +192,13 @@ class compress7z(Command):
 
 
 def logItem(item):
-	logger.info(f"\t item.basename:      {item.basename}")
-	logger.info(f"\t item.relative_path: {item.relative_path}")
-	logger.info(f"\t item.path:          {item.path}")
-	logger.info(f"\t is_directory:       {item.is_directory}")
-	logger.info(f"\t is_file:            {item.is_file}")
-	logger.info(f"\t is_link:            {item.is_link}")
-	logger.info(f"\t directory:          {os.path.dirname(item.path)}")
+	printValues = False
+	if printValues:
+		logger.info(pprint.pformat(vars(item)))
+	else:
+		logger.info(pprint.pformat(list(item.__dict__)))
 
 
 class test(Command):
 	def execute(self):
-		logger.info(" ")
-		for index, arg in enumerate(self.args):
-			logger.info(f"arg {index}: {arg}")
-
-		logger.info(" ")
-		for i in range(0, len(self.args)):
-			logger.info(f"rest {i}: {self.rest(i)}")
-
-		logger.info(" ")
-		selection = self.fm.thistab.get_selection()
-		logger.info(f"{len(selection)} items selected:")
-		logger.info(" ")
-		for item in self.fm.thistab.get_selection():
-			logItem(item)
-			logger.info(" ")
-
-		logger.info("self.fm.thisfile:")
-		logger.info(" ")
 		logItem(self.fm.thisfile)
