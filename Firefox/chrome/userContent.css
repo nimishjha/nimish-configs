@@ -28,6 +28,7 @@
 	--fontSizeSmall: 0.8em;
 	--fontSizePre: 18px;
 	--borderWidth: 3px;
+	--inputFontSizeLarge: 32px;
 
 	--fontBase: "Swis721 Cn BT";
 	--fontPre: "Swis721 Cn BT";
@@ -57,8 +58,8 @@
 	--colorLinksVisited:	hsl(var(--linkHue) 100 30);
 	--colorLinks:			hsl(var(--linkHue) 100 40);
 	--colorLinksHover:		hsl(var(--linkHue)  70 70);
-	--backgroundPre:		hsl(var(--baseHue) 100 4.5);
-	--colorPre: 			hsl(var(--baseHue) 100 30);
+	--backgroundPre:		#000;
+	--colorPre: 			#900;
 
 	--backgroundFormElements: #000;
 	--backgroundFormElementsFocused: #000;
@@ -173,7 +174,7 @@
 	--colorSeparator:		hsl(var(--baseHue) 0 4);
 	--backgroundHTML:		hsl(var(--baseHue) 0 4);
 	--backgroundBody:		hsl(var(--baseHue) 0 8);
-	--backgroundPre:		hsl(var(--baseHue) 0 5.5);
+	--backgroundPre:		hsl(var(--baseHue) 0 0);
 	--colorBorderDark:		hsl(var(--baseHue) 0 0);
 	--colorHeadings:		hsl(var(--baseHue) 0  53);
 	--colorLinks:			hsl(var(--linkHue) 45 55);
@@ -280,17 +281,18 @@
 .nimbusThemeAmber
 {
 	--baseHue: 30;
-	--backgroundBody: hsl(var(--baseHue) 100 5.5);
-	--backgroundHTML: hsl(var(--baseHue) 100 3);
-	--backgroundDark: hsl(var(--baseHue) 100 3);
+	--backgroundBody: hsl(var(--baseHue) 100 8);
+	--backgroundHTML: hsl(var(--baseHue) 100 4);
+	--backgroundDark: hsl(var(--baseHue) 100 4);
 	--backgroundHeadings: hsl(var(--baseHue) 100 1);
 	--colorBorderDark: #000;
-	--colorText: hsl(var(--baseHue) 100 30);
+	--colorText: hsl(var(--baseHue) 100 32);
 	--colorTextEmphasis: hsl(20 34 52);
 	--colorLinks: #hsl(11 100 37);
 	--bgMark: hsl(20 50 15);
 	--fgMark: hsl(20 50 40);
 	markyellow { background: #402000; color: #c90; }
+	markwhite { color: hsl(var(--baseHue) 10 56); }
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -330,6 +332,7 @@
 		{ font-family: var(--fontBase), sans-serif !important; font-weight: var(--fontWeightNormal) !important; }
 
 	nav, math, figure, figcaption, form, annotation, ruby, rp, table, tr, td, th, tbody, button, select, textarea, input, input[class], input[type] { font-family: var(--fontBase) !important; font-size: var(--fontSizeNormal) !important; }
+	input.fontSizeLarge { font-size: var(--inputFontSizeLarge) !important; }
 
 	h1, h2, h3, h4, h5, h6 { color: inherit !important; margin-top: 2px !important; margin-bottom: 2px !important; border: 0 !important; font-weight: normal !important; line-height: inherit !important; background: var(--backgroundHeadings) !important; }
 
@@ -481,7 +484,7 @@
 	kbd { color: var(--fgKbd) !important; }
 	samp { color: var(--fgSamp) !important; }
 	pre { font-family: var(--fontPre), monospace !important; font-size: var(--fontSizePre) !important; font-weight: var(--fontWeightPre) !important; line-height: var(--lineHeightPre) !important; background: var(--backgroundPre) !important; color: var(--colorPre) !important; }
-	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: #000 !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
+	pre, prex, prey { border-style: solid !important; border-width: 0 0 0 10px !important; border-color: var(--colorBorderDark) !important; padding: 10px 20px !important; margin: 2px 0 !important; overflow-x: auto !important; }
 	pre p { margin: 0 !important; padding: 0 !important; }
 	pre * { font: inherit !important; text-recoration: none !important; }
 	prex { display: block; padding: 10px 20px; margin: 0 0 10px 0; white-space: pre; font: bold 18px "swis271 cn bt"; }
