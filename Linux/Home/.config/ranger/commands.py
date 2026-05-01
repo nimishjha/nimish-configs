@@ -2,6 +2,7 @@ import os
 import re
 import pprint
 import logging
+from operator import attrgetter
 from os.path import splitext
 from ranger.api.commands import Command
 from utils import notify, getStem, getExt, checkIfFileExists, getFormattedModificationTime, getSafeName, renameFileIncrementOnCollision, renameFileFailOnCollision, renameSequential, copyFile
@@ -61,6 +62,18 @@ class batchRenameTwoDigits(Command):
 		notify(self.fm, error, f"Renamed {len(selection)} files")
 
 
+class batchRenameFourDigitsBySizeDescending(Command):
+	def execute(self):
+		prefix = self.rest(1)
+		if not prefix:
+			return self.fm.notify("A prefix is required", bad = True)
+
+		selection = self.fm.thistab.get_selection()
+		selection.sort(key = attrgetter("size"), reverse = True)
+		error = renameSequential(selection, prefix, 4)
+		notify(self.fm, error, f"Renamed {len(selection)} files")
+
+
 class batchRenameFilemtime(Command):
 	def execute(self):
 		newBaseName = self.rest(1)
@@ -88,13 +101,13 @@ class batchRenameFilemtime(Command):
 
 class setExtension(Command):
 	def execute(self):
-		newExtension = self.args(1)
-		if not newExtension:
-			return self.fm.notify("Extension is required", bad = True)
+		if len(self.args) != 2:
+			return self.fm.notify("Usage: setExtension <ext>", bad = True)
 
+		newExtension = self.args[1]
 		selection = self.fm.thistab.get_selection()
-
 		names = list()
+
 		for index, file in enumerate(selection):
 			name = getStem(file.relative_path) + "." + newExtension
 			if checkIfFileExists(name):
@@ -109,6 +122,35 @@ class setExtension(Command):
 			self.fm.notify(f"Failed to rename {numNotRenamed} files", bad = True)
 		else:
 			self.fm.notify(f"Set the extension to {newExtention} on {len(selection)} files")
+
+
+class removeFromFilenames(Command):
+	def execute(self):
+		if len(self.args) != 2:
+			return self.fm.notify("Usage: removeFromFilenames <searchString>", bad = True)
+
+		searchStr = self.args[1]
+
+		selection = self.fm.thistab.get_selection()
+
+		names = list()
+		for index, file in enumerate(selection):
+			stem, ext = os.path.splitext(file.relative_path)
+			if searchStr in stem:
+				stem = stem.replace(searchStr, "").strip()
+				name = stem + ext if len(ext) else stem
+				if checkIfFileExists(name):
+					return self.fm.notify(f"Cannot proceed, there would be at least one collision with {name}", bad = True)
+				names.append(name)
+
+		numNotRenamed = 0
+		for index, file in enumerate(selection):
+			numNotRenamed += bool(renameFileFailOnCollision(file.relative_path, names[index]))
+
+		if numNotRenamed > 0:
+			self.fm.notify(f"Failed to rename {numNotRenamed} files", bad = True)
+		else:
+			self.fm.notify(f"Removed the string {searchStr} from {len(selection)} names")
 
 
 class cleanupFilenames(Command):
@@ -191,14 +233,24 @@ class compress7z(Command):
 		self.fm.execute_command(commandString)
 
 
+def getProperties(obj: object, properties: list[str]) -> dict:
+	return {prop: getattr(obj, prop, "PROPERTY_DOES_NOT_EXIST") for prop in properties}
+
+
+def listItemProperties(item):
+	for dirItem in dir(item):
+		if not "__" in dirItem:
+			logger.info("\t\t" + dirItem)
+
+
 def logItem(item):
-	printValues = False
-	if printValues:
-		logger.info(pprint.pformat(vars(item)))
-	else:
-		logger.info(pprint.pformat(list(item.__dict__)))
+	fileInfoDict = getProperties(item, ["path", "realpath", "basename", "dirname", "extension", "relative_path", "_mimetype", "size"])
+	logger.info("")
+	for key in fileInfoDict.keys():
+		logger.info(f"\t{key:{24}} {fileInfoDict[key]}")
 
 
-class test(Command):
+class debugFileInfo(Command):
 	def execute(self):
 		logItem(self.fm.thisfile)
+
