@@ -206,7 +206,8 @@ function showCurDir(bp)
 	})
 end
 
-function getFileListForDir(dir)
+function getFileListForDir(dir, bp)
+	local ext = filepath.Ext(bp.Buf.Path)
 	local fileNames = {}
 	local files, err = ioutil.ReadDir(dir)
 	if err ~= nil then
@@ -214,7 +215,9 @@ function getFileListForDir(dir)
 	else
 		for i = 1, #files do
 			local fileName = files[i]:Name()
-			table.insert(fileNames, fileName)
+			if filepath.Ext(fileName) == ext then
+				table.insert(fileNames, fileName)
+			end
 		end
 	end
 
@@ -228,7 +231,7 @@ function openPreviousFile(bp)
 	local currentFileName = filepath.Base(bp.Buf.Path)
 
 	if #settings.filesInCurrentDir == 0 then
-		getFileListForDir(currentFileDir)
+		getFileListForDir(currentFileDir, bp)
 	end
 
 	if #settings.filesInCurrentDir > 0 then
@@ -248,7 +251,7 @@ function openNextFile(bp)
 	local currentFileName = filepath.Base(bp.Buf.Path)
 
 	if #settings.filesInCurrentDir == 0 then
-		getFileListForDir(currentFileDir)
+		getFileListForDir(currentFileDir, bp)
 	end
 
 	if #settings.filesInCurrentDir > 0 then
