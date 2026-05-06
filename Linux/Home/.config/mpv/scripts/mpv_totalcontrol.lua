@@ -96,6 +96,7 @@ local settings = {
 	shaderIndexByFileName = {},
 	pass1 = "",
 	pass2 = "",
+	pass3 = "",
 	whichPass = "pass2",
 	shadersGrouped = {},
 	shaderCountsByGroup = {},
@@ -270,7 +271,7 @@ end
 
 function checkFileExists(path)
 	local command = {"test", "-e", path}
-	local res = utils.subprocess({args = command, cancellable = false})
+	local res = utils.subprocess({ args = command, cancellable = false })
 	return res.status == 0
 end
 
@@ -372,10 +373,20 @@ end
 
 
 function swapShaderPasses()
-	if isValidShaderName(settings.pass1) and isValidShaderName(settings.pass2) then
+	local isPassOneSet = isValidShaderName(settings.pass1)
+	local isPassTwoSet = isValidShaderName(settings.pass2)
+	if isPassOneSet and isPassTwoSet then
 		local temp = settings.pass1
 		settings.pass1 = settings.pass2
 		settings.pass2 = temp
+		applyShaders()
+	elseif isPassOneSet then
+		settings.pass2 = settings.pass1
+		settings.pass1 = ""
+		applyShaders()
+	elseif isPassTwoSet then
+		settings.pass1 = settings.pass2
+		settings.pass2 = ""
 		applyShaders()
 	else
 		mp.commandv("show_text", "Both shader passes need to be set")
@@ -392,6 +403,11 @@ function setShaderPass2()
 	settings.whichPass = "pass2"
 end
 
+function setShaderPass3()
+	mp.commandv("show_text", "mode: Pass 3")
+	settings.whichPass = "pass3"
+end
+
 function clearShaderPass1()
 	settings.pass1 = ""
 	applyShaders()
@@ -402,6 +418,12 @@ function clearShaderPass2()
 	settings.pass2 = ""
 	applyShaders()
 	setShaderPass2()
+end
+
+function clearShaderPass3()
+	settings.pass3 = ""
+	applyShaders()
+	setShaderPass3()
 end
 
 function isValidShaderName(str)
@@ -472,31 +494,31 @@ function executeCommand()
 	end
 end
 
-function applyShaders()
-	local message = ""
+function buildShaderString()
 	local SHADERS_DIR = settings.shadersDir .. "/"
 	local LIST_SEPARATOR_UNIX = ":"
-	local LIST_SEPARATOR_WINDOWS = ";"
+	local messageSegments = {}
+	local shaderFilePaths = {}
 
-	if isValidShaderName(settings.pass1) then
-		if isValidShaderName(settings.pass2) then
-			local index1 = getIndexByFileName(settings.pass1)
-			local index2 = getIndexByFileName(settings.pass2)
-			message =  string.format("%s [%s] + %s [%s]", removeExtension(settings.pass1), index1, removeExtension(settings.pass2), index2)
-			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1 .. LIST_SEPARATOR_UNIX .. SHADERS_DIR .. settings.pass2)
-		else
-			local index = getIndexByFileName(settings.pass1)
-			message = string.format("Pass 1: %s [%s]", removeExtension(settings.pass1), index)
-			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass1)
+	for index, pass in ipairs({ "pass1", "pass2", "pass3" }) do
+		if isValidShaderName(settings[pass]) then
+			local index = getIndexByFileName(settings[pass])
+			local message = string.format("%s [%s]", removeExtension(settings[pass]), index)
+			table.insert(messageSegments, message)
+			table.insert(shaderFilePaths, SHADERS_DIR .. settings[pass])
 		end
+	end
+
+	return table.concat(shaderFilePaths, LIST_SEPARATOR_UNIX), table.concat(messageSegments, ", ")
+end
+
+function applyShaders()
+	local shaderString, message = buildShaderString()
+
+	if string.len(shaderString) > 0 then
+		mp.commandv("change-list", "glsl-shaders", "set", shaderString)
 	else
-		if isValidShaderName(settings.pass2) then
-			local index = getIndexByFileName(settings.pass2)
-			message = string.format("Pass 2: %s [%s]", removeExtension(settings.pass2), index)
-			mp.commandv("change-list", "glsl-shaders", "set", SHADERS_DIR .. settings.pass2)
-		else
-			clearShaders()
-		end
+		clearShaders()
 	end
 
 	if string.len(message) > 0 then
@@ -508,6 +530,7 @@ function clearShaders()
 	mp.commandv("change-list", "glsl-shaders", "clr", "")
 	settings.pass1 = ""
 	settings.pass2 = ""
+	settings.pass3 = ""
 	settings.whichPass = "pass2"
 	mp.commandv("show_text", "GLSL shaders cleared")
 end
@@ -807,10 +830,12 @@ function bindKeys()
 	mp.add_forced_key_binding('F12',              'loadShader12',             loadShaderPreset(12))
 	mp.add_forced_key_binding('`',                'clearShaders',             clearShaders)
 	mp.add_forced_key_binding('Ctrl+w',           'loadSplashScreen',         loadSplashScreen)
-	mp.add_forced_key_binding(';',                'setShaderPass1',           setShaderPass1)
-	mp.add_forced_key_binding("'",                'setShaderPass2',           setShaderPass2)
-	mp.add_forced_key_binding(":",                'clearShaderPass1',         clearShaderPass1)
-	mp.add_forced_key_binding('"',                'clearShaderPass2',         clearShaderPass2)
+	mp.add_forced_key_binding('KP4',              'setShaderPass1',           setShaderPass1)
+	mp.add_forced_key_binding("KP5",              'setShaderPass2',           setShaderPass2)
+	mp.add_forced_key_binding("KP6",              'setShaderPass3',           setShaderPass3)
+	mp.add_forced_key_binding("Shift+KP_LEFT",    'clearShaderPass1',         clearShaderPass1)
+	mp.add_forced_key_binding('Shift+KP_BEGIN',   'clearShaderPass2',         clearShaderPass2)
+	mp.add_forced_key_binding('Shift+KP_RIGHT',   'clearShaderPass3',         clearShaderPass3)
 	mp.add_forced_key_binding('=',                'swapShaderPasses',         swapShaderPasses)
 	mp.add_forced_key_binding("[",                'prevShader',               prevShader)
 	mp.add_forced_key_binding("]",                'nextShader',               nextShader)
@@ -818,6 +843,7 @@ function bindKeys()
 	mp.add_forced_key_binding('Ctrl+p',           'resetShaderPresets',       resetShaderPresets)
 	mp.add_forced_key_binding("Ctrl+s",           'promptForSecondsToSeekTo', promptForSecondsToSeekTo)
 	mp.add_forced_key_binding("Ctrl+r",           'promptForRenamePrefix',    promptForRenamePrefix)
+	mp.add_forced_key_binding('Ctrl+R',           'reloadThisScript',         reloadThisScript)
 	mp.add_forced_key_binding('Ctrl+o',           'toggleOrderBySize',        toggleOrderBySize)
 	mp.add_forced_key_binding('Ctrl+u',           'generateShaderFileData',   generateShaderFileData)
 	mp.add_forced_key_binding('Ctrl+z',           'generateDeleteCommand',    generateDeleteCommand)
@@ -839,9 +865,10 @@ function handleEndFile(evt)
 	clearLoopPoints(true)
 end
 
-
-
-
+function reloadThisScript()
+	mp.commandv("load-script", "~~/scripts/mpv_totalcontrol.lua")
+	msg.error("reloaded mpv_totalcontrol")
+end
 
 function main()
 	generateShaderFileData()
