@@ -283,7 +283,7 @@ function insertConsoleTimer(bp)
 	for i = 0, numCursors - 1 do
 		local cursor = curPaneBuf:GetCursor(i)
 		local cursorPos = buffer.Loc(cursor.Loc.X, cursor.Loc.Y)
-		local consoleTimer = "const t1 = new Date();\n" .. "const t2 = new Date(); console.log((t2 - t1) ms)"
+		local consoleTimer = "const t1 = new Date();\n" .. "const t2 = new Date();\nconsole.log((t2 - t1) ms);\n"
 		bp.Buf:insert(cursorPos, consoleTimer)
 	end
 end
