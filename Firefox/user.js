@@ -34,7 +34,6 @@ user_pref("browser.download.alwaysOpenPanel", false);
 user_pref("browser.download.panel.shown", true);
 user_pref("browser.preferences.experimental.hidden", false);
 
-
 user_pref("browser.sessionstore.closedTabsFromAllWindows", false);
 user_pref("browser.sessionstore.closedTabsFromClosedWindows", false);
 user_pref("browser.sessionstore.disable_platform_collection", true);
@@ -42,7 +41,6 @@ user_pref("browser.sessionstore.interval", 15000000);
 user_pref("browser.sessionstore.max_tabs_undo", 1);
 user_pref("browser.sessionstore.max_windows_undo", 1);
 user_pref("browser.sessionstore.resume_from_crash", false);
-
 
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("toolkit.telemetry.archive.enabled", false);
@@ -65,3 +63,19 @@ user_pref("browser.newtabpage.enabled", false);
 
 user_pref("general.smoothScroll", false);
 user_pref("devtools.toolbox.zoomValue", "1.0");
+
+user_pref("browser.urlbar.maxRichResults", 30);
+
+user_pref("browser.ml.pageAssist.enabled", false);
+user_pref("browser.ml.smartAssist.enabled", false);
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.chat.page", false);
+user_pref("browser.ml.chat.page.footerBadge", false);
+user_pref("browser.ml.chat.page.menuBadge", false);
+user_pref("browser.ml.chat.shortcuts", false);
+user_pref("browser.ml.chat.sidebar", false);
+user_pref("browser.ml.enable", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+
+user_pref("devtools.webconsole.input.autocomplete", false);
+user_pref("devtools.webconsole.input.eagerEvaluation", false);

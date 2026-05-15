@@ -1,6 +1,6 @@
 :root
 {
-	::-moz-selection { color: #000; background: #800; }
+	::-moz-selection { color: #000; background: #600; }
 	--monospace-font-family: "Swis721 Cn BT", "SF Mono", monospace !important;
 
 	--comment-node-color:			#666 !important;
@@ -52,9 +52,9 @@
 	--colorTextDark:		hsl(var(--baseHue) 100 20);
 	--colorHeadings:		hsl(var(--baseHue) 100 35);
 	--backgroundDark:		hsl(var(--baseHue) 100 4);
-	--backgroundHeadings:	hsl(var(--baseHue) 100 4);
-	--backgroundLessDark:	hsl(var(--baseHue) 100 6);
-	--backgroundBody:		hsl(var(--baseHue) 100 7);
+	--backgroundHeadings:	hsl(var(--baseHue) 100 2);
+	--backgroundLessDark:	hsl(var(--baseHue) 100 7);
+	--backgroundBody:		hsl(var(--baseHue) 100 6);
 	--colorLinksVisited:	hsl(var(--linkHue) 100 30);
 	--colorLinks:			hsl(var(--linkHue) 100 40);
 	--colorLinksHover:		hsl(var(--linkHue)  70 70);
@@ -123,36 +123,34 @@
 
 .nimbusThemeHideLinks
 {
-	::-moz-selection { color: #000; background: #70767C; }
+	::-moz-selection { color: #000; background: #555; }
 	--baseHue: 200;
+	--linkHue: 30;
 
-	--colorText:			hsl(var(--baseHue) 10 50);
-	--colorTextEmphasis:	hsl(var(--baseHue) 10 60);
-	--backgroundLessDark:	hsl(var(--baseHue) 14 11);
-	--backgroundHeadings:	hsl(var(--baseHue) 18 6);
-	--backgroundDark:		hsl(var(--baseHue) 18 8);
-	--colorSeparator:		hsl(var(--baseHue) 18 8);
-	--backgroundHTML:		hsl(var(--baseHue) 20 8);
-	--backgroundPre:		hsl(var(--baseHue) 22 9);
-	--colorBorderDark:		hsl(var(--baseHue) 35 5);
-	--colorHeadings:		hsl(var(--baseHue) 7  53);
-	--backgroundLight:		hsl(var(--baseHue) var(--baseSaturation) 16);
-	--backgroundBody:		hsl(var(--baseHue) var(--baseSaturation) 12);
-	--colorBorderLight:		hsl(var(--baseHue) var(--baseSaturation) 20);
-	--colorPre:				hsl(var(--baseHue) var(--baseSaturation) 47);
+	--bgMark: #333333;
+	--fgMark: #808080;
 
-	--backgroundFormElements: #080c10;
-	--backgroundFormElementsFocused: #000;
-	--colorFormElements: #999;
-	--colorFormElementsFocused: #CCC;
+	--colorText:			hsl(var(--baseHue) 0 30);
+	--colorTextDark:		hsl(var(--baseHue) 0 25);
+	--colorTextEmphasis:	hsl(var(--baseHue) 0 35);
+	--backgroundLessDark:	hsl(var(--baseHue) 0 11);
+	--backgroundHeadings:	hsl(var(--baseHue) 0 4);
+	--backgroundDark:		hsl(var(--baseHue) 0 4);
+	--colorSeparator:		hsl(var(--baseHue) 0 4);
+	--backgroundHTML:		hsl(var(--baseHue) 0 4);
+	--backgroundBody:		hsl(var(--baseHue) 0 8);
+	--backgroundPre:		hsl(var(--baseHue) 0 0);
+	--colorBorderDark:		hsl(var(--baseHue) 0 0);
+	--colorHeadings:		hsl(var(--baseHue) 0  53);
+	--backgroundLight:		hsl(var(--baseHue) 0 16);
+	--colorBorderLight:		hsl(var(--baseHue) 0 20);
+	--colorPre:				hsl(var(--baseHue) 0 35);
 
-	--bgMark: #303336;
-	--fgMark: #808488;
+	--colorLinks:			hsl(var(--baseHue) 0 40);
+	--colorLinksHover:		hsl(var(--linkHue) 0 60);
+	--colorLinksVisited:	hsl(var(--baseHue) 0 25);
 
-	--colorLinks:			hsl(var(--baseHue) 10 50);
-	--colorLinksHover:		hsl(var(--linkHue) 70 70);
-	--colorLinksVisited:	hsl(var(--baseHue) 10 40);
-	--imgFilter:			saturate(0) brightness(0.66);
+	--imgFilter:			saturate(0) brightness(0.5);
 	--imgHoverFilter:		saturate(0) brightness(1);
 }
 
@@ -216,31 +214,31 @@
 .nimbusThemeRed
 {
 	::-moz-selection { color: #000; background: #600; }
-	--backgroundHTML:		#100;
+	--backgroundBody:		#000;
+	--backgroundHTML:		#000;
+	--backgroundHeadings:	#000;
 	--backgroundLight:		#300;
 	--colorBorderDark:		#000;
-	--colorBorderLight:		#400;
+	--colorBorderLight:		#000;
 	--colorSeparator:		#000;
 	--baseHue:				0;
 	--linkHue:				30;
-	--colorTextEmphasis:	hsl(var(--baseHue)  40 60);
-	--colorText:			hsl(var(--baseHue) 100 32);
+	--colorTextEmphasis:	hsl(var(--baseHue)  40 50);
+	--colorText:			hsl(var(--baseHue) 100 27);
 	--colorHeadings:		hsl(var(--baseHue) 100 35);
-	--backgroundDark:		hsl(var(--baseHue) 100 4);
-	--backgroundHeadings:	hsl(var(--baseHue) 100 4);
-	--backgroundLessDark:	hsl(var(--baseHue) 100 6);
-	--backgroundBody:		hsl(var(--baseHue) 100 7);
+	--backgroundDark:		#000;
+	--backgroundLessDark:	#000;
 	--colorLinksVisited:	hsl(var(--linkHue) 100 30);
 	--colorLinks:			hsl(var(--linkHue) 100 40);
 	--colorLinksHover:		hsl(var(--linkHue)  70 70);
 	--backgroundPre:		hsl(var(--baseHue) 100 4.5);
 	--colorPre: 			hsl(var(--baseHue) 100 30);
 
-	--fgMark: #666;
-	--bgMark: #222;
-	markyellow { background: #000; color: #860; }
-	markpurple { background: #102; color: #406; }
-	markgreen { background: #030; color: #070; }
+	--fgMark: var(--colorText);
+	--bgMark: #300;
+
+	markyellow { background: #402000; color: #c90; }
+	markgreen { background: #030; color: #090; }
 	markred { background: #500; color: #b00; }
 	markblue { background: #003; color: #35a; }
 	markwhite { background: #000; color: #777; }
@@ -280,19 +278,22 @@
 
 .nimbusThemeAmber
 {
+	::-moz-selection { color: #000; background: #600; }
 	--baseHue: 30;
-	--backgroundBody: hsl(var(--baseHue) 100 8);
-	--backgroundHTML: hsl(var(--baseHue) 100 4);
+	--backgroundHTML: #100000;
+	--backgroundBody: #280c00;
 	--backgroundDark: hsl(var(--baseHue) 100 4);
 	--backgroundHeadings: hsl(var(--baseHue) 100 1);
 	--colorBorderDark: #000;
-	--colorText: hsl(var(--baseHue) 100 32);
-	--colorTextEmphasis: hsl(20 34 52);
-	--colorLinks: #hsl(11 100 37);
 	--bgMark: hsl(20 50 15);
 	--fgMark: hsl(20 50 40);
 	markyellow { background: #402000; color: #c90; }
-	markwhite { color: hsl(var(--baseHue) 10 56); }
+	markwhite { background: #000; color: #999; }
+
+	--colorText: #a84600;
+	--colorTextEmphasis: #c07070;
+	--colorLinks: #a00;
+	--colorLinksVisited: #733;
 }
 
 @-moz-document url-prefix(about:blank), url-prefix(about:newtab)
@@ -319,6 +320,7 @@
 {
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
 	*[contenteditable] { outline: 2px solid #c80 !important; }
+	svg { opacity: 0.25 !important; }
 
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
 		{ box-shadow: inset 0px 2000px 0 #000 !important; outline: 2px solid #c00 !important; }
@@ -365,14 +367,14 @@
 	quote, quoteauthor, postauthor, postdate, footnote, right, documentheading, slideshow { display: block !important; border-style: solid !important; }
 	quote { padding: 1rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; }
 	quoteauthor { padding: 0.5rem 2rem !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 1rem !important; text-align: right !important; }
-	postauthor { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
-	postdate { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; font-size: 0.8rem !important; text-align: right !important; }
+	postauthor { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; text-align: right !important; }
+	postdate { padding: 0.1rem 2rem !important; background: var(--backgroundDark) !important; border-width: 0 0 0 20px !important;  border-color: var(--colorBorderDark) !important; text-align: right !important; }
 	footnote { padding: 0.5em 10px !important; margin: 2px 0 !important; background: var(--backgroundDark) !important; border-width: 0 0 0 10px !important; border-color: var(--colorBorderLight) !important; }
 	footnote[id] { border-color: #b00 !important; }
 	right { text-align: right !important; }
 	documentheading { display: block; margin: 0 0 100px 0 !important; padding: 10px 0 !important; border-color: var(--colorBorderDark); border-width: 10px 0; }
 
-	slideshow { background: var(--colorBorderDark) !important; padding: 10px !important; }
+	slideshow { background: var(--colorBorderDark) !important; border-color: #000 !important; padding: 10px !important; }
 	slideshow::after { content: " "; clear: both; display: block; }
 
 	p, hgroup, article, caption, blockquote, center, col, colgroup, div, div[class], form, li, main, noscript, ol, section, summary, ul, video
@@ -384,7 +386,7 @@
 		{ background: inherit !important; color: inherit !important; font-family: inherit !important; font-size: inherit !important; font-style: normal !important; line-height: inherit !important; }
 	fieldset { border-style: solid !important; border-color: var(--colorBorderDark) !important; }
 	sub, sup { font-size: var(--fontSizeSmall) !important; font-family: inherit !important; line-height: 1.2 !important; }
-	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundDark) !important; border-color: var(--colorBorderLight) !important; }
+	header, header[class], footer, footer[class], nav, nav[class] { background: var(--backgroundDark) !important; border-color: var(--colorBorderLight) !important; color: inherit !important; }
 
 	#nimbus
 	{
@@ -528,6 +530,17 @@
 	x14 { color: #b46468; }
 	x15 { color: #783a3d; }
 
+	c  { color: #c85b60; }
+	d  { color: #c85b60; }
+	e  { color: #884962; }
+	f  { color: #c86b8f; }
+	g  { color: #ba1c24; }
+	h  { color: #99242a; }
+	j  { color: #c84f55; }
+	k  { color: #c33c72; }
+	l  { color: #c8000a; }
+	m  { color: #c82a69; }
+
 	html a[href*=".pdf"]:link, html a[href*=".PDF"] { background: #400 !important; color: #C00 !important; padding: 0px 5px !important; border-left: 10px solid #C00 !important; display: inline-block !important; margin: 1px !important; }
 	html a[href*=".pdf"]:visited, html a[href*=".PDF"]:visited { background: #200 !important; color: #800 !important; border-color: #C00 !important; }
 	html a[href*=".pdf"]:active, html a[href*=".pdf"]:hover, html a[href*=".pdf"]:focus { background: #600 !important; }
@@ -589,7 +602,7 @@
 	markgreen  { background: #040; color: #0B0; }
 	markred    { background: #500; color: #E33; }
 	markblue   { background: #005; color: #66D; }
-	markpurple { background: #180030; color: #84A; }
+	markpurple { background: #180030; color: #60A; }
 	markyellow { background: #630; color: #c0b040; }
 	markwhite  { background: #000; color: #b0a8a0; }
 
@@ -615,12 +628,12 @@
 		em { display: inline-block !important; width: 200px !important; }
 	}
 
-	#xxdialog input, autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 32px !important; color: #AAA !important; }
+	#customPrompt input, autocompleteinputwrapper input, autocompleteinputwrapper input[class] { font-size: 32px !important; color: #AAA !important; }
 	autocompleteinputwrapper input div, autocompleteinputwrapper input[class] div { color: #AAA !important; }
 
-	#xxdialog { position: fixed !important; margin: auto !important; z-index: 10000 !important; height: 90px !important; top: 0 !important; left: 0px !important; bottom: 0px !important; right: 0 !important; background: var(--colorBorderDark) !important; color: #AAA !important; border: 10px solid #000 !important; display: block !important; text-transform: none !important; width: 60vw !important; }
-	#xxdialog heading { height: 30px !important; line-height: 30px !important; padding: 0 10px !important; background: var(--colorBorderDark) !important; display: block !important; margin: 0 !important; }
-	#xxdialog input { font: 32px var(--fontBase) !important; line-height: 60px !important; verdana !important; background: #000 !important; color: #AAA !important; padding: 0 0 !important; margin: 0 !important; border-width: 0 10px !important; border-color: #000 !important; width: 100% !important; height: 60px !important; overflow: hidden !important; box-sizing: border-box !important; }
+	#customPrompt { position: fixed !important; margin: auto !important; z-index: 10000 !important; height: 90px !important; top: 0 !important; left: 0px !important; bottom: 0px !important; right: 0 !important; background: var(--colorBorderDark) !important; color: #AAA !important; border: 10px solid #000 !important; display: block !important; text-transform: none !important; width: 60vw !important; }
+	#customPrompt heading { height: 30px !important; line-height: 30px !important; padding: 0 10px !important; background: var(--colorBorderDark) !important; display: block !important; margin: 0 !important; }
+	#customPrompt input { font: 32px var(--fontBase) !important; line-height: 60px !important; verdana !important; background: #000 !important; color: #AAA !important; padding: 0 0 !important; margin: 0 !important; border-width: 0 10px !important; border-color: #000 !important; width: 100% !important; height: 60px !important; overflow: hidden !important; box-sizing: border-box !important; }
 
 	button[aria-pressed="true"] { outline: 2px solid #0C0 !important; }
 
@@ -714,8 +727,6 @@
 @-moz-document domain(www.youtube.com), domain(youtube.com)
 {
 	body { opacity: 0.65 !important; }
-	body.nimbusTheme2 { opacity: 0.9 !important; }
-	body.nimbusTheme3 { opacity: 0.9 !important; }
 	body, body * { font-family: var(--fontBase) !important; font-size: 18px !important; }
 	.ytd-thumbnail-overlay-time-status-renderer { box-shadow: inset 0 200px #000; }
 	ytd-app, ytd-browse { background: #000 !important; }
@@ -723,44 +734,6 @@
 
 input[type="checkbox"].toggle-button:checked { background: #357 !important; border-color: #357 !important; }
 input[type="checkbox"].toggle-button::before { background: #ACE !important; }
-
-@-moz-document url-prefix(moz-extension:)
-{
-	html, body { background: var(--colorBorderDark) !important; color: #888 !important; }
-	#editor { background: var(--colorBorderDark) !important; color: #999 !important; }
-	#editor textarea { background: var(--colorBorderDark) !important; color: #999 !important; font-family: var(--fontBase) !important; font-size: 20px !important; font-weight: bold !important; }
-	.tab-bar { background: #222 !important; color: #555 !important; }
-	#tabs .tab.active { background: var(--colorBorderDark) !important; color: #999 !important; }
-	.command-item { background: transparent !important; }
-	.CodeMirror { background: #000 !important; font-family: var(--fontBase), "SF Mono" !important; color: #789 !important; }
-	.CodeMirror-gutters { background: #000 !important; border-right: 10px solid #000 !important; }
-	.CodeMirror-line { font-size: 16px !important; font-weight: bold !important; }
-	.CodeMirror-selected { background: #008 !important; }
-	.CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #004 !important; color: #abc !important; }
-	.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #000 !important; color: #aca !important; }
-	.CodeMirror-cursor { border-left: 1px solid #ccc !important; border-right: 1px solid #ccc !important; }
-	.cm-s-default
-	{
-		.cm-keyword { color: #07c !important; }
-		.cm-atom { color: #219 !important; }
-		.cm-number { color: #164 !important; }
-		.cm-def { color: #88C !important; font-weight: bold !important; }
-		.cm-variable, .cm-s-default .cm-punctuation, .cm-s-default .cm-property, .cm-s-default .cm-operator { }
-		.cm-variable-2 { color: #66A !important; }
-		.cm-variable-3, .cm-s-default .cm-type { color: #66A !important; }
-		.cm-comment { color: #666 !important; }
-		.cm-string { color: #369 !important; }
-		.cm-string-2 { color: #369 !important; }
-		.cm-meta { color: #555 !important; }
-		.cm-qualifier { color: #555 !important; }
-		.cm-builtin { color: #C60 !important; }
-		.cm-bracket { color: #997 !important; }
-		.cm-tag { color: #170 !important; }
-		.cm-attribute { color: #448 !important; }
-		.cm-hr { color: #999 !important; }
-		.cm-link { color: #09c !important; }
-	}
-}
 
 #intStatus.icon-Cross { box-shadow: 0 20px 0px #C00; }
 #intStatus.icon-Yes { box-shadow: 0 20px 0px #0C0; }
