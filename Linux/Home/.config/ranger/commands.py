@@ -153,6 +153,8 @@ class removeFromFilenames(Command):
 		selection = self.fm.thistab.get_selection()
 
 		names = list()
+		filesToRename = list()
+
 		for index, file in enumerate(selection):
 			stem, ext = os.path.splitext(file.relative_path)
 			if searchStr in stem:
@@ -161,10 +163,11 @@ class removeFromFilenames(Command):
 				if checkIfFileExists(name):
 					return self.fm.notify(f"Cannot proceed, there would be at least one collision with {name}", bad = True)
 				names.append(name)
+				filesToRename.append(file.relative_path)
 
 		numNotRenamed = 0
-		for index, file in enumerate(selection):
-			numNotRenamed += bool(renameFileFailOnCollision(file.relative_path, names[index]))
+		for index, filename in enumerate(filesToRename):
+			numNotRenamed += bool(renameFileFailOnCollision(filename, names[index]))
 
 		if numNotRenamed > 0:
 			self.fm.notify(f"Failed to rename {numNotRenamed} files", bad = True)
