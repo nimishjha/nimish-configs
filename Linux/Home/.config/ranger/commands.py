@@ -145,10 +145,10 @@ class setExtension(Command):
 
 class removeFromFilenames(Command):
 	def execute(self):
-		if len(self.args) != 2:
+		if len(self.args) < 2:
 			return self.fm.notify("Usage: removeFromFilenames <searchString>", bad = True)
 
-		searchStr = self.args[1]
+		searchStr = self.rest(1)
 
 		selection = self.fm.thistab.get_selection()
 
