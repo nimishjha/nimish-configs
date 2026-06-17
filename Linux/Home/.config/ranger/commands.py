@@ -181,7 +181,9 @@ class cleanupFilenames(Command):
 		for file in self.fm.thistab.get_selection():
 			stem, ext = splitext(file.relative_path)
 			replacements = [
-				("\\[[A-Za-z0-9_-]+\\]", ""),
+				("\\[[^\\]]+\\]", ""),
+				("\\([^\\)]+\\)", ""),
+				("{[\\s\\w]+}", ""),
 				("[\\._]", " "),
 				("[^A-Za-z0-9 ]", " "),
 				("\\s+", " "),
@@ -275,4 +277,5 @@ def logItem(item):
 class debugFileInfo(Command):
 	def execute(self):
 		logItem(self.fm.thisfile)
+		# listItemProperties(self.fm.thisfile)
 
