@@ -86,7 +86,7 @@ toolbar { background: #000 !important; }
 .download.download-state[selected] { background-color: #333 !important; color: #AAA !important; }
 .download.download-state[active] { background-color: #333 !important; color: #AAA !important; }
 
-#contentAreaDownloadsView { --download-progress-fill-color: #0C0; }
+#contentAreaDownloadsView { --download-progress-fill-color: #090; }
 #contentAreaDownloadsView { background: #000 !important; color: #888 !important; }
 #contentAreaDownloadsView #downloadsListBox.allDownloadsListBox { background: #111 !important; border: 0 !important; }
 #contentAreaDownloadsView .download.download-state[current="true"] { background: #000 !important; color: #AAA !important; outline: 0 !important; }

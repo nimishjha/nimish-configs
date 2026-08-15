@@ -70,6 +70,7 @@
 
 	--imgFilter: brightness(0.5);
 	--imgHoverFilter: brightness(1);
+	--svgOpacity: 0.25;
 
 	--fgTt:		#864;
 	--fgKbd:	#860;
@@ -271,6 +272,7 @@
 	--imgFilter:			unset;
 	--bgMark: #303336;
 	--fgMark: #808488;
+	--svgOpacity: 1;
 
 	markwhite { background: #222; color: #c0c0c0; }
 	reference { background: #222 !important; }
@@ -320,7 +322,7 @@
 {
 	* { animation: none !important; transition: none !important; text-shadow: none !important; border-radius: 0 !important; }
 	*[contenteditable] { outline: 2px solid #c80 !important; }
-	svg { opacity: 0.25 !important; }
+	svg { opacity: var(--svgOpacity) !important; }
 
 	h1[contenteditable="true"], h2[contenteditable="true"], h3[contenteditable="true"], h4[contenteditable="true"], h5[contenteditable="true"], h6[contenteditable="true"], div[contenteditable="true"], li[contenteditable="true"], p[contenteditable="true"]
 		{ box-shadow: inset 0px 2000px 0 #000 !important; outline: 2px solid #c00 !important; }

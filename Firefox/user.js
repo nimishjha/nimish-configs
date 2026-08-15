@@ -1,3 +1,5 @@
+user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
+
 user_pref("browser.aboutConfig.showWarning", false);
 user_pref("browser.aboutwelcome.didSeeFinalScreen", true);
 user_pref("browser.cache.disk.enable", false);
@@ -51,8 +53,8 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
 user_pref("toolkit.telemetry.server", "");
 
-user_pref("browser.download.dir", "/mnt/ramdisk");
-user_pref("browser.download.lastDir", "/mnt/ramdisk");
+user_pref("browser.download.dir", "/mnt/ramdisk/downloads");
+user_pref("browser.download.lastDir", "/mnt/ramdisk/downloads");
 
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
