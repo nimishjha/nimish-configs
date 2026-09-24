@@ -94,10 +94,6 @@ toolbar { background: #000 !important; }
 html|select[size][multiple], xul|listheader, xul|richlistbox { appearance: none !important; margin-inline: 0 !important; background-color: #000 !important; border: 0 !important; border-radius: 0 !important; color: #888 !important; }
 xul|richlistbox > xul|richlistitem[selected], xul|treechildren::-moz-tree-row(selected) { background-color: #000 !important; color: #AAA !important; }
 
-#contentAreaDownloadsView {
---download-progress-fill-color: #DD0;
-}
-
 @media (prefers-color-scheme: dark) {
 	#contentAreaDownloadsView {
 		--download-progress-fill-color: #C0C;

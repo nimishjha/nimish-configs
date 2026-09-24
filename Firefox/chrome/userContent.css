@@ -1,6 +1,6 @@
 :root
 {
-	::-moz-selection { color: #000; background: #600; }
+	::selection, ::-moz-selection { color: #000; background: #600; }
 	--monospace-font-family: "Swis721 Cn BT", "SF Mono", monospace !important;
 
 	--comment-node-color:			#666 !important;
@@ -63,8 +63,8 @@
 
 	--backgroundFormElements: #000;
 	--backgroundFormElementsFocused: #000;
-	--colorFormElements: #666;
-	--colorFormElementsFocused: #AAA;
+	--colorFormElements: #700;
+	--colorFormElementsFocused: #A00;
 
 	markwhite { color: #b0a8a0; }
 
@@ -313,7 +313,7 @@
 	#downloadsListBox { border: 0 !important; background: #000 !important; }
 	.downloadTypeIcon { opacity: 0 !important; }
 	.downloadProgress { height: 8px !important; border-radius: 0 !important; background-color: #303030 !important; }
-	.downloadProgress::-moz-progress-bar { background-color: #0c0 !important; border-radius: 0 !important; }
+	.downloadProgress::-moz-progress-bar { background-color: #080 !important; border-radius: 0 !important; }
 	.downloadProgress:indeterminate::-moz-progress-bar { animation: none !important; background-color: #c70 !important; background-image: none !important; }
 }
 
